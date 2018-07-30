@@ -6,6 +6,6 @@ if year == 0:
     year = date.today().year
 if year%4 == 0 and year%100 != 0 and year%400 != 0:
     #\033[0;33;44m cores no terminal
-    print("\033[1;33;m{}\033[ is lead" .format(year))
+    print("{} is lead" .format(year))
 else:
     print("{} Dont lead".format(year))
