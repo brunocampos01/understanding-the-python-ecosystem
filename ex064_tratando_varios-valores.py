@@ -10,3 +10,7 @@ while number != 999:
         count += 1
         sum += number
 print('You typed {} number and sum is: {}'.format(count, sum))
+
+'''
+if n == 999
+    break'''
