@@ -7,9 +7,6 @@ count = 0
 while True:
     list.append(int(input('Type a number: ')))
     leave = str(input('Do you want continue?[Y/N] ')).upper()
-
-
-
     if leave in 'N':
         break
 print('You typed {} elements.'.format(len(list)))
