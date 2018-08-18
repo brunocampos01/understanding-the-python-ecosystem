@@ -1,6 +1,6 @@
 **Curso de Python 3**
 --------------------------------------------
-Anotações das Aulas, Desafios Resolvidos e Exercícios Corrigidos
+Anotações das aulas e exercícios resolvidos.
 
 
 Mundos   | Temas
