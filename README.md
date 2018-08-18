@@ -1,8 +1,10 @@
-Curso de Python 3 - Canal Curso em Vídeo
+**Curso de Python 3**
+--------------------------------------------
 Anotações das Aulas, Desafios Resolvidos e Exercícios Corrigidos
 
-Veja o curso de Python PARTE 1 em https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6
-Veja o curso de Python PARTE 2 em https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye
-Veja o curso de Python PARTE 3 em https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH
-Site curso em video: http://www.cursoemvideo.com
-Download Python 3: https://www.python.org/downloads/
+
+Mundos   | Temas
+-------- | ---
+1 | [Fundamentos](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
+2 |  [Estruturas de Controle](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
+3 | [Estruturas Compostas](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
