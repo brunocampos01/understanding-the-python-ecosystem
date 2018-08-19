@@ -1,22 +1,29 @@
+'''
+Tuplas: () - Parênteses
+Listas: [] - Colchetes
+Dicionários: {} - Chaves
+Exemplo 1 de Dicionário Vazio:
+dados = dict()
+Exemplo 2 de Dicionário Vazio:
+dados = {}'''
+
 pessoas = {'nomes': 'gustavo', 'sexo': 'm', 'idade': 12}
-print(pessoas['nomes'])
+if False:
+    print(pessoas['nomes'])
+    print(pessoas.keys()) #imprime os nomes dos indices
+    print(pessoas.values()) #imprime os valores dos indices
+    print(pessoas.items()) # tudo
 
-#imprime os nomes dos indices
-if False:
-    print(pessoas.keys())
-#imprime os valores dos indices
-if False:
-    print(pessoas.values())
-#imprime tudo
-if False:
-    print(pessoas.items())
+    for k in pessoas.keys():  # Para cada chave "k" nas chaves (keys) do dicionário "pessoas"...
+        print('indice: {}'.format(k))
 
-#imprimi dicionario com laco
-if False:
-    for key, value in pessoas.items():
-        print(f'{key} = {value}')
+    for v in pessoas.values():
+        print('valor: {}'.format(v))
 
-#add novo indice
+    for k, v in pessoas.items():
+        print(f'{k} = {v}')
+
+#add indice
 if False:
     pessoas['peso'] = 98
     print(pessoas.values())
