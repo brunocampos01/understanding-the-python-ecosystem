@@ -4,13 +4,13 @@ Default Arguments
 Variable Scope
 Documentation
 function recursive
-Lambda Expressions
-Iterators and Generators'''
+Lambda Expressions'''
 
 # Defining Functions
 if False:
     def show_plus_ten(num):
         return num + 10
+
 
     print(show_plus_ten(500))
 
@@ -19,6 +19,7 @@ if False:
     def cylinder_volume(height, radius=5):  # radius is parameter optional
         pi = 3.14
         return height * pi * radius ** 2
+
 
     print(cylinder_volume(2))  # unspecified in a function call.
     print(cylinder_volume(10, 7))  # pass in arguments by position
@@ -30,13 +31,17 @@ if False:
     def some_function():
         word = "hello"
 
+
     print(word)
 
 if False:
     # This works fine
     word = "hello"
+
+
     def some_function():
         print(word)
+
 
     some_function()
 
@@ -68,9 +73,11 @@ if False:
         if n == 0 or n == 1:
             return 1
         else:
-            return n*fatorial(n-1)
+            return n * fatorial(n - 1)
+
 
     print('fatorial de {} : {}'.format(5, fatorial(5)))
+
 
     def fibonacci(n):
         if n <= 1:
@@ -78,6 +85,22 @@ if False:
         else:
             return fibonacci(n - 1) + fibonacci(n - 2)
 
+
     print('Fibonacci: {}'.format(fibonacci(20)))
 
-# function lamba
+
+# function lambda
+'''
+1. The lambda keyword is used to indicate that this is a lambda expression. 
+2. Following lambda are one or more arguments for the anonymous function separated by commas,followed by a colon :
+3. Last is an expression that is evaluated and returned in this function. 
+'''
+if False:
+    def multiply(x, y):
+        return x * y
+
+    # equals
+    multiplys = lambda x, y: x * y
+
+    print(multiplys(2,6))
+
