@@ -1,3 +1,12 @@
+#implicit types
+if False:
+    counter = 100 # integer
+    miles = 500.0 # float point
+    name = "Rocky Balboa" # string
+    print (counter)
+    print (miles)
+    print (name)
+
 #mix types
 if False:
     n1 = float(input('enter value: '))
