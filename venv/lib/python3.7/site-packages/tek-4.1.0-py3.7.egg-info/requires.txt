@@ -1,0 +1,3 @@
+crystalmethod
+amino>=8.0.0
+golgi>=1.2.0

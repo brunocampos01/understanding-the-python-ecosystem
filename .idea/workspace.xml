@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ff63ca2a-53d6-46b0-924c-65f47bfef585" name="Default" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/curso/exercicios/ex92_worker_registration_dict.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ex001_test_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ex002_download_and_display_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ex003_extract_headers_tag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/curso" beforeDir="false" afterPath="$PROJECT_DIR$/curso" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/curso/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/curso/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/curso/exercicios/ex091_dicionario_ordem.py" beforeDir="false" afterPath="$PROJECT_DIR$/curso/exercicios/ex091_dicionario_ordem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/curso/exercicios/ex093_jogo_futebol_dicionario.py" beforeDir="false" afterPath="$PROJECT_DIR$/curso/exercicios/ex093_jogo_futebol_dicionario.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1799822461">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="23" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.4" value="4" />
+          <entry key="project.open.time.5" value="4" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="csv" value="6" />
+          <entry key="ipynb" value="8" />
+          <entry key="md" value="1" />
+          <entry key="png" value="1" />
+          <entry key="py" value="71" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSV" value="3" />
+          <entry key="IPNB" value="8" />
+          <entry key="Image" value="1" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="71" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="90" />
+          <entry key="py" value="7965" />
+          <entry key="txt" value="65" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="155" />
+          <entry key="Python" value="7965" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1055090724">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="4" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1747694028">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="15" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="ipynb" value="2" />
+          <entry key="md" value="2" />
+          <entry key="png" value="2" />
+          <entry key="py" value="22" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IPNB" value="2" />
+          <entry key="Image" value="2" />
+          <entry key="Markdown" value="2" />
+          <entry key="Python" value="22" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="89" />
+          <entry key="md" value="2" />
+          <entry key="py" value="5011" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="89" />
+          <entry key="Python" value="5011" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="projetos_python" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../artificial_inteligence/exercicios/busca_sequencial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <marker date="1537367479381" expanded="true" signature="330:335" ph="..." />
+                <marker date="1537367479381" expanded="true" signature="498:503" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/curso/exercicios/ex92_worker_registration_dict.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/curso/exercicios/ex093_jogo_futebol_dicionario.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/ex001_test_page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <folding>
+                <element signature="e#88#122#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/ex002_download_and_display_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/ex003_extract_headers_tag.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+              <folding>
+                <element signature="e#61#101#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/curso/exercicios/ex090_exibe_estrutura_dicionario.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" selection-start-line="13" selection-end-line="14" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>queens)f</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="brunocampos01" />
+      </list>
+    </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="ROOT_SYNC" value="SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/curso/aulas/aula012_estruturas_repeticao.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula016_tuplas.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula017_listas.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula017_listas.01.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula017_listas.02.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula017_listas.03.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula017_listas.03_copiar_listas.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula018_listas_aninhadas.py" />
+        <option value="$PROJECT_DIR$/curso/exercicios/ex090_exibeestrutura_dicionario.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula004_hello_word.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula019_dicionarios.py" />
+        <option value="$PROJECT_DIR$/curso/exercicios/ex090_exibe_estrutura_dicionario.py" />
+        <option value="$PROJECT_DIR$/curso/exercicios/ex094_grupo_analise_dicionario.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula101_functios.py" />
+        <option value="$PROJECT_DIR$/load_data_from_csv.ipynb" />
+        <option value="$PROJECT_DIR$/data_analysis.py" />
+        <option value="$PROJECT_DIR$/../data_science/Load Data from CSV.ipynb" />
+        <option value="$PROJECT_DIR$/../data_science/salarios_servidores_SEA_06.18.ipynb" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/pandas_numpy/array_pandas.py" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/pandas_numpy/array_numpy.py" />
+        <option value="$PROJECT_DIR$/../data_science/tutorial_data_analysis/performace_python_and_pandas.ipynb" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/scikit/playgroud_sklearn.py" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/scikit_learn/studentMain.py" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/scikit_learn/prep_terrain_data.py" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/scikit_learn/class_vis.py" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/scikit_learn/playgroud_sklearn.py" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/scikit_learn/ClassifyNB.py" />
+        <option value="$PROJECT_DIR$/../data_science_machine_learning/machine_learning/supervised_learning/algoritmo_perceptron.ipynb" />
+        <option value="$PROJECT_DIR$/../artificial_inteligence/subida_de_encosta.py" />
+        <option value="$PROJECT_DIR$/curso_machine_learing/pandas_numpy/array_numpy.01.py" />
+        <option value="$PROJECT_DIR$/curso/README.md" />
+        <option value="$PROJECT_DIR$/../../artificial_inteligence/algoritmo_forca_bruta-n_queen.py" />
+        <option value="$PROJECT_DIR$/../../artificial_inteligence/trabalho01-n_queens/algoritmo_forca_bruta-n_queen.py" />
+        <option value="$PROJECT_DIR$/../../data_science/Week-3-Numpy/playgroud_decision_tree.py" />
+        <option value="$PROJECT_DIR$/../../data_science/machine_learning/supervised_learning/Untitled.ipynb" />
+        <option value="$PROJECT_DIR$/../../data_science/machine_learning/supervised_learning/playgroud_decision_tree.py" />
+        <option value="$PROJECT_DIR$/curso/aulas/aula006_tipos_primitivos.py" />
+        <option value="$USER_HOME$/estudo/computacao/curso_devops/README.md" />
+        <option value="$PROJECT_DIR$/../../artificial_inteligence/trabalho01-n_queens/algoritmo_backtracking_n_queen.py" />
+        <option value="$PROJECT_DIR$/../../data_science/machine_learning/supervised_learning/final_project/visuals.py" />
+        <option value="$PROJECT_DIR$/curso/exercicios/ex92_worker_registration_dict.py" />
+        <option value="$PROJECT_DIR$/../../artificial_inteligence/exercicios/busca_sequencial.py" />
+        <option value="$PROJECT_DIR$/../../artificial_inteligence/exercicios/busca_largura.py" />
+        <option value="$PROJECT_DIR$/curso/exercicios/ex091_dicionario_ordem.py" />
+        <option value="$PROJECT_DIR$/curso/exercicios/ex093_jogo_futebol_dicionario.py" />
+        <option value="$PROJECT_DIR$/web/playgroud.py" />
+        <option value="$PROJECT_DIR$/web/playgroud_web_scraping.py" />
+        <option value="$PROJECT_DIR$/web/ex002_download_and_display_data.py" />
+        <option value="$PROJECT_DIR$/web/ex003_get_number_datasets.py" />
+        <option value="$PROJECT_DIR$/web/ex003_extract_h1_tag.py" />
+        <option value="$PROJECT_DIR$/web/ex003_extract_headers_tag.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="1281" />
+    <option name="width" value="1279" />
+    <option name="height" value="1060" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyPep8Inspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../../data_science/machine_learning/supervised_learning" />
+      <recent name="$PROJECT_DIR$/../../data_science/machine_learning" />
+      <recent name="$PROJECT_DIR$/../../artificial_inteligence/trabalho01-n_queens" />
+      <recent name="$PROJECT_DIR$/curso_machine_learing/pandas_numpy" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.ex003_get_number_datasets">
+    <configuration name="projetos_python" type="JupiterNotebook" factoryName="Jupyter Notebook">
+      <module name="projetos_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="additionalOptions" value="" />
+      <option name="ipnbHost" value="127.0.0.1" />
+      <option name="ipnbPort" value="8888" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ex002_download_and_display_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="projetos_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/web" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web/ex002_download_and_display_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ex003_get_number_datasets" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="projetos_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/web" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web/ex003_extract_headers_tag.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ex091_dicionario_ordem" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="projetos_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/curso/exercicios" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curso/exercicios/ex091_dicionario_ordem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ex093_jogo_futebol_dicionario" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="projetos_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/curso/exercicios" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curso/exercicios/ex093_jogo_futebol_dicionario.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="playgroud_web_scraping" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="projetos_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/web" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web/ex001_test_page.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jupyter Notebook.projetos_python" />
+      <item itemvalue="Python.ex091_dicionario_ordem" />
+      <item itemvalue="Python.ex093_jogo_futebol_dicionario" />
+      <item itemvalue="Python.playgroud_web_scraping" />
+      <item itemvalue="Python.ex002_download_and_display_data" />
+      <item itemvalue="Python.ex003_get_number_datasets" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.ex003_get_number_datasets" />
+        <item itemvalue="Python.ex002_download_and_display_data" />
+        <item itemvalue="Python.playgroud_web_scraping" />
+        <item itemvalue="Python.ex093_jogo_futebol_dicionario" />
+        <item itemvalue="Python.ex091_dicionario_ordem" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff63ca2a-53d6-46b0-924c-65f47bfef585" name="Default" comment="" />
+      <created>1534446466268</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534446466268</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1534474940224</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1534474940224</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial commit">
+      <created>1534515236675</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1534515236675</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial commit">
+      <created>1534515942136</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1534515942136</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial commit">
+      <created>1534521709106</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1534521709106</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial commit">
+      <created>1534522581832</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534522581832</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Initial commit">
+      <created>1534526473539</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1534526473540</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Initial commit">
+      <created>1534561749270</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1534561749270</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Initial commit">
+      <created>1534624430976</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1534624430976</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Initial commit">
+      <created>1534690186053</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1534690186054</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Initial commit">
+      <created>1534697061672</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1534697061672</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Initial commit">
+      <created>1534697147278</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1534697147278</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Initial commit">
+      <created>1534697263800</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1534697263800</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Initial commit">
+      <created>1534718910749</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1534718910750</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Initial commit">
+      <created>1534734720927</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1534734720927</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Initial commit">
+      <created>1534785068422</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1534785068422</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Initial commit">
+      <created>1534785450529</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1534785450529</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Initial commit">
+      <created>1534882856266</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1534882856266</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1281" y="0" width="1279" height="1060" extended-state="4" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6236045" visible="true" weight="0.1687898" />
+      <window_info id="Structure" order="1" sideWeight="0.37639552" side_tool="true" weight="0.24203822" />
+      <window_info id="Favorites" order="2" sideWeight="0.37639552" side_tool="true" weight="0.24203822" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6568471" visible="true" weight="0.19465241" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3989305" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49507293" weight="0.15491453" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4968153" weight="0.32869378" />
+      <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.49761146" weight="0.32869378" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49840763" weight="0.32762313" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.34315288" side_tool="true" weight="0.19465241" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/curso_machine_learing" />
+      <path value="$PROJECT_DIR$/../../data_science_machine_learning" />
+      <path value="$PROJECT_DIR$/../data_science_machine_learning" />
+    </ignored-roots>
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../data_science/enrollments.csv" />
+    <entry file="file://$PROJECT_DIR$/../data_science/Load Data from CSV.ipynb" />
+    <entry file="file://$PROJECT_DIR$/../data_science/daily_engagement.csv" />
+    <entry file="file://$PROJECT_DIR$/../data_science/salarios_servidores_SEA_06.18.ipynb" />
+    <entry file="file://$PROJECT_DIR$/../data_science/salarios_servidores_SEA_06.18_limpo.csv" />
+    <entry file="file://$PROJECT_DIR$/../data_science/tutorial_data_analysis/performace_python_and_pandas.ipynb" />
+    <entry file="file://$USER_HOME$/Downloads/titanic_survival_exploration.py" />
+    <entry file="file://$PROJECT_DIR$/curso_machine_learing/pandas_numpy/playgroud_numpy_array.py" />
+    <entry file="file://$PROJECT_DIR$/curso_machine_learing/scikit_learn/studentMain.py" />
+    <entry file="file://$PROJECT_DIR$/curso_machine_learing/scikit_learn/class_vis.py" />
+    <entry file="file://$PROJECT_DIR$/curso_machine_learing/scikit_learn/prep_terrain_data.py" />
+    <entry file="file://$PROJECT_DIR$/curso_machine_learing/scikit_learn/ClassifyNB.py" />
+    <entry file="file://$PROJECT_DIR$/../data_science_machine_learning/machine_learning/supervised_learning/algoritmo_perceptron.ipynb" />
+    <entry file="file://$PROJECT_DIR$/curso/aulas/aula008_import.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="3" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/aulas/aula009_strings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="91" column="10" selection-start-line="91" selection-start-column="10" selection-end-line="91" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso_machine_learing/scikit_learn/playgroud_sklearn.py" />
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex010_conversor_moedas.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex021_tocar_musica.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex030_par_impar.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex047_contagem_pares.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex088_mega_sena_lista.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../artificial_inteligence/subida_de_encosta.py" />
+    <entry file="file://$PROJECT_DIR$/curso_machine_learing/pandas_numpy/array_numpy.01.py" />
+    <entry file="file://$PROJECT_DIR$/curso_machine_learing/pandas_numpy/array_numpy.02.py" />
+    <entry file="file://$PROJECT_DIR$/curso/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="150">
+            <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/aulas/aula004_hello_word.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex076_lista_precos_tupla.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/aulas/aula017_listas.03_copiar_listas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex082_dividindo_valores_listas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/aulas/aula007_operadores.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex094_grupo_analise_dicionario.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../artificial_inteligence/trabalho01-n_queens/readme.md" />
+    <entry file="file://$PROJECT_DIR$/../../data_science_machine_learning/machine_learning/supervised_learning/algoritmo_perceptron.ipynb" />
+    <entry file="file://$PROJECT_DIR$/../../data_science/machine_learning/supervised_learning/Untitled.ipynb" />
+    <entry file="file://$PROJECT_DIR$/../../data_science/machine_learning/supervised_learning/plot_iris1.py" />
+    <entry file="file://$PROJECT_DIR$/../../data_science/machine_learning/supervised_learning/playgroud_decision_tree.py" />
+    <entry file="file://$USER_HOME$/estudo/computacao/curso_devops/images/logo-curso.png" />
+    <entry file="file://$USER_HOME$/estudo/computacao/curso_devops/README.md" />
+    <entry file="file://$PROJECT_DIR$/../../artificial_inteligence/trabalho01-n_queens/algoritmo_backtracking_n_queen.py" />
+    <entry file="file://$PROJECT_DIR$/../../data_science/machine_learning/supervised_learning/final_project/visuals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/aulas/aula006_tipos_primitivos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/aulas/aula019_dicionarios.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../artificial_inteligence/exercicios/busca_largura.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex091_dicionario_ordem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="11" selection-start-line="18" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../artificial_inteligence/exercicios/busca_sequencial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <marker date="1537367479381" expanded="true" signature="330:335" ph="..." />
+            <marker date="1537367479381" expanded="true" signature="498:503" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex92_worker_registration_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex093_jogo_futebol_dicionario.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/exercicios/ex090_exibe_estrutura_dicionario.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ex001_test_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#88#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ex002_download_and_display_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ex003_extract_headers_tag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#61#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/curso.iml" filepath="$PROJECT_DIR$/.idea/curso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../artificial_inteligence/.idea/artificial_inteligence.iml" filepath="$PROJECT_DIR$/../../artificial_inteligence/.idea/artificial_inteligence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../artificial_inteligence/.idea/artificial_inteligence.iml" filepath="$PROJECT_DIR$/../artificial_inteligence/.idea/artificial_inteligence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/curso_machine_learing/.idea/curso_machine_learing.iml" filepath="$PROJECT_DIR$/curso_machine_learing/.idea/curso_machine_learing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../data_science/.idea/data_science.iml" filepath="$PROJECT_DIR$/../../data_science/.idea/data_science.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../data_science_machine_learning/.idea/data_science.iml" filepath="$PROJECT_DIR$/../../data_science_machine_learning/.idea/data_science.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../data_science_machine_learning/.idea/data_science.iml" filepath="$PROJECT_DIR$/../data_science_machine_learning/.idea/data_science.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/projetos_python.iml" filepath="$PROJECT_DIR$/.idea/projetos_python.iml" />
     </modules>
   </component>
 </project>

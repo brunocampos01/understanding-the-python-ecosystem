@@ -1,0 +1,12 @@
+#!/home/brunocampos01/projetos/projetos_python/venv/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'series==2.33.12','console_scripts','serieslibd'
+__requires__ = 'series==2.33.12'
+import re
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(
+        load_entry_point('series==2.33.12', 'console_scripts', 'serieslibd')()
+    )

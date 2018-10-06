@@ -1,0 +1,9 @@
+[console_scripts]
+extract = tek_utils.extract:extract
+gain_collection = tek_utils.gain:gain_collection
+iptabler = tek_utils.iptables:iptabler
+process_album = tek_utils.process_album:process_album
+sh_release = tek_utils.sharehoster.search:sh_release
+shget = tek_utils.sharehoster:shget
+tget = tek_utils.sharehoster:tget
+

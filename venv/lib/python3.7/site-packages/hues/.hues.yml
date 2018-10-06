@@ -1,0 +1,20 @@
+hues:
+  default: defaultfg
+  time: magenta
+  label: blue
+  info: cyan
+  success: green
+  error: red
+  warn: yellow
+labels:
+  info: INFO
+  warn: WARNING
+  error: ERROR
+  success: SUCCESS
+options:
+  show_time: yes
+  time_format: '%H:%M:%S'
+
+  add_newline: yes
+
+  theme: simple

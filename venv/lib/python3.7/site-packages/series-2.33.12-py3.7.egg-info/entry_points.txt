@@ -1,0 +1,11 @@
+[console_scripts]
+handle_episode = series.handle_episode:handle_episode_cli
+seriesgetc = series.get.cli:getc
+seriesgetd = series.get.cli:getd
+serieslibc = series.library.cli:libc
+serieslibd = series.library.cli:libd
+store_episode = series.store_episode:store_episode_cli
+subsync_auto = series.subsync:subsync_auto
+subsync_cwd = series.subsync:subsync_cwd
+subsync_dir = series.subsync:subsync_dir_cli
+

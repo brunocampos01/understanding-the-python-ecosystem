@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: sklearn-pandas
+Version: 1.7.0
+Summary: Pandas integration with sklearn
+Home-page: https://github.com/paulgb/sklearn-pandas
+Author: Israel Saeta Pérez
+Author-email: israel.saeta@dukebody.com
+License: UNKNOWN
+Keywords: scikit,sklearn,pandas
+Platform: UNKNOWN
+Requires-Dist: numpy (>=1.6.1)
+Requires-Dist: pandas (>=0.11.0)
+Requires-Dist: scikit-learn (>=0.15.0)
+Requires-Dist: scipy (>=0.14)
+
+UNKNOWN
+
+

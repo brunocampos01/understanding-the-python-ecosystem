@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+jupyter-git/__init__.py
+jupyter-git/github-commit-push.js
+jupyter-git/notebook.json
+jupyter_git.egg-info/PKG-INFO
+jupyter_git.egg-info/SOURCES.txt
+jupyter_git.egg-info/dependency_links.txt
+jupyter_git.egg-info/entry_points.txt
+jupyter_git.egg-info/requires.txt
+jupyter_git.egg-info/top_level.txt

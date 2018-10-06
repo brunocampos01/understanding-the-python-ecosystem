@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+dateutils/__init__.py
+dateutils/dateadd.py
+dateutils/datediff.py
+dateutils.egg-info/PKG-INFO
+dateutils.egg-info/SOURCES.txt
+dateutils.egg-info/dependency_links.txt
+dateutils.egg-info/entry_points.txt
+dateutils.egg-info/not-zip-safe
+dateutils.egg-info/requires.txt
+dateutils.egg-info/top_level.txt

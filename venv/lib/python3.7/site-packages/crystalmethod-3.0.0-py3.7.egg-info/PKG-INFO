@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: crystalmethod
+Version: 3.0.0
+Summary: A simple python multidispatch.
+Home-page: http://packages.python.org/crystalmethod
+Author: Robert Kende
+Author-email: robert.kende@gmail.com
+License: MIT
+Description: A multimethod implementation, loosely based on Guido's initial 'Five-minute Multimethods in Python' : http://www.artima.com/weblogs/viewpost.jsp?thread=101605
+        This implementation supports instance methods as well as a condition based dispatch.
+        
+Keywords: crystalmethod,multidispatch,dispatch,decorator
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: MIT License

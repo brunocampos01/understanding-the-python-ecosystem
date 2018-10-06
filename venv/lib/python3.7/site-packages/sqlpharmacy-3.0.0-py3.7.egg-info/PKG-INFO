@@ -1,0 +1,685 @@
+Metadata-Version: 1.1
+Name: sqlpharmacy
+Version: 3.0.0
+Summary: Python ORM framework, quick, easy, simple yet powerful, based on sqlalchemy.
+Home-page: https://github.com/tylerlong/sqlpharmacy
+Author: Torsten Schmits, Tyler Long
+Author-email: tek@gentoo64.net
+License: BSD
+Description: sqlpharmacy
+        =========
+        - **News**: sqlpharmacy is fully compatible with the newest SQLAlchemy 0.7.9.
+        - **Notice**: sqlpharmacy is NOT YET compatible with SQLAlchemy 0.8.x.
+        
+        
+        |
+        
+        Introduction
+        ------------
+        Python ORM framework which enables you to get started in less than a minute!
+        
+        Super easy to setup and super easy to use, yet super powerful!
+        
+        You would regret that you didn't discorver it earlier!
+        
+        
+        |
+        
+        Features
+        --------
+        - quick: you could get and play with it in less than a minute. It couldn't be more straightforward.
+        - easy: you don't have to write any SQL statements, including those "create table xxx ..." ones.
+        - simple: the core code counts only 233 lines including comments and pydocs, there is no room for bugs.
+        - free: released under BSD license, you are free to use it and distribute it.
+        - powerful: built upon SQLAlchemy and doesn't compromise its power.
+        - support relationships by means of python decorators.
+        - support table inheritance in a most natural way.
+        - support multiple databases: you can map your models to many databases without difficulty.
+        - write less, do more: taking advantage of python metaclass reduces data modeling code dramatically.
+        - long-term maintained: Continous efforts are taken to improve and maintain it.
+        
+        
+        |
+        
+        Quick Start
+        -----------
+        
+        ::
+        
+            pip install sqlpharmacy
+        
+        Refer to the following examples to write your own database manipulation code.
+        
+        
+        |
+        
+        Hello World example
+        -------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class User:
+                name = Column(String(30))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://') # database urls: http://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls
+                db.create_tables() # create tables, you don't have to write any SQL.
+            
+                user = User(name = 'Hello World')
+                db.session.add_then_commit(user) # commit user to database.
+            
+                user = db.session.query(User).get(1)
+                print('My name is', user.name)
+                print('created_at', user.created_at) # created_at and updated_at timestamps are added automatically.
+                print('updated_at', user.updated_at)
+            
+                user.name = 'Tyler Long'
+                db.session.commit() # commit changes to database.
+                print('My name is', user.name)
+                print('created_at', user.created_at)
+                print('updated_at', user.updated_at)
+        
+        
+        |
+        
+        Many-to-one relationship example
+        --------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String, Text
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class Question:
+                title = Column(String(70))
+                content = Column(Text)
+            
+            @Database.many_to_one(Question)
+            class Answer:
+                content = Column(Text)
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                question = Question(title = 'What is sqlpharmacy?', content = 'What is sqlpharmacy?')
+                answer = Answer(question = question, content = 'sqlpharmacy is a Python ORM framework which enables you to get started in less than a minute!')
+                db.session.add_then_commit(answer)
+            
+                question = db.session.query(Question).get(1)
+                print('The question is:', question.title)
+                print('The answer is:', question.answers.first().content)
+        
+        
+        |
+        
+        Many-to-one relationship options example
+        ----------------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String, Text
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class Question:
+                title = Column(String(70))
+                content = Column(Text)
+            
+            @Database.many_to_one(Question, ref_name = 'question', backref_name = 'answers')
+            class Answer:
+                content = Column(Text)
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                question = Question(title = 'What is sqlpharmacy?', content = 'What is sqlpharmacy?')
+                answer = Answer(question = question, content = 'sqlpharmacy is a Python ORM framework which enables you to get started in less than a minute!')
+                db.session.add_then_commit(answer)
+            
+                question = db.session.query(Question).get(1)
+                print('The question is:', question.title)
+                print('The answer is:', question.answers.first().content)
+        
+        
+        |
+        
+        Many-to-one relationship with oneself example
+        ---------------------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            @Database.many_to_one('Node', ref_name = 'parent_node', backref_name = 'children_nodes')
+            class Node:
+                name = Column(String(70))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                root_node = Node(name = 'root')
+                node1 = Node(name = 'node1', parent_node = root_node)
+                node2 = Node(name = 'node2', parent_node = root_node)
+                db.session.add_then_commit(root_node)
+            
+                root_node = db.session.query(Node).filter_by(name = 'root').one()
+                print('Root node has {0} children nodes, they are {1}'\
+                    .format(root_node.children_nodes.count(), ', '.join(node.name for node in root_node.children_nodes)))
+        
+        
+        |
+        
+        Many-to-many relationship example
+        ---------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class User:
+                name = Column(String(30))
+            
+            @Database.many_to_many(User)
+            class Role:
+                name = Column(String(30))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                user1 = User(name = 'Tyler Long')
+                user2 = User(name = 'Peter Lau')
+                role = Role(name = 'Administrator', users = [user1, user2])
+                db.session.add_then_commit(role)
+            
+                admin_role = db.session.query(Role).filter_by(name = 'Administrator').one()
+                print(', '.join([user.name for user in admin_role.users]), 'are administrators')
+        
+        
+        |
+        
+        Many-to-many relationship options example
+        -----------------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class User:
+                name = Column(String(30))
+            
+            @Database.many_to_many(User, ref_name = 'users', backref_name = 'roles', middle_table_name = 'user_role')
+            class Role:
+                name = Column(String(30))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                user1 = User(name = 'Tyler Long')
+                user2 = User(name = 'Peter Lau')
+                role = Role(name = 'Administrator', users = [user1, user2])
+                db.session.add_then_commit(role)
+            
+                admin_role = db.session.query(Role).filter_by(name = 'Administrator').one()
+                print(', '.join([user.name for user in admin_role.users]), 'are administrators')
+        
+        
+        |
+        
+        Many-to-many relationship with oneself example
+        ----------------------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            @Database.many_to_many('User', ref_name = 'users_i_follow', backref_name = 'users_follow_me')
+            class User:
+                name = Column(String(30))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                peter = User(name = 'Peter Lau')
+                mark = User(name = 'Mark Wong', users_i_follow = [peter, ])
+                tyler = User(name = 'Tyler Long', users_i_follow = [peter, ], users_follow_me = [mark, ])
+                db.session.add_then_commit(tyler)
+            
+                tyler = db.session.query(User).filter_by(name = 'Tyler Long').one()
+                print('Tyler Long is following:', ', '.join(user.name for user in tyler.users_i_follow))
+                print('People who are following Tyler Long:', ', '.join(user.name for user in tyler.users_follow_me))
+                mark = db.session.query(User).filter_by(name = 'Mark Wong').one()
+                print('Mark Wong is following:', ', '.join(user.name for user in mark.users_i_follow))
+        
+        
+        |
+        
+        One-to-one relationship example
+        -------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class User:
+                name = Column(String(30))
+            
+            @Database.one_to_one(User)
+            class Contact:
+                email = Column(String(70))
+                address = Column(String(70))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                contact = Contact(email = 'quick.orm.feedback@gmail.com', address = 'Shenzhen, China')
+                user = User(name = 'Tyler Long', contact = contact)
+                db.session.add_then_commit(user)
+            
+                user = db.session.query(User).get(1)
+                print('User:', user.name)
+                print('Email:', user.contact.email)
+                print('Address:', user.contact.address)
+        
+        
+        |
+        
+        Multiple many-to-one relationships example
+        ------------------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String, Text
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class User:
+                name = Column(String(30))
+            
+            @Database.many_to_one(User, ref_name = 'author', backref_name = 'articles_authored')
+            @Database.many_to_one(User, ref_name = 'editor', backref_name = 'articles_edited')
+            class Article:
+                title = Column(String(80))
+                content = Column(Text)
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                author = User(name = 'Tyler Long')
+                editor = User(name = 'Peter Lau')
+                article = Article(author = author, editor = editor, title = 'sqlpharmacy is super quick and easy',
+                    content = 'sqlpharmacy is super quick and easy. Believe it or not.')
+                db.session.add_then_commit(article)
+            
+                article = db.session.query(Article).get(1)
+                print('Article:', article.title)
+                print('Author:', article.author.name)
+                print('Editor:', article.editor.name)
+        
+        
+        |
+        
+        Performing raw sql query example
+        --------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class User:
+                name = Column(String(70))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                count = db.engine.execute('select count(name) from user').scalar()
+                print('There are {0} users in total'.format(count))
+        
+        
+        |
+        
+        Multiple databases example
+        --------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class User:
+                name = Column(String(30))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db1 = Database('sqlite://')
+                db1.create_tables()
+            
+                db2 = Database('sqlite://')
+                db2.create_tables()
+            
+                user1 = User(name = 'user in db1')
+                user2 = User(name = 'user in db2')
+                db1.session.add_then_commit(user1)
+                db2.session.add_then_commit(user2)
+            
+                print('I am', db1.session.query(User).get(1).name)
+                print('I am', db2.session.query(User).get(1).name)
+        
+        
+        |
+        
+        Table inheritance example
+        -------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String, Text
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            class User:
+                name = Column(String(70))
+            
+            @Database.many_to_one(User)
+            class Post:
+                content = Column(Text)
+            
+            class Question(Post):
+                title = Column(String(70))
+            
+            @Database.many_to_one(Question)
+            class Answer(Post):
+                pass
+            
+            @Database.many_to_one(Post)
+            class Comment(Post):
+                pass
+            
+            @Database.many_to_many(Post)
+            class Tag:
+                name = Column(String(70))
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                user1 = User(name = 'Tyler Long')
+                user2 = User(name = 'Peter Lau')
+            
+                tag1 = Tag(name = 'sqlpharmacy')
+                tag2 = Tag(name = 'nice')
+            
+                question = Question(user = user1, title = 'What is sqlpharmacy?', content = 'What is sqlpharmacy?', tags = [tag1, ])
+                question2 = Question(user = user1, title = 'Have you tried sqlpharmacy?', content = 'Have you tried sqlpharmacy?', tags = [tag1, ])
+            
+                answer = Answer(user = user1, question = question, tags = [tag1, ],
+                    content = 'sqlpharmacy is a Python ORM framework which enables you to get started in less than a minute!')
+            
+                comment1 = Comment(user = user2, content = 'good question', post = question)
+                comment2 = Comment(user = user2, content = 'nice answer', post = answer, tags = [tag2, ])
+            
+                db.session.add_all_then_commit([question, question2, answer, comment1, comment2, tag1, tag2, ])
+            
+                question = db.session.query(Question).get(1)
+                print('tags for question "{0}": "{1}"'.format(question.title, ', '.join(tag.name for tag in question.tags)))
+                print('new comment for question:', question.comments.first().content)
+                print('new comment for answer:', question.answers.first().comments.first().content)
+            
+                user = db.session.query(User).filter_by(name = 'Peter Lau').one()
+                print('Peter Lau has posted {0} comments'.format(user.comments.count()))
+            
+                tag = db.session.query(Tag).filter_by(name = 'sqlpharmacy').first()
+                print('{0} questions are tagged "sqlpharmacy"'.format(tag.questions.count()))
+        
+        
+        |
+        
+        MetaBuilder to avoid duplicate code example
+        -------------------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String
+            
+            class DefaultModel:
+                name = Column(String(70))
+            
+            __metaclass__ = Database.MetaBuilder(DefaultModel)
+            
+            class User:
+                pass
+            
+            class Group:
+                pass
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+                user = User(name = 'tylerlong')
+                db.session.add(user)
+                group = Group(name = 'python')
+                db.session.add_then_commit(group)
+            
+                print(user.name)
+                print(group.name)
+        
+        
+        |
+        
+        Model for stackoverflow.com example
+        -----------------------------------
+        
+        ::
+        
+            from sqlpharmacy.core import Database
+            from sqlalchemy import Column, String, Text
+            
+            __metaclass__ = Database.DefaultMeta
+            
+            @Database.many_to_many('User', ref_name = 'followed_users', backref_name = 'followers')
+            class User:
+                email = Column(String(200))
+                name = Column(String(100))
+            
+            @Database.many_to_one(User)
+            class Post:
+                content = Column(Text)
+            
+            @Database.many_to_one(Post)
+            class Comment(Post):
+                pass
+            
+            class Question(Post):
+                title = Column(String(200))
+            
+            @Database.many_to_one(Question)
+            class Answer(Post):
+                pass
+            
+            @Database.many_to_many(Post)
+            class Tag:
+                name = Column(String(50))
+            
+            @Database.many_to_one(User, ref_name = 'sender', backref_name = 'messages_sent')
+            @Database.many_to_one(User, ref_name = 'receiver', backref_name = 'messages_received')
+            class Message:
+                content = Column(Text)
+            
+            @Database.many_to_one(User)
+            @Database.many_to_one(Post)
+            class Vote:
+                type = Column(String(20)) #"vote_up" or "vote_down"
+            
+            Database.register()
+            
+            if __name__ == '__main__':
+                db = Database('sqlite://')
+                db.create_tables()
+            
+                user1 = User(email = 'tylerlong@example.com', name = 'Tyler Long')
+                user2 = User(email = 'peterlau@example.com', name = 'Peter Lau')
+            
+                tag1 = Tag(name = 'Python')
+                tag2 = Tag(name = 'sqlpharmacy')
+            
+                question1 = Question(user = user1, title = 'Can you program in Python?', content = 'RT')
+                question2 = Question(user = user1, title = 'Do you know sqlpharmacy?', content = 'RT')
+            
+                answer1 = Answer(user = user2, question = question1, content = 'Yes I can')
+                answer2 = Answer(user = user2, question = question2, content = 'No I don\'t')
+            
+                comment1 = Comment(user = user1, content = 'You rock')
+                comment2 = Comment(user = user1, content = 'You suck')
+            
+                answer1.comments = [comment1,]
+                answer2.comments = [comment2,]
+            
+                user1.followers = [user2,]
+                question1.tags = [tag1,]
+                answer2.tags = [tag2,]
+            
+                vote1 = Vote(user = user1, type = 'vote_up', post = question1)
+                vote2 = Vote(user = user2, type = 'vote_up', post = question1)
+                vote2 = Vote(user = user2, type = 'vote_down', post = question2)
+            
+                db.session.add_all_then_commit([user1, user2,])
+            
+                print(user2.name, 'is following', ', '.join(user.name for user in user2.followed_users))
+                print(user1.name, 'questions:', ', '.join(question.title for question in user1.questions))
+                print('question1 tags:', ', '.join(tag.name for tag in question1.tags))
+                print('answer2 comments:', ', '.join(comment.content for comment in answer2.comments))
+                print('answer "', answer1.content, '" is for question: "', answer1.question.title, '"')
+                print('there are {0} vote_ups for question "{1}"'.format(question1.votes.filter_by(type = 'vote_up').count(), question1.title))
+        
+        
+        |
+        
+        Examples from real life
+        -----------------------
+        - Everblog_ is a personal blogging platform taking advantage of evernote, it chooses sqlpharmacy as its ORM framework. Refer to `everblog's database model file`_ for more detail.
+        
+        .. _Everblog: https://github.com/tylerlong/everblog
+        .. _`everblog's database model file`: https://github.com/tylerlong/everblog/blob/master/everblog/models.py
+        
+        If you know any other successful stories about sqlpharmacy, do tell me and I will list them above.
+        
+        
+        |
+        
+        Where to learn more about sqlpharmacy?
+        ------------------------------------
+        As said above, sqlpharmacy is built upon SQLAlchemy. sqlpharmacy never tries to hide SQLAlchemy's flexibility and power. Everything availiable in SQLAlchemy is still available in sqlpharmacy.
+        
+        So please read the documents of SQLAlchemy, you would learn much more there than you could here.
+        
+        Read sqlpharmacy's source code, try to improve it.
+        
+        
+        |
+        
+        You wanna involve?
+        ------------------
+        sqlpharmacy is released under BSD lisence.
+        
+        The source code is hosted on github: https://github.com/tylerlong/sqlpharmacy
+        
+        
+        |
+        
+        Acknowledgements
+        ----------------
+        sqlpharmacy is built upon SQLAlchemy - the famous Python SQL Toolkit and Object Relational Mapper. All of the glory belongs to the SQLAlchemy development team and the SQLAlchemy community! My contribution to sqlpharmacy becomes trivial compared with theirs( to SQLAlchemy).
+        
+        
+        |
+        
+        Feedback
+        --------
+        Comments, suggestions, questions, free beer, t-shirts, kindles, ipads ... are all welcome!
+        
+        Email: quick.orm.feedback@gmail.com
+        
+        
+        |
+        
+        todo list
+        ---------
+        #. full text search. (class decorator for model?)
+        #. orm for nosql? such as this one: http://qslack.com/projects/rhino-a-ruby-hbase-orm/
+        #. ref_grandchildren can't access some attributes of grandchildren. for example: everblog project: tag.blog_entrys.lang report an error.
+        #. generate visual charts according to model. It is good for analyzing and demonstrating.
+        #. multiple many_to_many between two models
+        #. make table name customizable
+        
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

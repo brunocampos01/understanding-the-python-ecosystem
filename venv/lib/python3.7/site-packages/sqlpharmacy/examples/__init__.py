@@ -1,0 +1,33 @@
+examples_list = [
+    'hello_world',
+    'many_to_one',
+    'many_to_one_options',
+    'many_to_one_to_self',
+    'many_to_many',
+    'many_to_many_options',
+    'many_to_many_to_self',
+    'one_to_one',
+    'multiple_many_to_one',
+    'raw_sql',
+    'multiple_databases',
+    'table_inheritance',
+    'meta_builder',
+    'model_for_stackoverflow',
+]
+
+examples_dict = {
+    'hello_world': 'Hello World',
+    'many_to_one': 'Many-to-one relationship',
+    'many_to_one_options': 'Many-to-one relationship options',
+    'many_to_one_to_self': 'Many-to-one relationship with oneself',
+    'many_to_many': 'Many-to-many relationship',
+    'many_to_many_options': 'Many-to-many relationship options',
+    'many_to_many_to_self': 'Many-to-many relationship with oneself',
+    'one_to_one': 'One-to-one relationship',
+    'multiple_many_to_one': 'Multiple many-to-one relationships',
+    'raw_sql': 'Performing raw sql query',
+    'multiple_databases': 'Multiple databases',
+    'table_inheritance': 'Table inheritance',
+    'meta_builder': 'MetaBuilder to avoid duplicate code',
+    'model_for_stackoverflow': 'Model for stackoverflow.com',
+}
