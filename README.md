@@ -1,8 +1,8 @@
 # **Learning Python**
-
+...
 
 # Pré-requisitos
-
+...
 ## Básico
   - O que eh o Python
   - Inserindo Comentarios
@@ -13,42 +13,39 @@
   - Funcoes logicas
   
 ## Estruturas de controle
-
+...
  
 ## Estruturas de dados compostas
  - tuplas
  - listas
- - dicionarios
+ - dicionários
  
  
 ## Funções
-
+...
 ## Tratamento de exceções
-
+...
 ## Strings
-
+...
 ## Arquivos e serialização
-
+...
 ## Testes
-
+...
 ## Paralelismo
 
 ## Web
 ...
-
 ## Científico (data science)
 - Numpy
 - Pandas
 - Matplotlib
 - Skitlearn (aprendizagem supervisionada, nao supervisionada)
 - TensorFlow (redes neurais)
-
 # Orientação à objetos
 ...
 # Padrão de Projetos
 ...
 # Course in video in English
-
 - Class notes and exercises solved.
 - Teacher - Gustavo Guanabara.
 
