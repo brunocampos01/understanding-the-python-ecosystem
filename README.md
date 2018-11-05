@@ -2,6 +2,7 @@
 ...
 
 # Pré-requisitos
+- Download do Python 3: https://www.python.org/downloads/
 ...
 ## Básico
   - O que eh o Python
@@ -45,7 +46,7 @@
 ...
 # Padrão de Projetos
 ...
-# Course in video in English
+# Curso em vídeo de Python em português e inglês
 - Class notes and exercises solved.
 - Teacher - Gustavo Guanabara.
 
