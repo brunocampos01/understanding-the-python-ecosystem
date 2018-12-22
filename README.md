@@ -4,6 +4,8 @@
 
 # Pré-requisitos
 ### Instalação
+- Vim editor:<br/>
+`sudo apt-get install vim`
 - Python 3.7 ou superior:<br/>
 `sudo apt get install python3.7`
 - Git:<br/>
@@ -11,21 +13,19 @@
 - pip:<br/>
 `sudo apt get install python-pip`
 - Jupyter Notebook:<br/>
-
 ```
 sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh; 
 chmod +x Anaconda3-5.3.1-Linux-x86_64.sh; ./Anaconda3-5.3.1-Linux-x86_64.sh
 ```
-- Vim editor:<br/>
-`sudo apt-get install vim`
+
 ### Alter Python PATH
 1. First open profile in editor: <br/>
 `~/.profile` or `~/.bashrc`
 
-2. Insert Python PATH
+2. Insert Python PATH:  <br/>
 `export PYTHON=/usr/bin/python<NUMER_VERSION>`
 
-3. Update profile/bashrc:
+3. Update profile/bashrc: <br/>
 `source ~/.profile` or `source ~/.bashrc`
 
 # Fundamentals
