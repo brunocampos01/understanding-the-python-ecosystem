@@ -5,26 +5,33 @@
 # Pré-requisitos
 ### Instalação
 - Python 3.7 ou superior:<br/>
-`sudo apt-get install python3.7`
+`sudo apt get install python3.7`
 - Git:<br/>
-`sudo apt-get install git`
+`sudo apt get install git`
 - pip:<br/>
-`sudo apt-get install python-pip`
+`sudo apt get install python-pip`
+- Jupyter Notebook:<br/>
 
-## Fundamentos
+```
+sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh; 
+chmod +x Anaconda3-5.3.1-Linux-x86_64.sh; ./Anaconda3-5.3.1-Linux-x86_64.sh
+```
+
+# Fundamentals
   - O que é o Python
+  - Interpretador e compilador
   - Environment Virtual
+  - Libraries
+  - Keys words
   - PEP 8: https://realpython.com/python-pep8/#naming-conventions
-  - 
 
-## Comandos Básico
-  - Inserindo Comentários
-  - Função input e print
+# Basic Comands
+  - Função print
   - Tipos de dados em Python
   - Sistemas numéricos
-  - Funções matemáticas
-  - Funções lógicas
-  
+  - Funções e libs matemáticas
+
+
 ## Estruturas de controle
 ...
  

@@ -23,7 +23,7 @@ or<br/>
 
 ---
 
-# Requeriments
+## Requeriments
 
 ### Visualize libraries installs
 `venv/bin/pip3 freeze`
