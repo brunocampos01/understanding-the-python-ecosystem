@@ -1,33 +1,46 @@
 # Environment Virtual Python
-The Python can is executed in a environment virtual **slice** without installs.
+
+The Python can is executed in a environment virtual with isolation from system.<br/>
+Each virtual environment has its **own Python binary**.
+ <img src="images/venv.png" />
 
 ### Install
-`pip install virtualenv`
-env.png
+`pip install virtualenv` <br/>
+or<br/>
+`python3 -m venv /path/to/new/virtual/environment`
+
+ <img src="images/env.png" />
+
 
 ### Create environment
 `virtualenv -p python3 NAME-ENVIRONMENT`
-- The virtualenv create repository with name NAME-ENVIRONMENT
 
 ### Init
-`. venv/bin/activate`
+`source <DIR>/bin/activate`
 
 ### Install libraries
-`venv/bin/pip3 install NAME-LIBRARIES
+`venv/bin/pip3 install NAME-LIBRARIES`
 
 ---
 
-# Creating Requeriments
+# Requeriments
 
 ### Visualize libraries installs
 `venv/bin/pip3 freeze`
-freeze.png
+
+ <img src="images/freeze.png" />
+
 - It´s passing address the *pip* the environment virtual
 
 ### Visualize libraries installs
 `venv/bin/pip3 freeze > requirements.txt`
-requirements.png
+
+ <img src="images/requeriments.png" />
+
 
 ### Install libraries in requirements
 `pip install -r requirements.txt`
 - -r (recursive)
+
+### References
+- https://realpython.com/python-virtual-environments-a-primer/
