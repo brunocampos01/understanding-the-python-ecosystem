@@ -35,12 +35,31 @@ def        for        lambda      try
 ---
 
 ## Interpreter and compiler
-Interpreter pode ser de 2 tipos:<br/>
-- **CPython:** escrito em C
-- **Jyphon:** escrito em Java (run JVM)
+
+interpreter.png
 
 
-Utilizando o interpretador interativo não é necessário a criação do arquivo de Python compilado
+- **CPython:** compiler and interpreter bytecode, write in C.
+
+cpython.png
+
+- **Jython:** compiler and interpreter Java bytecode, wirte in Java.
+jython.jpg
+
+
+
+comp-interpreter.png
+
+
+### Python program is run
+1. First Python checks for program syntax
+2. Compiles and converts it to bytecode and directly bytecode is loaded in system memory.
+3. Then compiled bytecode interpreted from memory to execute it.
+
+### Why use alter compiler python?>br/>
+**CPython:** torna muito fácil escrever extensões C para seu código Python porque no final ele é executado por um interpretador C. <br/>
+**Jython:**, por outro lado, torna muito fácil trabalhar com outros programas Java: você pode importar qualquer classe Java sem esforço adicional, chamando e utilizando suas classes Java de dentro de seus programas Jython.
+
 
 
 ---
