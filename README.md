@@ -16,6 +16,17 @@
 sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh; 
 chmod +x Anaconda3-5.3.1-Linux-x86_64.sh; ./Anaconda3-5.3.1-Linux-x86_64.sh
 ```
+- Vim editor:<br/>
+`sudo apt-get install vim`
+### Alter Python PATH
+1. First open profile in editor: <br/>
+`~/.profile` or `~/.bashrc`
+
+2. Insert Python PATH
+`export PYTHON=/usr/bin/python<NUMER_VERSION>`
+
+3. Update profile/bashrc:
+`source ~/.profile` or `source ~/.bashrc`
 
 # Fundamentals
   - O que é o Python
