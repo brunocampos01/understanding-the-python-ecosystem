@@ -28,6 +28,22 @@ chmod +x Anaconda3-5.3.1-Linux-x86_64.sh; ./Anaconda3-5.3.1-Linux-x86_64.sh
 3. Update profile/bashrc: <br/>
 `source ~/.profile` or `source ~/.bashrc`
 
+### Alter Python version
+CMD: `update-alternatives` symbolic links determining default commands
+
+- Check version<br/>
+`python --version`
+
+- Install python 2.7 and 3.7
+`update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2`<br/>
+`update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1`<br/>
+
+- Alter python versions<br/>
+`sudo update-alternatives --config python`
+
+ <img src="images/python_alternatives.png" width="1000" />
+
+
 # Fundamentals
   - What is Python?
   - Keys words
