@@ -13,7 +13,6 @@
 
 ## Fundamentos
   - O que é o Python
-  - Libraries
   - Environment Virtual
 
 ## Comandos Básico
@@ -57,6 +56,12 @@
 - Flask (microframework)
 - Django
 
+# Orientação à objetos
+...
+
+# Padrão de Projetos
+...
+
 ## Científico (data science)
 - Numpy
 - Pandas
@@ -64,22 +69,19 @@
 - Skitlearn (aprendizagem supervisionada, nao supervisionada)
 - TensorFlow (redes neurais)
 
-# Orientação à objetos
-...
-
-# Padrão de Projetos
-...
-
 # Course in video in English
 - Class notes and exercises solved.
-- Teacher - Gustavo Guanabara.
+- Teacher: Gustavo Guanabara.
 
 Words   | Themes
 -------- | ---
-1 | [Fundamentos](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
-2 | [Estruturas de Controle](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
-3 | [Estruturas Compostas](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
+1 | [Fundamentals](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
+2 | [Control Structures](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
+3 | [Compound Structures](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
 
 ---
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Bruno A. R. M. Campos</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
+## Author
+- Bruno Aurélio Rôzza de Moura Campos (brunocampos01@gmail.com)
+## Copyright
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Bruno A. R. M. Campos</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
