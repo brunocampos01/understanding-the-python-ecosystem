@@ -29,14 +29,15 @@ chmod +x Anaconda3-5.3.1-Linux-x86_64.sh; ./Anaconda3-5.3.1-Linux-x86_64.sh
 `source ~/.profile` or `source ~/.bashrc`
 
 # Fundamentals
-  - O que é o Python
-  - Interpretador e compilador
-  - Environment Virtual
-  - Libraries
+  - What is Python?
   - Keys words
-  - PEP 8: https://realpython.com/python-pep8/#naming-conventions
+  - Interpreter Python
+  - How Python program run ?
+  - Environment Virtual
+
 
 # Basic Comands
+  - Libraries
   - Função print
   - Tipos de dados em Python
   - Sistemas numéricos
