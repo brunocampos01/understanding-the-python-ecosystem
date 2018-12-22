@@ -34,7 +34,7 @@ CMD: `update-alternatives` symbolic links determining default commands
 - Check version<br/>
 `python --version`
 
-- Install python 2.7 and 3.7
+- Install python 2.7 and 3.7 <br/>
 `update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2`<br/>
 `update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1`<br/>
 
