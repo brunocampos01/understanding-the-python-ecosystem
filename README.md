@@ -2,48 +2,6 @@
 [![Python 3.7](https://img.shields.io/badge/python-3.7-yellow.svg)](https://www.python.org/downloads/release/python-371/)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
-# Pre Requeriments
-### Instalation
-- Vim editor:<br/>
-`sudo apt-get install vim`
-- Python 3.7 ou superior:<br/>
-`sudo apt get install python3.7`
-- Git:<br/>
-`sudo apt get install git`
-- pip:<br/>
-`sudo apt get install python-pip`
-- Jupyter Notebook:<br/>
-```
-sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh; 
-chmod +x Anaconda3-5.3.1-Linux-x86_64.sh; ./Anaconda3-5.3.1-Linux-x86_64.sh
-```
-
-### Alter Python PATH
-1. First open profile in editor: <br/>
-`~/.profile` or `~/.bashrc`
-
-2. Insert Python PATH:  <br/>
-`export PYTHON=/usr/bin/python<NUMER_VERSION>`
-
-3. Update profile/bashrc: <br/>
-`source ~/.profile` or `source ~/.bashrc`
-
-### Alter Python version
-CMD: `update-alternatives` symbolic links determining default commands
-
-- Check version<br/>
-`python --version`
-
-- Install python 2.7 and 3.7 <br/>
-`update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1`<br/>
-`update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION> 2`<br/>
-
-- Alter python versions<br/>
-`sudo update-alternatives --config python`
-
- <img src="images/python_alternatives.png" width="1000" />
-
-
 # Fundamentals
 - Pre Requeriments
 - Instalation
