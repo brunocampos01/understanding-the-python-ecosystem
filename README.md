@@ -45,7 +45,8 @@ CMD: `update-alternatives` symbolic links determining default commands
 
 
 # Fundamentals
-- Pre Requeriments and Instalation
+- Pre Requeriments
+- Instalation
 - How alter Python PATH and Python version
 - What is Python?
 - Keys words
