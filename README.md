@@ -2,8 +2,8 @@
 [![Python 3.7](https://img.shields.io/badge/python-3.7-yellow.svg)](https://www.python.org/downloads/release/python-371/)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
-# Pré-requisitos
-### Instalação
+# Pre Requeriments
+### Instalation
 - Vim editor:<br/>
 `sudo apt-get install vim`
 - Python 3.7 ou superior:<br/>
@@ -35,8 +35,8 @@ CMD: `update-alternatives` symbolic links determining default commands
 `python --version`
 
 - Install python 2.7 and 3.7 <br/>
-`update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2`<br/>
-`update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1`<br/>
+`update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1`<br/>
+`update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION> 2`<br/>
 
 - Alter python versions<br/>
 `sudo update-alternatives --config python`
@@ -45,19 +45,20 @@ CMD: `update-alternatives` symbolic links determining default commands
 
 
 # Fundamentals
-  - What is Python?
-  - Keys words
-  - Interpreter Python
-  - How Python program run ?
-  - Environment Virtual
-
+- Pre Requeriments and Instalation
+- How alter Python PATH and Python version
+- What is Python?
+- Keys words
+- Interpreter Python
+- How Python program run
+- Environment Virtual
 
 # Basic Comands
-  - Libraries
-  - Função print
-  - Tipos de dados em Python
-  - Sistemas numéricos
-  - Funções e libs matemáticas
+- Libraries
+- Função print
+- Types data
+- Numeric systems
+- libs matematics
 
 
 ## Estruturas de controle
