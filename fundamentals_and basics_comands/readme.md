@@ -15,13 +15,13 @@
 
 ## Pre Requeriments
 - Vim editor:<br/>
-`sudo apt-get install vim`
+`sudo apt install vim`
 - Python 3.7 ou superior:<br/>
-`sudo apt get install python3.7`
+`sudo apt install python3.7`
 - Git:<br/>
 `sudo apt get install git`
 - pip:<br/>
-`sudo apt get install python-pip`
+`sudo apt install python-pip`
 - Jupyter Notebook:<br/>
 `sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
 `chmod +x Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
@@ -35,7 +35,12 @@
 `export PYTHON=/usr/bin/python<NUMER_VERSION>`
 
 3. Update profile/bashrc: <br/>
-`source ~/.profile` or `source ~/.bashrc`
+`sudo vim ~/.bashrc`<br/>
+
+  - Insert in final document:<br/>
+  `export PYTHON=/usr/bin/python3`<br/>
+
+`source ~/.bashrc`
 
 ### Alter Python version
 CMD: `update-alternatives` symbolic links determining default commands
