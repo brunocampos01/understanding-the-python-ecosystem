@@ -23,10 +23,9 @@
 - pip:<br/>
 `sudo apt get install python-pip`
 - Jupyter Notebook:<br/>
-```
-sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh; 
-chmod +x Anaconda3-5.3.1-Linux-x86_64.sh; ./Anaconda3-5.3.1-Linux-x86_64.sh
-```
+`sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
+`chmod +x Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
+`./Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
 
 ### Alter Python PATH
 1. First open profile in editor: <br/>
