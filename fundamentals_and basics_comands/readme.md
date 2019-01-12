@@ -3,7 +3,9 @@
 - Instalation
 - How alter Python PATH and Python version
 - What is Python?
+- Zen of Python
 - Keys words
+- Types
 - Interpreter Python
 - How Python program run
 - Environment Virtual
@@ -57,11 +59,17 @@ CMD: `update-alternatives` symbolic links determining default commands
 ---
 
 ## What is Python?
-É uma linguagem de script de programação interpretada.<br/>
+É uma linguagem de programação interpretada.<br/>
 Paradigmas:
 - imperativa
 - orientada à objetos
 - funcional
+- scripts
+
+---
+
+## Zen of Python
+`import this`<br/>
 
 ---
 
@@ -75,6 +83,12 @@ class      exec       in          raise
 continue   finally    is          return
 def        for        lambda      try
 ```
+
+---
+
+## Types
+
+<img src="images/Python_3._The_standard_type_hierarchy.png" width="1000" />
 
 ---
 
@@ -112,3 +126,7 @@ Compiler and interpreter Java bytecode, wirte in Java.
 3. Then compiled bytecode interpreted from memory to execute it.
 
 ---
+
+## PEP 8
+Diz sobre a qualidade de cógido (sintaxe)
+https://realpython.com/python-pep8/#naming-conventions
