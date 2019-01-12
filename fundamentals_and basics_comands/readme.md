@@ -7,11 +7,8 @@
 - Interpreter Python
 - How Python program run
 - Environment Virtual
+- PEP 8: https://realpython.com/python-pep8/#naming-conventions
 
-# PEP 8
-- https://realpython.com/python-pep8/#naming-conventions
-
----
 
 ## Pre Requeriments
 - Vim editor:<br/>
