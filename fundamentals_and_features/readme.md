@@ -1,7 +1,8 @@
-# Fundamentals
+# Fundamentals and Features Language
 - Pre Requeriments
-- Instalation
+- Python PATH
 - How alter Python PATH and Python version
+- Change versions of python
 - What is Python?
 - Zen of Python
 - Keys words
@@ -9,13 +10,13 @@
 - Interpreter Python
 - How Python program run
 - Environment Virtual
-- PEP 8: https://realpython.com/python-pep8/#naming-conventions
+- PEP 8:   https://realpython.com/python-pep8/#naming-conventions
 
 
 ## Pre Requeriments
 - Vim editor:<br/>
 `sudo apt install vim`
-- Python 3.7 ou superior:<br/>
+- Python 3.7 or more:<br/>
 `sudo apt install python3.7`
 - Git:<br/>
 `sudo apt get install git`
@@ -26,29 +27,30 @@
 `chmod +x Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
 `./Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
 
-### Alter Python PATH
+## Python PATH
 1. First open profile in editor: <br/>
-`~/.profile` or `~/.bashrc`
+`vim ~/.profile` or `vim ~/.bashrc`
 
 2. Insert Python PATH:  <br/>
 `export PYTHON=/usr/bin/python<NUMER_VERSION>`
 
 3. Update profile/bashrc: <br/>
 `sudo vim ~/.bashrc`<br/>
+`source ~/.bashrc` or `.  ~/.bashrc `
 
-  - Insert in final document:<br/>
-  `export PYTHON=/usr/bin/python3`<br/>
-
-`source ~/.bashrc`
-
-### Alter Python version
+## Change versions of python
 CMD: `update-alternatives` symbolic links determining default commands
 
 - Check version<br/>
 `python --version`
 
-- Install python 2.7 and 3.7 <br/>
-`update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1`<br/>
+- Check where´s binary Python<br/>
+`python --version`
+
+_By default python 2.7 in /usr/bin/python<NUMER_VERSION>_
+
+- Install multiples pythons<br/>
+`update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1`<br/><br/>
 `update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION> 2`<br/>
 
 - Alter python versions<br/>
@@ -56,6 +58,8 @@ CMD: `update-alternatives` symbolic links determining default commands
 
  <img src="images/python_alternatives.png" width="1000" />
 
+- Check changes<br/>
+`python --version`
 ---
 
 ## What is Python?
