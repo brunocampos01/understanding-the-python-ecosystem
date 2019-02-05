@@ -5,8 +5,8 @@
 ### Pre Requeriments
 - Vim editor:<br/>
 `sudo apt install vim`
-- Python 3.7 or more:<br/>
-`sudo apt install python3.7`
+- Python 3.6 or more:<br/>
+`sudo apt install python3.6`
 - Git:<br/>
 `sudo apt get install git`
 - pip:<br/>
