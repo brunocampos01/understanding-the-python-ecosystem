@@ -206,36 +206,44 @@ https://realpython.com/python-pep8/#naming-conventions
 
 # Basic Comands
 - Libraries
-- Função print
+- Function print
 - Types data
 - Numeric systems
 - libs matematics
 
 
-## Estruturas de controle
-...
+## Control Structure
+- Conditional
+- Repeatition
+- Functional Programming
  
-## Estruturas de dados compostas
- - tuplas
- - listas
- - dicionários
+## Simple Data Structure
+ - Tuples
+ - List
+ - Dict
  
-## Funções
-...
+## Function
+- Defining Functions
+- Documentation
+- Default arguments
+- Packing and unpacking arguments
+- Variable Scope
+- function recursive
+- Lambda Expressions
 
-## Tratamento de exceções
+## Try-except-finally
 ...
 
 ## Strings
 ...
 
-## Arquivos e serialização
+## Files
 ...
 
-## Testes
+## Tests
 ...
 
-## Paralelismo
+## Threads
 ...
 
 ## Web
@@ -248,15 +256,15 @@ https://realpython.com/python-pep8/#naming-conventions
 # Orientação à objetos
 ...
 
-# Padrão de Projetos
+# Design Pattern
 ...
 
-## Científico (data science)
+## Science
 - Numpy
 - Pandas
 - Matplotlib
 - Skitlearn (aprendizagem supervisionada, nao supervisionada)
-- TensorFlow (redes neurais)
+- TensorFlow (neural network)
 
 # Course in video in English
 - Class notes and exercises solved.
