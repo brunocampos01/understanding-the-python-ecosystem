@@ -222,16 +222,77 @@ https://realpython.com/python-pep8/#naming-conventions
  - List
  - Dict
  
-## Function
+## Functions
 - Defining Functions
 - Documentation
 - Default arguments
 - Packing and unpacking arguments
 - Variable Scope
+- Global variable
+- Constants
 - function recursive
 - Lambda Expressions
 
-## Try-except-finally
+```
+ Do global variables evil?
+ 
+ global variables are bad in any programming language.
+ 
+ However, global constants are not conceptually the same as global variables; 
+ global constants are perfectly fine to use.
+ 
+ so when you need a constant you have to use a global.
+ 
+ - http://wiki.c2.com/?GlobalVariablesAreBad
+ 
+ 
+ To make code more modular, the first step is always to move all global variables into a "config" object.
+ 
+```
+#### Violating Pure Function definition
+I believe that a clean and (nearly) bug-free code should have functions that are as pure as possible (see pure functions). A pure function is the one that has the following conditions:
+
+A função sempre avalia o mesmo valor de resultado, dado o (s) mesmo (s) valor (es) do argumento. O valor do resultado da função não pode depender de qualquer informação ou estado oculto que possa mudar enquanto a execução do programa prossegue ou entre diferentes execuções do programa, nem pode depender de qualquer entrada externa de dispositivos de E / S (normalmente - veja abaixo).
+A avaliação do resultado não causa nenhum efeito colateral observável semanticamente, como a mutação de objetos mutáveis ​​ou a saída para dispositivos de E / S.
+Ter variáveis ​​globais está violando pelo menos um dos itens acima, se não ambos, pois um código externo provavelmente pode causar resultados inesperados.
+
+Outra definição clara de funções puras: "Função pura é uma função que toma todas as suas entradas como argumentos explícitos e produz todas as suas saídas como resultados explícitos". [1] Ter variáveis ​​globais viola a idéia de funções puras, já que uma entrada e talvez uma das saídas (a variável global) não está sendo explicitamente dada ou retornada.
+
+
+#### Violating Unit testing F.I.R.S.T principle
+Further on that, if you consider unit-testing and the F.I.R.S.T
+ principle (Fast tests, Independent tests, Repeatable, Self-Validating and Timely) will probably violate the Independent tests principle (which means that tests don't depend on each other).
+
+
+## Configuration File
+There are ways to manage the configuration:
+- Using built-in data structure
+- Using external configuration file
+    - json
+    - ini
+- Using environment variables
+- Using dynamic loading
+
+
+#### Using built-in data structure
+Use dictionary, ex:<br/>
+```bash
+DATABASE_CONFIG = {
+    'host': 'localhost',
+    'dbname': 'company',
+    'user': 'user',
+    'password': 'password',
+    'port': 3306
+}
+```
+<br/>
+Must is file separed, how example `config.py`
+
+
+#### Using environment variables
+The configuration values are not managed as a separate file.
+
+## Exceptions
 ...
 
 ## Strings
@@ -275,105 +336,6 @@ Words   | Themes
 1 | [Fundamentals](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
 2 | [Control Structures](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
 3 | [Compound Structures](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
-
-
-
-- [Awesome Python](#awesome-python)
-    - [Admin Panels](#admin-panels)
-    - [Algorithms and Design Patterns](#algorithms-and-design-patterns)
-    - [Anti-spam](#anti-spam)
-    - [Asset Management](#asset-management)
-    - [Audio](#audio)
-    - [Authentication](#authentication)
-    - [Build Tools](#build-tools)
-    - [Built-in Classes Enhancement](#built-in-classes-enhancement)
-    - [Caching](#caching)
-    - [ChatOps Tools](#chatops-tools)
-    - [Cluster Computing](#cluster-computing)
-    - [CMS](#cms)
-    - [Code Analysis](#code-analysis)
-    - [Command-line Tools](#command-line-tools)
-    - [Compatibility](#compatibility)
-    - [Computer Vision](#computer-vision)
-    - [Concurrency and Parallelism](#concurrency-and-parallelism)
-    - [Configuration](#configuration)
-    - [Cryptography](#cryptography)
-    - [Data Analysis](#data-analysis)
-    - [Data Validation](#data-validation)
-    - [Data Visualization](#data-visualization)
-    - [Database Drivers](#database-drivers)
-    - [Database](#database)
-    - [Date and Time](#date-and-time)
-    - [Debugging Tools](#debugging-tools)
-    - [Deep Learning](#deep-learning)
-    - [DevOps Tools](#devops-tools)
-    - [Distribution](#distribution)
-    - [Documentation](#documentation)
-    - [Downloader](#downloader)
-    - [E-commerce](#e-commerce)
-    - [Editor Plugins and IDEs](#editor-plugins-and-ides)
-    - [Email](#email)
-    - [Environment Management](#environment-management)
-    - [Files](#files)
-    - [Foreign Function Interface](#foreign-function-interface)
-    - [Forms](#forms)
-    - [Functional Programming](#functional-programming)
-    - [Game Development](#game-development)
-    - [Geolocation](#geolocation)
-    - [GUI](#gui)
-    - [Hardware](#hardware)
-    - [HTML Manipulation](#html-manipulation)
-    - [HTTP](#http)
-    - [Image Processing](#image-processing)
-    - [Implementations](#implementations)
-    - [Interactive Interpreter](#interactive-interpreter)
-    - [Internationalization](#internationalization)
-    - [Job Scheduler](#job-scheduler)
-    - [Logging](#logging)
-    - [Machine Learning](#machine-learning)
-    - [Miscellaneous](#miscellaneous)
-    - [Natural Language Processing](#natural-language-processing)
-    - [Network Virtualization](#network-virtualization)
-    - [Networking](#networking)
-    - [News Feed](#news-feed)
-    - [ORM](#orm)
-    - [Package Management](#package-management)
-    - [Package Repositories](#package-repositories)
-    - [Permissions](#permissions)
-    - [Processes](#processes)
-    - [Queue](#queue)
-    - [Recommender Systems](#recommender-systems)
-    - [RESTful API](#restful-api)
-    - [Robotics](#robotics)
-    - [RPC Servers](#rpc-servers)
-    - [Science](#science)
-    - [Search](#search)
-    - [Serialization](#serialization)
-    - [Serverless Frameworks](#serverless-frameworks)
-    - [Specific Formats Processing](#specific-formats-processing)
-    - [Static Site Generator](#static-site-generator)
-    - [Tagging](#tagging)
-    - [Template Engine](#template-engine)
-    - [Testing](#testing)
-    - [Text Processing](#text-processing)
-    - [Third-party APIs](#third-party-apis)
-    - [URL Manipulation](#url-manipulation)
-    - [Video](#video)
-    - [Web Content Extracting](#web-content-extracting)
-    - [Web Crawling & Web Scraping](#web-crawling--web-scraping)
-    - [Web Frameworks](#web-frameworks)
-    - [WebSocket](#websocket)
-    - [WSGI Servers](#wsgi-servers)
-- [Services](#services)
-    - [Code Quality](#code-quality)
-    - [Continuous Integration](#continuous-integration)
-- [Resources](#resources)
-    - [Podcasts](#podcasts)
-    - [Twitter](#twitter)
-    - [Websites](#websites)
-    - [Weekly](#weekly)
-- [Other Awesome Lists](#other-awesome-lists)
-- [Contributing](#contributing)
 
 - - -
 

@@ -11,7 +11,6 @@ if False:
     def show_plus_ten(num):
         return num + 10
 
-
     print(show_plus_ten(500))
 
 # Default Arguments
@@ -31,25 +30,21 @@ if False:
     def some_function():
         word = "hello"
 
+    print(some_function())
 
-    print(word)
-
-if False:
+if True:
     # This works fine
     word = "hello"
 
-
-    def some_function():
+    def some_functionGlobal():
         print(word)
 
-
-    some_function()
+    some_functionGlobal()
 
 '''Good practice:
 It is best to define variables in the smallest scope they will be needed in.
 While functions can refer to variables defined in a larger scope, this is very rarely a good idea.'''
 
-# documentation (docstrings)
 if False:
     def population_density(population, land_area):
         """Calculate the population density of an area.
