@@ -2,52 +2,93 @@
 [![Python 3.7](https://img.shields.io/badge/python-3.7-yellow.svg)](https://www.python.org/downloads/release/python-371/)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
-### Pre Requeriments
+## Summary
+- Pre Requirements
+- Preparing Environment
+- Zen of Python
+- What is Python?
+- Keys words
+- Types
+- Interpreter and Compiler
+- How Python program run ?
+- Environment Virtual Python
+- Configuration File
+- Call unique def in file.py (python -c "import FILE_NAME; def test(requirements)")
+
+
+
+
+### Pre Requirements
+
 - Vim editor:<br/>
-`sudo apt install vim`
+```
+sudo apt install vim
+```
+
 - Python 3.6 or more:<br/>
-`sudo apt install python3.6`
+```
+sudo apt install python3.6
+```
+
 - Git:<br/>
-`sudo apt get install git`
-- pip:<br/>
-`sudo apt install python-pip`
+```
+sudo apt get install git
+```
+
+- pip (package manager):<br/>
+```
+sudo apt install python-pip
+```
+
 - Jupyter Notebook:<br/>
-`sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
-`chmod +x Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
-`./Anaconda3-5.3.1-Linux-x86_64.sh`<br/>
+```
+sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh; \
+chmod +x Anaconda3-5.3.1-Linux-x86_64.sh ; \
+./Anaconda3-5.3.1-Linux-x86_64.sh
+```
 
 ---
-<h1> Installation and preparing environment </h1>
+
+## Check Configuration
+- Check if OS contains binary Python
+- Check where version install
+- Check libraries installed
+
+#### Check Where's Binary Python<br/>
+`python --version`
+
+_By default python 2.7 in /usr/bin/python<NUMER_VERSION>_
+
+#### Check where version install
+`witch python`
+
+---
+
+## Preparing Environment
 
 - Python PATH
-- How alter Python PATH and Python version
-- Change versions of python
+- How to alter Python PATH and Python version
+- Change versions of Python
 
-## Python PATH
+#### Python PATH
 1. First open profile in editor: <br/>
 `vim ~/.profile` or `vim ~/.bashrc`
 
-2. Insert Python PATH:  <br/>
+2. Insert Python PATH: <br/>
 `export PYTHON=/usr/bin/python<NUMER_VERSION>`
 
 3. Update profile/bashrc: <br/>
 `sudo vim ~/.bashrc`<br/>
 `source ~/.bashrc` or `.  ~/.bashrc `
 
-## Change versions of python
+#### Change Versions of Python
 CMD: `update-alternatives` symbolic links determining default commands
 
-- Check version<br/>
-`python --version`
-
-- Check where´s binary Python<br/>
-`python --version`
-
-_By default python 2.7 in /usr/bin/python<NUMER_VERSION>_
-
 - Install multiples pythons<br/>
-`update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1`<br/><br/>
-`update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION> 2`<br/>
+```
+update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1
+update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION>
+```
 
 - Alter python versions<br/>
 `sudo update-alternatives --config python`
@@ -108,10 +149,10 @@ def        for        lambda      try
  - Comparian
 - How Python program run
 
-# Interpreter and compiler
+# Interpreter and sompiler
 
  <img src="images/cpython.png" width="299" />
- 
+
 ## CPython
 Compiler and interpreter bytecode, write in C.
 
@@ -119,7 +160,7 @@ Compiler and interpreter bytecode, write in C.
 ## Jython
 <img src="images/jython.jpg"  width="50" />
 
-Compiler and interpreter Java bytecode, wirte in Java.
+Compiler and interpreter Java bytecode, write in Java.
 
 
 ## Comparian
@@ -153,7 +194,7 @@ Compiler and interpreter Java bytecode, wirte in Java.
 
 The Python can is executed in a environment virtual with isolation from system.<br/>
 Each virtual environment has its **own Python binary**.
- 
+
  <img src="images/venv.png" />
 
 ### Install
@@ -216,12 +257,12 @@ https://realpython.com/python-pep8/#naming-conventions
 - Conditional
 - Repeatition
 - Functional Programming
- 
+
 ## Simple Data Structure
  - Tuples
  - List
  - Dict
- 
+
 ## Functions
 - Defining Functions
 - Documentation
@@ -235,19 +276,19 @@ https://realpython.com/python-pep8/#naming-conventions
 
 ```
  Do global variables evil?
- 
+
  global variables are bad in any programming language.
- 
- However, global constants are not conceptually the same as global variables; 
+
+ However, global constants are not conceptually the same as global variables;
  global constants are perfectly fine to use.
- 
+
  so when you need a constant you have to use a global.
- 
+
  - http://wiki.c2.com/?GlobalVariablesAreBad
- 
- 
+
+
  To make code more modular, the first step is always to move all global variables into a "config" object.
- 
+
 ```
 #### Violating Pure Function definition
 I believe that a clean and (nearly) bug-free code should have functions that are as pure as possible (see pure functions). A pure function is the one that has the following conditions:
