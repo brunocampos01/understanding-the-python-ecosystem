@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # path
-CURRENT_DIR="$(dirname `readlink -f $0`)"
+CURRENT_DIR="$(dirname (readlink -f $0)"
 VENV_PATH=$CURRENT_DIR/venv/
 REQUIREMENTS=$CURRENT_DIR/requirements.txt
 

@@ -1,5 +1,5 @@
 # Basic Comands
-  -Libraries
+  - Libraries
   - Função print
   - Tipos de dados em Python
   - Sistemas numéricos
@@ -15,7 +15,7 @@ Import everythings module:
 Import only thing module:
 
 <img src="images/from.png" />
- 
+
 ---
 
 ## Function print formated
@@ -63,8 +63,8 @@ print ("%g" % 1000000000000000000000000000000)
 
 ## Data Type
 
-- Python não tem tipos primitivos. 
-- Em python é tudo objeto. 
+- Python não tem tipos primitivos.
+- Em python é tudo objeto.
 
  <img src="images/types.png" />
 
