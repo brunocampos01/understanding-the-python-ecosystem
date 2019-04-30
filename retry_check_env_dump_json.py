@@ -1,5 +1,3 @@
-import os
-import sys
 import time
 import requests
 
@@ -7,18 +5,7 @@ import requests
 URL_CLIENTS = ""
 TIMEOUT = 5
 MAX_RETRIES = 1
-USER = os.environ['USER']
-PASSWORD = os.environ['PASSWORD']
 
-def check_env(var):
-   """
-   Function to check if env exists
-   """
-   try:
-      os.environ[var]
-   except KeyError:
-      print("Not found environment variable: ", var)
-      sys.exit(1)
 
 def retry(url, timeout, max_retries, user, password):
    """
