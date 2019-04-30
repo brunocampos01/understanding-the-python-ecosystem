@@ -2,13 +2,13 @@ import logging
 import configparser
 import mysql.connector
 from pathlib import Path
-from platflows.commons import metrics
 
 
 PATH_PROJECT = str(Path(__file__).parent.parent.parent)
-PATH_CONFIG = "conf/dev/luigi.cfg"
+PATH_CONFIG = "/conf/prod/luigi.cfg"
+
 config = configparser.ConfigParser()
-config.read(PATH_CONFIG)
+config.read(PATH_PROJECT + PATH_CONFIG)
 
 MYSQL_USER_COCKPIT = config['RDSMySQL']['MYSQL_USER_COCKPIT']
 MYSQL_PASSWORD_COCKPIT = config['RDSMySQL']['MYSQL_PASSWORD_COCKPIT']
@@ -29,7 +29,7 @@ def read_script_sql(path):
     :return: object with querys of script sql
     """
     try:
-        return open(path, 'r').read().split(';')
+        return [query.strip() for query in open(path, 'r').read().strip().split(';')]
     except IOError:
         logging.exception("Failed of read in file %s:", path)
 
@@ -52,7 +52,7 @@ def manager_cnx(host, user, password):
 
 def create_user(database, host, creater, pw_creater, user, password):
     """
-    :param database: name's database
+    :param database: database's name
     :param host: DNS
     :param creater: user's name exists
     :param pw_creater: user's password exists
@@ -74,7 +74,10 @@ def create_user(database, host, creater, pw_creater, user, password):
         try:
             cursor.execute(query)
         except mysql.connector.Error:
-            logging.exception("Failed creating user: ")
+            logging.error("Failed creating user:"
+                          "\ndatabase: %s, host: %s, creater: %s, pw_creater: %s, user: %s, password: %s"
+                          "\nquery: %s"
+                          % (database, host, creater, pw_creater, user, password, query))
             raise
 
     close_conn(connection=cnx, cursor=cursor)
@@ -96,7 +99,8 @@ def create_databases(host, user, password, db_name):
     try:
         cursor.execute("CREATE DATABASE {};".format(db_name))
     except mysql.connector.Error:
-        logging.exception("Failed creating database: ")
+        logging.error("Failed creating database:\nhost: %s, user: %s, password: %s, db_name: %s"
+                      % (host, user, password, db_name))
         raise
     finally:
         close_conn(connection=cnx, cursor=cursor)
@@ -120,36 +124,10 @@ def create_tables(host, user, password, path_script):
         try:
             cursor.execute(query)
         except mysql.connector.Error:
-            logging.exception("Failed creating tables: ")
+            logging.error("Failed creating tables, query: [%s]"
+                          "\nhost: %s, user: %s, password: %s, path_script: %s"
+                          % (query, host, user, password, path_script))
             raise
-    close_conn(connection=cnx, cursor=cursor)
-
-
-def send_metrics(type_metric, date_to_run, task_name, job_status, start_time, host, user, password):
-    """
-    Function to append metrics each job or module
-    :param type_metric: jobs or modules
-    :param date_to_run: type=date
-    :param task_name: type=string, get in principal task
-    :param job_status: type=string, get in principal task
-    :param start_time: type=datetime, get in principal task
-    :param host: get config file
-    :param user: get config file
-    :param password: get config file
-    :return: None
-    """
-    logging.info("Inserting metrics in database ...")
-
-    query_insert = metrics.prepare_metrics(type_metric, date_to_run, task_name, job_status, start_time)
-    print(query_insert)
-
-    cnx = manager_cnx(host, user, password)
-    cursor = cnx.cursor(buffered=True)
-
-    cursor.execute("USE `ETLMetrics`;")
-    cursor.execute(query_insert)
-    cnx.commit()  # Make sure data is committed to the database
-
     close_conn(connection=cnx, cursor=cursor)
 
 
@@ -178,4 +156,4 @@ if __name__ == "__main__":
     create_tables(user=MYSQL_USER,
                   password=MYSQL_PASSWORD,
                   host=HOST_MYSQL,
-                  path_script=PATH_SCRIPT_SQL)
+                  path_script=PATH_PROJECT+PATH_SCRIPT_SQL)
