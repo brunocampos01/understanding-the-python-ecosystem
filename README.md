@@ -119,6 +119,18 @@ Paradigmas:
 
 ---
 
+## Files _.py_
+
+File: Typically, a Python file is any file that contains code. Most Python files have the extension .py.
+
+Script: A Python script is a file that you intend to execute from the command line to accomplish a task.
+
+Module: A Python module is a file that you intend to import from within another module or a script, or from the interactive interpreter. You can read more about modules in the Python documentation.
+
+- Examples ...
+- Read: https://realpython.com/run-python-scripts/
+
+
 ## Zen of Python
 `import this`<br/>
 
@@ -150,7 +162,7 @@ def        for        lambda      try
  - Comparian
 - How Python program run
 
-# Interpreter and sompiler
+# Interpreter and Compiler
 
  <img src="images/cpython.png" width="299" />
 
