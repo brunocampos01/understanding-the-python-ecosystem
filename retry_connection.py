@@ -48,8 +48,12 @@ def retry(url, timeout, max_retries, user, password):
                                         get_warnings=True)
             except mysql.connector.Error:
 
-                if retry >= limit_retries:
-                    print('TRY', retry)
+                if retry <= limit_retries:
+                    retry += 1
+                    logging.error("Connection failed. Retry [%s / %s]" % (retry, limit_retries))
+                    time.sleep(timeout)
+
+                else:
                     logging.exception("Connection failed: "
                                       "db_hostname: %s, user: %s, password: %s, "
                                       "connection_timeout: %s, limit_retries: %s"
@@ -59,9 +63,5 @@ def retry(url, timeout, max_retries, user, password):
                                          self.connection_timeout,
                                          self.limit_retries))
 
-                else:
-                    retry += 1
-                    logging.error("Connection failed. Retry [%s / %s]" % (retry, limit_retries))
-                    time.sleep(timeout)
 
         raise Exception('Retries FAILED !')
