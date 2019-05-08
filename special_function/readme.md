@@ -163,3 +163,32 @@ Data from the web that has been modified
 ## References:
 - https://realpython.com/python-main-function/
 - https://docs.python.org/3/library/__main__.html 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://pt.stackoverflow.com/questions/109784/pra-qu%C3%AA-serve-o-metodo-new-in-python
+https://softwareengineering.stackexchange.com/questions/200522/how-to-deal-with-database-connections-in-a-python-library-module
+
+https://gist.github.com/cabecada/da8913830960a644755b18a02b65e184
+
+https://pt.stackoverflow.com/questions/110806/como-adicionar-uma-foreign-key-em-uma-tabela-j%C3%A1-criada
+
+
+https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python
+
+https://realpython.com/python-exceptions/
+
+https://realpython.com/python-logging/#using-handlers
+
+https://stackoverflow.com/questions/13357760/mysql-create-user-if-not-exists
