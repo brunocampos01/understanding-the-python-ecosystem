@@ -13,6 +13,7 @@
 - Interpreter and Compiler
 - How Python program run ?
 - Environment Virtual Python
+- Style Guide
 - Configuration File
 - Call unique def in file.py (python -c "import FILE_NAME; def test(requirements)")
 
@@ -250,13 +251,163 @@ or<br/>
 
 
 
-## PEP 8
+## Style Guide (PEP 8)
 Diz sobre a qualidade de cógido (sintaxe)
 https://realpython.com/python-pep8/#naming-conventions
 
+_"Readability counts"_<br/>
+
+#### Identation and Length
+- 4 spaces
+- Limit all line of 72 characteres
+- Statement of functions and flow
+
+```Python
+# Aligned with opening delimiter.
+foo = long_function_name(var_one=0.0, var_two=0.0,
+                         var_three=0.0, var_four=0.0)
+```
+
+#### Line Break After a Binary Operator
+
+
+```Python
+income = (gross_wages
+          + taxable_interest
+          + (dividends - qualified_dividends)
+          - ira_deduction
+          - student_loan_interest)
+```
+
+#### Imports
+Following order:
+
+1. Standard library imports.
+2. Related third party imports. (parte de terceiros)
+3. Local application/library specific imports.
+
+
+#### Global Variables
+- Módulos que são projetados para uso via M import * devem usar o mecanismo __ all __ para impedir a exportação de globals
+
+- To better  support introspection
+Use __ all __ to switch *. E.g
+```Python
+__all__ = ['foo', 'Bar']
+
+from module import *
+```
+significa que, quando você `from module import * ` apenas esses nomes __all__ são importados.
+
+EXAMPLES...
+- More details: https://stackoverflow.com/questions/44834/can-someone-explain-all-in-python and https://www.python.org/dev/peps/pep-0008/#naming-conventions
+
+#### Strings '' and ""
+Single quotation marks and strings with double quotation marks are the same
+
+#### Comments (#)
+- Fisrt word **need** upper case.
+- Comments in-line separete by 2 spaces.
+```Python
+x = x + 1  # Compensar borda
+```
+
+#### Names
+- Class Name (camelCase): `CapWords()`
+- Variables (snack_case): `cat_words`
+- Constants: `MAX_OVERFLOW`
 
 ---
 
+## Programming Recommendations
+
+#### String Concatenation
+
+- Use ` ''.join()`, `os.path.dirname.join(stringA + stringB)`
+ - This optimization is fragile even in CPython. **Not** use `stringA + stringB`
+
+
+#### Exception
+
+- limite a cláusula try à quantidade mínima absoluta de código necessária.
+
+Yes:
+```Python
+try:
+    value = collection[key]
+except KeyError:
+    return key_not_found(key)
+else:
+    return handle_value(value)
+```
+
+No:
+```Python
+try:
+    # Too broad!
+    return handle_value(collection[key])
+except KeyError:
+    # Will also catch KeyError raised by handle_value()
+    return key_not_found(key)
+```
+
+- Objetivo de responder à pergunta "O que deu errado?" programaticamente, em vez de apenas afirmar que "Ocorreu um problema"
+
+- Ao capturar erros do sistema operacional, prefira a hierarquia de exceção explícita introduzida no Python 3.3 sobre a introspecção de valores errno .
+
+
+#### Return
+"_Should explicitly state this as return None_"
+
+- Be consistent in return statements.
+- Todas as instruções de retorno em uma função devem retornar uma expressão ou nenhuma delas deve.
+
+Yes:
+```Python
+def foo(x):
+    if x >= 0:
+        return math.sqrt(x)
+    else:
+        return None
+
+def bar(x):
+    if x < 0:
+        return None
+    return math.sqrt(x)
+```
+No:
+```Python
+def foo(x):
+    if x >= 0:
+        return math.sqrt(x)
+
+def bar(x):
+    if x < 0:
+        return
+    return math.sqrt(x)
+```
+
+#### String Methods
+
+- Use string methods instead of the string module.
+- Because, String methods are always much faster.
+- Use ''.startswith() and ''.endswith() instead of string slicing to check for prefixes or suffixes.
+
+```Python
+Yes: if foo.startswith('bar'):
+No:  if foo[:3] == 'bar':
+```
+
+#### Type Comparisons
+- Always use `isinstance()`
+```Python
+Yes: if isinstance(obj, int):
+
+No:  if type(obj) is type(1):
+```
+
+
+---
 
 # Basic Comands
 - Libraries
