@@ -1,9 +1,8 @@
 import os
-import sys
 
 
-LANGUAGE = os.environ['LANGUAGE']
-SHELL = os.environ['SHELL']
+LANGUAGE = os.getenv('LANGUAGE')
+SHELL = os.getenv('SHELL')
 
 
 def check_env(var):
@@ -11,7 +10,7 @@ def check_env(var):
     Function to check if env exists
     """
     try:
-        print(var)
+        print('Environment Varible: ', var)
         return os.environ[var]
     except KeyError("Not found environment variable: %s" % var):
         raise

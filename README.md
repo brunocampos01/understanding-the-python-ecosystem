@@ -249,17 +249,19 @@ or<br/>
 `pip install -r requirements.txt`
 - -r (recursive)
 
-
+---
 
 ## Style Guide (PEP 8)
-Diz sobre a qualidade de cógido (sintaxe)
-https://realpython.com/python-pep8/#naming-conventions
+About code style (sintax)
+- https://realpython.com/python-pep8/#naming-conventions
+
+- https://pep8.org
 
 _"Readability counts"_<br/>
 
 #### Identation and Length
 - 4 spaces
-- Limit all line of 72 characteres
+- Limit all line of 72 characteres if docstring and 79 to code.
 - Statement of functions and flow
 
 ```Python
@@ -286,9 +288,31 @@ Following order:
 2. Related third party imports. (parte de terceiros)
 3. Local application/library specific imports.
 
+Yes:
+```Python
+import os
+import sys
+```
+
+No:
+```Python
+import os, sys
+```
+
+No problems:
+```Python
+from subprocess import Popen, PIPE
+```
+
+### Dunders to Documentation
+```Python
+__all__ = ['a', 'b', 'c']
+__version__ = '0.1'
+__author__ = 'Cardinal Biggles'
+```
 
 #### Global Variables
-- Módulos que são projetados para uso via M import * devem usar o mecanismo __ all __ para impedir a exportação de globals
+- Módulos que são projetados para uso via M import * devem usar o mecanismo `__ all __` para impedir a exportação de globals
 
 - To better  support introspection
 Use __ all __ to switch *. E.g
@@ -302,7 +326,7 @@ significa que, quando você `from module import * ` apenas esses nomes __all__ s
 EXAMPLES...
 - More details: https://stackoverflow.com/questions/44834/can-someone-explain-all-in-python and https://www.python.org/dev/peps/pep-0008/#naming-conventions
 
-#### Strings '' and ""
+#### Strings (' ') and (" ")
 Single quotation marks and strings with double quotation marks are the same
 
 #### Comments (#)
@@ -312,12 +336,252 @@ Single quotation marks and strings with double quotation marks are the same
 x = x + 1  # Compensar borda
 ```
 
+- With types
+```Python
+def send_email(address,     # type: Union[str, List[str]]
+               sender,      # type: str
+               cc,          # type: Optional[List[str]]
+               bcc,         # type: Optional[List[str]]
+               subject='',
+               body=None    # type: List[str]
+               ):
+    """Send an email message.  Return True if successful."""
+    <code>
+```
+
 #### Names
 - Class Name (camelCase): `CapWords()`
 - Variables (snack_case): `cat_words`
 - Constants: `MAX_OVERFLOW`
 
 ---
+
+# Annotation Functions
+"_Don’t use comments to specify a type, when you can use type annotation._"
+
+-  Atua como um linter (analisador de código para mostrar erros) muito poderoso.
+- O Python não atribui nenhum significado a essas anotações.
+
+
+Examples:
+
+Method arguments and return values
+```Python
+def func(a: int) -> List[int]:
+```
+
+Declare the type of a variable
+```python
+a = SomeFunc()  # type: SomeType
+```
+
+
+Argumento e tipo de retorno são declarados nas anotações:
+
+```Python
+def hello_name(name: str) -> str:
+    return (f'Hello' {name}')
+```
+Isso informa que o tipo esperado do argumento de nome é str . Analogicamente, o tipo de retorno esperado é str .
+
+
+#### MINHA REGRA:
+- Annotation function don't use in global variable
+- Everyone parameters and return functions
+
+
+References:
+- https://medium.com/@shamir.stav_83310/the-other-great-benefit-of-python-type-annotations-896c7d077c6b
+- https://www.python.org/dev/peps/pep-0484/
+- https://blog.jetbrains.com/pycharm/2015/11/python-3-5-type-hinting-in-pycharm-5/
+
+
+---
+
+# Docstrings
+
+- [PEP 257](https://www.python.org/dev/peps/pep-0257/)
+- Docstrings must have:
+  - Args
+  - Returns
+  - Raises
+
+Example Google
+```Python
+def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
+    """Fetches rows from a Bigtable.
+
+    Retrieves rows pertaining to the given keys from the Table instance
+    represented by big_table.  Silly things may happen if
+    other_silly_variable is not None.
+
+    Args:
+        big_table: An open Bigtable Table instance.
+        keys: A sequence of strings representing the key of each table row
+            to fetch.
+        other_silly_variable: Another optional variable, that has a much
+            longer name than the other args, and which does nothing.
+
+    Returns:
+        A dict mapping keys to the corresponding table row data
+        fetched. Each row is represented as a tuple of strings. For
+        example:
+
+        {'Serak': ('Rigel VII', 'Preparer'),
+         'Zim': ('Irk', 'Invader'),
+         'Lrrr': ('Omicron Persei 8', 'Emperor')}
+
+        If a key from the keys argument is missing from the dictionary,
+        then that row was not found in the table.
+
+    Raises:
+        IOError: An error occurred accessing the bigtable.Table object.
+    """
+```
+
+Base Example
+```Python
+def say_hello(name):
+    """
+    A simple function that says hello...
+    Richie style
+    """
+
+    print(f"Hello {name}, is it me you're looking for?")
+```
+
+
+#### `__doc__`
+
+Such a docstring becomes the `__doc__` special attribute of that object.
+
+Example:
+```Python
+print(say_hello.__doc__)
+
+# A simple function that says hello... Richie style
+```
+<img src='__doc__.png'>
+
+
+##### `help()`
+
+Is a built-in function help() that prints out the objects docstring.
+
+```Python
+>>> help(say_hello)
+Help on function say_hello in module __main__:
+
+# say_hello(name)
+#     A simple function that says hello... Richie style
+```
+
+<img src='help().png'>
+
+#### In scripts
+A docstring de um script deve ser utilizável como sua mensagem de "usage", como uma função `usage()` em shell script.
+- Essa docstring deve documentar:
+  - sintaxe da linha de comando
+  - variáveis ​​de ambiente
+  - arquivo
+
+```python
+"""
+Example of program with many options using docopt.
+Usage:
+  options_example.py [-hvqrf FILE PATH]
+  my_program tcp <host> <port> [--timeout=<seconds>]
+
+Examples:
+  calculator_example.py 1 + 2 + 3 + 4 + 5
+  calculator_example.py 1 + 2 '*' 3 / 4 - 5    # note quotes around '*'
+  calculator_example.py sum 10 , 20 , 30 , 40
+
+Arguments:
+  FILE     input file
+  PATH     out directory
+
+Options:
+  -h --help            show this help message and exit
+  --version            show version and exit
+  -v --verbose         print status messages
+  -q --quiet           quiet mode
+  -f --force
+  -t, --timeout TIMEOUT    set timeout TIMEOUT seconds
+  -a, --all             List everything.
+
+"""
+from docopt import docopt
+
+
+if __name__ == '__main__':
+    arguments = docopt(__doc__, version='1.0.0rc2')
+    print(arguments)
+"""
+```
+References: http://docopt.org/
+
+#### In Functions
+A docstring para uma função ou método deve resumir seu comportamento e documentar seus argumentos, valor (es) de retorno, efeitos colaterais, exceções levantadas e restrições sobre quando ele pode ser chamado (tudo se aplicável). Argumentos opcionais devem ser indicados. Deve ser documentado se os argumentos da palavra-chave fazem parte da interface.
+
+- Uma breve descrição do que é o método e do que é usado
+- Quaisquer argumentos (obrigatórios e opcionais) que são passados, incluindo argumentos de palavras-chave
+- Rotule quaisquer argumentos que sejam considerados opcionais ou tenham um valor padrão
+- Quaisquer efeitos colaterais que ocorrem ao executar o método
+- Quaisquer exceções que são levantadas
+- Quaisquer restrições sobre quando o método pode ser chamado
+
+Example
+
+```Python
+def says(self, sound=None):
+    """Prints what the animals name is and what sound it makes.
+
+    If the argument `sound` isn't passed in, the default Animal
+    sound is used.
+
+    Parameters
+    ----------
+    sound : str, optional
+        The sound the animal makes (default is None)
+
+    Raises
+    ------
+    NotImplementedError
+        If no sound is set for the animal or passed in as a parameter.
+    """
+
+    if self.sound is None and sound is None:
+        raise NotImplementedError("Silent Animals are not supported!")
+
+    out_sound = self.sound if sound is None else sound
+    print(self.says_str.format(name=self.name, sound=out_sound))
+```
+Reference: https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings
+
+
+#### In Class
+A docstring para uma classe deve resumir seu comportamento e listar os métodos públicos e variáveis ​​de instância. Se a classe se destina a ser uma subclasse e possui uma interface adicional para subclasses, essa interface deve ser listada separadamente (no docstring). O construtor de classe deve ser documentado na docstring para seu método __init__ . Os métodos individuais devem ser documentados por seus próprios docstring.
+
+Example
+```Python
+class SimpleClass:
+    """Class docstrings go here."""
+
+    def say_hello(self, name: str):
+        """Class method docstrings go here."""
+
+        print(f'Hello {name}')
+```
+
+Class docstrings should contain the following information:
+
+- A brief summary of its purpose and behavior
+- Any public methods, along with a brief description
+- Any class properties (attributes)
+- Anything related to the interface for subclassers, if the class is intended to be subclassed
+
+
 
 ## Programming Recommendations
 
@@ -375,6 +639,7 @@ def bar(x):
         return None
     return math.sqrt(x)
 ```
+
 No:
 ```Python
 def foo(x):
@@ -391,7 +656,7 @@ def bar(x):
 
 - Use string methods instead of the string module.
 - Because, String methods are always much faster.
-- Use ''.startswith() and ''.endswith() instead of string slicing to check for prefixes or suffixes.
+- Use `''.startswith()` and `''.endswith()` instead of string slicing to check for prefixes or suffixes.
 
 ```Python
 Yes: if foo.startswith('bar'):
@@ -405,7 +670,6 @@ Yes: if isinstance(obj, int):
 
 No:  if type(obj) is type(1):
 ```
-
 
 ---
 

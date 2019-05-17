@@ -1,13 +1,26 @@
 from time import sleep
 
 
-print("This is my file to demonstrate best practices.")
+print("This is my file to demonstrate best practices.\n")
 
 
-def process_data(data):
+def process_data(data: str) -> str:
+    """
+    Example Function with DocStrings and Annotation Function.
+    In this file Python view the best pratices write a Python file using main()
+
+    Args:
+        big_table: A data to process.
+
+    Returns:
+        A data changed of type String.
+
+    Raises:
+        None.
+    """
     print("Beginning data processing...")
-    modified_data = data + " that has been modified"
-    sleep(3)
+    modified_data = data + " that has been modified"  # type: str
+    sleep(8)
     print("Data processing finished.")
     return modified_data
 
