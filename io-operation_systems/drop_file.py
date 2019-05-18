@@ -10,5 +10,5 @@ def drop_file(path):
             os.remove(path)
 
     except IOError as err:
-        print ('IOError: ', err)
+        print('IOError: ', err)
         pass
