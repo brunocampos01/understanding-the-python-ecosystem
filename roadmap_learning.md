@@ -4,4 +4,7 @@
 
 - [Comments](https://www.python.org/dev/peps/pep-0008/#comments)
 
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/brunocampos01/becoming-a-expert-python/master)
+
 - https://mybinder.org/v2/gh/brunocampos01/becoming-a-expert-python/master
