@@ -1,5 +1,8 @@
-#Exercício Python 023: Faça um programa que leia um número de 0 a 9999 e mostre na tela cada um dos dígitos separados.
+#Exercício Python 023:
+# Faça um programa que leia um número de 0 a 9999 e mostre na tela cada um dos dígitos separados.
+
 from math import trunc
+
 
 number = int(input('enter a number: '))
 thousand = trunc(number/1000)

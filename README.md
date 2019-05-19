@@ -1,10 +1,15 @@
-# **Becoming a Python Expert**
+# Becoming a Python Expert
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/210d4a617a3d4411bab1d3618cafca89)](https://app.codacy.com/app/brunocampos01/becoming-a-python-expert?utm_source=github.com&utm_medium=referral&utm_content=brunocampos01/becoming-a-python-expert&utm_campaign=Badge_Grade_Dashboard)
 [![Python 3.7](https://img.shields.io/badge/python-3.7-yellow.svg)](https://www.python.org/downloads/release/python-371/)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
-## Summary
+
+<img src='images/python.png'>
+
+
+# Summary
 - Pre Requirements
+- Check Python Configuration
 - Preparing Environment
 - Zen of Python
 - What is Python?
@@ -18,32 +23,47 @@
 - Call unique def in file.py (python -c "import FILE_NAME; def test(requirements)")
 
 
+## Pre Requirements
 
-
-### Pre Requirements
-
-- Vim editor:<br/>
-```
-sudo apt install vim
-```
-
-- Python 3.6 or more:<br/>
-```
+- Python 3.6 or more
+```bash
 sudo apt install python3.6
 ```
 
-- Git:<br/>
-```
-sudo apt get install git
-```
-
-- pip (package manager):<br/>
-```
-sudo apt install python-pip
+- Development Tool
+```bash
+sudo apt install build-essential \
+                 libssl-dev \
+                 libffi-dev \
+                 python3-dev
 ```
 
-- Jupyter Notebook:<br/>
+- Git
+```bash
+sudo apt install git
 ```
+
+- pip (package manager)
+```bash
+sudo apt install -y python3-pip
+```
+
+- Libraries
+```bash
+pip install --user virtualenv \
+                   numpy \
+                   pandas \
+                   matplotlib \
+                   mysql-connector-python
+```
+
+- Vim editor
+```bash
+sudo apt install vim
+```
+
+- Jupyter Notebook
+```bash
 sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh; \
 chmod +x Anaconda3-5.3.1-Linux-x86_64.sh ; \
 ./Anaconda3-5.3.1-Linux-x86_64.sh
@@ -51,18 +71,31 @@ chmod +x Anaconda3-5.3.1-Linux-x86_64.sh ; \
 
 ---
 
-## Check Configuration
-- Check if OS contains binary Python
+## Check Python Configuration
+
+<img src='images/config.jpg' width="100">
+
+- Check version Python
 - Check where version install
 - Check libraries installed
 
-#### Check Where's Binary Python<br/>
-`python --version`
+##### Check what version Python
 
-_By default python 2.7 in /usr/bin/python<NUMER_VERSION>_
+```bash
+python --version
 
-#### Check where version install
-`witch python`
+# Python 3.6.7
+```
+
+##### Check where version install
+
+```bash
+which python
+
+# /usr/bin/python
+```
+
+##### Check where version install
 
 ---
 
@@ -72,37 +105,62 @@ _By default python 2.7 in /usr/bin/python<NUMER_VERSION>_
 - How to alter Python PATH and Python version
 - Change versions of Python
 
-#### Python PATH
-1. First open profile in editor: <br/>
-`vim ~/.profile` or `vim ~/.bashrc`
+##### Configure Python PATH
 
-2. Insert Python PATH: <br/>
-`export PYTHON=/usr/bin/python<NUMER_VERSION>`
+1. First open profile in editor
+```bash
+sudo vim ~/.profile
+```
+or
+```bash
+sudo vim ~/.bashrc
+```
 
-3. Update profile/bashrc: <br/>
-`sudo vim ~/.bashrc`<br/>
-`source ~/.bashrc` or `.  ~/.bashrc `
+2. Insert Python PATH
+```bash
+export PYTHON=/usr/bin/python<NUMER_VERSION>
+```
+<img src='images/bashrc_python.png'>
 
-#### Change Versions of Python
+NOTE: quit vim: `ESC, :, w, q`
+
+
+3. Update profile/bashrc
+```bash
+source ~/.bashrc
+```
+or
+```bash
+.  ~/.bashrc
+```
+
+##### Change Versions of Python
+
 CMD: `update-alternatives` symbolic links determining default commands
 
 - Install multiples pythons<br/>
-```
+```bash
 update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1
 update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION>
 ```
 
-- Alter python versions<br/>
-`sudo update-alternatives --config python`
+- Alter python versions
+```bash
+sudo update-alternatives --config python
+```
 
  <img src="images/python_alternatives.png" width="1000" />
 
-- Check changes<br/>
-`python --version`
+- Check changes
+```bash
+python --version
+
+# Python 3.4
+```
 
 ---
 
-<h1> Fundamentals Language </h1>
+## Fundamentals Language
 
 - What is Python?
 - Zen of Python
@@ -110,17 +168,9 @@ update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER
 - Types
 
 
-## What is Python?
-It is an interpreted programming language.<br/>
-Paradigmas:
-- imperativa
-- orientada à objetos
-- funcional
-- scripts
-
 ---
 
-## Files _.py_
+## Modules
 
 File: Typically, a Python file is any file that contains code. Most Python files have the extension .py.
 
@@ -128,8 +178,60 @@ Script: A Python script is a file that you intend to execute from the command li
 
 Module: A Python module is a file that you intend to import from within another module or a script, or from the interactive interpreter. You can read more about modules in the Python documentation.
 
+```
+sound/                          Top-level package
+      __init__.py               Initialize the sound package
+      formats/                  Subpackage for file format conversions
+              __init__.py
+              wavread.py
+              wavwrite.py
+              aiffread.py
+              aiffwrite.py
+              auread.py
+              auwrite.py
+              ...
+      effects/                  Subpackage for sound effects
+              __init__.py
+              echo.py
+              surround.py
+              reverse.py
+              ...
+      filters/                  Subpackage for filters
+              __init__.py
+              equalizer.py
+              vocoder.py
+              karaoke.py
+              ...
+
+```
+
+###### `__init__.py`
+
+- The `__init__.py` files are required to make Python treat directories containing the file as packages.
+- File can empty
+- Is good pratice `__init__` have a list with modules to import. Example:
+```
+__all__ = ["echo", "surround", "reverse"]
+```
+- So import `from sound.effects import *` call the modules: "echo", "surround", "reverse"
+
+
+Import individual module:<br/>
+```python
+from package import item.subitem.subsubite...
+
+from module import name
+```
+
+
 - Examples ...
 - Read: https://realpython.com/run-python-scripts/
+
+
+#### Compiled Python Files
+Program **doesn’t run any faster when it is read from a .pyc** file than when it is read from a .py file;
+
+.pyc it's faster to loaded modules
 
 
 ## Zen of Python
@@ -150,43 +252,34 @@ def        for        lambda      try
 
 ---
 
-# Types
+## Types
 
 <img src="images/Python_3._The_standard_type_hierarchy.png" width="1000" />
 
 ---
-
-<h1> Interpreter Python</h1>
-- Interpreter and compiler
- - CPython
- - Jython
- - Comparian
-- How Python program run
-
-# Interpreter and Compiler
+## Interpreter and Compiler
 
  <img src="images/cpython.png" width="299" />
 
-## CPython
+#### CPython
 Compiler and interpreter bytecode, write in C.
 
 
-## Jython
+#### Jython
 <img src="images/jython.jpg"  width="50" />
 
 Compiler and interpreter Java bytecode, write in Java.
 
 
-## Comparian
+#### Comparian
 
 <img src="images/comp-interpreter.png"/>
 
-### Why use alter compiler python?
+#### Why use alter compiler python?
 
 **CPython:** torna muito fácil escrever extensões C para seu código Python porque no final ele é executado por um interpretador C. <br/>
 **Jython:**, por outro lado, torna muito fácil trabalhar com outros programas Java: você pode importar qualquer classe Java sem esforço adicional, chamando e utilizando suas classes Java de dentro de seus programas Jython.
 
----
 
 ## How Python program run ?
 
@@ -197,12 +290,6 @@ Compiler and interpreter Java bytecode, write in Java.
 3. Then compiled bytecode interpreted from memory to execute it.
 
 ---
-
-<h1> Features Language </h1>
-
-- Environment Virtual
-- File of requirements
-- PEP 8
 
 ## Environment Virtual Python
 
@@ -280,6 +367,11 @@ income = (gross_wages
           - ira_deduction
           - student_loan_interest)
 ```
+
+## Encoding
+By default: `UTF-8`
+
+Change encoding: `# -*- coding: UTF-8 -*-`
 
 #### Imports
 Following order:
@@ -390,6 +482,10 @@ Isso informa que o tipo esperado do argumento de nome é str . Analogicamente, o
 - Everyone parameters and return functions
 
 
+Learn:
+- https://docs.python.org/3/library/typing.html#module-typing
+
+
 References:
 - https://medium.com/@shamir.stav_83310/the-other-great-benefit-of-python-type-annotations-896c7d077c6b
 - https://www.python.org/dev/peps/pep-0484/
@@ -461,7 +557,7 @@ print(say_hello.__doc__)
 
 # A simple function that says hello... Richie style
 ```
-<img src='__doc__.png'>
+<img src='images/__doc__.png'>
 
 
 ##### `help()`
@@ -476,7 +572,7 @@ Help on function say_hello in module __main__:
 #     A simple function that says hello... Richie style
 ```
 
-<img src='help().png'>
+<img src='images/help().png'>
 
 #### In scripts
 A docstring de um script deve ser utilizável como sua mensagem de "usage", como uma função `usage()` em shell script.
@@ -587,8 +683,8 @@ Class docstrings should contain the following information:
 
 #### String Concatenation
 
-- Use ` ''.join()`, `os.path.dirname.join(stringA + stringB)`
- - This optimization is fragile even in CPython. **Not** use `stringA + stringB`
+- Use ` ''.join()`, `os.path.dirname.join(stringA + stringB + stringC + stringD)`
+ - This optimization is fragile even in CPython. **Not** use `stringA + stringB + stringC + stringD`
 
 
 #### Exception
@@ -761,14 +857,183 @@ Must is file separed, how example `config.py`
 #### Using environment variables
 The configuration values are not managed as a separate file.
 
+## Control Flow
+-  examples
+  - [range](https://docs.python.org/3/library/stdtypes.html#range)
+  - Looping Techniques
+    - items()
+    - enumerate()
+    - zip()
+
+###### items()
+- dictionaries
+
+```python
+knights = {'gallahad': 'the pure',
+           'robin': 'the brave'}
+
+for k, v in knights.items():
+     print(k, v)
+
+# gallahad the pure
+# robin the brave
+```
+
+###### enumerate()
+- List
+
+```python
+for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(i, v)
+
+# 0 tic
+# 1 tac
+# 2 toe
+```
+
+###### zip()
+- Loop over two or more sequences at the same time
+- Excelent tools to garant good algorith complex
+
+```python
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+
+
+for q, a in zip(questions, answers):
+    print('What is your {0}?  It is {1}.'.format(q, a))
+
+# What is your name?  It is lancelot.
+# What is your quest?  It is the holy grail.
+# What is your favorite color?  It is blue.
+```
+
+
+
+
+## Functions
+- examples
+- Optional arguments
+- Unpacking Argument (**kwargs)
+
+
+##### Optional arguments
+
+```python
+def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+```
+Accepts **one required argument (`voltage`)** and three optional arguments (`state, action, and type`)
+
+
+##### Unpacking Argument
+```python
+def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
+
+d = {"voltage": "four million",
+     "state": "bleedin' demised",
+     "action": "VOOM"}
+
+parrot(**d)
+
+# This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
+```
+
+
 ## Exceptions
 ...
 
 ## Strings
-...
+```
+ +---+---+---+---+---+---+
+ | P | y | t | h | o | n |
+ +---+---+---+---+---+---+
+ 0   1   2   3   4   5   6
+-6  -5  -4  -3  -2  -1
+```
+
+```
+print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred',
+                                                       other='Georg'))
+# The story of Bill, Manfred, and Georg.
+```
 
 ## Files
-...
+- o arquivo de saída padrão pode ser referenciado como `sys.stdout`
+
+## Serialization
+- Pickle
+- sqlite
+
+## Classes
+- Um namespace é um mapeamento de nomes para objetos.
+apenas ligam nomes a objetos
+- verbos para métodos e substantivos para atributos de dados
+-  nada no Python torna possível impor a ocultação de dados
+
+Examples:
+```python
+class MyClass:
+    """A simple example class"""
+    i = 12345
+
+    def f(self):
+        return 'hello world'
+```
+##### self
+- O primeiro argumento de um método é chamado self. Isso nada mais é do que uma convenção
+- É útil para aumenta a legibilidade dos métodos: não há chance de confundir variáveis ​​locais e variáveis ​​de instância ao olhar através de um método.
+
+```python
+class Bag:
+    def __init__(self):
+        self.data = []
+
+    def add(self, x):
+        self.data.append(x)
+
+    def addtwice(self, x):
+        self.add(x)
+        self.add(x)
+```
+
+##### `__class__`
+- Each value is an object. It is stored as `object.__class__`
+
+```python
+class MyFirstClass:
+    """A simple example class"""
+    i = 42
+
+    def func_ex(self):
+        print('learning Python')
+
+
+if __name__ == '__main__':
+    object = MyFirstClass()  # initialized instance
+    object.func_ex()
+
+    print(object.__class__)
+
+# learning Python
+# <class '__main__.MyFirstClass'>
+```
+
+##### Inheritance
+
+
+##### Private Variables
+
+##### Iterators
+When call `for` the interpreter call `iter()`<br/>
+The function `iter()` return next object of list
+
+##### Generators
+
+##### Generators Expressoins
+`sum(i*i for i in range(10))                 # sum of squares`
 
 ## Tests
 ...
@@ -2001,6 +2266,7 @@ Online tools and APIs to simplify development.
 ## References
 - https://realpython.com/python-virtual-environments-a-primer/
 - https://github.com/vinta/awesome-python/edit/master/README.md
+- https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-ubuntu-18-04-quickstart
 
 
 ## Copyright

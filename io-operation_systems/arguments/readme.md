@@ -1,3 +1,8 @@
+# Arguments
+
+ arguments thereafter are turned into a list of strings  and assigned to the `sys.argv` variable.
+
+
 ## Argparse
 - Basic
 ```Python
@@ -29,7 +34,7 @@ def validate(args):
 ```
 
 
-Arparse is the standard library (included with Python) for creating command-line utilities. 
+Arparse is the standard library (included with Python) for creating command-line utilities.
 
 
 ## `sys.argv` or `argparse`

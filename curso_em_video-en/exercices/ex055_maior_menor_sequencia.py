@@ -1,4 +1,6 @@
-#Exercício Python 055: Faça um programa que leia o peso de cinco pessoas. No final, mostre qual foi o maior e o menor peso lidos.
+# Exercício Python 055:
+# Faça um programa que leia o peso de cinco pessoas. No final, mostre qual foi o maior e o menor peso lidos.
+
 bigger = 0
 smaller = 0
 for count in range(1, 6):

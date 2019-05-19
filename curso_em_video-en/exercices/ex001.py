@@ -1,4 +1,2 @@
-#crie um programa que escreva "Hello word" na tela
+# Create program which write "Hello word" in terminal
 print('thug life')
-
-

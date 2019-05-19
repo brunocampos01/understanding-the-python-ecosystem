@@ -1,4 +1,5 @@
-'''Exercício Python 043: Desenvolva uma lógica que leia o peso e a altura de uma pessoa,
+'''Exercício Python 043:
+ Desenvolva uma lógica que leia o peso e a altura de uma pessoa,
  calcule seu Índice de Massa Corporal (IMC) e mostre seu status, de acordo com a tabela abaixo:
 - IMC abaixo de 18,5: Abaixo do Peso
 - Entre 18,5 e 25: Peso Ideal
@@ -11,7 +12,8 @@ height = float(input('Type with your height(m): '))
 imc = weight/(height**2)
 print('The IMC is: {:.1f}'.format(imc))
 
-if(imc < 18.5):
+# An if … elif … elif … sequence is a substitute for the switch or case statements
+if imc < 18.5:
     print('Under weight')
 elif 18.5 <= imc <= 25:
     print('OK')
