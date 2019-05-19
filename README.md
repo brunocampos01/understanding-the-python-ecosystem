@@ -1,7 +1,10 @@
 # Becoming a Expert Python
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/210d4a617a3d4411bab1d3618cafca89)](https://app.codacy.com/app/brunocampos01/becoming-a-python-expert?utm_source=github.com&utm_medium=referral&utm_content=brunocampos01/becoming-a-python-expert&utm_campaign=Badge_Grade_Dashboard)
-[![Python 3.7](https://img.shields.io/badge/python-3.7-yellow.svg)](https://www.python.org/downloads/release/python-371/)
+
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
+
+[![Python 3.7](https://img.shields.io/badge/python-3.7-yellow.svg)](https://www.python.org/downloads/release/python-371/)
+
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 
@@ -65,7 +68,7 @@
     - TODO
 <br/>
 
-- **Curso em Vídeo: resolução de execícios**
+- **Curso em Vídeo: resolutions exercises**
     - Class notes and exercises solved.
     - Teacher: Gustavo Guanabara.
 
@@ -81,7 +84,7 @@
 
 - **Awesome Python by Category**
 
-    - [Awesome Data Science with Python](#awesome-python)
+    - **Awesome Data Science with Python**
         - [Data Analysis](#data-analysis)
         - [Data Validation](#data-validation)
         - [Data Visualization](#data-visualization)
@@ -94,7 +97,7 @@
 
     <br/>
 
-    - [Awesome Security with Python](#awesome-python)
+    - **Awesome Security with Python**
         - [Admin Panels](#admin-panels)
         - [Authentication](#authentication)
         - [Cryptography](#cryptography)
@@ -102,7 +105,7 @@
 
     <br/>
 
-    - [Awesome DevOps with Python](#awesome-python)
+    - **Awesome DevOps with Python**
         - [Build Tools](#build-tools)
         - [Built-in Classes Enhancement](#built-in-classes-enhancement)
         - [Configuration](#configuration)
@@ -117,7 +120,7 @@
 
     <br/>
 
-    - [Awesome Data with Python](#awesome-python)
+    - **Awesome Data with Python**
         - [Database Drivers](#database-drivers)
         - [Database](#database)
         - [ORM](#orm)
@@ -126,7 +129,7 @@
 
     <br/>
 
-    - [Awesome Processing with Python](#awesome-python)
+    - **Awesome Processing with Python**
         - [Algorithms and Design Patterns](#algorithms-and-design-patterns)
         - [Compatibility](#compatibility)
         - [Computer Vision](#computer-vision)
@@ -138,7 +141,7 @@
 
     <br/>
 
-    - [Awesome Programming with Python](#awesome-python)
+    - **Awesome Programming with Python**
         - [Code Analysis](#code-analysis)
         - [Debugging Tools](#debugging-tools)
         - [Documentation](#documentation)
