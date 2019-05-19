@@ -1,9 +1,11 @@
 """
-Exercício Python 093:
+Exercise Python 093:
+
  Crie um programa que gerencie o aproveitamento de um jogador de futebol.
- O programa vai ler o nome do jogador e quantas partidas ele jogou.
- Depois vai ler a quantidade de gols feitos em cada partida. No final, tudo isso será guardado em um dicionário,
-  incluindo o total de gols feitos durante o campeonato.
+- O programa vai ler o nome do jogador e quantas partidas ele jogou.
+- Depois vai ler a quantidade de gols feitos em cada partida.
+No final, tudo isso será guardado em um dicionário,
+incluindo o total de gols feitos durante o campeonato.
 """
 
 player = dict()
@@ -18,6 +20,7 @@ for playes in range(0, total):
 # insert list matches in dict
 player['matches'] = matches[:]
 print('#'*50)
+
 for i, v in player.items():
     print(f' The field {i} has value {v}')
 # equal for

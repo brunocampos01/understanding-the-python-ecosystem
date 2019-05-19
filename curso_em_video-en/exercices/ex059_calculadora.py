@@ -1,6 +1,8 @@
 """
-Exercício Python 059:
+Exercise Python 059:
+
 Crie um programa que leia dois valores e mostre um menu na tela:
+
 [ 1 ] somar
 [ 2 ] multiplicar
 [ 3 ] maior
@@ -8,12 +10,12 @@ Crie um programa que leia dois valores e mostre um menu na tela:
 [ 5 ] sair do programa
 Seu programa deverá realizar a operação solicitada em cada caso.
 """
-
 number1 = int(input('Type a number: '))
 number2 = int(input('Type a number: '))
 chooce = 0
+
 while chooce != 6:
-    print('-='*50)
+    print('-=' * 50)
     chooce = int(input(''' \t[1] sum
     [2] multiply
     [3] divide
@@ -28,7 +30,7 @@ while chooce != 6:
         multiply = number1 * number2
         print('Mutiply = {}'.format(multiply))
     if chooce == 3:
-        divide = number1/number2
+        divide = number1 / number2
         print('Divide = {}'.format(divide))
     if chooce == 4:
         subtract = number1 = number2
@@ -36,4 +38,6 @@ while chooce != 6:
     if chooce == 5:
         number1 = int(input('Type a number: '))
         number2 = int(input('Type a number: '))
+
 print("End")
+s

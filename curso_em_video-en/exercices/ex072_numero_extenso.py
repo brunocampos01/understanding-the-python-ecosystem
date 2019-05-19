@@ -1,13 +1,13 @@
 """
-Exercício Python 072:
- Crie um programa que tenha uma tupla totalmente preenchida com
- uma contagem por extenso, de zero até vinte.
- Seu programa deverá ler um número pelo teclado (entre 0 e 20) e mostrá-lo por extenso.
+Exercise Python 072:
+
+Crie um programa que tenha uma tupla totalmente preenchida com
+uma contagem por extenso, de zero até vinte.
+Seu programa deverá ler um número pelo teclado (entre 0 e 20) e mostrá-lo por extenso.
  """
 numbers = ('zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
-           'nine', 'ten', 'eleven', 'twelve', 'thirteen','fourteen', 'fifteen', 'sixteen',
+           'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
            'seventeen', 'eightteen', 'nineteen', 'twenty')
-
 
 '''number = int(input('Enter a number between 0 and 20: '))
 while number < 0 or number > 20:

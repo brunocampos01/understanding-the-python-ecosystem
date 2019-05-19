@@ -1,5 +1,5 @@
 """
-Exercice Python 012:
+Exercise Python 012:
 
 O mesmo professor do desafio 019 quer sortear a ordem de apresentação
 de trabalhos dos alunos.

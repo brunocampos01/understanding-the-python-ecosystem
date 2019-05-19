@@ -1,5 +1,5 @@
 """
-Exercice Python 005:
+Exercise Python 005:
 
 Do program to read a number integer and show terminal your predecessor and successor
 """

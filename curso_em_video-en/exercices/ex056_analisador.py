@@ -1,9 +1,10 @@
 """
-Exercício Python 056: Desenvolva um programa que leia o nome, idade e sexo de 4 pessoas.
+Exercise Python 056:
+
+Desenvolva um programa que leia o nome, idade e sexo de 4 pessoas.
 No final do programa, mostre: a média de idade do grupo, qual é o nome do homem mais velho e
 quantas mulheres têm menos de 20 anos.
 """
-
 avgYear = 0
 yearMenOld = 0
 nameMenOld = ''
@@ -25,7 +26,7 @@ for count in range(1, 5):
     if sex in 'Ff' and year < 20:
         womens20 = womens20 + 1
 
-avgYear = avgYear/4
+avgYear = avgYear / 4
 print('The average of the group is {}'.format(avgYear))
 print('The man more old have {} years and call {}'.format(yearMenOld, nameMenOld))
 print('Altogether {} womens with less than 20 years.'.format(womens20))

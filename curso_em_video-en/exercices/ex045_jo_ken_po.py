@@ -1,16 +1,11 @@
 """
-Exercice Python 030:
+Exercise Python 045:
 
-Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.
+Crie um programa que faça o computador jogar Jokenpô com você.
 """
-
-# Exercício Python 045:
-# Crie um programa que faça o computador jogar Jokenpô com você.
-
 import secrets
 
 from time import sleep
-
 
 print('''Your chooce:
 [0] STONE
