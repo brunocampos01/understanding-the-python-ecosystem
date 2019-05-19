@@ -11,4 +11,3 @@ def drop_file(path):
 
     except IOError as err:
         print('IOError: ', err)
-        pass

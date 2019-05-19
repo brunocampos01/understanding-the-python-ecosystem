@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-import os
 import argparse
+import configparser
+import os
 
 import mysql.connector
-import configparser
 
 path_directory = os.path.dirname(os.path.abspath(__file__))
 path_config = ''.join(path_directory + '/config_mysql.ini')
@@ -116,8 +116,8 @@ def main():
                 password=MYSQL_PASSWORD,
                 connection_timeout=CONNECTION_TIMEOUT,
                 attemps=ATTEMPTS,
-                delay=DELAY)\
-        .with_database(MYSQL_DB_NAME)\
+                delay=DELAY) \
+        .with_database(MYSQL_DB_NAME) \
         .execute_statement(table=arguments.table)
 
 
