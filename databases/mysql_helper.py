@@ -1,7 +1,8 @@
-import logging
 import configparser
-import mysql.connector
+import logging
 from pathlib import Path
+
+import mysql.connector
 
 
 PATH_PROJECT = str(Path(__file__).parent.parent.parent)
@@ -156,4 +157,4 @@ if __name__ == "__main__":
     create_tables(user=MYSQL_USER,
                   password=MYSQL_PASSWORD,
                   host=HOST_MYSQL,
-                  path_script=PATH_PROJECT+PATH_SCRIPT_SQL)
+                  path_script=PATH_PROJECT + PATH_SCRIPT_SQL)

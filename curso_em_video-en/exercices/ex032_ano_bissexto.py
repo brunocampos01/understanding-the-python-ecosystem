@@ -1,3 +1,9 @@
+"""
+Exercice Python 030:
+
+Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.
+"""
+
 #Exercício Python 032: Faça um programa que leia um ano qualquer e mostre se ele é bissexto.
 
 from datetime import date

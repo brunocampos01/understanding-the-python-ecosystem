@@ -1,6 +1,9 @@
-'''Exercício Python 072: Crie um programa que tenha uma tupla totalmente preenchida com
+"""
+Exercício Python 072:
+ Crie um programa que tenha uma tupla totalmente preenchida com
  uma contagem por extenso, de zero até vinte.
- Seu programa deverá ler um número pelo teclado (entre 0 e 20) e mostrá-lo por extenso.'''
+ Seu programa deverá ler um número pelo teclado (entre 0 e 20) e mostrá-lo por extenso.
+ """
 numbers = ('zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
            'nine', 'ten', 'eleven', 'twelve', 'thirteen','fourteen', 'fifteen', 'sixteen',
            'seventeen', 'eightteen', 'nineteen', 'twenty')

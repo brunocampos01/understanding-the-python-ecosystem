@@ -1,3 +1,9 @@
+"""
+Exercice Python 030:
+
+Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.
+"""
+
 #Exercício Python 047: Crie um programa que mostre na tela todos os números pares que estão no intervalo entre 1 e 50.
 
 for cont in range(2, 51, 2):

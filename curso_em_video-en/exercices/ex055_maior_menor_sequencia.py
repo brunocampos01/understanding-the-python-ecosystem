@@ -1,3 +1,9 @@
+"""
+Exercice Python 030:
+
+Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.
+"""
+
 # Exercício Python 055:
 # Faça um programa que leia o peso de cinco pessoas. No final, mostre qual foi o maior e o menor peso lidos.
 

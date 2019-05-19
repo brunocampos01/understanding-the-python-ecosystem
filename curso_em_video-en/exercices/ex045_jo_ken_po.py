@@ -1,13 +1,24 @@
-#Exercício Python 045: Crie um programa que faça o computador jogar Jokenpô com você.
-from random import randint
+"""
+Exercice Python 030:
+
+Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.
+"""
+
+# Exercício Python 045:
+# Crie um programa que faça o computador jogar Jokenpô com você.
+
+import secrets
+
 from time import sleep
+
+
 print('''Your chooce:
 [0] STONE
 [1] PAPER
 [2] scissors ''')
-itens = ('stone', 'paper','scissors')
+itens = ('stone', 'paper', 'scissors')
 chooce = int(input('Which is your move? '))
-choocePc = randint(0, 2)
+choocePc = secrets.randbelow(2)
 
 print('JO')
 sleep(1)
@@ -16,8 +27,8 @@ sleep(1)
 print('PO!!!')
 sleep(1)
 
-print('{}\nPC throwed: {}'.format('-='*20, itens[choocePc]))
-print('Player throwed: {}\n{}'.format(itens[chooce], '-='*20))
+print('{}\nPC throwed: {}'.format('-=' * 20, itens[choocePc]))
+print('Player throwed: {}\n{}'.format(itens[chooce], '-=' * 20))
 
 if chooce == choocePc:
     print('tie')
@@ -29,7 +40,7 @@ elif chooce == 1 and choocePc == 0:
     print('paper GAIN stone')
 elif chooce == 1 and choocePc == 2:
     print('Scissors GAIN paper')
-elif chooce ==2 and choocePc == 0:
+elif chooce == 2 and choocePc == 0:
     print('stone GAIN scissors')
 elif chooce == 2 and choocePc == 1:
     print('scissors GAIN paper')

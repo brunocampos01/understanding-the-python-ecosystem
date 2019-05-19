@@ -1,5 +1,8 @@
-'''Le nome + media 2 alunos. No final exibe conteudo estruturado na tela'''
+"""
+Exercice Python 030:
 
+Le nome + media 2 alunos. No final exibe conteudo estruturado na tela
+"""
 classroom = []
 students = {}
 

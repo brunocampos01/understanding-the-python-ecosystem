@@ -1,6 +1,8 @@
-'''Exercício Python 076: Crie um programa que tenha uma tupla única com nomes de produtos
+"""
+Exercício Python 076: Crie um programa que tenha uma tupla única com nomes de produtos
 e seus respectivos preços, na sequência.
-No final, mostre uma listagem de preços, organizando os dados em forma tabular.'''
+No final, mostre uma listagem de preços, organizando os dados em forma tabular.
+"""
 priceList = ('pencil', 1.75, 'eraser', 2.00, 'pen', 1.00, 'notebook', 12.50)
 print('-' * 50)
 print('\t\t\t\tPRICE LIST')

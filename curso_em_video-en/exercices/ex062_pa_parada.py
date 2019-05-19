@@ -1,3 +1,9 @@
+"""
+Exercice Python 030:
+
+Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.
+"""
+
 #Exercício Python 062: Melhore o DESAFIO 061, perguntando para o usuário se ele quer mostrar mais alguns termos.
 # O programa encerrará quando ele disser que quer mostrar 0 termos.
 print('\narithmetic progress generator\n')

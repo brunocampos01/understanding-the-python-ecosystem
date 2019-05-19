@@ -65,6 +65,20 @@
     - TODO
 <br/>
 
+- **Curso em Vídeo: resolução de execícios**
+    - Class notes and exercises solved.
+    - Teacher: Gustavo Guanabara.
+
+        Words   | Themes
+        -------- | ---
+        1 | [Fundamentals](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
+        2 | [Control Structures](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
+        3 | [Compound Structures](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
+        4 | [Functions](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
+
+
+<br/>
+
 - **Awesome Python by Category**
 
     - [Awesome Data Science with Python](#awesome-python)
@@ -1199,16 +1213,6 @@ The function `iter()` return next object of list
 - Matplotlib
 - Skitlearn (aprendizagem supervisionada, nao supervisionada)
 - TensorFlow (neural network)
-
-# Course in video in English
-- Class notes and exercises solved.
-- Teacher: Gustavo Guanabara.
-
-Words   | Themes
--------- | ---
-1 | [Fundamentals](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
-2 | [Control Structures](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
-3 | [Compound Structures](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
 
 - - -
 

@@ -1,3 +1,9 @@
+"""
+Exercice Python 030:
+
+Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.
+"""
+
 #Exercício Python 053: Crie um programa que leia uma frase qualquer e diga se ela é um palíndromo, desconsiderando os espaços.
 phrase = str(input('Type a phrase: ')).upper().strip()
 inversePhrase = ''
