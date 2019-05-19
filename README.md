@@ -28,7 +28,7 @@
     - [What's is Python ?](#what's-is-python-?)
     - [Python Files](#python-files)
         - [Python: .py](#python:-.)
-        - [`__init__.py`](#_init.py_)
+        - [`__init__.py`](#_init.py)
         - [Global Modules](#global-modules)
         - [Python Compiler: .pyc](#python-compiler:)
         - [Requirements](#requirements)
@@ -64,7 +64,9 @@
 - **Fundamentals** _Read in jupyter notebook_
     - TODO
 <br/>
+
 - **Awesome Python by Category**
+
     - [Awesome Data Science with Python](#awesome-python)
         - [Data Analysis](#data-analysis)
         - [Data Validation](#data-validation)
@@ -75,6 +77,7 @@
         - [Natural Language Processing](#natural-language-processing)
         - [Text Processing](#text-processing)
         - [Recommender Systems](#recommender-systems)
+
     <br/>
 
     - [Awesome Security with Python](#awesome-python)
@@ -82,6 +85,7 @@
         - [Authentication](#authentication)
         - [Cryptography](#cryptography)
         - [Permissions](#permissions)
+
     <br/>
 
     - [Awesome DevOps with Python](#awesome-python)
@@ -96,6 +100,7 @@
         - [Package Repositories](#package-repositories)
         - [Testing](#testing)
         - [Continuous Integration](#continuous-integration)
+
     <br/>
 
     - [Awesome Data with Python](#awesome-python)
@@ -104,6 +109,7 @@
         - [ORM](#orm)
         - [Queue](#queue)
         - [Serialization](#serialization)
+
     <br/>
 
     - [Awesome Processing with Python](#awesome-python)
@@ -115,6 +121,7 @@
         - [Image Processing](#image-processing)
         - [Job Scheduler](#job-scheduler)
         - [Processes](#processes)
+
     <br/>
 
     - [Awesome Programming with Python](#awesome-python)
