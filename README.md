@@ -66,7 +66,7 @@
 <br/>
 
 - **Curso em Vídeo: resolutions exercises**
-    - Class notes and exercises solved.
+    - Class notes and exercises solved
     - Teacher: Gustavo Guanabara.
 
         Words   | Themes
@@ -91,6 +91,7 @@
         - [Natural Language Processing](#natural-language-processing)
         - [Text Processing](#text-processing)
         - [Recommender Systems](#recommender-systems)
+        - [Reinforcement Learning](#reinforcement-learning)
 
     <br/>
 
@@ -1453,6 +1454,11 @@ Code Formatters
 * [SerpentAI](https://github.com/SerpentAI/SerpentAI) - Game agent framework. Use any video game as a deep learning sandbox.
 * [tensorflow](https://github.com/tensorflow/tensorflow) - The most popular Deep Learning framework created by Google.
 * [Theano](https://github.com/Theano/Theano) - A library for fast numerical computation.
+* [Brainforge](https://github.com/csxeba/brainforge) A Neural Networking library based on NumPy only
+* [deeplearn.js](https://pair-code.github.io/deeplearnjs/) a neural network library for the web
+* [OpenNN](https://github.com/Artelnics/OpenNN) a neural network C++ library
+* [Convolutional neural network](https://en.wikipedia.org/wiki/Convolutional_neural_network) In machine learning, a convolutional neural network (CNN, or ConvNet) is a class of deep, feed-forward artificial neural network that have successfully been applied to analyzing visual imagery.
+
 
 ## DevOps Tools
 
@@ -1848,6 +1854,14 @@ Code Formatters
 * [spotlight](https://github.com/maciejkula/spotlight) - Deep recommender models using PyTorch.
 * [Surprise](https://github.com/NicolasHug/Surprise) - A scikit for building and analyzing recommender systems.
 * [tensorrec](https://github.com/jfkirk/tensorrec) - A Recommendation Engine Framework in TensorFlow.
+
+
+## Reinforcement Learning
+* [Keras-rl](https://github.com/matthiasplappert/keras-rl) - Deep Reinforcement Learning for Keras.
+* [Gym](https://github.com/openai/gym) - A toolkit for developing and comparing reinforcement learning algorithms. Written in Python.
+* [TFLearn](https://github.com/tflearn/tflearn) - is a deep learning library featuring a higher-level API for [TensorFlow][].
+* [Tensorforce](https://github.com/reinforceio/tensorforce) - a TensorFlow library for applied reinforcement learning
+
 
 ## RESTful API
 
