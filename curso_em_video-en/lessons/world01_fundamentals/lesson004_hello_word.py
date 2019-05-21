@@ -1,4 +1,7 @@
-# Note: Give the single quotation mark (') to the chairman of the double quotation mark (").
+"""
+Note:
+     Give the single quotation mark (') to the chairman of the double quotation mark (").
+"""
 print('Olá, Mundo!')
 
 # Variables assigned with values entered by the user.

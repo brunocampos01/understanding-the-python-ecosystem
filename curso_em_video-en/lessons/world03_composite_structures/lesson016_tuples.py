@@ -1,26 +1,29 @@
-"""Em Python, existem 3 tipos de Variáveis Compostas:
+"""
+Em Python, existem 3 tipos de Variáveis Compostas:
 - Tuplas
 - Listas
 - Dicionários
+
 lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim')
 Índices:      [0]        [1]      [2]      [3]
-NOTA 1: As Tuplas são IMUTÁVEIS!"""
 
+NOTA 1: As Tuplas são IMUTÁVEIS!
+"""
 lanche = ('haburger', 'batata doce', 'pizza', 'pudim')
 
 print(lanche[0:])
 print(lanche[1:])
 print(lanche[-1])
-#lanche[1] = 'Refrigerante' -> Impossible command, since tuples are immutable
+# lanche[1] = 'Refrigerante' -> Impossible command, since tuples are immutable
 
-#count elements
+# count elements
 print(len(lanche))
 
-#organiza por ordem
+# organiza por ordem
 print(sorted(lanche))
 
 if False:
-    #exibindo todos os dados e posicoes
+    # exibindo todos os dados e posicoes
     for comida in lanche:
         print('Eu vou comer {}.'.format(comida))
 
@@ -32,7 +35,7 @@ if False:
         print(f'{quecomida} na posição {indice}')
 
 if True:
-    #concatenacao de tuplas
+    # concatenacao de tuplas
     a = (2, 5, 4)
     b = (5, 8, 1, 2)
     c = a + b
@@ -40,10 +43,10 @@ if True:
     print('c = {}'.foramt(c))
     print('d = {}'.format(d))
     print('O tamanho da tupla eh: {}'.format(len(c)))
-    print('O numero 5 aparece {} vezes na tupla.' .format(c.count(5)))
+    print('O numero 5 aparece {} vezes na tupla.'.format(c.count(5)))
     print('A posicao do numero 1 eh {}'.format(c.index(1)))
 if False:
-    #deletar tupla
+    # deletar tupla
     del (c)
     print(c)
 
@@ -53,5 +56,5 @@ if False:
     print(pessoa)  # Exibe ('Gustavo', 39, 'M', 99.88)
 
 if False:
-    del(pessoa)
+    del (pessoa)
 # del(pessoa[0]) -> Comando impossível, pois não se pode deletar um único elemento da tupla

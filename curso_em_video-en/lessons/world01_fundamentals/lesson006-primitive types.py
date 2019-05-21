@@ -1,20 +1,20 @@
-#implicit types
+# Implicit types
 if False:
-    counter = 100 # integer
-    miles = 500.0 # float point
-    name = "Rocky Balboa" # string
-    print (counter)
-    print (miles)
-    print (name)
+    counter = 100  # integer
+    miles = 500.0  # float point
+    name = "Rocky Balboa"  # string
+    print(counter)
+    print(miles)
+    print(name)
 
-#mix types
+# Mix types
 if False:
     n1 = float(input('enter value: '))
     n2 = int(input('enter other value: '))
     s = n1 + n2
-    print('the sum is {}, and {} = {}' .format(n1, n2, s))
+    print('the sum is {}, and {} = {}'.format(n1, n2, s))
 
-#prints
+# Prints
 if False:
     n1 = int(input('enter value: '))
     n2 = int(input('enter other value: '))
@@ -22,7 +22,7 @@ if False:
     print('the sum between {} and {} is {}'.format(n1, n2, s))  # method 1
     print(f'the sum between {n1} and {n2} is {s}')  # method f strings
 
-#checkers types
+# Checkers types
 if False:
     n = input('type something: ')
     print(n.isnumeric())  # Checks if what was entered is or can become a numeric value; returns True if yes

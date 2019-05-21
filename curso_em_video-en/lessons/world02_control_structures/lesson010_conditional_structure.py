@@ -19,7 +19,8 @@ if <CONDIÇÃO>:
 else:
     <COMANDOS B>
 Simplified Conditional Example:
-print('Frase a exibir se a condição se cumprir' if <CONDIÇÃO> else 'Frase a exibir se a condição não se cumprir')
+print('Frase a exibir se a condição se cumprir'
+ if <CONDIÇÃO> else 'Frase a exibir se a condição não se cumprir')
 
 Example of Nested Conditional Structure:
 if <CONDIÇÃO 1>:
@@ -29,8 +30,10 @@ elif <CONDIÇÃO 2>:
 elif <CONDIÇÃO 3>:
     <COMANDOS C>
 else:
-    <COMANDOS D>"""
+    <COMANDOS D>
+"""
 tempo = int(input('Quantos anos tem seu carro? '))  # Atribui à variável "tempo" o valor de um número inteiro
+
 if tempo <= 3:  # Se a variável "tempo" receber um valor igual ou menor do que 3...
     print('Carro novo!')  # Exibe "Carro novo!"
 else:  # Senão...

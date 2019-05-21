@@ -1,9 +1,13 @@
-"""Repetition structure with Logic Test
+"""
+Repetition structure with Logic Test
+
 NOTE:
-Use the for when the loop has a predefined number of repetitions. Otherwise, use the while."""
+Use the for when the loop has a predefined number of repetitions.
+ Otherwise, use the while.
+"""
 
 if False:
-    #for
+    # for
     for c in range(1, 11):
         print(c)
     print('end')
@@ -28,7 +32,7 @@ if False:
         r = str(input('Quer continuar [S/N]? ')).upper()
     print('FIM 3')
 
-#Infinite Repetition Structure
+# Infinite Repetition Structure
 if False:
     # loop infinito
     n = s = 0

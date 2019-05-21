@@ -1,15 +1,17 @@
-'''
+"""
 Defining Functions
 Default Arguments
 Variable Scope
 Documentation
 function recursive
-Lambda Expressions'''
+Lambda Expressions
+"""
 
 # Defining Functions
 if False:
     def show_plus_ten(num):
         return num + 10
+
 
     print(show_plus_ten(500))
 
@@ -30,14 +32,17 @@ if False:
     def some_function():
         word = "hello"
 
+
     print(some_function())
 
 if True:
     # This works fine
     word = "hello"
 
+
     def some_functionGlobal():
         print(word)
+
 
     some_functionGlobal()
 
@@ -83,7 +88,6 @@ if False:
 
     print('Fibonacci: {}'.format(fibonacci(20)))
 
-
 # function lambda
 '''
 1. The lambda keyword is used to indicate that this is a lambda expression. 
@@ -94,8 +98,8 @@ if False:
     def multiply(x, y):
         return x * y
 
+
     # equals
     multiplys = lambda x, y: x * y
 
-    print(multiplys(2,6))
-
+    print(multiplys(2, 6))

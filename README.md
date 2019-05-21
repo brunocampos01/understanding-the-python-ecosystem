@@ -16,13 +16,7 @@
     - [Check Python Configuration](#check-python-configuration)
     - [Preparing Environment](#preparing-environment)
     - [Virtual Environment Python](#virtual-environment-python)
-
-- **Pip**
-    - [What is ?](#what-is-?)
-    - [Config file](#config-file)
-    - [Install package](#install-package)
-    - [Unistall package](#unistall-package)
-    - [Listing Packages](#listing-packagess)
+    - [Managemant Libraries](#managemant-libraries)
 
 - **Command line**
     - [Options Command]()
@@ -71,6 +65,9 @@
 
 - **Fundamentals** _Read in jupyter notebook_
     - TODO
+    - https://docs.python.org/3/library/index.html
+    - https://docs.python.org/3/reference/index.html
+    - https://docs.python.org/3/howto/index.html
 <br/>
 
 - **Curso em Vídeo: resolutions exercises**
@@ -422,8 +419,11 @@ pip install -r requirements.txt
 
 ## Virtual Environment Python
 
-The Python can is executed in a environment virtual with isolation from system.<br/>
-Each virtual environment has its **own Python binary**.
+The Python can is executed in a environment virtual with ****semi-isolated**** from system.<br/>
+The virtual environment use **Python binary** which is in OS.
+
+- `sys.prefix` aponta para o diretório do ambiente virtual.
+- `sys.base.prefix` aponta para o ambiente não virtual.
 
  <img src="images/venv.png" />
 
@@ -435,6 +435,11 @@ $ pip install virtualenv
 ```bash
 virtualenv -p python3  NAME-ENVIRONMENT
 ```
+or
+```bash
+python -m venv
+```
+
 <img src="images/env.png" />
 
 ##### Start
@@ -443,12 +448,16 @@ source <DIR>/bin/activate
 ```
 ---
 
-## Pip
+## Managemant Libraries
 
-“search”, “install”, “uninstall”, “freeze”
+- [Python Package Index](https://pypi.org/)
+- poetry
+- conda
+- pipenv
+
+#### Pip
 
 ##### `pip freeze`
-Will produce a list of the installed packages. A common convention is to put this list in a requirements.txt
 
 ```bash
 (venv) $ pip freeze > requirements.txt
@@ -1254,7 +1263,41 @@ The function `iter()` return next object of list
 `sum(i*i for i in range(10))                 # sum of squares`
 
 ## Tests
+One approach for developing high quality software is to write tests for each function
+
+
+
+#### doctest
+The doctest module provides a tool for scanning a module and validating tests embedded in a program’s docstrings.
+<br/>
+Isso aprimora a documentação fornecendo ao usuário um exemplo e permite que o módulo doctest verifique se o código permanece fiel à documentação:
+```python
+def average(values):
+    """Computes the arithmetic mean of a list of numbers.
+
+    >>> print(average([20, 30, 70]))
+    40.0
+    """
+    return sum(values) / len(values)
+
+import doctest
+doctest.testmod()   # automatically validate the embedded tests
+```
+
 ...
+
+## Logging
+```
+import logging
+logging.debug('Debugging information')
+logging.info('Informational message')
+logging.warning('Warning:config file %s not found', 'server.conf')
+logging.error('Error occurred')
+logging.critical('Critical error -- shutting down')
+```
+...
+
+### stdin, stdout, and stderr
 
 ## Threads
 ...

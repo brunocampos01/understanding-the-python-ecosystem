@@ -1,4 +1,4 @@
-#slicing string
+# slicing string
 if False:
     frase = 'Curso em Vídeo Python'
 
@@ -13,7 +13,7 @@ if False:
     print(frase[9::3])  # Exibe do índice [9] até o final (21, no caso), pulando de 3 em 3, ficando "VePh"
     print(frase[::2])  # Exibe do índice inicial [0] até o final (21, no caso), pulando de 2 em 2, ficando "Croe íe yhn"
 
-#Strings Analysis
+# Strings Analysis
 if False:
     frase = 'Curso em Vídeo Python'
 
@@ -28,7 +28,7 @@ if False:
     print(frase.find('Android'))  # Quando se procura na string algo que não está presente, o valor exibido é "-1"
     print('Curso' in frase)  # Verifica se o que está entre aspas está presente na string, e se sim, exibe "True"
 
-#string transformation
+# string transformation
 if False:
     frase = 'Curso em Vídeo Python'
     frase2 = '   Aprenda Python  '
@@ -36,7 +36,8 @@ if False:
     print(frase.replace('Python', 'Android'))  # Exibe a string com um termo existente substituído por outro
     print(frase.upper())  # Exibe a string toda em letras maiúsculas
     print(frase.lower())  # Exibe a string toda em letras minúsculas
-    print(frase.capitalize())  # Exibe a string capitalizada (com apenas o primeiro caractere da frase em letra maiúscula)
+    print(
+        frase.capitalize())  # Exibe a string capitalizada (com apenas o primeiro caractere da frase em letra maiúscula)
     print(frase.title())  # Exibe a string estilo título (com o primeiro caractere de cada palavra em letra maiúscula)
     print(frase)  # A string original não foi alterada permanentemente por nenhum dos comandos utilizados acima
 
@@ -44,15 +45,17 @@ if False:
 
     print(frase2.strip())  # Remove todos os espaços excedentes da string
     print(frase2.rstrip())  # Remove os espaços excedentes apenas do lado direito da string (inclusão do "r" no comando)
-    print(frase2.lstrip())  # Remove os espaços excedentes apenas do lado esquerdo da string (inclusão do "l" no comando)
-    print(frase2)  # Novamente, a string original não foi alterada permanentemente por nenhum dos comandos utilizados acima
+    print(
+        frase2.lstrip())  # Remove os espaços excedentes apenas do lado esquerdo da string (inclusão do "l" no comando)
+    print(
+        frase2)  # Novamente, a string original não foi alterada permanentemente por nenhum dos comandos utilizados acima
 
     print('')  # Linha em branco
 
     frase = frase.replace('Python', 'Android')  # Desta forma sim, a string original é substituída permanentemente
     print(frase)  # Exibe a string original já com as modificações feitas acima
 
-#String Split and Join
+# String Split and Join
 if False:
     frase = 'Curso em Vídeo Python'
     frase_separada = frase.split()  # Separa cada palavra da string em uma lista; os índices são refeitos
@@ -72,7 +75,7 @@ if False:
     frase_junta_espaco = ' '.join(frase_separada)  # Junta as palavras separadas na lista usando um espaço como divisor
     print(frase_junta_espaco)  # Exibe a string junta novamente, com o espaço sendo o divisor, como na origin
 
-#Long Text Print
+# Long Text Print
 if False:
     print('''Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Cras aliquam sapien non augue pharetra finibus. Integer ac justo quam.
@@ -81,7 +84,7 @@ if False:
     Etiam varius, enim ut tincidunt tristique, dui risus tristique quam, id iaculis ipsum sem nec elit.
     Nunc iaculis sit amet diam id lobortis. Nam egestas congue lectus vitae maximus.''')
 
-#manipulation list
+# manipulation list
 if False:
     frase = 'Curso em Vídeo Python'
     frase_dividida = frase.split()  # Atribui à variável "frase_dividida" a lista de palavras contidas em "frase"
@@ -89,4 +92,5 @@ if False:
     print(frase_dividida[2])  # Exibe a terceira palavra na lista
     print(frase_dividida[3][0])  # Exibe a primeira letra da quarta palavra na lista
     print(frase_dividida[3][0:3])  # Exibe da primeira até a terceira letra da quarta palavra na lista
-    print(frase_dividida[0][::2])  # Exibe da primeira até a última letra da primeira palavra na lista, pulando de 2 em 2
+    print(
+        frase_dividida[0][::2])  # Exibe da primeira até a última letra da primeira palavra na lista, pulando de 2 em 2
