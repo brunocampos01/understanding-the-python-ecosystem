@@ -24,13 +24,21 @@
     - [Unistall package](#unistall-package)
     - [Listing Packages](#listing-packagess)
 
+- **Command line**
+    - [Options Command]()
+        - [`-c` command]()
+        - `-m` [module-name]()
+        - `-d`
+        - `-v`
+    - [Executing modules as scripts]()
+
 - **Understanding**
     - [What's is Python ?](#what's-is-python-?)
     - [Python Files](#python-files)
-        - [Python: .py](#python:-.)
+        - [Files: .py](#Files:-.)
         - [`__init__.py`](#_init.py)
         - [Global Modules](#global-modules)
-        - [Python Compiler: .pyc](#python-compiler:)
+        - [Files Compiler: .pyc](#compiler-file)
         - [Requirements](#requirements)
     - [Interpreter and Compiler](#interpreter-and-compiler)
     - [Zen of Python](#zen-of-python)
@@ -229,9 +237,13 @@ which python
 
 ## Preparing Environment
 
-- Python PATH
-- How to alter Python PATH and Python version
-- Change versions of Python
+##### Enviornment Variables
+
+- To individual project
+`PYTHONPATH`search path until module.
+
+- To interpreter
+`PYTHONHOME` indicate standard libraries.
 
 ##### Configure Python PATH
 
@@ -246,7 +258,7 @@ sudo vim ~/.bashrc
 
 2. Insert Python PATH
 ```bash
-export PYTHON=/usr/bin/python<NUMER_VERSION>
+export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
 ```
 <img src='images/bashrc_python.png'>
 
@@ -272,7 +284,7 @@ update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSI
 update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION>
 ```
 
-- Alter python versions
+- Change python versions
 ```bash
 sudo update-alternatives --config python
 ```
@@ -291,7 +303,7 @@ python --version
 ## Python Files
 REFACTOR
 
-#### Python: `.py`
+#### Files: `.py`
 
 File: Typically, a Python file is any file that contains code. Most Python files have the extension .py.
 
@@ -349,6 +361,10 @@ from package import item.subitem.subsubite...
 from module import name
 ```
 
+TODO:
+- https://nbviewer.jupyter.org/github/ricardoduarte/python-for-developers/blob/master/Chapter10/Chapter10_Packages.ipynb
+
+
 #### Global Modules
 - Módulos que são projetados para uso via M import * devem usar o mecanismo `__ all __` para impedir a exportação de globals
 
@@ -370,7 +386,7 @@ EXAMPLES...
 - Read: https://realpython.com/run-python-scripts/
 
 
-#### Python Compiler: `.pyc`
+#### Compiler Files: `.pyc`
 Program **doesn’t run any faster when it is read from a .pyc** file than when it is read from a .py file;
 
 .pyc it's faster to loaded modules
@@ -379,7 +395,7 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 #### Requirements
 “Requirements files” are files containing a list of items to be installed using pip install.
 
-##### Generate file `requiremens.txt`
+##### Generate file `requirements.txt`
 ```bash
 pip freeze > requirements.txt
 ```
@@ -405,7 +421,6 @@ pip install -r requirements.txt
 ---
 
 ## Virtual Environment Python
-(TODO)
 
 The Python can is executed in a environment virtual with isolation from system.<br/>
 Each virtual environment has its **own Python binary**.
@@ -430,8 +445,18 @@ source <DIR>/bin/activate
 
 ## Pip
 
-TODO
+“search”, “install”, “uninstall”, “freeze”
 
+##### `pip freeze`
+Will produce a list of the installed packages. A common convention is to put this list in a requirements.txt
+
+```bash
+(venv) $ pip freeze > requirements.txt
+(venv) $ cat requirements.txt
+novas==3.1.1.3
+numpy==1.9.2
+requests==2.7.0
+```
 ---
 
 ## Undertanding
@@ -472,6 +497,39 @@ NOTE: [PEP 20](https://www.python.org/dev/peps/pep-0020/)
 ## Types
 
 <img src="images/Python_3._The_standard_type_hierarchy.png" width="1000" />
+
+Examples:
+```python
+# Converting real to integer
+print 'int(3.14) =', int(3.14)
+
+# Converting integer to real
+print 'float(5) =', float(5)
+
+# Calculation between integer and real results in real
+print '5.0 / 2 + 3 = ', 5.0 / 2 + 3
+
+# Integers in other base
+print "int('20', 8) =", int('20', 8) # base 8
+print "int('20', 16) =", int('20', 16) # base 16
+
+# Operations with complex numbers
+c = 3 + 4j
+print 'c =', c
+print 'Real Part:', c.real
+print 'Imaginary Part:', c.imag
+print 'Conjugate:', c.conjugate()
+
+# int(3.14) = 3
+# float(5) = 5.0
+# 5.0 / 2 + 3 =  5.5
+# int('20', 8) = 16
+# int('20', 16) = 32
+# c = (3+4j)
+# Real Part: 3.0
+# Imaginary Part: 4.0
+# Conjugate: (3-4j)
+```
 
 ---
 ## Interpreter and Compiler
@@ -1066,6 +1124,10 @@ for q, a in zip(questions, answers):
 
 
 ## Functions
+
+TODO:
+- https://nbviewer.jupyter.org/github/ricardoduarte/python-for-developers/blob/master/Chapter6/Chapter6_Functions.ipynb
+
 - examples
 - Optional arguments
 - Unpacking Argument (**kwargs)
@@ -1077,7 +1139,6 @@ for q, a in zip(questions, answers):
 def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
 ```
 Accepts **one required argument (`voltage`)** and three optional arguments (`state, action, and type`)
-
 
 ##### Unpacking Argument
 ```python
@@ -1100,6 +1161,9 @@ parrot(**d)
 ...
 
 ## Strings
+TODO:
+- https://nbviewer.jupyter.org/github/ricardoduarte/python-for-developers/blob/master/Chapter5/Chapter5_Types.ipynb
+
 ```
  +---+---+---+---+---+---+
  | P | y | t | h | o | n |
