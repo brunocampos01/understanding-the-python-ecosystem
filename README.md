@@ -446,6 +446,9 @@ python -m venv
 ```bash
 source <DIR>/bin/activate
 ```
+
+References:
+- https://realpython.com/python-virtual-environments-a-primer/
 ---
 
 ## Managemant Libraries
