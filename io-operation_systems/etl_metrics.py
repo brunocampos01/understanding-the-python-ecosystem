@@ -103,7 +103,8 @@ def main():
                         help='Start date, e.g 2019-05-30')
     parser.add_argument('-ed', type=str, action='store', required=True,
                         help='End date including, e.g 2019-05-31')
-    parser.add_argument('-table', type=str, action='store', required=True,
+    parser.add_argument('-table', type=str, action='store',
+                        required=True,
                         help='Choose which table [modules, jobs]')
     parser.add_argument('-status', type=str, action='store',
                         help='Status of modules/jobs')

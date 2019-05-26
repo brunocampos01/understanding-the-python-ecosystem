@@ -13,6 +13,5 @@ d = {"voltage": "four million",
      "state": "bleedin' demised",
      "action": "VOOM"}
 
-
 if __name__ == '__main__':
     parrot(**d)

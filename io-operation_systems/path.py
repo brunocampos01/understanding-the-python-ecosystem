@@ -1,5 +1,5 @@
-import os
 import configparser
+import os
 
 
 PATH_PROJECT = os.path.dirname(__file__)

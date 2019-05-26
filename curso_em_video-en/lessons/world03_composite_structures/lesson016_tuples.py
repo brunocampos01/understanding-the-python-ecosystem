@@ -28,10 +28,12 @@ if False:
         print('Eu vou comer {}.'.format(comida))
 
     for cont in range(0, len(lanche)):
-        print('Comi {} na seguinte ordem: {}'.format(lanche[cont], cont))
+        print(
+            'Comi {} na seguinte ordem: {}'.format(lanche[cont], cont))
         print(lanche[cont])
 
-    for indice, quecomida in enumerate(lanche):  # Para cada posição "pos" e elemento "quecomida" em "lanche"...
+    for indice, quecomida in enumerate(
+        lanche):  # Para cada posição "pos" e elemento "quecomida" em "lanche"...
         print(f'{quecomida} na posição {indice}')
 
 if True:
@@ -52,7 +54,8 @@ if False:
 
 # Tuplas aceitam vários tipos de dados, não necessariamente do mesmo tipo.
 if False:
-    pessoa = ('Gustavo', 39, 'M', 99.88)  # Tupla "pessoa" com dados str, int, str e float, respectivamente
+    pessoa = ('Gustavo', 39, 'M',
+              99.88)  # Tupla "pessoa" com dados str, int, str e float, respectivamente
     print(pessoa)  # Exibe ('Gustavo', 39, 'M', 99.88)
 
 if False:

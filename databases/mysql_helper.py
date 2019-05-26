@@ -30,7 +30,8 @@ def read_script_sql(path):
     :return: object with querys of script sql
     """
     try:
-        return [query.strip() for query in open(path, 'r').read().strip().split(';')]
+        return [query.strip() for query in
+                open(path, 'r').read().strip().split(';')]
     except IOError:
         logging.exception("Failed of read in file %s:", path)
 
@@ -63,8 +64,10 @@ def create_user(database, host, creater, pw_creater, user, password):
     """
     logging.info("Creating user %s", user)
 
-    query_create = "CREATE USER'{}'@'%' IDENTIFIED BY '{}';".format(user, password)
-    query_grant = "GRANT ALL PRIVILEGES ON {}.* TO '{}'@'%';".format(database, user)
+    query_create = "CREATE USER'{}'@'%' IDENTIFIED BY '{}';".format(
+        user, password)
+    query_grant = "GRANT ALL PRIVILEGES ON {}.* TO '{}'@'%';".format(
+        database, user)
     query_load_permissions = "FLUSH PRIVILEGES;"
     query_list = [query_create, query_grant, query_load_permissions]
 
@@ -78,7 +81,8 @@ def create_user(database, host, creater, pw_creater, user, password):
             logging.error("Failed creating user:"
                           "\ndatabase: %s, host: %s, creater: %s, pw_creater: %s, user: %s, password: %s"
                           "\nquery: %s"
-                          % (database, host, creater, pw_creater, user, password, query))
+                          % (database, host, creater, pw_creater, user,
+                             password, query))
             raise
 
     close_conn(connection=cnx, cursor=cursor)
@@ -100,8 +104,9 @@ def create_databases(host, user, password, db_name):
     try:
         cursor.execute("CREATE DATABASE {};".format(db_name))
     except mysql.connector.Error:
-        logging.error("Failed creating database:\nhost: %s, user: %s, password: %s, db_name: %s"
-                      % (host, user, password, db_name))
+        logging.error(
+            "Failed creating database:\nhost: %s, user: %s, password: %s, db_name: %s"
+            % (host, user, password, db_name))
         raise
     finally:
         close_conn(connection=cnx, cursor=cursor)

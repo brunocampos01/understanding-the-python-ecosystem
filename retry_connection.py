@@ -25,7 +25,8 @@ def retry(url, timeout, max_retries, user, password):
     raise Exception('Request Error in ', url)
 
 
-def __init__(self, db_hostname, user, password, connection_timeout, limit_retries):
+def __init__(self, db_hostname, user, password, connection_timeout,
+             limit_retries):
     self.db_hostname = db_hostname
     self.user = user
     self.password = password
@@ -48,7 +49,8 @@ def connect_db(self, limit_retries, timeout):
 
             if retry <= limit_retries:
                 retry += 1
-                logging.error("Connection failed. Retry [%s / %s]" % (retry, limit_retries))
+                logging.error("Connection failed. Retry [%s / %s]" % (
+                retry, limit_retries))
                 time.sleep(timeout)
 
             else:

@@ -1,6 +1,5 @@
 from time import sleep
 
-
 print("\nThis is my file to demonstrate best practices.")
 
 
