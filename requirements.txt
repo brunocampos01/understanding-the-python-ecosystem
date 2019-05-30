@@ -13,7 +13,7 @@ matplotlib==3.1.0
 mysql-connector-python==8.0.16
 numpy==1.16.4
 pandas==0.24.2
-protobuf==3.7.1
+protobuf==3.8.0
 pyparsing==2.4.0
 python-dateutil==2.8.0
 pytz==2019.1
