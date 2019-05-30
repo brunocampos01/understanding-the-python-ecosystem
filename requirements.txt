@@ -5,7 +5,7 @@ Click==7.0
 Flask==1.0.2
 itsdangerous==1.1.0
 Jinja2==2.10
-MarkupSafe==1.0
+MarkupSafe==1.1.1
 Werkzeug==0.15.4
 cycler==0.10.0
 kiwisolver==1.1.0
