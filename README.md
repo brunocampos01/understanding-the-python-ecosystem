@@ -173,7 +173,8 @@ sudo apt install python3.6
 sudo apt install build-essential \
                  libssl-dev \
                  libffi-dev \
-                 python3-dev
+                 python3-dev\
+                 python3-venv
 ```
 
 - Git
@@ -188,11 +189,12 @@ sudo apt install -y python3-pip
 
 - Libraries
 ```bash
-pip install --user virtualenv \
-                   numpy \
-                   pandas \
-                   matplotlib \
-                   mysql-connector-python
+pip3 install --user od \
+                    numpy \
+                    pandas \
+                    matplotlib \
+                    virtualenv \
+                    mysql-connector-python
 ```
 
 - Vim editor
