@@ -1,11 +1,58 @@
+##############################################################################
+# Helps Coding Styles 
+
+
+# References:
+#   https://editorconfig.org/
+#   https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig
+##############################################################################
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
 [*]
-charset=utf-8
-end_of_line=lf
-insert_final_newline=false
-indent_style=space
-indent_size=4
 
-[{.eslintrc,.babelrc,jest.config,.stylelintrc,*.bowerrc,*.jsb3,*.jsb2,*.json}]
-indent_style=space
-indent_size=2
+# Always indent by 4 characters
+indent_size = 4
 
+# Docstrings and comments use max_line_length = 79
+max_line_length = 79
+
+# Enforce Unix style line endings (\n only)
+end_of_line = lf
+
+# Set default charset
+charset = utf-8
+
+# Always end files with a blank line
+insert_final_newline = true
+
+# Force space characters for indentation
+indent_style = space
+
+# Remove whitespace characters at the end of line
+trim_trailing_whitespace = true
+
+
+# HTML files
+[*.html]
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_size = 2
+insert_final_newline = ignore
+
+# JavaScript files
+[**.min.js]
+indent_style = ignore
+insert_final_newline = ignore
+
+# Makefiles
+[Makefile]
+indent_style = tab
+
+# Batch files
+[*.bat]
+indent_style = tab
