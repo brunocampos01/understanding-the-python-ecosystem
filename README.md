@@ -194,6 +194,7 @@ pip3 install --user od \
                     pandas \
                     matplotlib \
                     virtualenv \
+                    jupyter \
                     mysql-connector-python
 ```
 
