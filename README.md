@@ -12,7 +12,7 @@
 # Summary
 
 - **Configuration**
-    - [Pre Requirements](#pre-requirements)
+    - [Requirements](#requirements)
     - [Check Python Configuration](#check-python-configuration)
     - [Preparing Environment](#preparing-environment)
     - [Virtual Environment Python](#virtual-environment-python)
@@ -161,7 +161,7 @@
 
 ---
 
-## Pre Requirements
+## Requirements
 
 - Python 3.6 or more
 ```bash
