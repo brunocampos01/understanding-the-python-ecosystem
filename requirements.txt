@@ -18,4 +18,4 @@ pyparsing==2.4.2
 python-dateutil==2.8.0
 pytz==2019.2
 six==1.12.0
-virtualenv==16.7.3
+virtualenv==16.7.4
