@@ -1,6 +1,8 @@
 import sys
-import config
+
 from bottle import app
+
+from configuration_files.configuration_by_environment import config
 
 
 if __name__ == '__main__':
@@ -8,10 +10,13 @@ if __name__ == '__main__':
 
     if env == 'dev':
         app.config = config.DevelopmentConfig
+
     elif env == 'test':
         app.config = config.TestConfig
     elif env == 'prod':
+        print('Select: production')
         app.config = config.ProductionConfig
+
     else:
         raise ValueError('Invalid environment name')
 

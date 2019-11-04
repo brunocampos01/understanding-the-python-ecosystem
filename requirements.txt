@@ -1,5 +1,5 @@
 requests
-mysql
+mysql-connector-python
 docopt
 Click==7.0
 Flask==1.1.1
