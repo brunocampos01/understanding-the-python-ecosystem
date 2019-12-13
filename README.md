@@ -199,7 +199,7 @@ sudo apt install build-essential \
 sudo apt install git
 ```
 
-- pip (package manager)
+- pip3 (package manager)
 ```bash
 sudo apt install -y python3-pip
 ```
@@ -220,13 +220,6 @@ pip3 install --user od \
 sudo apt install vim
 ```
 
-- Jupyter Notebook
-```bash
-sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh; \
-chmod +x Anaconda3-5.3.1-Linux-x86_64.sh ; \
-./Anaconda3-5.3.1-Linux-x86_64.sh
-```
-
 ---
 
 ## Check Python Configuration
@@ -235,11 +228,15 @@ chmod +x Anaconda3-5.3.1-Linux-x86_64.sh ; \
 
 
 ##### Check what version Python
-
 ```bash
 python --version
 
 # Python 3.6.7
+```
+
+If return Python2, try set a alias in file .bashrc
+```
+alias python-python3
 ```
 
 ##### Check where version install
