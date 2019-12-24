@@ -38,7 +38,7 @@
     - [Zen of Python](#zen-of-python)
     - [Types](#types)
 
-- **Programming Recommendations**
+- **Best Pratices**
     - [Identation and Length](#identation-and-length)
     - [Line Break After a Binary Operator](#line-break-after-a-binary-operator)
     - [Naming](#naming)
@@ -54,7 +54,7 @@
     - [Exception](#exception)
     - [Return](#return)
     - [Type Comparisons](#type-comparisons)
-
+    - [Methods with numerous parameters ](#methods-with-numerous-parameters)
 - **Docstrings**
     - [`__doc__`](#__doc__)
     - [`help()`](#help)
@@ -1011,6 +1011,39 @@ Class docstrings should contain the following information:
 - https://realpython.com/python-pep8/#naming-conventions
 - https://pep8.org
 - Style guide Google: https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings
+
+#### Methods with numerous parameters 
+Methods with numerous parameters are a challenge to maintain, especially if most of them share the same datatype. 
+<br/>
+These situations usually denote the **need for new objects to wrap the
+ numerous parameters**.
+
+
+#### Example(s):
+
+- too many arguments
+```python
+def add_person(birthYear: int, birthMonth: int, birthDate: int,
+               height: int, weight: int,
+               ssn: int):
+'''too many arguments'''
+
+    . . . 
+```
+- preferred approach
+```python
+def add_person(birthdate: 'Date',
+               measurements: 'BodyMeasurements',
+               ssn: int):
+'''preferred approach'''
+
+    . . . 
+```
+
+
+## Cyclomatic Complexity
+cyclomatic complexity counts the number of decision points in a method
+
 ---
 
 # Basic Comands
