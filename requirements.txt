@@ -11,12 +11,12 @@ cycler==0.10.0
 kiwisolver==1.1.0
 matplotlib==3.1.2
 mysql-connector-python==8.0.18
-numpy==1.17.4
+numpy==1.18.0
 pandas==0.25.3
-protobuf==3.11.0
+protobuf==3.11.1
 pyparsing==2.4.5
 python-dateutil==2.8.1
 pytz==2019.3
 six==1.13.0
-virtualenv==16.7.8
+virtualenv==16.7.9
 wget==3.2
