@@ -194,9 +194,14 @@ sudo apt install build-essential \
                  python3-venv
 ```
 
-- Git
+- [Git](https://github.com/brunocampos01/devops/tree/master/git)
 ```bash
 sudo apt install git
+```
+
+- Vim editor (git's default editor)
+```bash
+sudo apt install vim
 ```
 
 - pip3 (package manager)
@@ -204,7 +209,7 @@ sudo apt install git
 sudo apt install -y python3-pip
 ```
 
-- Libraries
+- Libraries Used in this Project
 ```bash
 pip3 install --user od \
                     numpy \
@@ -213,11 +218,6 @@ pip3 install --user od \
                     virtualenv \
                     jupyter \
                     mysql-connector-python
-```
-
-- Vim editor
-```bash
-sudo apt install vim
 ```
 
 ---
@@ -234,9 +234,10 @@ python --version
 # Python 3.6.7
 ```
 
-If return Python2, try set a alias in file .bashrc
+If return Python2, try set a alias in file [.bashrc](https://github.com/brunocampos01/home-sweet-home/blob/master/.bashrc)
 ```
-alias python-python3
+# Python
+alias python=python3
 ```
 
 ##### Check where version install
@@ -254,7 +255,7 @@ which python
 ##### Enviornment Variables
 
 - To individual project
-`PYTHONPATH`search path until module.
+`PYTHONPATH` search path until module.
 
 - To interpreter
 `PYTHONHOME` indicate standard libraries.
@@ -290,9 +291,10 @@ or
 
 ##### Change Versions of Python
 
-CMD: `update-alternatives` symbolic links determining default commands
+Terminal: `update-alternatives` symbolic links determining default commands
 
-- Install multiples pythons<br/>
+- Install multiples pythons
+
 ```bash
 update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1
 update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION>
@@ -311,6 +313,21 @@ python --version
 
 # Python 3.4
 ```
+
+---
+
+## Python Tools
+
+https://packaging.python.org/key_projects/#pipenv
+
+In production ...
+- distlib
+- pip
+- Pipfile
+- Pipenv
+- virtualenv
+- eggs
+- Wheel
 
 ---
 
@@ -490,10 +507,7 @@ requests==2.7.0
 
 ## Undertanding
 
-## What's is Python ?
-todo
-
-## Zen of Python
+### Zen of Python
 
 <img src="images/zen.png" width="30%" />
 
