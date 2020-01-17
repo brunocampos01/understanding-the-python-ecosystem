@@ -86,95 +86,115 @@
 
 <br/>
 
-- **Awesome Python**
-    - [Admin Panels](#admin-panels)
-    - [Algorithms and Design Patterns](#algorithms-and-design-patterns)
-    - [Audio](#audio)
-    - [Authentication](#authentication)
-    - [Build Tools](#build-tools)
-    - [Built-in Classes Enhancement](#built-in-classes-enhancement)
-    - [Caching](#caching)
-    - [ChatOps Tools](#chatops-tools)
-    - [CMS](#cms)
-    - [Code Analysis](#code-analysis)
-    - [Command-line Interface Development](#command-line-interface-development)
-    - [Command-line Tools](#command-line-tools)
-    - [Compatibility](#compatibility)
-    - [Computer Vision](#computer-vision)
-    - [Concurrency and Parallelism](#concurrency-and-parallelism)
-    - [Configuration](#configuration)
-    - [Cryptography](#cryptography)
-    - [Data Analysis](#data-analysis)
-    - [Data Validation](#data-validation)
-    - [Data Visualization](#data-visualization)
-    - [Database](#database)
-    - [Database Drivers](#database-drivers)
-    - [Date and Time](#date-and-time)
-    - [Debugging Tools](#debugging-tools)
-    - [Deep Learning](#deep-learning)
-    - [DevOps Tools](#devops-tools)
-    - [Distributed Computing](#distributed-computing)
-    - [Distribution](#distribution)
-    - [Documentation](#documentation)
-    - [Downloader](#downloader)
-    - [E-commerce](#e-commerce)
-    - [Editor Plugins and IDEs](#editor-plugins-and-ides)
-    - [Email](#email)
-    - [Environment Management](#environment-management)
-    - [Files](#files)
-    - [Foreign Function Interface](#foreign-function-interface)
-    - [Forms](#forms)
-    - [Functional Programming](#functional-programming)
-    - [Game Development](#game-development)
-    - [Geolocation](#geolocation)
-    - [GUI Development](#gui-development)
-    - [Hardware](#hardware)
-    - [HTML Manipulation](#html-manipulation)
-    - [HTTP Clients](#http-clients)
-    - [Image Processing](#image-processing)
-    - [Implementations](#implementations)
-    - [Interactive Interpreter](#interactive-interpreter)
-    - [Internationalization](#internationalization)
-    - [Job Scheduler](#job-scheduler)
-    - [Logging](#logging)
-    - [Machine Learning](#machine-learning)
-    - [Miscellaneous](#miscellaneous)
-    - [Natural Language Processing](#natural-language-processing)
-    - [Network Virtualization](#network-virtualization)
-    - [Networking](#networking)
-    - [News Feed](#news-feed)
-    - [ORM](#orm)
-    - [Package Management](#package-management)
-    - [Package Repositories](#package-repositories)
-    - [Permissions](#permissions)
-    - [Processes](#processes)
-    - [Queue](#queue)
-    - [Recommender Systems](#recommender-systems)
-    - [RESTful API](#restful-api)
-    - [Robotics](#robotics)
-    - [RPC Servers](#rpc-servers)
-    - [Science](#science)
-    - [Search](#search)
-    - [Serialization](#serialization)
-    - [Serverless Frameworks](#serverless-frameworks)
-    - [Specific Formats Processing](#specific-formats-processing)
-    - [Static Site Generator](#static-site-generator)
-    - [Tagging](#tagging)
-    - [Template Engine](#template-engine)
-    - [Testing](#testing)
-    - [Text Processing](#text-processing)
-    - [Third-party APIs](#third-party-apis)
-    - [URL Manipulation](#url-manipulation)
-    - [Video](#video)
-    - [Web Asset Management](#web-asset-management)
-    - [Web Content Extracting](#web-content-extracting)
-    - [Web Crawling](#web-crawling)
-    - [Web Frameworks](#web-frameworks)
-    - [WebSocket](#websocket)
-    - [WSGI Servers](#wsgi-servers)
-- [Services](#services)
-    - [Code Quality](#code-quality)
-    - [Continuous Integration](#continuous-integration)
+## **Awesome Python**
+
+**Data Engineering**
+- [Caching](#caching)
+- [Queue](#queue)
+- [Data Serialization](#data-serialization)
+- [Data Analysis](#data-analysis)
+- [Data Validation](#data-validation)
+- [Data Visualization](#data-visualization)
+
+**Artificial Inteligence**
+- [Computer Vision](#computer-vision)
+- [Machine Learning](#machine-learning)
+- [Deep Learning](#deep-learning)
+- [Network Virtualization](#network-virtualization)
+- [Text Processing](#text-processing)
+- [Natural Language Processing](#natural-language-processing)
+- [ChatOps Tools](#chatops-tools)
+- [Image Processing](#image-processing)
+- [Search](#search)
+- [Robotics](#robotics)
+- [Science](#science)
+
+**Databases**
+- [Database](#database)
+- [Database Drivers](#database-drivers)
+- [ORM](#orm)
+
+**Security**
+- [Authentication](#authentication)
+- [Cryptography](#cryptography)
+- [Permissions](#permissions)
+
+**Operation**
+- [Date and Time](#date-and-time)
+- [Built-in Classes Enhancement](#built-in-classes-enhancement)
+- [Command-line Interface Development](#command-line-interface-development)
+- [Command-line Tools](#command-line-tools)
+- [Environment Management](#environment-management)
+- [Files](#files)
+- [Networking](#networking)
+- [Audio](#audio)
+- [Hardware](#hardware)
+- [Video](#video)
+
+**DevOps**
+- [Parsing](#parsing)
+- [Processes](#processes)
+- [Concurrency and Parallelism](#concurrency-and-parallelism)
+- [Distributed Computing](#distributed-computing)
+- [Compatibility](#compatibility)
+- [Configuration](#configuration)
+- [Debugging Tools](#debugging-tools)
+- [DevOps Tools](#devops-tools)
+- [Distribution](#distribution)
+- [Documentation](#documentation)
+- [Downloader](#downloader)
+- [Logging](#logging)
+- [Job Scheduler](#job-scheduler)
+- [Continuous Integration](#continuous-integration)
+
+
+**Cloud**
+- [Serverless Frameworks](#serverless-frameworks)
+
+**Python**
+- [Algorithms and Design Patterns](#algorithms-and-design-patterns)
+- [Code Analysis](#code-analysis)
+- [Code Quality](#code-quality)
+- [Functional Programming](#functional-programming)
+- [Implementations](#implementations)
+- [Interactive Interpreter](#interactive-interpreter)
+- [Package Management](#package-management)
+- [Package Repositories](#package-repositories)
+- [Testing](#testing)
+- [Editor Plugins and IDEs](#editor-plugins-and-ides)
+- [Build Tools](#build-tools)
+
+**Web**
+- [Admin Panels](#admin-panels)
+- [CMS](#cms)
+- [Forms](#forms)
+- [HTML Manipulation](#html-manipulation)
+- [HTTP Clients](#http-clients)
+- [News Feed](#news-feed)
+- [Static Site Generator](#static-site-generator)
+- [URL Manipulation](#url-manipulation)
+- [Web Asset Management](#web-asset-management)
+- [Web Content Extracting](#web-content-extracting)
+- [Web Crawling](#web-crawling)
+- [Web Frameworks](#web-frameworks)
+- [WebSocket](#websocket)
+- [WSGI Servers](#wsgi-servers)
+- [Tagging](#tagging)
+- [Template Engine](#template-engine)
+
+**Miscellaneous**
+- [Miscellaneous](#miscellaneous)
+- [Recommender Systems](#recommender-systems)
+- [Game Development](#game-development)
+- [Geolocation](#geolocation)
+- [GUI Development](#gui-development)
+- [E-commerce](#e-commerce)
+- [Email](#email)
+
+**Services**
+- [RESTful API](#restful-api)
+- [Services](#services) 
+- [Third-party APIs](#third-party-apis)  
 
 ---
 
@@ -1457,7 +1477,6 @@ A curated list of awesome Python frameworks, libraries, software and resources.
 
 *Compile software from source code.*
 
-* [BitBake](http://www.yoctoproject.org/docs/1.6/bitbake-user-manual/bitbake-user-manual.html) - A make-like build tool for embedded Linux.
 * [buildout](http://www.buildout.org/en/latest/) - A build system for creating, assembling and deploying applications from multiple parts.
 * [PlatformIO](https://github.com/platformio/platformio-core) - A console tool to build code with different development platforms.
 * [pybuilder](https://github.com/pybuilder/pybuilder) - A continuous build tool written in pure Python.
@@ -1861,14 +1880,6 @@ A curated list of awesome Python frameworks, libraries, software and resources.
 * [Unipath](https://github.com/mikeorr/Unipath) - An object-oriented approach to file/directory operations.
 * [watchdog](https://github.com/gorakhargosh/watchdog) - API and shell utilities to monitor file system events.
 
-## Foreign Function Interface
-
-*Libraries for providing foreign function interface.*
-
-* [cffi](https://pypi.org/project/cffi/) - Foreign Function Interface for Python calling C code.
-* [ctypes](https://docs.python.org/3/library/ctypes.html) - (Python standard library) Foreign Function Interface for Python calling C code.
-* [PyCUDA](https://mathema.tician.de/software/pycuda/) - A Python wrapper for Nvidia's CUDA API.
-* [SWIG](http://www.swig.org/Doc1.3/Python.html) - Simplified Wrapper and Interface Generator.
 
 ## Forms
 
@@ -2017,12 +2028,6 @@ A curated list of awesome Python frameworks, libraries, software and resources.
     * [awesome-jupyter](https://github.com/markusschanta/awesome-jupyter)
 * [ptpython](https://github.com/jonathanslenders/ptpython) - Advanced Python REPL built on top of the [python-prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit).
 
-## Internationalization
-
-*Libraries for working with i18n.*
-
-* [Babel](http://babel.pocoo.org/en/latest/) - An internationalization library for Python.
-* [PyICU](https://github.com/ovalhub/pyicu) - A wrapper of International Components for Unicode C++ library ([ICU](http://site.icu-project.org/)).
 
 ## Job Scheduler
 
@@ -2074,11 +2079,10 @@ A curated list of awesome Python frameworks, libraries, software and resources.
 
 *Useful libraries or tools that don't fit in the categories above.*
 
-* [blinker](https://github.com/jek/blinker) - A fast Python in-process signal/event dispatching system.
+
 * [boltons](https://github.com/mahmoud/boltons) - A set of pure-Python utilities.
 * [itsdangerous](https://github.com/pallets/itsdangerous) - Various helpers to pass trusted data to untrusted environments.
-* [pluginbase](https://github.com/mitsuhiko/pluginbase) - A simple but flexible plugin system for Python.
-* [tryton](http://www.tryton.org/) - A general purpose business framework.
+
 
 ## Natural Language Processing
 
@@ -2289,7 +2293,7 @@ A curated list of awesome Python frameworks, libraries, software and resources.
 * [python-lambda](https://github.com/nficano/python-lambda) - A toolkit for developing and deploying Python code in AWS Lambda.
 * [Zappa](https://github.com/Miserlou/Zappa) - A tool for deploying WSGI applications on AWS Lambda and API Gateway.
 
-## Specific Formats Processing
+## Parsing
 
 *Libraries for parsing and manipulating specific text formats.*
 
