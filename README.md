@@ -7,8 +7,11 @@
 
 <img src='images/python.png'>
 
-Estes guias tem por objetivo compreender o ambiente de desenvolvimento e execucao de Python. Alem disso, vou cobrir topicos que envolvem desde os fundamentos da linguagem, boas praticas, build, deploy, distribuicao ate topicos avancados de programacao na linguagem.
-Para topicos de programacao, o conteudo ficara dentro do topico [awesome].
+These guides aim to understand the development and execution environment of Python. In addition, I will cover topics ranging from language fundamentals, good practices, build, deploy, distribution to advanced language programming topics.
+For programming topics, the content will be inside the topic [Awesome Python](#awesome-Python).
+
+_Estes guias tem por objetivo compreender o ambiente de desenvolvimento e execucao de Python. Alem disso, vou cobrir topicos que envolvem desde os fundamentos da linguagem, boas praticas, build, deploy, distribuicao ate topicos avancados de programacao na linguagem.
+Para topicos de programacao, o conteudo ficara dentro do topico [Awesome Python](#awesome-Python)._
 
 # Summary
 [Before you start do this !](#before-you-start,-do-this-!)
@@ -22,12 +25,11 @@ This topic describe how to set up the environment to Python developement.
 - [Virtual Environment](#virtual-environment)
 
 ## Fundamentals
-- TODO
-- Complete Documentation(#https://docs.python.org/3/contents.html)
 - [What's is Python ?](#what's-is-python-?)
 - [Zen of Python](#zen-of-python)
 - [Types](#types)
 - [Interpreter and Compiler](#interpreter-and-compiler)
+- [Complete Documentation](#https://docs.python.org/3/contents.html)
 - [Main()](#main())
     - [__ main __](#main)
     - https://docs.python.org/3/library/index.html
@@ -385,9 +387,9 @@ sudo vim ~/.bashrc
 export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
 ```
 
-<img src='images/bashrc_python.png' width="90%">
+<img src='images/bashrc_python.png' width="40%">
 
-NOTE: quit vim: `ESC, :, w, q`
+NOTE: quit vim: `ESC, :wq`
 
 
 3. Update profile/bashrc
