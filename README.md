@@ -5,88 +5,111 @@
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 
-
 <img src='images/python.png'>
 
+Estes guias tem por objetivo compreender o ambiente de desenvolvimento e execucao de Python. Alem disso, vou cobrir topicos que envolvem desde os fundamentos da linguagem, boas praticas, build, deploy, distribuicao ate topicos avancados de programacao na linguagem.
+Para topicos de programacao, o conteudo ficara dentro do topico [awesome].
 
 # Summary
+[Before you start do this !](#before-you-start,-do-this-!)
 
-- **Configuration**
-    - [Requirements](#requirements)
-    - [Check Python Configuration](#check-python-configuration)
-    - [Preparing Environment](#preparing-environment)
-    - [Virtual Environment Python](#virtual-environment-python)
-    - [Managemant Libraries](#managemant-libraries)
+## Preparing the Environment for the Python
+This topic describe how to set up the environment to Python developement.
+- [Requirements File](#requirements-file)
+- [Pipfile and Pipfile.lock](#pipfile-and-pipfile.lock)
+- [Check Python Configuration](#check-python-configuration)
+- [Preparing Environment](#preparing-environment)
+- [Virtual Environment](#virtual-environment)
 
-- **Command line**
-    - [Options Command]()
-        - [`-c` command]()
-        - `-m` [module-name]()
-        - `-d`
-        - `-v`
-    - [Executing modules as scripts]()
+## Fundamentals
+- TODO
+- Complete Documentation(#https://docs.python.org/3/contents.html)
+- [What's is Python ?](#what's-is-python-?)
+- [Zen of Python](#zen-of-python)
+- [Types](#types)
+- [Interpreter and Compiler](#interpreter-and-compiler)
+- [Main()](#main())
+    - [__ main __](#main)
+    - https://docs.python.org/3/library/index.html
+    - https://docs.python.org/3/reference/index.html
+    - https://docs.python.org/3/howto/index.html
+    - https://docs.python.org/3/reference/import.
+    - html#replacing-the-standard-import-system
+- [Executing modules as scripts](#)
+- [Options Command](#)
+- [`-c` command](#)
+- [`-m` module-name](#) https://realpython.com/run-python-scripts/
+- Language limitations
+  - GIL
 
-- **Understanding**
-    - [What's is Python ?](#what's-is-python-?)
-    - [Python Files](#python-files)
-        - [Files: .py](#Files:-.)
-        - [`__init__.py`](#_init.py)
-        - [Global Modules](#global-modules)
-        - [Files Compiler: .pyc](#compiler-file)
-        - [Requirements](#requirements)
-    - [Interpreter and Compiler](#interpreter-and-compiler)
-    - [Zen of Python](#zen-of-python)
-    - [Types](#types)
+## Advanced
+- Anonymous functions (lambda)
+  -https://pt.stackoverflow.com/questions/50422/como-declarar-uma-fun%C3%A7%C3%A3o-an%C3%B4nima-no-python
+- Generators
+- Iterators
+- Decorators
+- Personal Exceptions
+- Enfeites em funções
+- Metaclasses
+- coroutine function
+- concurrent
 
-- **Best Pratices**
-    - [Identation and Length](#identation-and-length)
-    - [Line Break After a Binary Operator](#line-break-after-a-binary-operator)
-    - [Naming](#naming)
-    - [Encoding](#encoding)
-    - [Strings `' '` and `" "`](#strings-and)
-    - [Comments `#`](#comments)
-    - [Imports](#imports)
-    - [Dunders to Documentation](#dunders-to-documentation)
-    - [Annotation Functions](#annotation-functions)
-        - [Type Hints](#type-hints)
-    - [String Concatenation](#string-concatenation)
-    - [String Methods](#string-methods)
-    - [Exception](#exception)
-    - [Return](#return)
-    - [Type Comparisons](#type-comparisons)
-    - [Methods with numerous parameters ](#methods-with-numerous-parameters)
-- **Docstrings**
+## Build, Distribute and Deploy Python Code
+This part of the guide focuses on sharing and deploying your Python code.
+- https://docs.python-guide.org/
+
+## Python Files
+- [.py](#Files:-.)
+- [.pyc](#Files:-.)
+- [.pyo](#Files:-.)
+- [.egg](#Files:-.)
+- [`__init__.py`](#_init.py)
+- [Requirements File](#requirements-file)
+- [Pipfile and Pipfile.lock](#pipfile-and-pipfile.lock)
+
+## Books
+- https://www.packtpub.com/application-development/expert-python-programming
+
+## Best Pratices
+- [Identation and Length](#identation-and-length)
+- [Line Break After a Binary Operator](#line-break-after-a-binary-operator)
+- [Naming](#naming)
+- [Encoding](#encoding)
+- [Strings `' '` and `" "`](#strings-and)
+- [Comments `#`](#comments)
+- [Imports](#imports)
+- [Dunders to Documentation](#dunders-to-documentation)
+- [Annotation Functions](#annotation-functions)
+ - [Type Hints](#type-hints)
+- [String Concatenation](#string-concatenation)
+- [String Methods](#string-methods)
+- [Exception](#exception)
+- [Return](#return)
+- [Type Comparisons](#type-comparisons)
+- [Methods with numerous parameters ](#methods-with-numerous-parameters)
+- Docstrings
     - [`__doc__`](#__doc__)
     - [`help()`](#help)
     - [Scripts with docstrings](#scripts-with-docstrings)
     - [Functions with Docstrings](#functions-with-docstrings)
     - [Class with Docstrings](#class-with-docstrings)
-<br/>
+TODO - https://realpython.com/documenting-python-code/
+TODO - https://docs.python-guide.org/
 
-- **Fundamentals** _Read in jupyter notebook_
-    - [Main()](#main())
-    - [__ main __](#main)
-    - TODO
-    - https://docs.python.org/3/library/index.html
-    - https://docs.python.org/3/reference/index.html
-    - https://docs.python.org/3/howto/index.html
-<br/>
+### Curso em Vídeo: resolutions exercises
+- Class notes and exercises solved
+- Teacher: Gustavo Guanabara.
 
-- **Curso em Vídeo: resolutions exercises**
-    - Class notes and exercises solved
-    - Teacher: Gustavo Guanabara.
-
-        Words   | Themes
-        -------- | ---
-        1 | [Fundamentals](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
-        2 | [Control Structures](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
-        3 | [Compound Structures](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
-        4 | [Functions](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
-
+Words   | Themes
+------- | ---
+1 | [Fundamentals](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
+2 | [Control Structures](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
+3 | [Compound Structures](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
+4 | [Functions](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
 
 <br/>
 
-## **Awesome Python**
+# **Awesome Python**
 
 **Data Engineering**
 - [Caching](#caching)
@@ -147,9 +170,9 @@
 - [Job Scheduler](#job-scheduler)
 - [Continuous Integration](#continuous-integration)
 
-
 **Cloud**
 - [Serverless Frameworks](#serverless-frameworks)
+- [Libraries to management services in cloud](#libraries-to-managenent-services-in-cloud)
 
 **Python**
 - [Algorithms and Design Patterns](#algorithms-and-design-patterns)
@@ -163,6 +186,12 @@
 - [Testing](#testing)
 - [Editor Plugins and IDEs](#editor-plugins-and-ides)
 - [Build Tools](#build-tools)
+
+**Managemant Libraries**
+- [Python Package Index](https://pypi.org/)
+- [Poetry](https://python-poetry.org/)
+- [Conda](https://docs.conda.io/en/latest/)
+- [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/)
 
 **Web**
 - [Admin Panels](#admin-panels)
@@ -193,27 +222,55 @@
 
 **Services**
 - [RESTful API](#restful-api)
-- [Services](#services) 
-- [Third-party APIs](#third-party-apis)  
+- [Services](#services)
+- [Third-party APIs](#third-party-apis)
 
+### FAQ
+- How do I configure my computer to run Python code?
+- How do I configure my computer to develop in Python?
+- What are the best practices to prepare an environment that runs Python?
+- What is a requirements.txt file ?
+- How to ensure a fully reproducible (100% equal) environment ?
+- How is the virtual environment Python executable able to use something different from the system site packages ?
+- When use golang in place Python
+---
 ---
 
-## Requirements
+## Before you start, do this !
+<img src='images/config.jpg' width="400">
 
-- Python 3.6 or more
+On **Linux**, make sure you have the right version of Python pre-installed, and the basic developer toolset available. Makes sure of that:
+
+1. Install the latest version of Python.
 ```bash
-sudo apt install python3.6
+sudo apt install python3.8
 ```
 
-- Development Tool
+2. Satisfy some system requirements
 ```bash
-sudo apt install build-essential \
-                 libssl-dev \
-                 libffi-dev \
+sudo apt install build-essential\
+                 libffi-dev\
+                 python3-pip\
                  python3-dev\
-                 python3-venv
+                 python3-venv \
+                 python3-setuptools\
+                 python3-pkg-resources           
 ```
 
+2. Create and activate Python virtual environment
+
+```bash
+cd your-project
+python3 -m venv venv
+source venv/bin/activate
+```
+
+NOTE for beginners:
+<br/>
+A Python virtual environment is a local interpreter that allows to install dependencies without polluting the global Python interpreter. There are different ways to create virtual environments (virtualenv; -m venv) and to install packages (pip install; easy_install), which may be confusing at the beginning.
+
+
+4. Install tools
 - [Git](https://github.com/brunocampos01/devops/tree/master/git)
 ```bash
 sudo apt install git
@@ -224,12 +281,7 @@ sudo apt install git
 sudo apt install vim
 ```
 
-- pip3 (package manager)
-```bash
-sudo apt install -y python3-pip
-```
-
-- Libraries Used in this Project
+5. Install Libraries used in this project
 ```bash
 pip3 install --user od \
                     numpy \
@@ -242,12 +294,49 @@ pip3 install --user od \
 
 ---
 
+## Requirements File
+_Requirements files_ is file containing a list of items to be installed using pip install.
+
+- Generate file `requirements.txt`
+```bash
+pip3 freeze > requirements.txt
+```
+
+or
+
+```bash
+venv/bin/pip3 freeze > requirements.txt
+cat requirements # image bellow
+```
+<img src="images/requeriments.png"/>
+
+
+- Visualize instaled libraries 
+```bash
+pip3 freeze
+```
+<img src="images/freeze.png"/>
+
+- Install libraries in requirements
+```bash
+pip3 install -r requirements.txt
+```
+`-r` recursive
+
+---
+
+## Pipfile and Pipfile.lock
+Using pip and requirements.txt file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is that, given the same input (the requirements.txt file), pip doesn’t always produce the same environment. 
+
+...
+
+---
+
 ## Check Python Configuration
 
-<img src='images/config.jpg' width="400">
+<img src='images/Python3VersionChange.jpg' width="80%">
 
-
-##### Check what version Python
+- Check what version Python
 ```bash
 python --version
 
@@ -260,8 +349,7 @@ If return Python2, try set a alias in file [.bashrc](https://github.com/brunocam
 alias python=python3
 ```
 
-##### Check where version install
-
+- Check **where** instaled Python
 ```bash
 which python
 
@@ -272,7 +360,7 @@ which python
 
 ## Preparing Environment
 
-##### Enviornment Variables
+### Enviornment Variables
 
 - To individual project
 `PYTHONPATH` search path until module.
@@ -280,13 +368,14 @@ which python
 - To interpreter
 `PYTHONHOME` indicate standard libraries.
 
-##### Configure Python PATH
-
+### Configure Python PATH
 1. First open profile in editor
 ```bash
 sudo vim ~/.profile
 ```
+
 or
+
 ```bash
 sudo vim ~/.bashrc
 ```
@@ -295,7 +384,8 @@ sudo vim ~/.bashrc
 ```bash
 export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
 ```
-<img src='images/bashrc_python.png'>
+
+<img src='images/bashrc_python.png' width="90%">
 
 NOTE: quit vim: `ESC, :, w, q`
 
@@ -304,55 +394,147 @@ NOTE: quit vim: `ESC, :, w, q`
 ```bash
 source ~/.bashrc
 ```
+
 or
+
 ```bash
 .  ~/.bashrc
 ```
 
-##### Change Versions of Python
+### Change the Python3 default version
+`update-alternatives` symbolic links determining default commands
 
-Terminal: `update-alternatives` symbolic links determining default commands
+1. Execute in terminal
+```bash
+sudo update-alternatives --config python
+```
+If return error: `update-alternatives: error: no alternatives for python3`, following to step [2](#2)
 
-- Install multiples pythons
-
+2. Install multiples Python
 ```bash
 update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1
-update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION>
+
+update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION> 2
 ```
 
-- Change python versions
+3. Change Python versions
 ```bash
 sudo update-alternatives --config python
 ```
 
- <img src="images/python_alternatives.png" width="1000" />
+<img src="images/python_alternatives.png" width="1000" />
 
-- Check changes
+```bash
+sudo update-alternatives  --set python /usr/bin/python3.6
+```
+
+4. Check changes
 ```bash
 python --version
 
-# Python 3.4
+# Python 3.8
 ```
 
 ---
 
-## Python Tools
+## Virtual Environment
+<img src="images/virtual_env_p3.png" width="50%"/>
 
-https://packaging.python.org/key_projects/#pipenv
+The Python can is executed in a virtual environment with **semi-isolated** from system.
+<br/>
+When Python is initiating, it analyzes the path of its binary. In a virtual environment, it's actually just a copy or Symbolic link to your system's Python binary. Next, set the `sys.prefix` location which is used to locate the `site-packages'(third party libraries)
 
-In production ...
-- distlib
-- pip
-- Pipfile
-- Pipenv
-- virtualenv
-- eggs
-- Wheel
+_Quando o Python está iniciando, ele analisa o caminho do seu binário. Em um virtual environment, na verdade, é apenas uma cópia ou Symbolic link para o binário Python do seu sistema. Em seguida, define o local `sys.prefix` que é usado para localizar o `site-packages`(third party libraries)._
+
+<img src="images/venv.png" />
+
+### Symbolic link
+- `sys.prefix` points to the virtual environment directory.
+- `sys.base.prefix` points to the **non-virtual** environment.
+
+Example, how keep the files in folder of virtual environment:
+```bash
+ll
+
+# random.py -> /usr/lib/python3.6/random.py
+# reprlib.py -> /usr/lib/python3.6/reprlib.py
+# re.py -> /usr/lib/python3.6/re.py
+# ...
+```
+
+```bash
+tree
+
+├── bin
+│   ├── activate
+│   ├── activate.csh
+│   ├── activate.fish
+│   ├── easy_install
+│   ├── easy_install-3.8
+│   ├── pip
+│   ├── pip3
+│   ├── pip3.8
+│   ├── python -> python3.8
+│   ├── python3 -> python3.8
+│   └── python3.8 -> /Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8
+├── include
+├── lib
+│   └── python3.8
+│       └── site-packages
+└── pyvenv.cfg
+```
+
+### Create Virtual Environment
+```bash
+$ virtualenv -p python3  NAME_ENVIRONMENT
+(env) $
+```
+or
+```bash
+$ python3 -m venv NAME_ENVIRONMENT
+(env) $
+```
+
+
+###  To begin using the virtual environment, it needs to be activated
+Execute activate script
+```bash
+source <DIR>/bin/activate
+```
+
+<img src="images/env.png" />
+
+##### References
+- https://realpython.com/python-virtual-environments-a-primer/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
 ## Python Files
-REFACTOR
+REFACTORING
+https://packaging.python.org/key_projects/#pipenv
+
+In production ...
+- distlib
+- virtualenv
+- eggs
+- Wheel
 
 #### Files: `.py`
 
@@ -442,94 +624,13 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 
 .pyc it's faster to loaded modules
 
-
-#### Requirements
-“Requirements files” are files containing a list of items to be installed using pip install.
-
-##### Generate file `requirements.txt`
-```bash
-pip freeze > requirements.txt
-```
-or
-```bash
-venv/bin/pip3 freeze > requirements.txt
-```
- <img src="images/requeriments.png" />
-
-
-##### Visualize libraries installs
-```bash
-pip freeze
-```
-<img src="images/freeze.png" />
-
-##### Install libraries in requirements
-```bash
-pip install -r requirements.txt
-```
-- `-r` recursive
-
----
-
-## Virtual Environment Python
-
-The Python can is executed in a environment virtual with ****semi-isolated**** from system.<br/>
-The virtual environment use **Python binary** which is in OS.
-
-- `sys.prefix` aponta para o diretório do ambiente virtual.
-- `sys.base.prefix` aponta para o ambiente não virtual.
-
- <img src="images/venv.png" />
-
-##### Install
-```bash
-$ pip install virtualenv
-```
-##### Create Virtual Environment
-```bash
-virtualenv -p python3  NAME-ENVIRONMENT
-```
-or
-```bash
-python -m venv
-```
-
-<img src="images/env.png" />
-
-##### Start
-```bash
-source <DIR>/bin/activate
-```
-
-References:
-- https://realpython.com/python-virtual-environments-a-primer/
----
-
-## Managemant Libraries
-
-- [Python Package Index](https://pypi.org/)
-- poetry
-- conda
-- pipenv
-
-#### Pip
-
-##### `pip freeze`
-
-```bash
-(venv) $ pip freeze > requirements.txt
-(venv) $ cat requirements.txt
-novas==3.1.1.3
-numpy==1.9.2
-requests==2.7.0
-```
 ---
 
 ## Undertanding
 
 ### Zen of Python
 
-<img src="images/zen.png" width="30%" />
+<img src="images/zen.png" width="50%"/>
 
 ```python
 Beautiful is better than ugly.
@@ -623,8 +724,8 @@ Compiler and interpreter Java bytecode, write in Java.
 
 <img src="images/interpreter.png" width="500" />
 
-1. First Python checks for program syntax
-2. Compiles and converts it to bytecode and directly bytecode is loaded in system memory.
+1. First, Python interpreter **checks syntax** (sequential)
+2. **Compile and convert it to bytecode** and directly bytecode is loaded in system memory.
 3. Then compiled bytecode interpreted from memory to execute it.
 
 ---
@@ -1043,8 +1144,8 @@ Class docstrings should contain the following information:
 - https://pep8.org
 - Style guide Google: https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings
 
-#### Methods with numerous parameters 
-Methods with numerous parameters are a challenge to maintain, especially if most of them share the same datatype. 
+#### Methods with numerous parameters
+Methods with numerous parameters are a challenge to maintain, especially if most of them share the same datatype.
 <br/>
 These situations usually denote the **need for new objects to wrap the
  numerous parameters**.
@@ -1059,7 +1160,7 @@ def add_person(birthYear: int, birthMonth: int, birthDate: int,
                ssn: int):
 '''too many arguments'''
 
-    . . . 
+    . . .
 ```
 - preferred approach
 ```python
@@ -1068,7 +1169,7 @@ def add_person(birthdate: 'Date',
                ssn: int):
 '''preferred approach'''
 
-    . . . 
+    . . .
 ```
 
 
@@ -2292,6 +2393,12 @@ A curated list of awesome Python frameworks, libraries, software and resources.
 
 * [python-lambda](https://github.com/nficano/python-lambda) - A toolkit for developing and deploying Python code in AWS Lambda.
 * [Zappa](https://github.com/Miserlou/Zappa) - A tool for deploying WSGI applications on AWS Lambda and API Gateway.
+
+## Libraries to Management Services in Cloud
+- [Azure](https://azure.microsoft.com/en-us/develop/python/)
+- [AWS - boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [Google Cloud Platform](https://cloud.google.com/python/)
+
 
 ## Parsing
 
