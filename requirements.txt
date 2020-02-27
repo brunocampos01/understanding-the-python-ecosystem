@@ -18,5 +18,5 @@ pyparsing==2.4.6
 python-dateutil==2.8.1
 pytz==2019.3
 six==1.14.0
-virtualenv==20.0.5
+virtualenv==20.0.7
 wget==3.2
