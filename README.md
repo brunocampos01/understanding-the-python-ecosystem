@@ -8,13 +8,11 @@
 <img src='images/python.png'>
 
 These guides aim to understand the development and execution environment of Python. In addition, I will cover topics ranging from language fundamentals, good practices, build, deploy, distribution to advanced language programming topics.
-For programming topics, the content will be inside the topic [Awesome Python](#awesome-Python).
 
-_Estes guias tem por objetivo compreender o ambiente de desenvolvimento e execucao de Python. Alem disso, vou cobrir topicos que envolvem desde os fundamentos da linguagem, boas praticas, build, deploy, distribuicao ate topicos avancados de programacao na linguagem.
-Para topicos de programacao, o conteudo ficara dentro do topico [Awesome Python](#awesome-Python)._
+_Estes guias tem por objetivo compreender o ambiente de desenvolvimento e execucao de Python. Alem disso, vou cobrir topicos que envolvem desde os fundamentos da linguagem, boas praticas, build, deploy, distribuicao ate topicos avancados de programacao na linguagem._
 
 # Summary
-[Before you start do this !](#before-you-start,-do-this-!)
+[Before you start, do this !](#before-you-start,-do-this-!)
 
 ## Preparing the Environment for the Python
 This topic describe how to set up the environment to Python developement.
@@ -444,7 +442,7 @@ python --version
 
 The Python can is executed in a virtual environment with **semi-isolated** from system.
 <br/>
-When Python is initiating, it analyzes the path of its binary. In a virtual environment, it's actually just a copy or Symbolic link to your system's Python binary. Next, set the `sys.prefix` location which is used to locate the `site-packages'(third party libraries)
+When Python is initiating, it analyzes the path of its binary. In a virtual environment, it's actually just a copy or Symbolic link to your system's Python binary. Next, set the `sys.prefix` location which is used to locate the `site-packages` (third party libraries)
 
 _Quando o Python está iniciando, ele analisa o caminho do seu binário. Em um virtual environment, na verdade, é apenas uma cópia ou Symbolic link para o binário Python do seu sistema. Em seguida, define o local `sys.prefix` que é usado para localizar o `site-packages`(third party libraries)._
 
