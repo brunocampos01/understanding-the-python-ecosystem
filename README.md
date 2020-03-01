@@ -5,22 +5,23 @@
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 
-<img src='images/python.png'>
+<img src='images/python.png' align="center" height=auto width=80%>
+
 
 These guides aim to understand the development and execution environment of Python. In addition, I will cover topics ranging from language fundamentals, good practices, build, deploy, distribution to advanced language programming topics.
 
 _Estes guias tem por objetivo compreender o ambiente de desenvolvimento e execucao de Python. Alem disso, vou cobrir topicos que envolvem desde os fundamentos da linguagem, boas praticas, build, deploy, distribuicao ate topicos avancados de programacao na linguagem._
 
 # Summary
-[Before you start, do this !](#before-you-start,-do-this-!)
+[ How to install and set up a Python](#how-to-install-and-set-up-a-Python)
 
 ## Preparing the Environment for the Python
 This topic describe how to set up the environment to Python developement.
-- [Requirements File](#requirements-file)
-- [Pipfile and Pipfile.lock](#pipfile-and-pipfile.lock)
 - [Check Python Configuration](#check-python-configuration)
 - [Preparing Environment](#preparing-environment)
+- [Requirements File](#requirements-file)
 - [Virtual Environment](#virtual-environment)
+- [Pipenv](#pipenv)
 
 ## Fundamentals
 - [What's is Python ?](#what's-is-python-?)
@@ -236,8 +237,8 @@ Words   | Themes
 ---
 ---
 
-## Before you start, do this !
-<img src='images/config.jpg' width="400">
+## How to install and set up a Python 
+<img src='images/config.jpg'  align="center" height=auto width=80%>
 
 On **Linux**, make sure you have the right version of Python pre-installed, and the basic developer toolset available. Makes sure of that:
 
@@ -294,43 +295,6 @@ pip3 install --user od \
 
 ---
 
-## Requirements File
-_Requirements files_ is file containing a list of items to be installed using pip install.
-
-- Generate file `requirements.txt`
-```bash
-pip3 freeze > requirements.txt
-```
-
-or
-
-```bash
-venv/bin/pip3 freeze > requirements.txt
-cat requirements # image bellow
-```
-<img src="images/requeriments.png"/>
-
-
-- Visualize instaled libraries 
-```bash
-pip3 freeze
-```
-<img src="images/freeze.png"/>
-
-- Install libraries in requirements
-```bash
-pip3 install -r requirements.txt
-```
-`-r` recursive
-
----
-
-## Pipfile and Pipfile.lock
-Using pip and requirements.txt file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is that, given the same input (the requirements.txt file), pip doesn’t always produce the same environment. 
-
-...
-
----
 
 ## Check Python Configuration
 
@@ -385,7 +349,7 @@ sudo vim ~/.bashrc
 export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
 ```
 
-<img src='images/bashrc_python.png' width="40%">
+<img src='images/bashrc_python.png'  align="center" height=auto width=80%>
 
 NOTE: quit vim: `ESC, :wq`
 
@@ -437,8 +401,39 @@ python --version
 
 ---
 
+## Requirements File
+_Requirements files_ is file containing a list of items to be installed using pip install.
+
+- Generate file `requirements.txt`
+```bash
+pip3 freeze > requirements.txt
+```
+
+or
+
+```bash
+venv/bin/pip3 freeze > requirements.txt
+cat requirements # image bellow
+```
+<img src="images/requeriments.png" align="center" height=auto width=50%/>
+
+
+- Visualize instaled libraries 
+```bash
+pip3 freeze
+```
+<img src="images/freeze.png" align="center" height=auto width=100%/>
+
+- Install libraries in requirements
+```bash
+pip3 install -r requirements.txt
+```
+`-r` recursive
+
+---
+
 ## Virtual Environment
-<img src="images/virtual_env_p3.png" width="50%"/>
+<img src="images/virtual_env_p3.png"  align="center" height=auto width=80%/>
 
 The Python can is executed in a virtual environment with **semi-isolated** from system.
 <br/>
@@ -446,7 +441,7 @@ When Python is initiating, it analyzes the path of its binary. In a virtual envi
 
 _Quando o Python está iniciando, ele analisa o caminho do seu binário. Em um virtual environment, na verdade, é apenas uma cópia ou Symbolic link para o binário Python do seu sistema. Em seguida, define o local `sys.prefix` que é usado para localizar o `site-packages`(third party libraries)._
 
-<img src="images/venv.png" />
+<img src="images/venv.png"  align="center" height=auto width=80%/>
 
 ### Symbolic link
 - `sys.prefix` points to the virtual environment directory.
@@ -502,13 +497,132 @@ Execute activate script
 source <DIR>/bin/activate
 ```
 
-<img src="images/env.png" />
+<img src="images/env.png" align="center" height=auto width=100%/>
 
-##### References
-- https://realpython.com/python-virtual-environments-a-primer/
+#### References
+- [python-virtual-environments-a-primer](https://realpython.com/python-virtual-environments-a-primer/)
+
+---
+
+## Pipenv
+- Package manager: `Pipefile`
+- Virtual environment: `$HOME/.local/share`
+- Lock package: `Pipefile.lock`
+
+<img src="images/pipe.gif" align="center" height=auto width=100%/>
 
 
+### Why use pipefile?
+Using pip and requirements.txt file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is that, given the same input (the requirements.txt file), pip doesn’t always produce the same environment. 
 
+### What is pipefile?
+It automatically creates and manages a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates the ever-important Pipfile.lock, which is used to produce deterministic builds.
+
+Features:
+- Deterministic builds
+- Separates development and production environment libraries into a single file `Pipefile`
+- Automatically adds/removes packages from your `Pipfile`
+- Automatically create and manage a virtualenv
+- Check PEP 508 requirements
+- Check installed package safety
+
+### Comparisons
+```
+# Pipfile
+
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+matplotlib = "==3.1.3"
+
+[packages]
+requests = "*"
+numpy = "==1.18.1"
+pandas = "==1.0.1"
+wget = "==3.2"
+
+[requires]
+python_version = "3.8"
+platform_system = 'Linux'
+```
+
+```
+# requirements.txt
+
+requests
+matplotlib==3.1.3
+numpy==1.18.1
+pandas==1.0.1
+wget==3.2
+```
+
+
+### Install
+```bash
+pip3 install --user pipenv
+```
+
+### Create Pipfile and virtual environment
+```bash
+pipenv --python 3
+
+# Creating a virtualenv for this project…
+# Pipfile: /home/campos/projects/becoming-a-expert-python/Pipfile
+
+# Using /usr/bin/python3.8 (3.8.2) to create virtualenv…
+# ⠼ Creating virtual environment...created virtual environment CPython3.8.2.final.0-64 in 256ms
+
+#   creator CPython3Posix(dest=/home/campos/.local/share/virtualenvs/becoming-a-expert-python-fmPL6zJP, clear=False, global=False)
+
+#   seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/campos/.local/share/virtualenv/seed-app-data/v1)
+
+#   activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+
+# ✔ Successfully created virtual environment! 
+# Virtualenv location: /home/campos/.local/share/virtualenvs/becoming-a-expert-python-fmPL6zJP
+
+# requirements.txt found, instead of Pipfile! Converting…
+# ✔ Success! 
+```
+
+- See where virtual environment installed
+```bash
+pipenv --venv
+```
+
+### Activate environment
+```bash
+pipenv run
+```
+<img src='images/pipenv.png' width="100%">
+
+### Install Libraries with Pipefile
+```bash
+pipenv install flask
+
+# or
+
+pipenv install --dev flask
+```
+
+### Create lock file
+```bash
+pipenv lock
+
+# Locking [dev-packages] dependencies…
+# Locking [packages] dependencies…
+# ✔ Success!
+```
+
+#### References
+- [Official documentation](https://github.com/pypa/pipenv)
+- [Gerenciando suas dependências e ambientes python com pipenv](https://medium.com/code-rocket-blog/gerenciando-suas-depend%C3%AAncias-e-ambientes-python-com-pipenv-9e5413513fa6)
+- [How are Pipfile and Pipfile.lock used?](https://stackoverflow.com/questions/46330327/how-are-pipfile-and-pipfile-lock-used)
+
+---
 
 
 
@@ -630,7 +744,7 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 
 ### Zen of Python
 
-<img src="images/zen.png" width="50%"/>
+<img src="images/zen.png" align="center" height=auto width=80%/>
 
 ```python
 Beautiful is better than ugly.
@@ -698,21 +812,20 @@ print 'Conjugate:', c.conjugate()
 ---
 ## Interpreter and Compiler
 
- <img src="images/cpython.png" width="299" />
+ <img src="images/cpython.png"  align="center" height=auto width=80% />
 
-#### CPython
+### CPython
 Compiler and interpreter bytecode, write in C.
 
-
-#### Jython
-<img src="images/jython.jpg"  width="50" />
+### Jython
+<img src="images/jython.jpg"   align="center" height=auto width=50% />
 
 Compiler and interpreter Java bytecode, write in Java.
 
 
-#### Comparian
+### Comparian
 
-<img src="images/comp-interpreter.png"/>
+<img src="images/comp-interpreter.png"  align="center" height=auto width=80%/>
 
 #### Why use alter compiler python?
 
@@ -722,7 +835,7 @@ Compiler and interpreter Java bytecode, write in Java.
 
 #### How Python program run ?
 
-<img src="images/interpreter.png" width="500" />
+<img src="images/interpreter.png"  align="center" height=auto width=100%/>
 
 1. First, Python interpreter **checks syntax** (sequential)
 2. **Compile and convert it to bytecode** and directly bytecode is loaded in system memory.
@@ -1018,7 +1131,7 @@ print(say_hello.__doc__)
 
 - Example partner Google
 
-<img src='images/__doc__.png'>
+<img src='images/__doc__.png' align="center" height=auto width=1000%>
 
 
 ##### `help()`
@@ -2651,9 +2764,6 @@ Online tools and APIs to simplify development.
 * [PEP 8 Speaks](https://pep8speaks.com/) - GitHub integration to review code style.
 ---
 
-## Author
-- Bruno Aurélio Rôzza de Moura Campos (brunocampos01@gmail.com)
-
 ## References
 - https://realpython.com/python-virtual-environments-a-primer/
 - https://github.com/vinta/awesome-python/edit/master/README.md
@@ -2661,6 +2771,13 @@ Online tools and APIs to simplify development.
 - https://jtemporal.com/requirements-txt/
 - https://pip.pypa.io/en/stable/user_guide/
 
+---
+
+## Author
+- Bruno Aurélio Rôzza de Moura Campos
+  - [github](https://github.com/brunocampos01)
+  - [linkedin](https://www.linkedin.com/in/brunocampos01/)
+  - brunocampos01@gmail.com
 
 ## Copyright
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Bruno A. R. M. Campos</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
