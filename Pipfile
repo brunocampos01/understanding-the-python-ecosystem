@@ -9,7 +9,7 @@ verify_ssl = true
 requests = "*"
 matplotlib = "==3.2.0"
 numpy = "==1.18.1"
-pandas = "==1.0.1"
+pandas = "==1.0.2"
 wget = "==3.2"
 lock = "*"
 flask = "*"
