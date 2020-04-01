@@ -6,18 +6,18 @@ A) Quantos números foram digitados.
 B) A lista de valores, ordenada de forma decrescente.
 C) Se o valor 5 foi digitado e está ou não na lista.
 """
-list = []
+lista = []
 count = 0
 while True:
-    list.append(int(input('Type a number: ')))
+    lista.append(int(input('Type a number: ')))
     leave = str(input('Do you want continue?[Y/N] ')).upper()
 
     if leave in 'N':
         break
 
-print('You typed {} elements.'.format(len(list)))
-print('Values in inverse order is: {}'.format(list.sort(reverse=True)))
-print('Ordem typed: {}'.format(list))
+print('You typed {} elements.'.format(len(lista)))
+print('Values in inverse order is: {}'.format(lista.sort(reverse=True)))
+print('Ordem typed: {}'.format(lista))
 
-if 5 in list:
-    print('The value 5 belongs to list')
+if 5 in lista:
+    print('The value 5 belongs to lista')

@@ -1,32 +1,32 @@
 """
 Exercise Python 082:
 
-Crie um programa que vai ler vários números e colocar em uma lista.
-Depois disso, crie duas listas extras que vão conter apenas os valores pares
+Crie um programa que vai ler vários números e colocar em uma listaa.
+Depois disso, crie duas listaas extras que vão conter apenas os valores pares
 e os valores ímpares digitados,
-respectivamente. Ao final, mostre o conteúdo das três listas geradas.
+respectivamente. Ao final, mostre o conteúdo das três listaas geradas.
 """
 
-list = []
-listPair = []
-listOdd = []
+lista = []
+listaPair = []
+listaOdd = []
 
 while True:
     element = int(input('Type a number: '))
-    list.append(element)
+    lista.append(element)
     leave = str(input('Do you want leave?[Y/N] ')).upper()
 
     if leave in 'Y':
         break
 
-print('List: {}'.format(list))
+print('lista: {}'.format(lista))
 
-for i in list:
+for i in lista:
     if i % 2 == 0:
-        listPair.append(i)
+        listaPair.append(i)
     else:
-        listOdd.append(i)
+        listaOdd.append(i)
 
 print('=' * 50)
-print('The list {} contains pairs.'.format(listPair))
-print('The list {} contains odd.'.format(listOdd))
+print('The lista {} contains pairs.'.format(listaPair))
+print('The lista {} contains odd.'.format(listaOdd))

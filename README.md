@@ -10,7 +10,9 @@
 
 These guides aim to understand the development and execution environment of Python. In addition, I will cover topics ranging from language fundamentals, good practices, build, deploy, distribution to advanced language programming topics.
 
-_Estes guias tem por objetivo compreender o ambiente de desenvolvimento e execucao de Python. Alem disso, vou cobrir topicos que envolvem desde os fundamentos da linguagem, boas praticas, build, deploy, distribuicao ate topicos avancados de programacao na linguagem._
+_Estes guias tem por objetivo compreender o ambiente de desenvolvimento e execução de Python. Além disso, vou cobrir tópicos que envolvem desde os fundamentos da linguagem, boas práticas, build, deploy e distribuição_
+
+- NOTE: Tópicos avançados de programação com Python ficaram em outro contexto.
 
 # Summary
 [ How to install and set up a Python](#how-to-install-and-set-up-a-Python)
@@ -238,7 +240,7 @@ Words   | Themes
 ---
 
 ## How to install and set up a Python 
-<img src='images/config.jpg'  align="center" height=auto width=80%>
+<img src='images/config.jpg'  align="center" height=280 width=100%>
 
 On **Linux**, make sure you have the right version of Python pre-installed, and the basic developer toolset available. Makes sure of that:
 
@@ -313,7 +315,7 @@ If return Python2, try set a alias in file [.bashrc](https://github.com/brunocam
 alias python=python3
 ```
 
-- Check **where** instaled Python
+- Check **where** installed Python
 ```bash
 which python
 
@@ -349,7 +351,7 @@ sudo vim ~/.bashrc
 export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
 ```
 
-<img src='images/bashrc_python.png'  align="center" height=auto width=80%>
+<img src='images/bashrc_python.png'  align="center" height=auto width=50%>
 
 NOTE: quit vim: `ESC, :wq`
 
@@ -357,15 +359,13 @@ NOTE: quit vim: `ESC, :wq`
 3. Update profile/bashrc
 ```bash
 source ~/.bashrc
-```
 
-or
+# or
 
-```bash
 .  ~/.bashrc
 ```
 
-### Change the Python3 default version
+### Install multiple Python3
 `update-alternatives` symbolic links determining default commands
 
 1. Execute in terminal
@@ -490,14 +490,16 @@ $ python3 -m venv NAME_ENVIRONMENT
 (env) $
 ```
 
-
 ###  To begin using the virtual environment, it needs to be activated
+<img src="images/virtualenv.gif" align="center" height=auto width=100%/>
+
 Execute activate script
 ```bash
 source <DIR>/bin/activate
 ```
 
 <img src="images/env.png" align="center" height=auto width=100%/>
+
 
 #### References
 - [python-virtual-environments-a-primer](https://realpython.com/python-virtual-environments-a-primer/)
@@ -2077,8 +2079,8 @@ A curated list of awesome Python frameworks, libraries, software and resources.
 
 *Libraries for Python version and virtual environment management.*
 
-* [pyenv](https://github.com/pyenv/pyenv) - Simple Python version management.
-* [pipenv](https://github.com/pypa/pipenv) - Python Development Workflow for Humans.
+* [pip](https://github.com/pyenv/pyenv) - Simple Python version management.
+* [pipenv](https://github.com/pypa/pipenv) - Python Development Workflow for Humans. **Good**
 * [poetry](https://github.com/sdispater/poetry) - Python dependency management and packaging made easy.
 * [virtualenv](https://github.com/pypa/virtualenv) - A tool to create isolated Python environments.
 

@@ -40,4 +40,3 @@ while chooce != 6:
         number2 = int(input('Type a number: '))
 
 print("End")
-s

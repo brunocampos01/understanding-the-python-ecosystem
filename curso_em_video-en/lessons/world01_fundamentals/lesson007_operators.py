@@ -11,11 +11,11 @@ print(81 ** (1 / 2))  # Raiz Quadrada
 
 """
 Order of Precedence (Which is taken into account first in the Python code):
-#1 () - Parênteses
-#2 ** - Potência/Exponenciação
-#3 *, /, // e % - Multiplicação, Divisão, Divisão Inteira e Resto da Divisão
+# 1 () - Parênteses
+# 2 ** - Potência/Exponenciação
+# 3 *, /, // e % - Multiplicação, Divisão, Divisão Inteira e Resto da Divisão
  (O que aparecer primeiro no código, executa primeiro)
-#4 + e - - Adição e Subtração 
+# 4 + e - - Adição e Subtração 
 (O que aparecer primeiro no código, executa primeiro)
 """
 print(5 + 3 * 2)  # Primeiro se resolve a Multiplicação, depois a Adição

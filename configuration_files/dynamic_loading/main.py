@@ -1,4 +1,3 @@
-import sys
 import pymysql
 import config
 import os
