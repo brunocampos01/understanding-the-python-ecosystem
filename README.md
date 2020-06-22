@@ -67,6 +67,7 @@ This part of the guide focuses on sharing and deploying your Python code.
 - [.pyo](#Files:-.)
 - [.egg](#Files:-.)
 - [`__init__.py`](#_init.py)
+- [`__main__.py`](#_main.py)
 - [Requirements File](#requirements-file)
 - [Pipfile and Pipfile.lock](#pipfile-and-pipfile.lock)
 
