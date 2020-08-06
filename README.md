@@ -33,15 +33,15 @@ This topic describe how to set up the environment to Python developement.
 - [Complete Documentation](#https://docs.python.org/3/contents.html)
 - [Main()](#main())
   - [__ main __](#main)
-  - https://docs.python.org/3/library/index.html
+  <!-- - https://docs.python.org/3/library/index.html
   - https://docs.python.org/3/reference/index.html
   - https://docs.python.org/3/howto/index.html
   - https://docs.python.org/3/reference/import.
-  - html#replacing-the-standard-import-system
+  - html#replacing-the-standard-import-system -->
 - [Executing modules as scripts](#)
 - [Options Command](#)
 - [`-c` command](#)
-- [`-m` module-name](#) https://realpython.com/run-python-scripts/
+<!-- - [`-m` module-name](#) https://realpython.com/run-python-scripts/ -->
 - Language limitations
   - GIL
 - Python Files
@@ -54,7 +54,7 @@ This topic describe how to set up the environment to Python developement.
   - [Requirements File](#requirements-file)
   - [Pipfile and Pipfile.lock](#pipfile-and-pipfile.lock)
 
-## Advanced
+<!-- ## Advanced
 - [Anonymous functions (lambda)](https://pt.stackoverflow.com/questions/50422/como-declarar-uma-fun%C3%A7%C3%A3o-an%C3%B4nima-no-python)
 - Generators
 - Iterators
@@ -67,10 +67,8 @@ This topic describe how to set up the environment to Python developement.
 
 ## Build, Distribute and Deploy Python Code
 This part of the guide focuses on sharing and deploying your Python code.
-- https://docs.python-guide.org/
+- https://docs.python-guide.org/ -->
 
-## Books
-- https://www.packtpub.com/application-development/expert-python-programming
 
 ## Best Pratices
 - [Identation and Length](#identation-and-length)
@@ -95,8 +93,9 @@ This part of the guide focuses on sharing and deploying your Python code.
     - [Scripts with docstrings](#scripts-with-docstrings)
     - [Functions with Docstrings](#functions-with-docstrings)
     - [Class with Docstrings](#class-with-docstrings)
-TODO - https://realpython.com/documenting-python-code/
-TODO - https://docs.python-guide.org/
+<!-- TODO - https://realpython.com/documenting-python-code/
+TODO - https://docs.python-guide.org/ -->
+
 
 # **Awesome Python**
 
@@ -648,7 +647,7 @@ pipenv lock
 
 
 ---
-
+<!-- 
 ## Python Files
 REFACTORING
 https://packaging.python.org/key_projects/#pipenv
@@ -745,7 +744,7 @@ EXAMPLES...
 #### Compiler Files: `.pyc`
 Program **doesn’t run any faster when it is read from a .pyc** file than when it is read from a .py file;
 
-.pyc it's faster to loaded modules
+.pyc it's faster to loaded modules -->
 
 ---
 
@@ -1476,8 +1475,8 @@ parrot(**d)
 ```
 
 
-## Exceptions
-...
+<!-- ## Exceptions
+TODO
 
 ## Strings
 TODO:
@@ -1495,7 +1494,7 @@ TODO:
 print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred',
                                                        other='Georg'))
 # The story of Bill, Manfred, and Georg.
-```
+``` -->
 
 ## Files
 - o arquivo de saída padrão pode ser referenciado como `sys.stdout`
@@ -1558,7 +1557,7 @@ if __name__ == '__main__':
 # <class '__main__.MyFirstClass'>
 ```
 
-##### Inheritance
+<!-- ##### Inheritance
 
 
 ##### Private Variables
@@ -1630,7 +1629,7 @@ logging.critical('Critical error -- shutting down')
 - Pandas
 - Matplotlib
 - Skitlearn (aprendizagem supervisionada, nao supervisionada)
-- TensorFlow (neural network)
+- TensorFlow (neural network) -->
 
 - - -
 

@@ -1,9 +1,9 @@
 """
-This file is good example when use **kargs
+This file is good example when use **context
 """
 
 
-def create_statement(type_metric, **kargv):
+def create_statement(type_metric, **context):
     """
     :param type_metric: choose table
     :param argv: all metrics to records
@@ -15,24 +15,24 @@ def create_statement(type_metric, **kargv):
                " start_time, end_time, execution_time, fk_module) " \
                "VALUES " \
                "('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}');" \
-            .format(kargv['execution_date'],
-                    kargv['job_name'],
-                    kargv['status'],
-                    kargv['start_time'],
-                    kargv['end_time'],
-                    kargv['execution_time'],
-                    kargv['fk_module'])
+            .format(context['execution_date'],
+                    context['job_name'],
+                    context['status'],
+                    context['start_time'],
+                    context['end_time'],
+                    context['execution_time'],
+                    context['fk_module'])
     else:
         return "INSERT INTO modules " \
                "(execution_date, module_name, module_status," \
                " start_time, end_time, execution_time) " \
                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}');" \
-            .format(kargv['execution_date'],
-                    kargv['module_name'],
-                    kargv['status'],
-                    kargv['start_time'],
-                    kargv['end_time'],
-                    kargv['execution_time'])
+            .format(context['execution_date'],
+                    context['module_name'],
+                    context['status'],
+                    context['start_time'],
+                    context['end_time'],
+                    context['execution_time'])
 
 
 if __name__ == '__main__':
