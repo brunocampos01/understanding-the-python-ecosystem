@@ -46,8 +46,7 @@ This topic describe how to set up the environment to Python developement.
   - GIL
 
 ## Advanced
-- Anonymous functions (lambda)
-  -https://pt.stackoverflow.com/questions/50422/como-declarar-uma-fun%C3%A7%C3%A3o-an%C3%B4nima-no-python
+- [Anonymous functions (lambda)](https://pt.stackoverflow.com/questions/50422/como-declarar-uma-fun%C3%A7%C3%A3o-an%C3%B4nima-no-python)
 - Generators
 - Iterators
 - Decorators
@@ -246,7 +245,7 @@ Words   | Themes
 ---
 ---
 
-## How to install and set up a Python 
+## How to install and set up a Python
 <img src='images/config.jpg'  align="center" height=280 width=100%>
 
 On **Linux**, make sure you have the right version of Python pre-installed, and the basic developer toolset available. Makes sure of that:
@@ -264,7 +263,7 @@ sudo apt install build-essential\
                  python3-dev\
                  python3-venv \
                  python3-setuptools\
-                 python3-pkg-resources           
+                 python3-pkg-resources
 ```
 
 2. Create and activate Python virtual environment
@@ -425,7 +424,7 @@ cat requirements # image bellow
 <img src="images/requeriments.png" align="center" height=auto width=50%/>
 
 
-- Visualize instaled libraries 
+- Visualize instaled libraries
 ```bash
 pip3 freeze
 ```
@@ -522,7 +521,7 @@ source <DIR>/bin/activate
 
 
 ### Why use pipefile?
-Using pip and requirements.txt file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is that, given the same input (the requirements.txt file), pip doesn’t always produce the same environment. 
+Using pip and requirements.txt file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is that, given the same input (the requirements.txt file), pip doesn’t always produce the same environment.
 
 ### What is pipefile?
 It automatically creates and manages a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates the ever-important Pipfile.lock, which is used to produce deterministic builds.
@@ -590,11 +589,11 @@ pipenv --python 3
 
 #   activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
 
-# ✔ Successfully created virtual environment! 
+# ✔ Successfully created virtual environment!
 # Virtualenv location: /home/campos/.local/share/virtualenvs/becoming-a-expert-python-fmPL6zJP
 
 # requirements.txt found, instead of Pipfile! Converting…
-# ✔ Success! 
+# ✔ Success!
 ```
 
 - See where virtual environment installed
@@ -2656,7 +2655,7 @@ Awesome more complete [HERE](https://github.com/josephmisiti/awesome-machine-lea
 * [Shogun](https://github.com/shogun-toolbox/shogun) - The Shogun Machine Learning Toolbox.
 * [Pyevolve](https://github.com/perone/Pyevolve) - Genetic algorithm framework. **[Deprecated]**
 * [Caffe](https://github.com/BVLC/caffe) - A deep learning framework developed with cleanliness, readability, and speed in mind.
-* [breze](https://github.com/breze-no-salt/breze) - Theano based library for deep and recurrent neural networks. 
+* [breze](https://github.com/breze-no-salt/breze) - Theano based library for deep and recurrent neural networks.
 * [Cortex](https://github.com/cortexlabs/cortex) - Open source platform for deploying machine learning models in production.
 * [pyhsmm](https://github.com/mattjj/pyhsmm) - library for approximate unsupervised inference in Bayesian Hidden Markov Models (HMMs) and explicit-duration Hidden semi-Markov Models (HSMMs), focusing on the Bayesian Nonparametric extensions, the HDP-HMM and HDP-HSMM, mostly with weak-limit approximations.
 * [mrjob](https://pythonhosted.org/mrjob/) - A library to let Python program run on Hadoop.
@@ -2833,7 +2832,7 @@ Awesome more complete [HERE](https://github.com/josephmisiti/awesome-machine-lea
 * [Neuron](https://github.com/molcik/python-neuron) - Neuron is simple class for time series predictions. It's utilize LNU (Linear Neural Unit), QNU (Quadratic Neural Unit), RBF (Radial Basis Function), MLP (Multi Layer Perceptron), MLP-ELM (Multi Layer Perceptron - Extreme Learning Machine) neural networks learned with Gradient descent or LeLevenberg–Marquardt algorithm. **[Deprecated]**
 * [Data Driven Code](https://github.com/atmb4u/data-driven-code) - Very simple implementation of neural networks for dummies in python without using any libraries, with detailed comments.
 * [Machine Learning, Data Science and Deep Learning with Python](https://www.manning.com/livevideo/machine-learning-data-science-and-deep-learning-with-python) - LiveVideo course that covers machine learning, Tensorflow, artificial intelligence, and neural networks.
-* [TResNet: High Performance GPU-Dedicated Architecture](https://github.com/mrT23/TResNet) - TResNet models were designed and optimized to give the best speed-accuracy tradeoff out there on GPUs. 
+* [TResNet: High Performance GPU-Dedicated Architecture](https://github.com/mrT23/TResNet) - TResNet models were designed and optimized to give the best speed-accuracy tradeoff out there on GPUs.
 
 <a name="python-kaggle"></a>
 #### Kaggle Competition Source Code

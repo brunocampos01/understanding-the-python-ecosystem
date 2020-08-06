@@ -9,12 +9,12 @@ def check_permissions(file_path):
         path validated (exists and permissions)
     """
     try:
-        if os.access(path, os.W_OK):
+        if os.access(file_path, os.W_OK):
             pass
         else:
-            os.chmod(path, 0o666)
+            os.chmod(file_path, 0o666)
     except OSError as err:
-        print('IOError: ', path, err)
+        print('IOError: ', file_path, err)
         raise
     else:
-        return path
+        return file_path
