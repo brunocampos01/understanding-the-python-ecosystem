@@ -32,18 +32,27 @@ This topic describe how to set up the environment to Python developement.
 - [Interpreter and Compiler](#interpreter-and-compiler)
 - [Complete Documentation](#https://docs.python.org/3/contents.html)
 - [Main()](#main())
-    - [__ main __](#main)
-    - https://docs.python.org/3/library/index.html
-    - https://docs.python.org/3/reference/index.html
-    - https://docs.python.org/3/howto/index.html
-    - https://docs.python.org/3/reference/import.
-    - html#replacing-the-standard-import-system
+  - [__ main __](#main)
+  - https://docs.python.org/3/library/index.html
+  - https://docs.python.org/3/reference/index.html
+  - https://docs.python.org/3/howto/index.html
+  - https://docs.python.org/3/reference/import.
+  - html#replacing-the-standard-import-system
 - [Executing modules as scripts](#)
 - [Options Command](#)
 - [`-c` command](#)
 - [`-m` module-name](#) https://realpython.com/run-python-scripts/
 - Language limitations
   - GIL
+- Python Files
+  - [.py](#Files:-.)
+  - [.pyc](#Files:-.)
+  - [.pyo](#Files:-.)
+  - [.egg](#Files:-.)
+  - [`__init__.py`](#_init.py)
+  - [`__main__.py`](#_main.py)
+  - [Requirements File](#requirements-file)
+  - [Pipfile and Pipfile.lock](#pipfile-and-pipfile.lock)
 
 ## Advanced
 - [Anonymous functions (lambda)](https://pt.stackoverflow.com/questions/50422/como-declarar-uma-fun%C3%A7%C3%A3o-an%C3%B4nima-no-python)
@@ -59,16 +68,6 @@ This topic describe how to set up the environment to Python developement.
 ## Build, Distribute and Deploy Python Code
 This part of the guide focuses on sharing and deploying your Python code.
 - https://docs.python-guide.org/
-
-## Python Files
-- [.py](#Files:-.)
-- [.pyc](#Files:-.)
-- [.pyo](#Files:-.)
-- [.egg](#Files:-.)
-- [`__init__.py`](#_init.py)
-- [`__main__.py`](#_main.py)
-- [Requirements File](#requirements-file)
-- [Pipfile and Pipfile.lock](#pipfile-and-pipfile.lock)
 
 ## Books
 - https://www.packtpub.com/application-development/expert-python-programming
