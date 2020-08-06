@@ -98,19 +98,6 @@ This part of the guide focuses on sharing and deploying your Python code.
 TODO - https://realpython.com/documenting-python-code/
 TODO - https://docs.python-guide.org/
 
-### Curso em Vídeo: resolutions exercises
-- Class notes and exercises solved
-- Teacher: Gustavo Guanabara.
-
-Words   | Themes
-------- | ---
-1 | [Fundamentals](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
-2 | [Control Structures](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
-3 | [Compound Structures](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
-4 | [Functions](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
-
-<br/>
-
 # **Awesome Python**
 
 **Data Engineering**
@@ -232,6 +219,21 @@ Words   | Themes
 - [RESTful API](#restful-api)
 - [Services](#services)
 - [Third-party APIs](#third-party-apis)
+
+<br/>
+**Curso em Vídeo: resolutions exercises**
+<br/>
+- Learning Python in portuguese !
+- Class notes and exercises solved
+- Teacher: Gustavo Guanabara.
+
+Words   | Themes
+------- | ---
+1 | [Fundamentals](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
+2 | [Control Structures](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
+3 | [Compound Structures](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
+4 | [Functions](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
+
 
 ### FAQ
 - How do I configure my computer to run Python code?
