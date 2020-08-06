@@ -1,6 +1,5 @@
 import os
 
-
 LANGUAGE = os.getenv('LANGUAGE')
 SHELL = os.getenv('SHELL')
 
