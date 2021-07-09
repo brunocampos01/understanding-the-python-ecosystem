@@ -523,7 +523,39 @@ pipenv lock
 ---
 
 
+## Simple Deterministic Build
 
+```
+pip install pip-tools
+pip3 freeze > requirements.in
+
+pip-compile --generate-hashes requirements.in
+```
+
+output: requirements.txt
+```
+wtforms==2.3.3 \
+    --hash=sha256:7b504fc724d0d1d4d5d5c114e778ec88c37ea53144683e084215eed5155ada4c \
+    --hash=sha256:81195de0ac94fbc8368abbaf9197b88c4f3ffd6c2719b5bf5fc9da744f3d829c
+    # via
+    #   -r requirements.in
+    #   flask-admin
+    #   flask-wtf
+zict==2.0.0 \
+    --hash=sha256:26aa1adda8250a78dfc6a78d200bfb2ea43a34752cf58980bca75dde0ba0c6e9 \
+    --hash=sha256:8e2969797627c8a663575c2fc6fcb53a05e37cdb83ee65f341fc6e0c3d0ced16
+    # via
+    #   -r requirements.in
+    #   distributed
+zipp==3.4.0 \
+    --hash=sha256:102c24ef8f171fd729d46599845e95c7ab894a4cf45f5de11a44cc7444fb1108 \
+    --hash=sha256:ed5eee1974372595f9e416cc7bbeeb12335201d8081ca8a0743c954d4446e5cb
+    # via
+    #   -r requirements.in
+    #   importlib-metadata
+    #   importlib-resources
+    #   pep517
+```
 
 
 
