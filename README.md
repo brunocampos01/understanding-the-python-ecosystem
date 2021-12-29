@@ -115,38 +115,92 @@ which python
 sudo update-alternatives --list python
 ```
 
+<br/>
+
 ---
 
-### Switch Python2
+## **Advanced settings of Python**
+
+### **Install multiples Python versions**
+Sometimes you might work on different projects at the same time with different versions of Python. Normally I using Anaconda is the easiest solution, however, can there are restricted.
+
+
+<details>	
+  <summary> Watch</summary>
+  <img src='images/install_python.gif' height=auto width="100%">
+</details>
+
+1. Add repository
+
+   This PPA contains more recent Python versions packaged for Ubuntu.
+   ```bash
+   sudo add-apt-repository ppa:deadsnakes/ppa -y
+   ```
+
+2. Update packeages
+   ```bash
+   sudo apt update -y
+   ```
+   
+3. Check which python version is installed
+   ```bash
+   python --version
+   ```
+   
+4. Install Python
+   ```bash
+   sudo apt install python3.<VERSION>
+   ```
+   
+<br/>
+
+### **Change system's Python**
+Before installed other versions of Python it's necessary set which system's Python will be use.
+
+1. Use `update-alternatives`
+
+   It's possible use the `update-alternatives` command to set priority to different versions of the same software installed in Ubuntu systems. Now, define priority of versions:
+   
+   ```bash
+   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+   
+   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 2
+    
+   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 3
+
+   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 4
+   ```
+
+   In direcotry `/usr/bin` will be create simbolic link: `/usr/bin/python -> /etc/alternatives/python*`
+
+2. Choose version
+
+   <details>	
+     <summary> Watch</summary>
+     <img src='images/change_python.gif' height=auto width="100%">
+   </details>
+
+   ```bash
+   sudo update-alternatives --config python
+   ```
+
+3. Test
+   ```bash
+   python --version
+   ```
+
+
+<br/>
+
+### **Change Python2 to Python3**
 If return Python **2**, try set a alias in .bashrc, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc)
 
 ```bash
 alias python=python3
 ```
 
----
-
-## Install multiples Python versions
-
-This PPA contains more recent Python versions packaged for Ubuntu.
-
-
-
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt update -y
-sudo apt install python3.6
-
-  <details>	
-    <summary> Watch</summary>
-    <img src='images/install_python.gif' height=auto width="100%">
-  </details>
-
-```bash
-    ./configure
-    make
-    make test
-    sudo make install
-```
+**NOTE:**
+recomended for started Ubuntu 20.4
 
 
 <!-- 
@@ -598,7 +652,6 @@ EXAMPLES...
 Program **doesn’t run any faster when it is read from a .pyc** file than when it is read from a .py file;
 
 .pyc it's faster to loaded modules -->
- -->
 
 
 
