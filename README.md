@@ -49,6 +49,12 @@ This topic describe how is the pattern of Python projects.
 This topic describe best pratices.
 
 <br/>
+
+:mag: **_Other Features this Snack_**
+
+Extra topics to see.
+
+<br/>
 <br/>
 <br/>
 
