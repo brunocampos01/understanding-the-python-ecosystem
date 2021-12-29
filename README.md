@@ -206,7 +206,7 @@ The important thing to realize is that Python 3 is not backwards compatible with
 - To individual project `PYTHONPATH` search path until module. Example: [Apache Airflow](https://airflow.apache.org/) read `dag\` folder and add automatically any file that is in this directory. 
 - To interpreter `PYTHONHOME` indicate standard libraries.
 
-### Configure `PYTHONPATH`
+#### **Configure `PYTHONPATH`**
 1. Open profile
    ```bash
    sudo vim ~/.bashrc
