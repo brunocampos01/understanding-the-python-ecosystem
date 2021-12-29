@@ -32,7 +32,7 @@ This topic describe how to set up the environment to Python developement.
 ### **How to prepare and install a Python environment?**
 
 <details>
-    <summary><b>  <a href="#"><img src="images/icon_ubuntu.png"/></a> Linux</b></summary>
+    <summary><b>  <img src="images/icon_ubuntu.png"/> Linux</b></summary>
   
   Python needs a set of tools that are system requirements. If necessary, install these requirements with this command:
   ```bash
@@ -55,7 +55,7 @@ This topic describe how to set up the environment to Python developement.
 </details>
 
 <details>	
-  <summary><b>  <a href="#"><img src="images/icon_windows.png"/></a> Windows</b></summary>
+  <summary><b>  <img src="images/icon_windows.png"/> Windows</b></summary>
 
   On Windows, I recommend using the package manager [chocolatey](https://chocolatey.org/) and set your Powershell to can work as admin. See [this](devpos/infra-as-code) tutorial.
 
@@ -114,7 +114,7 @@ This topic describe how to set up the environment to Python developement.
     <summary> Watch</summary>
     <img src='images/list_versions.gif' height=auto width="100%">
   </details>
-
+  
   ```bash
   sudo update-alternatives --list python
   ```
