@@ -1,2 +1,0 @@
-Ola estou escrevendo em um arquivo binario
-Outra linha em binario
