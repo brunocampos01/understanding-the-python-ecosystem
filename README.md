@@ -129,7 +129,7 @@ Sometimes you might work on different projects at the same time with different v
      <summary> Watch</summary>
      <img src='images/install_python.gif' height=auto width="100%">
    </details>
-   
+
    This PPA contains more recent Python versions packaged for Ubuntu.
    ```bash
    sudo add-apt-repository ppa:deadsnakes/ppa -y
@@ -191,7 +191,7 @@ Before installed other versions of Python it's necessary set which system's Pyth
 <br/>
 
 ### **Change Python2 to Python3**
-If return Python **2**, try set a alias in .bashrc, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc)
+If return Python **2**, try set a alias in `/home/$USER/.bashrc`, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc).
 
 ```bash
 alias python=python3
@@ -231,6 +231,23 @@ NOTE: quit vim: `ESC, :wq`
 3. Update profile/bashrc
 ```bash
 source ~/.bashrc
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- 
 
