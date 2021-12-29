@@ -1,8 +1,9 @@
-# Description:   Install Python Dependencies, Delete all compiled Python files, Test python environment
+# Description:   Install Python dependencies, delete all compiled Python files
+#                and test python environment
 # Author:        brunocampos01
 # ----------------------------------- #
 
-.PHONY: clean data lint requirements
+.PHONY: clean data install_dependencies
 #################################################################################
 # GLOBALS                                                                       #
 #################################################################################
@@ -17,14 +18,17 @@ PYTHON_INTERPRETER = python3
 #################################################################################
 
 ## Install Python Dependencies
-install_requirements:
+install_dependencies:
 	$ sudo apt install python3
 	$ sudo apt install build-essential \
+	                   software-properties-common \
                        libssl-dev \
                        libffi-dev \
                        python3-dev \
                        python3-venv \
-                       python3-pip
+                       python3-pip \
+					   python3-setuptools \
+					   python3-pkg-resources
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel virtualenv
 
 ## Delete all compiled Python files
@@ -35,10 +39,6 @@ clean:
 	rm -fr .ipynb_checkpoints/
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
-
-## Lint using flake8
-lint:
-	flake8 src
 
 ## Test python environment is setup correctly
 test_environment:

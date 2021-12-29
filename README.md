@@ -248,7 +248,7 @@ The important thing to realize is that Python 3 is not backwards compatible with
     ]
    ```
 
-
+---
 
 
 
@@ -264,7 +264,7 @@ The important thing to realize is that Python 3 is not backwards compatible with
 
 <!-- 
 
----
+
 
 ## Requirements File
 _Requirements files_ is file containing a list of items to be installed using pip install.

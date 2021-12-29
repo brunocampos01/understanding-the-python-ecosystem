@@ -1,6 +1,5 @@
 import sys
 
-# This project need python 3
 REQUIRED_PYTHON = "python3"
 
 
@@ -20,8 +19,8 @@ def check_python_version(python_req: str):
         raise TypeError("This project requires Python {}. Found: Python {}"
                         .format(required_major, sys.version))
     else:
-        print("Python Version: {}".format(sys.version))  # e.g 3.7.3
-        print(">>> Development environment passes all tests!")
+        print("Python Version: {}".format(sys.version))  # e.g 3.11
+        print("Development environment passes all tests!")
 
 
 def main():

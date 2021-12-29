@@ -126,3 +126,6 @@ dmypy.json
 # IDEs and editors
 .vscode/*
 .idea/*
+
+# paths
+notebooks/
