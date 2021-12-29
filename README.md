@@ -2,30 +2,55 @@
 ![Python 3](https://img.shields.io/badge/python-3-blue.svg)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
-## Preparing the Environment for the Python
-- How to prepare and install a Python environment?
-- Analisando a fundo as configurações do ambiente
-- O que é e como funciona um ambiente virtual de Python?
-- Como organizar os requisitos de um projeto que tem Python?
-- Gerenciadores de pacotes de Python
-- Como usar arquivos de configurações em Python?
 
-<!-- ## Preparing the Environment for the Python
+# Summary
+
+**_Python's Habitat_**
+
 This topic describe how to set up the environment to Python developement.
+- [Preparing the Environment for the Python](#How-to-prepare-and-install-a-Python-environment?)
 - [Check Python Configuration](#check-python-configuration)
-- [Preparing Environment](#preparing-environment)
-- [Requirements File](#requirements-file)
-- [Virtual Environment](#virtual-environment)
-- [Pipenv](#pipenv)
+- [Advanced settings of Python](#Advanced-settings-of-Python)
+  - [Install multiples Python versions](#Install-multiples-Python-versions)
+  - [Change system's Python](#Change-system's-Python)
+  - [Change Python2 to Python3](#Change-Python2-to-Python3)
+  - [Set Python's Environment Variables](#Set-Python's-Environment-Variables)
+- O que é e como funciona um ambiente virtual de Python?
+- Como executar Python dentro de um container
 
-### FAQ
-- How do I configure my computer to run Python code?
-- How do I configure my computer to develop in Python?
-- What are the best practices to prepare an environment that runs Python?
-- What is a requirements.txt file ?
-- How to ensure a fully reproducible (100% equal) environment ?
-- How is the virtual environment Python executable able to use something different from the system site packages ?
-- When use golang in place Python -->
+<br/>
+
+**_Python's Taxonomy_**
+
+This topic describe how is the pattern of Python projects.
+- Gerenciadores de pacotes
+  - [Pip](#pipenv)
+  - [Poetry](#pipenv)
+  - [Pipenv](#pipenv)
+- [Requirements File](#requirements-file)
+- Deterministic build
+- Como usar arquivos de configurações em Python?
+- Criando pacotes
+- Arquivos Python
+
+<br/>
+
+**_Python's Behavior_**
+- Interpreter and Compiler
+  - CPython
+  - Jython
+  - Comparian
+- How Python program run ?
+
+<br/>
+
+**_Python's Feeding_**
+
+This topic describe best pratices.
+
+<br/>
+<br/>
+<br/>
 
 ---
 
@@ -83,6 +108,8 @@ This topic describe how to set up the environment to Python developement.
 
 ---
 
+<br/>
+
 ## **Check Python Configuration**
 ### Check **current version**
 
@@ -115,9 +142,9 @@ which python
 sudo update-alternatives --list python
 ```
 
-<br/>
-
 ---
+
+<br/>
 
 ## **Advanced settings of Python**
 
@@ -249,6 +276,9 @@ The important thing to realize is that Python 3 is not backwards compatible with
    ```
 
 ---
+
+<br/>
+
 
 
 
@@ -639,7 +669,15 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 
 
 
-
+<!-- ## Configuration File
+There are ways to manage the configuration:
+- Using built-in data structure
+- Using external configuration file
+    - json
+    - ini
+- Using environment variables
+- Using dynamic loading
+ -->
 
 
 

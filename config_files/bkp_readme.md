@@ -667,76 +667,7 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 
 ---
 
-## Undertanding
 
-### Zen of Python
-
-<img src="images/zen.png" align="center" height=auto width=80%/>
-
-```python
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren't special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!
-```
-
-NOTE: [PEP 20](https://www.python.org/dev/peps/pep-0020/)
-
----
-
-## Types
-
-<img src="images/Python_3._The_standard_type_hierarchy.png" width="1000" />
-
-Examples:
-```python
-# Converting real to integer
-print 'int(3.14) =', int(3.14)
-
-# Converting integer to real
-print 'float(5) =', float(5)
-
-# Calculation between integer and real results in real
-print '5.0 / 2 + 3 = ', 5.0 / 2 + 3
-
-# Integers in other base
-print "int('20', 8) =", int('20', 8) # base 8
-print "int('20', 16) =", int('20', 16) # base 16
-
-# Operations with complex numbers
-c = 3 + 4j
-print 'c =', c
-print 'Real Part:', c.real
-print 'Imaginary Part:', c.imag
-print 'Conjugate:', c.conjugate()
-
-# int(3.14) = 3
-# float(5) = 5.0
-# 5.0 / 2 + 3 =  5.5
-# int('20', 8) = 16
-# int('20', 16) = 32
-# c = (3+4j)
-# Real Part: 3.0
-# Imaginary Part: 4.0
-# Conjugate: (3-4j)
-```
-
----
 ## Interpreter and Compiler
 
  <img src="images/cpython.png"  align="center" height=auto width=80% />
@@ -1278,14 +1209,6 @@ Further on that, if you consider unit-testing and the F.I.R.S.T
  principle (Fast tests, Independent tests, Repeatable, Self-Validating and Timely) will probably violate the Independent tests principle (which means that tests don't depend on each other).
 
 
-## Configuration File
-There are ways to manage the configuration:
-- Using built-in data structure
-- Using external configuration file
-    - json
-    - ini
-- Using environment variables
-- Using dynamic loading
 
 
 #### Using built-in data structure
