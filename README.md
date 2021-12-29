@@ -35,7 +35,7 @@ This topic describe how is the pattern of Python projects.
 
 <br/>
 
-:anger:**_Python's Behavior_**
+:anger: **_Python's Behavior_**
 - Interpreter and Compiler
   - CPython
   - Jython
