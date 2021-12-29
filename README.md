@@ -29,7 +29,7 @@ This topic describe how to set up the environment to Python developement.
 
 ---
 
-### **How to prepare and install a Python environment?**
+## **How to prepare and install a Python environment?**
 
 <details>
     <summary><b>  <a href="#linux"><img src="images/icon_ubuntu.png"/></a> Linux</b></summary>
@@ -38,13 +38,15 @@ This topic describe how to set up the environment to Python developement.
   ```bash
   sudo apt update
 
-  sudo apt install build-essential\
-                   libffi-dev\
-                   python3-pip\
-                   python3-dev\
-                   python3-venv \
-                   python3-setuptools\
-                   python3-pkg-resources
+  sudo apt install\
+    software-properties-common\
+    build-essential\
+    libffi-dev\
+    python3-pip\
+    python3-dev\
+    python3-venv\
+    python3-setuptools\
+    python3-pkg-resources
   ```
   
   Now, the environment is done to install Python
@@ -54,7 +56,7 @@ This topic describe how to set up the environment to Python developement.
   <br/>
 </details>
 
-<details>	
+<details>
   <summary><b>  <a href="#windows"><img src="images/icon_windows.png"/></a> Windows</b></summary>
 
   On Windows, I recommend using the package manager [chocolatey](https://chocolatey.org/) and set your Powershell to can work as admin. See [this](devpos/infra-as-code) tutorial.
@@ -81,43 +83,43 @@ This topic describe how to set up the environment to Python developement.
 
 ---
 
-### **Check Python Configuration**
-- Check **current version**
+## **Check Python Configuration**
+### Check **current version**
 
-  <details>	
-    <summary> Watch</summary>
-    <img src='images/which_python.gif' height=auto width="80%">
-  </details>
+<details>	
+  <summary> Watch</summary>
+  <img src='images/version_python.gif' height=auto width="100%">
+</details>
 
-  ```bash
-  python --version
-  ```
+```bash
+python --version
+```
 
 - If return Python **2**, try set a alias in .bashrc, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc)
 
-  ```bash
-  alias python=python3
-  ```
+```bash
+alias python=python3
+```
 
-- Check **where** installed Python
-  <details>	
-    <summary> Watch</summary>
-    <img src='images/which_python.gif' height=auto width="80%">
-  </details>
+### Check **where** installed Python
+<details>	
+  <summary> Watch</summary>
+  <img src='images/which_python.gif' height=auto width="100%">
+</details>
 
-  ```bash
-  which python
-  ```
+```bash
+which python
+```
 
-- Check **which Python versions** are installed
-  <details>	
-    <summary> Watch</summary>
-    <img src='images/list_versions.gif' height=auto width="80%">
-  </details>
+### Check **which Python versions** are installed
+<details>	
+  <summary> Watch</summary>
+  <img src='images/list_versions.gif' height=auto width="100%">
+</details>
   
-  ```bash
-  sudo update-alternatives --list python
-  ```
+```bash
+sudo update-alternatives --list python
+```
 
 
 
@@ -143,6 +145,10 @@ This topic describe how to set up the environment to Python developement.
 
 ## Install multiples Python versions
 
+This PPA contains more recent Python versions packaged for Ubuntu.
+
+
+
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update -y
 sudo apt install python3.6
@@ -160,7 +166,7 @@ sudo apt install python3.6
 ```
 
 
-
+<!-- 
 
 ## Preparing Environment
 
@@ -609,6 +615,13 @@ EXAMPLES...
 Program **doesn’t run any faster when it is read from a .pyc** file than when it is read from a .py file;
 
 .pyc it's faster to loaded modules -->
+ -->
+
+
+
+
+
+
 
 
 ---
@@ -617,11 +630,11 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 <br/>
 <a href="mailto:brunocampos01@gmail.com" target="_blank"><img src="https://github.com/brunocampos01/devops/blob/master/images/email.png" alt="Gmail" width="30">
 </a>
-<a href="https://stackoverflow.com/users/8329698/bruno-campos" target="_blank"><img src="https://github.com/brunocampos01/devops/blob/master/images/stackoverflow.png" alt="GitHub" width="30">
+<a href="https://stackoverflow.com/users/8329698/bruno-campos" target="_blank"><img src="https://github.com/brunocampos01/devops/blob/master/images/stackoverflow.png" alt="Stackoverflow" width="30">
 </a>
 <a href="https://www.linkedin.com/in/brunocampos01" target="_blank"><img src="https://github.com/brunocampos01/devops/blob/master/images/linkedin.png" alt="LinkedIn" width="30"></a>
 <a href="https://github.com/brunocampos01" target="_blank"><img src="https://github.com/brunocampos01/devops/blob/master/images/github.png" alt="GitHub" width="30"></a>
-<a href="https://medium.com/@brunocampos01" target="_blank"><img src="https://github.com/brunocampos01/devops/blob/master/images/medium.png" alt="GitHub" width="30">
+<a href="https://medium.com/@brunocampos01" target="_blank"><img src="https://github.com/brunocampos01/devops/blob/master/images/medium.png" alt="Medium" width="30">
 </a>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png",  align="right" /></a><br/>
 </p>
