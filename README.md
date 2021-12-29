@@ -104,7 +104,7 @@ which python
 sudo update-alternatives --list python
 ```
 
-<video src='images/which_python.mp4' height=auto width="50%">
+<img src='images/which_python.gif' height=auto width="50%">
 
 
 ---
