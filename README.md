@@ -5,7 +5,7 @@
 
 # Summary
 
-**_Python's Habitat_**
+:sunrise_over_mountains: **_Python's Habitat_**
 
 This topic describe how to set up the environment to Python developement.
 - [Preparing the Environment for the Python](#How-to-prepare-and-install-a-Python-environment?)
@@ -20,7 +20,7 @@ This topic describe how to set up the environment to Python developement.
 
 <br/>
 
-**_Python's Taxonomy_**
+:snake: **_Python's Taxonomy_**
 
 This topic describe how is the pattern of Python projects.
 - Gerenciadores de pacotes
@@ -44,7 +44,7 @@ This topic describe how is the pattern of Python projects.
 
 <br/>
 
-**_Python's Feeding_**
+:clap: **_Python's Feeding_**
 
 This topic describe best pratices.
 
