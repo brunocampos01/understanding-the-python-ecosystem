@@ -35,7 +35,7 @@ This topic describe how is the pattern of Python projects.
 
 <br/>
 
-**_Python's Behavior_**
+:anger:**_Python's Behavior_**
 - Interpreter and Compiler
   - CPython
   - Jython
@@ -44,7 +44,7 @@ This topic describe how is the pattern of Python projects.
 
 <br/>
 
-:clap: **_Python's Feeding_**
+:bug: **_Python's Feeding_**
 
 This topic describe best pratices.
 
