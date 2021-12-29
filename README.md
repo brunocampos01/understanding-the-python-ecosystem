@@ -36,6 +36,8 @@ This topic describe how to set up the environment to Python developement.
   
   Python needs a set of tools that are system requirements. If necessary, install these requirements with this command:
   ```bash
+  sudo apt update
+
   sudo apt install build-essential\
                    libffi-dev\
                    python3-pip\
@@ -72,7 +74,7 @@ This topic describe how to set up the environment to Python developement.
   python --version 
   ```
   
-  <img src='images/windows_python_6.png' height=auto width="100%">
+  <img src='images/windows_python_6.png' height=100% width="100%">
 
   <br/>
 </details>
@@ -81,35 +83,74 @@ This topic describe how to set up the environment to Python developement.
 
 ### **Check Python Configuration**
 - Check **current version**
-```bash
-python --version
 
-# Python 3.10.1
-```
+  <details>	
+    <summary> Watch</summary>
+    <img src='images/which_python.gif' height=auto width="100%">
+  </details>
 
-If return Python **2**, try set a alias in .bashrc, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc)
-```bash
-alias python=python3
-```
+  ```bash
+  python --version
+  ```
+
+- If return Python **2**, try set a alias in .bashrc, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc)
+
+  ```bash
+  alias python=python3
+  ```
 
 - Check **where** installed Python
-```bash
-which python
+  <details>	
+    <summary> Watch</summary>
+    <img src='images/which_python.gif' height=auto width="100%">
+  </details>
 
-# /usr/bin/python
-```
+  ```bash
+  which python
+  ```
 
 - Check **which Python versions** are installed
-```
-sudo update-alternatives --list python
-```
+  <details>	
+    <summary> Watch</summary>
+    <img src='images/list_versions.gif' height=auto width="100%">
+  </details>
 
-<img src='images/which_python.gif' height=auto width="50%">
+  ```bash
+  sudo update-alternatives --list python
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---
 
 ## Install multiples Python versions
+
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update -y
+sudo apt install python3.6
+
+  <details>	
+    <summary> Watch</summary>
+    <img src='images/install_python.gif' height=auto width="100%">
+  </details>
 
 ```bash
     ./configure
@@ -117,6 +158,8 @@ sudo update-alternatives --list python
     make test
     sudo make install
 ```
+
+
 
 
 ## Preparing Environment
