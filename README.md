@@ -95,12 +95,6 @@ This topic describe how to set up the environment to Python developement.
 python --version
 ```
 
-- If return Python **2**, try set a alias in .bashrc, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc)
-
-```bash
-alias python=python3
-```
-
 ### Check **where** installed Python
 <details>	
   <summary> Watch</summary>
@@ -121,25 +115,14 @@ which python
 sudo update-alternatives --list python
 ```
 
+---
 
+### Switch Python2
+If return Python **2**, try set a alias in .bashrc, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```bash
+alias python=python3
+```
 
 ---
 
