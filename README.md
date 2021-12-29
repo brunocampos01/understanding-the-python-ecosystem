@@ -124,14 +124,12 @@ sudo update-alternatives --list python
 ### **Install multiples Python versions**
 Sometimes you might work on different projects at the same time with different versions of Python. Normally I using Anaconda is the easiest solution, however, can there are restricted.
 
-
-<details>	
-  <summary> Watch</summary>
-  <img src='images/install_python.gif' height=auto width="100%">
-</details>
-
 1. Add repository
-
+   <details>	
+     <summary> Watch</summary>
+     <img src='images/install_python.gif' height=auto width="100%">
+   </details>
+   
    This PPA contains more recent Python versions packaged for Ubuntu.
    ```bash
    sudo add-apt-repository ppa:deadsnakes/ppa -y
@@ -171,7 +169,7 @@ Before installed other versions of Python it's necessary set which system's Pyth
    sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 4
    ```
 
-   In direcotry `/usr/bin` will be create simbolic link: `/usr/bin/python -> /etc/alternatives/python*`
+   In directory `/usr/bin` will be create simbolic link: `/usr/bin/python -> /etc/alternatives/python*`
 
 2. Choose version
 
@@ -199,16 +197,9 @@ If return Python **2**, try set a alias in .bashrc, see this [example](https://g
 alias python=python3
 ```
 
-**NOTE:**
-recomended for started Ubuntu 20.4
+<br/>
 
-
-<!-- 
-
-## Preparing Environment
-
-### Enviornment Variables
-
+### **Set Python's Environment Variables**
 - To individual project
 `PYTHONPATH` search path until module.
 
@@ -241,44 +232,7 @@ NOTE: quit vim: `ESC, :wq`
 ```bash
 source ~/.bashrc
 
-# or
-
-.  ~/.bashrc
-```
-
-### Install multiple Python3
-`update-alternatives` symbolic links determining default commands
-
-1. Execute in terminal
-```bash
-sudo update-alternatives --config python
-```
-If return error: `update-alternatives: error: no alternatives for python3`, following to step [2](#2)
-
-2. Install multiples Python
-```bash
-update-alternatives --install /usr/bin/python python /usr/bin/python<NUMER_VERSION> 1
-
-update-alternatives --install /usr/bin/python python /usr/bin/python<OTHER_NUMER_VERSION> 2
-```
-
-3. Change Python versions
-```bash
-sudo update-alternatives --config python
-```
-
-<img src="images/python_alternatives.png" width="1000" />
-
-```bash
-sudo update-alternatives  --set python /usr/bin/python3.6
-```
-
-4. Check changes
-```bash
-python --version
-
-# Python 3.8
-```
+<!-- 
 
 ---
 
