@@ -55,7 +55,7 @@ This topic describe how to set up the environment to Python developement.
 </details>
 
 <details>	
-  <summary><b>  <img src="images/icon_windows.png"/> Windows</b></summary>
+  <summary><b>  <a href="#windows"><img src="images/icon_windows.png"/></a> Windows</b></summary>
 
   On Windows, I recommend using the package manager [chocolatey](https://chocolatey.org/) and set your Powershell to can work as admin. See [this](devpos/infra-as-code) tutorial.
 
