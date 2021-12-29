@@ -32,7 +32,7 @@ This topic describe how to set up the environment to Python developement.
 ### **How to prepare and install a Python environment?**
 
 <details>
-    <summary><b>  <img src="images/icon_ubuntu.png"/> Linux</b></summary>
+    <summary><b>  <a href="#linux"><img src="images/icon_ubuntu.png"/></a> Linux</b></summary>
   
   Python needs a set of tools that are system requirements. If necessary, install these requirements with this command:
   ```bash
@@ -86,7 +86,7 @@ This topic describe how to set up the environment to Python developement.
 
   <details>	
     <summary> Watch</summary>
-    <img src='images/which_python.gif' height=auto width="100%">
+    <img src='images/which_python.gif' height=auto width="80%">
   </details>
 
   ```bash
@@ -102,7 +102,7 @@ This topic describe how to set up the environment to Python developement.
 - Check **where** installed Python
   <details>	
     <summary> Watch</summary>
-    <img src='images/which_python.gif' height=auto width="100%">
+    <img src='images/which_python.gif' height=auto width="80%">
   </details>
 
   ```bash
@@ -112,7 +112,7 @@ This topic describe how to set up the environment to Python developement.
 - Check **which Python versions** are installed
   <details>	
     <summary> Watch</summary>
-    <img src='images/list_versions.gif' height=auto width="100%">
+    <img src='images/list_versions.gif' height=auto width="80%">
   </details>
   
   ```bash
