@@ -15,8 +15,8 @@ This topic describe how to set up the environment to Python developement.
   - [Change system's Python](#Change-system's-Python)
   - [Change Python2 to Python3](#Change-Python2-to-Python3)
   - [Set Python's Environment Variables](#Set-Python's-Environment-Variables)
-- O que é e como funciona um ambiente virtual de Python?
-- Como executar Python dentro de um container
+- [What is a virtual environment and how it works](#What-is-a-virtual-environment-and-how-it-works)
+- [How to run Python inside a container](#How-to-run-Python-inside-a-container)
 
 <br/>
 
@@ -50,7 +50,7 @@ This topic describe best pratices.
 
 <br/>
 
-:mag: **_Other Features this Snack_**
+:mag: **_Python's Other Features_**
 
 Extra topics to see.
 
@@ -239,7 +239,9 @@ The important thing to realize is that Python 3 is not backwards compatible with
 - To individual project `PYTHONPATH` search path until module. Example: [Apache Airflow](https://airflow.apache.org/) read `dag\` folder and add automatically any file that is in this directory. 
 - To interpreter `PYTHONHOME` indicate standard libraries.
 
-#### **Configure `PYTHONPATH`**
+<details>
+  <summary><b>  Configure PYTHONPATH</b></summary>
+
 1. Open profile
    ```bash
    sudo vim ~/.bashrc
@@ -280,61 +282,19 @@ The important thing to realize is that Python 3 is not backwards compatible with
     ...
     ]
    ```
+</details>
 
 ---
 
 <br/>
 
+## **What is a virtual environment and how it works**
 
+<img src="images/virtualenv.png"  align="center" height=auto width=80%/>
 
+###### Source: https://vincenttechblog.com/fix-change-python-virtualenv-settings/
 
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-
-## Requirements File
-_Requirements files_ is file containing a list of items to be installed using pip install.
-
-- Generate file `requirements.txt`
-```bash
-pip3 freeze > requirements.txt
-```
-
-or
-
-```bash
-venv/bin/pip3 freeze > requirements.txt
-cat requirements # image bellow
-```
-<img src="images/requeriments.png" align="center" height=auto width=50%/>
-
-
-- Visualize instaled libraries
-```bash
-pip3 freeze
-```
-<img src="images/freeze.png" align="center" height=auto width=100%/>
-
-- Install libraries in requirements
-```bash
-pip3 install -r requirements.txt
-```
-`-r` recursive
-
----
-
-## Virtual Environment
-<img src="images/virtual_env_p3.png"  align="center" height=auto width=80%/>
+<br/>
 
 The Python can is executed in a virtual environment with **semi-isolated** from system.
 <br/>
@@ -342,7 +302,7 @@ When Python is initiating, it analyzes the path of its binary. In a virtual envi
 
 _Quando o Python está iniciando, ele analisa o caminho do seu binário. Em um virtual environment, na verdade, é apenas uma cópia ou Symbolic link para o binário Python do seu sistema. Em seguida, define o local `sys.prefix` que é usado para localizar o `site-packages`(third party libraries)._
 
-<img src="images/venv.png"  align="center" height=auto width=80%/>
+<img src="images/virtualenv.jpg"  align="center" height=auto width=50%/>
 
 ### Symbolic link
 - `sys.prefix` points to the virtual environment directory.
@@ -404,6 +364,56 @@ source <DIR>/bin/activate
 
 #### References
 - [python-virtual-environments-a-primer](https://realpython.com/python-virtual-environments-a-primer/)
+
+
+---
+
+<br/>
+
+## How to run Python inside a container
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+## Requirements File
+_Requirements files_ is file containing a list of items to be installed using pip install.
+
+- Generate file `requirements.txt`
+```bash
+pip3 freeze > requirements.txt
+```
+
+or
+
+```bash
+venv/bin/pip3 freeze > requirements.txt
+cat requirements # image bellow
+```
+<img src="images/requeriments.png" align="center" height=auto width=50%/>
+
+
+- Visualize instaled libraries
+```bash
+pip3 freeze
+```
+<img src="images/freeze.png" align="center" height=auto width=100%/>
+
+- Install libraries in requirements
+```bash
+pip3 install -r requirements.txt
+```
+`-r` recursive
+
+---
 
 ---
 
@@ -686,7 +696,9 @@ There are ways to manage the configuration:
  -->
 
 
-
+<!-- TODO
+- Side effects: https://realpython.com/defining-your-own-python-function/#side-effects
+- return: https://realpython.com/defining-your-own-python-function/#exiting-a-function -->
 
 ---
 
