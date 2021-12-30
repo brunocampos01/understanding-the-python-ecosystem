@@ -385,10 +385,11 @@ Python can run in a virtual environment with **isolation** from the system.
   ```bash
   source <NAME_ENVIRONMENT>/bin/activate
   ```
+  <br/>
 </details>
 
 <details>
-  <summary><a href="#linux"><img src="images/icons_test.png"/></a><b> Python Interview Questions on Virtual Environment</b></summary> 
+  <summary><a href=""><img src="images/icons_test.png"/></a><b> Python Interview Questions on Virtual Environment</b></summary> 
 
   1. What is virtual environment in Python?
   2. How to create and use a virtual environment in Python?
