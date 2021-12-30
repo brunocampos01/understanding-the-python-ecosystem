@@ -625,6 +625,24 @@ A set of command line tools to help you keep your pip-based packages fresh.
 2. **Compile and convert it to bytecode** and directly bytecode is loaded in system memory.
 3. Then compiled bytecode interpreted from memory to execute it.
 
+    
+ TODO
+ Compilers and Interpreters
+A compiler converts the .py source file into a .pyc bytecode for the Python virtual machine.
+A Python interpreter executes this bytecode on the virtual machine
+    
+    
+Design of CPython
+Each CPython interpreter for Python, the process uses a GIL(Global Interpreter Lock). This serves as a limitation as it disables concurrent Python threads for a process.
+
+Another problem is that to achieve concurrency, you must manage separate CPython interpreter processes with a multitasking OS.
+
+This also makes it harder for concurrent CPython processes to communicate.
+    
+
+#gil
+    
+    
 ---
 
 <br/>
