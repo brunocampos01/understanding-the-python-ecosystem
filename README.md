@@ -21,7 +21,7 @@ This topic describe how is the pattern of Python projects.
 - [Package manager](#package-manager)
 - [Requirements File](#requirements-file)
 - [Deterministic build](#deterministic-build)
-<!-- - Arquivos Python -->
+<!-- - Principals Files -->
 
 <br/>
 
@@ -37,6 +37,27 @@ This topic describe how is the pattern of Python projects.
 :bug: **_Python's Feeding_**
 
 This topic describe best pratices.
+- [Identation and Length](#identation-and-length)
+- [Line Break After a Binary Operator](#line-break-after-a-binary-operator)
+- [Naming](#naming)
+- [Encoding](#encoding)
+- [Strings `' '` and `" "`](#strings-and)
+- [Comments `#`](#comments)
+- [Imports](#imports)
+- [Dunders to Documentation](#dunders-to-documentation)
+- [Annotation Functions](#annotation-functions)
+ - [Type Hints](#type-hints)
+- [String Concatenation](#string-concatenation)
+- [String Methods](#string-methods)
+- [Exception](#exception)
+- [Return](#return)
+- [Type Comparisons](#type-comparisons)
+- [Methods with numerous parameters ](#methods-with-numerous-parameters)
+- Docstrings
+<!-- TODO - https://realpython.com/documenting-python-code/
+TODO - https://docs.python-guide.org/ -->
+
+
 
 <br/>
 
@@ -490,10 +511,26 @@ Python can run in a virtual environment with **isolation** from the system.
      <br/>
 </details>
 
+<details>
+  <summary><b> Python Package Index</b></summary> 
+   
+   [Doc Python Package Index](https://pypi.org/)
+   <br/>
+</details>
 
-- [Python Package Index](https://pypi.org/)
-- [Poetry](https://python-poetry.org/)
-- [Conda](https://docs.conda.io/en/latest/)
+<details>
+  <summary><b> Poetry</b></summary> 
+    
+   [Doc Poetry](https://python-poetry.org/)
+   <br/>
+</details>
+
+<details>
+  <summary><b> Conda</b></summary> 
+  
+  [Doc Conda](https://docs.conda.io/en/latest/)
+  <br/>
+</details>
 
 ---
 
@@ -587,6 +624,465 @@ A set of command line tools to help you keep your pip-based packages fresh.
 1. First, Python interpreter **checks syntax** (sequential)
 2. **Compile and convert it to bytecode** and directly bytecode is loaded in system memory.
 3. Then compiled bytecode interpreted from memory to execute it.
+
+---
+
+<br/>
+
+## **Best Pratices**
+
+_"Readability counts"_
+
+### **Identation and Length**
+- 4 spaces
+- Limit all line 72 characteres to docstring
+- Limit all line 79 to code
+- Statement of functions and flow, e.g:
+
+```Python
+# Aligned with opening delimiter.
+foo = long_function_name(var_one=0.0, 
+                         var_two=0.0,
+                         var_three=0.0,
+                         var_four=0.0)
+
+```
+
+### **Naming Convention**
+- Class Name (camelCase): `CapWords()`
+- Variables (snack_case): `cat_words`
+- Constants: `MAX_OVERFLOW`
+
+
+##### Line Break After a Binary Operator
+```Python
+income = (gross_wages
+          + taxable_interest
+          + (dividends - qualified_dividends)
+          - ira_deduction
+          - student_loan_interest)
+
+```
+
+##### Encoding
+By default: `UTF-8`
+
+```Python
+# -*- coding: UTF-8 -*-
+<code>
+```
+
+##### Strings `' '` and `" "`
+Single quotation marks and strings with double quotation marks are the same.
+
+##### Comments `#`
+- Fisrt word **need** upper case.
+- Comments in-line separete by 2 spaces.
+```Python
+x = x + 1  # Compensar borda
+```
+
+##### Imports
+Following order:
+
+1. Standard library imports.
+2. Related third party imports.
+(_parte de terceiros_)
+3. Local application/library specific imports.
+
+```Python
+import argparse
+import configparser
+import os
+
+import mysql.connector
+
+import my_module
+```
+
+Yes:
+```Python
+import os
+import sys
+```
+
+No:
+```Python
+import os, sys
+```
+
+No problems:
+```Python
+from subprocess import Popen, PIPE
+```
+
+
+##### Dunders to Documentation
+```Python
+__version__ = '0.1'
+__author__ = 'Bruno Campos'
+```
+
+
+##### String Concatenation
+
+- Use ` ''.join()`, to concatenate 3 or more:
+```python
+os.path.dirname.join(stringA + stringB + stringC + stringD)
+```
+
+- This optimization is fragile even in CPython. **Not** use:
+```python
+stringA + stringB + stringC + stringD
+```
+
+
+##### String Methods
+
+- Use string methods instead of the string module because, String methods are always much faster.
+- Use `''.startswith()` and `''.endswith()` instead of string slicing to check for prefixes or suffixes.
+
+```Python
+Yes: if foo.startswith('bar'):
+No:  if foo[:3] == 'bar':
+```
+
+
+##### Exception
+
+Limit the clausule `try:` minimal code necessary.
+
+Yes:
+```Python
+try:
+    value = collection[key]
+except KeyError:
+    return key_not_found(key)
+else:
+    return handle_value(value)
+```
+
+No:
+```Python
+try:
+    # Too broad!
+    return handle_value(collection[key])
+except KeyError:
+    # Will also catch KeyError raised by handle_value()
+    return key_not_found(key)
+```
+
+- Objetivo de responder à pergunta **"O que deu errado?"** programaticamente, em vez de apenas afirmar que _"Ocorreu um problema"_
+
+
+##### Return
+"_Should explicitly state this as return None_"
+
+- Be consistent in return statements.
+- Todas as instruções de retorno em uma função devem retornar uma expressão ou nenhuma delas deve.
+
+Yes:
+```Python
+def foo(x):
+    if x >= 0:
+        return math.sqrt(x)
+    else:
+        return None
+```
+
+No:
+```Python
+def foo(x):
+    if x >= 0:
+        return math.sqrt(x)
+```
+
+
+##### Type Comparisons
+- Always use `isinstance()`
+```Python
+Yes: if isinstance(obj, int):
+
+No:  if type(obj) is type(1):
+```
+
+#### Annotation Functions
+"_Don’t use comments to specify a type, when you can use type annotation._"
+
+-  Atua como um linter (analisador de código para mostrar erros) muito poderoso.
+- O Python não atribui nenhum significado a essas anotações.
+- _Examples_:
+
+Method arguments and return values
+```Python
+def func(a: int) -> List[int]:
+```
+
+```Python
+def hello_name(name: str) -> str:
+    return (f'Hello' {name}')
+```
+
+Declare the type of a variable (type hints)
+```python
+a = SomeFunc()  # type: SomeType
+```
+
+Isso informa que o tipo esperado do argumento de nome é str . Analogicamente, o tipo de retorno esperado é str .
+
+##### Type Hints
+```Python
+def send_email(address,     # type: Union[str, List[str]]
+               sender,      # type: str
+               cc,          # type: Optional[List[str]]
+               bcc,         # type: Optional[List[str]]
+               subject='',
+               body=None    # type: List[str]
+               ):
+    """Send an email message.  Return True if successful."""
+    <code>
+```
+
+TODO
+- https://docs.python.org/3/library/typing.html#module-typing
+
+
+##### References
+- https://medium.com/@shamir.stav_83310/the-other-great-benefit-of-python-type-annotations-896c7d077c6b
+- https://www.python.org/dev/peps/pep-0484/
+- https://blog.jetbrains.com/pycharm/2015/11/python-3-5-type-hinting-in-pycharm-5/
+
+---
+
+## Docstrings
+
+- Docstrings must have:
+  - Args
+  - Returns
+  - Raises
+
+Simple Example
+```Python
+def say_hello(name):
+    """
+    A simple function that says hello...
+    Richie style
+    """
+
+    print(f"Hello {name}, is it me you're looking for?")
+```
+
+Example partner Google
+```Python
+def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
+    """Fetches rows from a Bigtable.
+
+    Retrieves rows pertaining to the given keys from the Table instance
+    represented by big_table.  Silly things may happen if
+    other_silly_variable is not None.
+
+    Args:
+        big_table: An open Bigtable Table instance.
+        keys: A sequence of strings representing the key of each table row
+            to fetch.
+        other_silly_variable: Another optional variable, that has a much
+            longer name than the other args, and which does nothing.
+
+    Returns:
+        A dict mapping keys to the corresponding table row data
+        fetched. Each row is represented as a tuple of strings. For
+        example:
+
+        {'Serak': ('Rigel VII', 'Preparer'),
+         'Zim': ('Irk', 'Invader'),
+         'Lrrr': ('Omicron Persei 8', 'Emperor')}
+
+        If a key from the keys argument is missing from the dictionary,
+        then that row was not found in the table.
+
+    Raises:
+        IOError: An error occurred accessing the bigtable.Table object.
+    """
+    return None
+```
+
+#### `__doc__`
+
+Such a docstring becomes the `__doc__` special attribute of that object.
+
+- Simple Example
+```Python
+print(say_hello.__doc__)
+
+# A simple function that says hello... Richie style
+```
+
+- Example partner Google
+
+<img src='images/__doc__.png' align="center" height=auto width=1000%>
+
+
+##### `help()`
+- Create manual: `man`
+- Is a built-in function help() that prints out the objects docstring.
+
+```Python
+>>> help(say_hello)
+Help on function say_hello in module __main__:
+
+# say_hello(name)
+#     A simple function that says hello... Richie style
+```
+
+<img src='images/help().png'>
+
+##### Scripts with Docstrings
+- Docstrings must show how to use script
+- Must doc:
+  - Usage: sintax command line
+  - Examples
+  - Arguments required and optional
+
+```python
+"""
+Example of program with many options using docopt.
+Usage:
+  options_example.py [-hvqrf FILE PATH]
+  my_program tcp <host> <port> [--timeout=<seconds>]
+
+Examples:
+  calculator_example.py 1 + 2 + 3 + 4 + 5
+  calculator_example.py 1 + 2 '*' 3 / 4 - 5    # note quotes around '*'
+  calculator_example.py sum 10 , 20 , 30 , 40
+
+Arguments:
+  FILE     input file
+  PATH     out directory
+
+Options:
+  -h --help            show this help message and exit
+  --version            show version and exit
+  -v --verbose         print status messages
+  -q --quiet           quiet mode
+  -f --force
+  -t, --timeout TIMEOUT    set timeout TIMEOUT seconds
+  -a, --all             List everything.
+
+"""
+from docopt import docopt
+
+
+if __name__ == '__main__':
+    arguments = docopt(__doc__, version='1.0.0rc2')
+    print(arguments)
+```
+
+##### Functions with Docstrings
+A docstring to a function or method must resume:
+- behavior
+- arguments required
+- arguments optional
+- default value of arguments
+- returns
+- raise Exceptions
+
+Example
+
+```Python
+def says(self, sound=None):
+    """Prints what the animals name is and what sound it makes.
+
+    If the argument `sound` isn't passed in, the default Animal
+    sound is used.
+
+    Parameters
+    ----------
+    sound : str, optional
+        The sound the animal makes (default is None)
+
+    Raises
+    ------
+    NotImplementedError
+        If no sound is set for the animal or passed in as a parameter.
+    """
+
+    if self.sound is None and sound is None:
+        raise NotImplementedError("Silent Animals are not supported!")
+
+    out_sound = self.sound if sound is None else sound
+    print(self.says_str.format(name=self.name, sound=out_sound))
+
+```
+
+##### Class with Docstrings
+A docstring para uma classe deve resumir seu comportamento e listar os métodos públicos e variáveis ​​de instância. Se a classe se destina a ser uma subclasse e possui uma interface adicional para subclasses, essa interface deve ser listada separadamente (no docstring). O construtor de classe deve ser documentado na docstring para seu método __init__ . Os métodos individuais devem ser documentados por seus próprios docstring.
+
+Example
+```Python
+class SimpleClass:
+    """Class docstrings go here."""
+
+    def say_hello(self, name: str):
+        """Class method docstrings go here."""
+
+        print(f'Hello {name}')
+```
+
+Class docstrings should contain the following information:
+
+- A brief summary of its purpose and behavior
+- Any public methods, along with a brief description
+- Any class properties (attributes)
+- Anything related to the interface for subclassers, if the class is intended to be subclassed
+
+
+
+##### References
+- [PEP 08](https://www.python.org/dev/peps/pep-0008/)
+- [PEP 484](https://www.python.org/dev/peps/pep-0484/)
+- [PEP 257](https://www.python.org/dev/peps/pep-0257/)
+- https://realpython.com/python-pep8/#naming-conventions
+- https://pep8.org
+- Style guide Google: https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings
+
+#### Methods with numerous parameters
+Methods with numerous parameters are a challenge to maintain, especially if most of them share the same datatype.
+<br/>
+These situations usually denote the **need for new objects to wrap the
+ numerous parameters**.
+
+
+#### Example(s):
+
+- too many arguments
+```python
+def add_person(birthYear: int, birthMonth: int, birthDate: int,
+               height: int, weight: int,
+               ssn: int):
+'''too many arguments'''
+
+    . . .
+```
+- preferred approach
+```python
+def add_person(birthdate: 'Date',
+               measurements: 'BodyMeasurements',
+               ssn: int):
+'''preferred approach'''
+
+    . . .
+```
+
+
+## Cyclomatic Complexity
+cyclomatic complexity counts the number of decision points in a method
+
+
+
+
+
+
+
 
 
 <!-- TODO
