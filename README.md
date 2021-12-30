@@ -530,7 +530,6 @@ Python can run in a virtual environment with **isolation** from the system.
 <!-- ### **The issue with Pip** -->
 Using pip and `requirements.txt` file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is, given the same input (the `requirements.txt` file), pip does not always produce the same environment.
 
-<br/>
 
 ### **pip-tools**
 A set of command line tools to help you keep your pip-based packages fresh.
