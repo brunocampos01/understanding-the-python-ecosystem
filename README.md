@@ -183,13 +183,13 @@ sudo update-alternatives --list python
      ```bash
      sudo apt install python3.<VERSION>
      ```
+  <br/>
 </details>
    
 
 <details>	
    <summary><b> Change system's Python</b></summary>
   
-  <!-- ### **Change system's Python** -->
   Before installed other versions of Python it's necessary set which system's Python will be use.
   
   1. Use `update-alternatives`
@@ -223,13 +223,13 @@ sudo update-alternatives --list python
      ```bash
      python --version
      ```
+  <br/>
 </details>
 
 
 <details>
   <summary><b> Change Python2 to Python3</b></summary>
   
-  <!-- ### **Change Python2 to Python3** -->
   If return Python **2**, try set a alias in `/home/$USER/.bashrc`, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc).
   
   ```bash
@@ -238,7 +238,7 @@ sudo update-alternatives --list python
   
   **NOTE:**
   The important thing to realize is that Python 3 is not backwards compatible with Python 2. This means that if you try to run Python 2 code as Python 3, it will probably break.
-  
+  <br/>
   </details>
 
   
@@ -295,7 +295,7 @@ sudo update-alternatives --list python
        ]
       ```
    </details>
-
+   <br/>
 </details>
 
 
