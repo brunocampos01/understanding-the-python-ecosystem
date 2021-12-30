@@ -18,24 +18,19 @@ This topic describe how to set up the environment to Python developement.
 :snake: **_Python's Taxonomy_**
 
 This topic describe how is the pattern of Python projects.
-- Gerenciadores de pacotes
-  - [Pip](#pipenv)
-  - [Poetry](#pipenv)
-  - [Pipenv](#pipenv)
+- [Package manager](#packeage-manager)
 - [Requirements File](#requirements-file)
-- Deterministic build
-- Como usar arquivos de configurações em Python?
-- Criando pacotes
+- [Deterministic build](#deterministic-build)
+- [Use configuration files](#use-python-configuration-files)
 - Arquivos Python
 
 <br/>
 
 :anger: **_Python's Behavior_**
-- Interpreter and Compiler
-  - CPython
-  - Jython
-  - Comparian
+- [Interpreter and Compiler](#interpreter-and-compiler)
 - How Python program run ?
+<!-- - Tools (Dis, PDB, Python Profile and Tabnanny) # TODO
+https://data-flair.training/blogs/python-tools/ -->
 
 <br/>
 
@@ -389,7 +384,7 @@ Python can run in a virtual environment with **isolation** from the system.
 </details>
 
 <details>
-  <summary><a href=""><img src="images/icons_test.png"/></a><b> Python Interview Questions on Virtual Environment</b></summary> 
+  <summary><a href="#"><img src="images/icons_test.png"/></a><b> Python Interview Questions on Virtual Environment</b></summary> 
 
   1. What is virtual environment in Python?
   2. How to create and use a virtual environment in Python?
@@ -400,7 +395,114 @@ Python can run in a virtual environment with **isolation** from the system.
 
 <br/>
 
-## How to run Python inside a container
+## **Package manager**
+### **The issue with Pip**
+Using pip and requirements.txt file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is, given the same input (the requirements.txt file), pip does not always produce the same environment.
+
+### Pipenv
+Create and manage automatically a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates the ever-important `Pipfile.lock`, which is used to produce deterministic builds.
+
+#### **Features**
+- Deterministic builds
+- Separates development and production environment libraries into a single file `Pipefile`
+- Automatically adds/removes packages from your `Pipfile`
+- Automatically create and manage a virtualenv
+- Check PEP 508 requirements
+- Check installed package safety
+
+#### **Pipfile X requirements**
+```
+# Pipfile
+
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+matplotlib = "==3.1.3"
+
+[packages]
+requests = "*"
+numpy = "==1.18.1"
+pandas = "==1.0.1"
+wget = "==3.2"
+
+[requires]
+python_version = "3.8"
+platform_system = 'Linux'
+```
+
+```
+# requirements.txt
+
+requests
+matplotlib==3.1.3
+numpy==1.18.1
+pandas==1.0.1
+wget==3.2
+```
+
+
+### Install
+```bash
+pip3 install --user pipenv
+```
+
+### Create Pipfile and virtual environment
+1. Create environment
+   <details>	
+     <summary> Watch</summary>
+     <img src='images/pipenv.gif' height=auto width="100%">
+   </details>
+
+   ```bash
+   pipenv --python 3
+   ```
+
+2. See **where** virtual environment is installed
+   ```bash
+   pipenv --venv
+   ```
+
+3. Activate environment
+   ```bash
+   pipenv run
+   ```
+
+4. Install Libraries with Pipefile
+   ```bash
+   pipenv install flask
+   # or
+   pipenv install --dev flask
+   ```
+
+5. Create lock file
+   <details>	
+     <summary> Watch</summary>
+     <img src='images/pipenv_lock.gif' height=auto width="100%">
+   </details>
+ 
+   ```bash
+   pipenv lock
+   ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -444,129 +546,6 @@ pip3 install -r requirements.txt
 `-r` recursive
 
 ---
-
----
-
-## Pipenv
-- Package manager: `Pipefile`
-- Virtual environment: `$HOME/.local/share`
-- Lock package: `Pipefile.lock`
-
-<img src="images/pipe.gif" align="center" height=auto width=100%/>
-
-
-### Why use pipefile?
-Using pip and requirements.txt file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is that, given the same input (the requirements.txt file), pip doesn’t always produce the same environment.
-
-### What is pipefile?
-It automatically creates and manages a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates the ever-important Pipfile.lock, which is used to produce deterministic builds.
-
-Features:
-- Deterministic builds
-- Separates development and production environment libraries into a single file `Pipefile`
-- Automatically adds/removes packages from your `Pipfile`
-- Automatically create and manage a virtualenv
-- Check PEP 508 requirements
-- Check installed package safety
-
-### Comparisons
-```
-# Pipfile
-
-[[source]]
-name = "pypi"
-url = "https://pypi.org/simple"
-verify_ssl = true
-
-[dev-packages]
-matplotlib = "==3.1.3"
-
-[packages]
-requests = "*"
-numpy = "==1.18.1"
-pandas = "==1.0.1"
-wget = "==3.2"
-
-[requires]
-python_version = "3.8"
-platform_system = 'Linux'
-```
-
-```
-# requirements.txt
-
-requests
-matplotlib==3.1.3
-numpy==1.18.1
-pandas==1.0.1
-wget==3.2
-```
-
-
-### Install
-```bash
-pip3 install --user pipenv
-```
-
-### Create Pipfile and virtual environment
-```bash
-pipenv --python 3
-
-# Creating a virtualenv for this project…
-# Pipfile: /home/campos/projects/becoming-a-expert-python/Pipfile
-
-# Using /usr/bin/python3.8 (3.8.2) to create virtualenv…
-# ⠼ Creating virtual environment...created virtual environment CPython3.8.2.final.0-64 in 256ms
-
-#   creator CPython3Posix(dest=/home/campos/.local/share/virtualenvs/becoming-a-expert-python-fmPL6zJP, clear=False, global=False)
-
-#   seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/campos/.local/share/virtualenv/seed-app-data/v1)
-
-#   activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
-
-# ✔ Successfully created virtual environment!
-# Virtualenv location: /home/campos/.local/share/virtualenvs/becoming-a-expert-python-fmPL6zJP
-
-# requirements.txt found, instead of Pipfile! Converting…
-# ✔ Success!
-```
-
-- See where virtual environment installed
-```bash
-pipenv --venv
-```
-
-### Activate environment
-```bash
-pipenv run
-```
-<img src='images/pipenv.png' width="100%">
-
-### Install Libraries with Pipefile
-```bash
-pipenv install flask
-
-# or
-
-pipenv install --dev flask
-```
-
-### Create lock file
-```bash
-pipenv lock
-
-# Locking [dev-packages] dependencies…
-# Locking [packages] dependencies…
-# ✔ Success!
-```
-
-#### References
-- [Official documentation](https://github.com/pypa/pipenv)
-- [Gerenciando suas dependências e ambientes python com pipenv](https://medium.com/code-rocket-blog/gerenciando-suas-depend%C3%AAncias-e-ambientes-python-com-pipenv-9e5413513fa6)
-- [How are Pipfile and Pipfile.lock used?](https://stackoverflow.com/questions/46330327/how-are-pipfile-and-pipfile-lock-used)
-
----
-
 
 ## Simple Deterministic Build
 
