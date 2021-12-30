@@ -16,7 +16,6 @@ This topic describe how to set up the environment to Python developement.
   - [Change Python2 to Python3](#Change-Python2-to-Python3)
   - [Set Python's Environment Variables](#Set-Python's-Environment-Variables)
 - [What is a virtual environment and how it works](#What-is-a-virtual-environment-and-how-it-works)
-- [How to run Python inside a container](#How-to-run-Python-inside-a-container)
 
 <br/>
 
@@ -296,75 +295,88 @@ The important thing to realize is that Python 3 is not backwards compatible with
 
 <br/>
 
-The Python can is executed in a virtual environment with **semi-isolated** from system.
+Python can run in a virtual environment with **semi-isolation** from the system. 
+
 <br/>
-When Python is initiating, it analyzes the path of its binary. In a virtual environment, it's actually just a copy or Symbolic link to your system's Python binary. Next, set the `sys.prefix` location which is used to locate the `site-packages` (third party libraries)
 
-_Quando o Python está iniciando, ele analisa o caminho do seu binário. Em um virtual environment, na verdade, é apenas uma cópia ou Symbolic link para o binário Python do seu sistema. Em seguida, define o local `sys.prefix` que é usado para localizar o `site-packages`(third party libraries)._
+<details>
+  <summary><b> Arquitecture of Execution</b></summary>
 
-<img src="images/virtualenv.jpg"  align="center" height=auto width=50%/>
+  <img src="images/org_python.jpg"  align="center" height=auto width=100%/>
+  
+  <br/>
+  
+  Virtualenv enables us to create multiple Python environments which are isolated from the global Python environment as well as from each other.
+  
+  <img src="images/org_python_virtualenv.jpg"  align="center" height=auto width=100%/>
+  
+  <br/>
+  
+  When Python is initiating, it analyzes the path of its binary. In a virtual environment, it's actually just a copy or Symbolic link to your system's Python binary. Next, set the `sys.prefix` location which is used to locate the `site-packages` (third party libraries)
+  
+  
+  <img src="images/virtualenv.jpg"  align="center" height=auto width=70%/>
+  
+  <br/>
+  
+  #### **Symbolic link**
+  - `sys.prefix` points to the virtual environment directory.
+  - `sys.base.prefix` points to the **non-virtual** environment.
+  
+  #### **Folder of virtual environment**
+  ```bash
+  ll
+  
+  # random.py -> /usr/lib/python3.6/random.py
+  # reprlib.py -> /usr/lib/python3.6/reprlib.py
+  # re.py -> /usr/lib/python3.6/re.py
+  # ...
+  ```
+  
+  ```bash
+  tree
+  
+  ├── bin
+  │   ├── activate
+  │   ├── activate.csh
+  │   ├── activate.fish
+  │   ├── easy_install
+  │   ├── easy_install-3.8
+  │   ├── pip
+  │   ├── pip3
+  │   ├── pip3.8
+  │   ├── python -> python3.8
+  │   ├── python3 -> python3.8
+  │   └── python3.8 -> /Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8
+  ├── include
+  ├── lib
+  │   └── python3.8
+  │       └── site-packages
+  └── pyvenv.cfg
+  ```
+  
+</details>
+  
+<br/>
 
-### Symbolic link
-- `sys.prefix` points to the virtual environment directory.
-- `sys.base.prefix` points to the **non-virtual** environment.
-
-Example, how keep the files in folder of virtual environment:
-```bash
-ll
-
-# random.py -> /usr/lib/python3.6/random.py
-# reprlib.py -> /usr/lib/python3.6/reprlib.py
-# re.py -> /usr/lib/python3.6/re.py
-# ...
-```
-
-```bash
-tree
-
-├── bin
-│   ├── activate
-│   ├── activate.csh
-│   ├── activate.fish
-│   ├── easy_install
-│   ├── easy_install-3.8
-│   ├── pip
-│   ├── pip3
-│   ├── pip3.8
-│   ├── python -> python3.8
-│   ├── python3 -> python3.8
-│   └── python3.8 -> /Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8
-├── include
-├── lib
-│   └── python3.8
-│       └── site-packages
-└── pyvenv.cfg
-```
-
-### Create Virtual Environment
-```bash
-$ virtualenv -p python3  NAME_ENVIRONMENT
-(env) $
-```
-or
-```bash
-$ python3 -m venv NAME_ENVIRONMENT
-(env) $
-```
-
-###  To begin using the virtual environment, it needs to be activated
-<img src="images/virtualenv.gif" align="center" height=auto width=100%/>
-
-Execute activate script
-```bash
-source <DIR>/bin/activate
-```
-
-<img src="images/env.png" align="center" height=auto width=100%/>
-
-
-#### References
-- [python-virtual-environments-a-primer](https://realpython.com/python-virtual-environments-a-primer/)
-
+<details>
+  <summary><b> Create Virtual Environment</b></summary> 
+  
+  <details>	
+    <summary> Watch</summary>
+    <img src='images/create_virtualenv.gif' height=auto width="100%">
+  </details>
+  
+  Create virtual environment
+  ```bash
+  virtualenv -p python3  <NAME_ENVIRONMENT>
+  ```
+  
+  Activate 
+  ```bash
+  source <NAME_ENVIRONMENT>/bin/activate
+  ```
+</details>
 
 ---
 
