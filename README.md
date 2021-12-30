@@ -626,7 +626,7 @@ A set of command line tools to help you keep your pip-based packages fresh.
 3. Then compiled bytecode interpreted from memory to execute it.
 
     
- TODO
+<!--  TODO
  Compilers and Interpreters
 A compiler converts the .py source file into a .pyc bytecode for the Python virtual machine.
 A Python interpreter executes this bytecode on the virtual machine
@@ -640,7 +640,7 @@ Another problem is that to achieve concurrency, you must manage separate CPython
 This also makes it harder for concurrent CPython processes to communicate.
     
 
-#gil
+#gil -->
     
     
 ---
