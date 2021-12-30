@@ -577,7 +577,7 @@ A set of command line tools to help you keep your pip-based packages fresh.
 
 ## **How Python program run**
 
-<img src="images/interpreter.png"  align="center" height=auto width=90%/>
+<img src="images/interpreter.png"  align="center" height=auto width=80%/>
 
 
 <br/>
