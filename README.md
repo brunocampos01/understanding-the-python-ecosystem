@@ -225,8 +225,6 @@ sudo update-alternatives --list python
      ```
 </details>
 
-  
-<!-- <br/> -->
 
 <details>
   <summary><b> Change Python2 to Python3</b></summary>
@@ -242,6 +240,7 @@ sudo update-alternatives --list python
   The important thing to realize is that Python 3 is not backwards compatible with Python 2. This means that if you try to run Python 2 code as Python 3, it will probably break.
   
   </details>
+
   
   <details>
     <summary><b> Set Python's Environment Variables</b></summary>
@@ -250,50 +249,52 @@ sudo update-alternatives --list python
   - To individual project `PYTHONPATH` search path until module. Example: [Apache Airflow](https://airflow.apache.org/) read `dag\` folder and add automatically any file that is in this directory. 
   - To interpreter `PYTHONHOME` indicate standard libraries.
   
-  <details>
-    <summary><b> Configure PYTHONPATH</b></summary>
+  <br/>
   
-  1. Open profile
-     ```bash
-     sudo vim ~/.bashrc
-     ```
-  
-  2. Insert Python PATH
-     ```bash
-     export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
-     ```
-  
-  3. Update profile/bashrc
-     ```bash
-     source ~/.bashrc
-     ```
-  
-  4. Test
-     ```bash
-     >>> import sys
-     >>> from pprint import pprint
-     >>> pprint(sys.path)
-     ['',
-      '/usr/lib/python311.zip',
-      '/usr/lib/python3.11',
-      '/usr/lib/python3.11/lib-dynload',
-      '/usr/local/lib/python3.11/dist-packages',
-      '/usr/lib/python3/dist-packages']
-     ```
-     
-     Example with Apache Airflow
-     ```bash
-     >>> import sys
-     >>> from pprint import pprint
-     >>> pprint(sys.path)
-     ['',
-      '/home/project_name/dags',
-      '/home/project_name/config',
-      '/home/project_name/utilities',
-      ...
-      ]
-     ```
-   </details>
+    <details>
+      <summary><b> Configure PYTHONPATH</b></summary>
+    
+    1. Open profile
+       ```bash
+       sudo vim ~/.bashrc
+       ```
+    
+    2. Insert Python PATH
+       ```bash
+       export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
+       ```
+    
+    3. Update profile/bashrc
+       ```bash
+       source ~/.bashrc
+       ```
+    
+    4. Test
+       ```bash
+       >>> import sys
+       >>> from pprint import pprint
+       >>> pprint(sys.path)
+       ['',
+        '/usr/lib/python311.zip',
+        '/usr/lib/python3.11',
+        '/usr/lib/python3.11/lib-dynload',
+        '/usr/local/lib/python3.11/dist-packages',
+        '/usr/lib/python3/dist-packages']
+       ```
+       
+       Example with Apache Airflow
+       ```bash
+       >>> import sys
+       >>> from pprint import pprint
+       >>> pprint(sys.path)
+       ['',
+        '/home/project_name/dags',
+        '/home/project_name/config',
+        '/home/project_name/utilities',
+        ...
+        ]
+       ```
+     </details>
 
 </details>
 
