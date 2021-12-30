@@ -26,7 +26,7 @@ This topic describe how is the pattern of Python projects.
 <br/>
 
 :anger: **_Python's Behavior_**
-- [How Python program run?](#how-python-program-run?)
+- [How Python program run](#how-python-program-run)
 <!-- 
 - Tools (Dis, PDB, Python Profile and Tabnanny) #TODO
  https://data-flair.training/blogs/python-tools/ 
@@ -575,9 +575,9 @@ A set of command line tools to help you keep your pip-based packages fresh.
 
 <br/>
 
-## **How Python program run?**
+## **How Python program run**
 
-<img src="images/interpreter.png"  align="center" height=auto width=100%/>
+<img src="images/interpreter.png"  align="center" height=auto width=90%/>
 
 
 <br/>
