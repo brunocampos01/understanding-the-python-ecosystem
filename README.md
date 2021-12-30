@@ -238,8 +238,9 @@ sudo update-alternatives --list python
   
   **NOTE:**
   The important thing to realize is that Python 3 is not backwards compatible with Python 2. This means that if you try to run Python 2 code as Python 3, it will probably break.
+
   <br/>
-  </details>
+</details>
 
   
   <details>
