@@ -18,17 +18,15 @@ This topic describe how to set up the environment to Python developement.
 :snake: **_Python's Taxonomy_**
 
 This topic describe how is the pattern of Python projects.
-- [Package manager](#packeage-manager)
+- [Package manager](#package-manager)
 - [Requirements File](#requirements-file)
 - [Deterministic build](#deterministic-build)
-- [Use configuration files](#use-python-configuration-files)
 <!-- - Arquivos Python -->
 
 <br/>
 
 :anger: **_Python's Behavior_**
-- [Interpreter and Compiler](#interpreter-and-compiler)
-- How Python program run ?
+- [How Python program run?](#how-python-program-run?)
 <!-- 
 - Tools (Dis, PDB, Python Profile and Tabnanny) #TODO
  https://data-flair.training/blogs/python-tools/ 
@@ -490,6 +488,11 @@ Python can run in a virtual environment with **isolation** from the system.
      <br/>
 </details>
 
+
+- [Python Package Index](https://pypi.org/)
+- [Poetry](https://python-poetry.org/)
+- [Conda](https://docs.conda.io/en/latest/)
+
 ---
 
 <br/>
@@ -538,7 +541,7 @@ A set of command line tools to help you keep your pip-based packages fresh.
 - Distinguish direct dependencies and versions
 - Freeze a set of exact packages and versions that we know work
 - Make it reasonably easy to update packages
-- Take advantage of pip's hash checking to give a little more confidence that packages haven't been modified
+- Take advantage of pip's hash checking to give a little more confidence that packages haven't been modified (DNS attack)
 - Stable
 
 <details>	
@@ -568,75 +571,34 @@ A set of command line tools to help you keep your pip-based packages fresh.
 
 </details>	
 
+---
+
+<br/>
+
+## **How Python program run?**
+
+<img src="images/interpreter.png"  align="center" height=auto width=100%/>
 
 
+<br/>
+
+1. First, Python interpreter **checks syntax** (sequential)
+2. **Compile and convert it to bytecode** and directly bytecode is loaded in system memory.
+3. Then compiled bytecode interpreted from memory to execute it.
 
 
-
-
-
-
-
-
-
-
-
-
+<!-- TODO
+- Side effects: https://realpython.com/defining-your-own-python-function/#side-effects
+- return: https://realpython.com/defining-your-own-python-function/#exiting-a-function -->
 
 
 
 <!-- 
-
-## Python Files
-REFACTORING
-https://packaging.python.org/key_projects/#pipenv
-
-In production ...
-- distlib
-- virtualenv
-- eggs
-- Wheel
-
-#### Files: `.py`
-
-File: Typically, a Python file is any file that contains code. Most Python files have the extension .py.
-
-Script: A Python script is a file that you intend to execute from the command line to accomplish a task.
-
-Module: A Python module is a file that you intend to import from within another module or a script, or from the interactive interpreter. You can read more about modules in the Python documentation.
-
-
-Call unique def in file.py (`python -c "import FILE_NAME; def test(requirements)"`)
+Call unique def in file.py (`python -c "import FILE_NAME; def test(requirements)"`) 
 
 
 
-```
-sound/                          Top-level package
-      __init__.py               Initialize the sound package
-      formats/                  Subpackage for file format conversions
-              __init__.py
-              wavread.py
-              wavwrite.py
-              aiffread.py
-              aiffwrite.py
-              auread.py
-              auwrite.py
-              ...
-      effects/                  Subpackage for sound effects
-              __init__.py
-              echo.py
-              surround.py
-              reverse.py
-              ...
-      filters/                  Subpackage for filters
-              __init__.py
-              equalizer.py
-              vocoder.py
-              karaoke.py
-              ...
-
-```
-
+## Principal Files
 #### `__init__.py`
 
 - The `__init__.py` files are required to make Python treat directories containing the file as packages.
@@ -685,22 +647,6 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 
 .pyc it's faster to loaded modules -->
 
-
-
-<!-- ## Configuration File
-There are ways to manage the configuration:
-- Using built-in data structure
-- Using external configuration file
-    - json
-    - ini
-- Using environment variables
-- Using dynamic loading
- -->
-
-
-<!-- TODO
-- Side effects: https://realpython.com/defining-your-own-python-function/#side-effects
-- return: https://realpython.com/defining-your-own-python-function/#exiting-a-function -->
 
 ---
 
