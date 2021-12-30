@@ -384,7 +384,7 @@ Python can run in a virtual environment with **isolation** from the system.
 </details>
 
 <details>
-  <summary><a href="#"><img src="images/icons_test.png"/></a><b> Python Interview Questions on Virtual Environment</b></summary> 
+  <summary><a href="#"><img src="images/icons_test.png"/></a><b> Interview Questions on Virtual Environment</b></summary> 
 
   1. What is virtual environment in Python?
   2. How to create and use a virtual environment in Python?
@@ -527,48 +527,47 @@ Python can run in a virtual environment with **isolation** from the system.
 <br/>
 
 ## **Deterministic Build**
-### **The issue with Pip**
-Using pip and `requirements.txt` file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is, given the same input (the requirements.txt file), pip does not always produce the same environment.
+<!-- ### **The issue with Pip** -->
+Using pip and `requirements.txt` file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is, given the same input (the `requirements.txt` file), pip does not always produce the same environment.
 
 <br/>
 
 ### **pip-tools**
+A set of command line tools to help you keep your pip-based packages fresh.
 
+#### **Features**
+- Distinguish direct dependencies and versions
+- Freeze a set of exact packages and versions that we know work
+- Make it reasonably easy to update packages
+- Take advantage of pip's hash checking to give a little more confidence that packages haven't been modified
+- Stable
 
+<details>	
+  <summary><b> Principal Comands</b></summary>
 
-```
-pip install pip-tools
-pip3 freeze > requirements.in
+  1. Install
+  ```
+  pip install pip-tools
+  ```
+  
+  2. Get libraries's version
+  ```bash
+  pip3 freeze > requirements.in
+  ```
+  
+  3. Generate hashes and list dependeces
+  ```bash
+  pip-compile --generate-hashes requirements.in
+  ```
+  output: [requirements.txt](requirements.txt)
+  
+  4. Install libraries and hash checking
+  ```bash
+  pip-compile --generate-hashes requirements.in
+  ```
+  <br/>
 
-pip-compile --generate-hashes requirements.in
-```
-
-output: requirements.txt
-```
-wtforms==2.3.3 \
-    --hash=sha256:7b504fc724d0d1d4d5d5c114e778ec88c37ea53144683e084215eed5155ada4c \
-    --hash=sha256:81195de0ac94fbc8368abbaf9197b88c4f3ffd6c2719b5bf5fc9da744f3d829c
-    # via
-    #   -r requirements.in
-    #   flask-admin
-    #   flask-wtf
-zict==2.0.0 \
-    --hash=sha256:26aa1adda8250a78dfc6a78d200bfb2ea43a34752cf58980bca75dde0ba0c6e9 \
-    --hash=sha256:8e2969797627c8a663575c2fc6fcb53a05e37cdb83ee65f341fc6e0c3d0ced16
-    # via
-    #   -r requirements.in
-    #   distributed
-zipp==3.4.0 \
-    --hash=sha256:102c24ef8f171fd729d46599845e95c7ab894a4cf45f5de11a44cc7444fb1108 \
-    --hash=sha256:ed5eee1974372595f9e416cc7bbeeb12335201d8081ca8a0743c954d4446e5cb
-    # via
-    #   -r requirements.in
-    #   importlib-metadata
-    #   importlib-resources
-    #   pep517
-```
-
-
+</details>	
 
 
 
