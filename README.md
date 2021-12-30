@@ -50,6 +50,8 @@ Extra topics to see.
 
 ---
 
+<br/>
+
 ## **Preparing the Environment for the Python**
 
 <details>
