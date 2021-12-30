@@ -291,7 +291,6 @@ The important thing to realize is that Python 3 is not backwards compatible with
 ## **What is a virtual environment and how it works**
 
 <img src="images/virtualenv.png"  align="center" height=auto width=80%/>
-
 ###### Source: https://vincenttechblog.com/fix-change-python-virtualenv-settings/
 
 <br/>
