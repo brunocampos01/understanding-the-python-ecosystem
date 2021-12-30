@@ -22,15 +22,17 @@ This topic describe how is the pattern of Python projects.
 - [Requirements File](#requirements-file)
 - [Deterministic build](#deterministic-build)
 - [Use configuration files](#use-python-configuration-files)
-- Arquivos Python
+<!-- - Arquivos Python -->
 
 <br/>
 
 :anger: **_Python's Behavior_**
 - [Interpreter and Compiler](#interpreter-and-compiler)
 - How Python program run ?
-<!-- - Tools (Dis, PDB, Python Profile and Tabnanny) # TODO
-https://data-flair.training/blogs/python-tools/ -->
+<!-- 
+- Tools (Dis, PDB, Python Profile and Tabnanny) #TODO
+ https://data-flair.training/blogs/python-tools/ 
+-->
 
 <br/>
 
@@ -361,8 +363,6 @@ Python can run in a virtual environment with **isolation** from the system.
   ```
   
 </details>
-  
-<!-- <br/> -->
 
 <details>
   <summary><b> Create Virtual Environment</b></summary>  
@@ -396,158 +396,145 @@ Python can run in a virtual environment with **isolation** from the system.
 <br/>
 
 ## **Package manager**
-### **The issue with Pip**
-Using pip and requirements.txt file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is, given the same input (the requirements.txt file), pip does not always produce the same environment.
+<details>
+  <summary><b> Pipenv</b></summary> 
+  
+  Create and manage automatically a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates the ever-important `Pipfile.lock`, which is used to produce deterministic builds.
+  
+  #### **Features**
+  - Deterministic builds
+  - Separates development and production environment libraries into a single file `Pipefile`
+  - Automatically adds/removes packages from your `Pipfile`
+  - Automatically create and manage a virtualenv
+  - Check PEP 508 requirements
+  - Check installed package safety
+  
+  #### **Pipfile X requirements**
+  ```bash
+  # Pipfile
+  
+  [[source]]
+  name = "pypi"
+  url = "https://pypi.org/simple"
+  verify_ssl = true
+  
+  [dev-packages]
+  
+  [packages]
+  requests = "*"
+  numpy = "==1.18.1"
+  pandas = "==1.0.1"
+  wget = "==3.2"
+  
+  [requires]
+  python_version = "3.8"
+  platform_system = 'Linux'
+  ```
+  
+  ```bash
+  # requirements.txt
+  
+  requests
+  matplotlib==3.1.3
+  numpy==1.18.1
+  pandas==1.0.1
+  wget==3.2
+  ```
+  
+  <br/>
+  
+  ### **Install**
+  ```bash
+  pip3 install --user pipenv
+  ```
+  
+  <br/>
 
-### Pipenv
-Create and manage automatically a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates the ever-important `Pipfile.lock`, which is used to produce deterministic builds.
-
-#### **Features**
-- Deterministic builds
-- Separates development and production environment libraries into a single file `Pipefile`
-- Automatically adds/removes packages from your `Pipfile`
-- Automatically create and manage a virtualenv
-- Check PEP 508 requirements
-- Check installed package safety
-
-#### **Pipfile X requirements**
-```
-# Pipfile
-
-[[source]]
-name = "pypi"
-url = "https://pypi.org/simple"
-verify_ssl = true
-
-[dev-packages]
-matplotlib = "==3.1.3"
-
-[packages]
-requests = "*"
-numpy = "==1.18.1"
-pandas = "==1.0.1"
-wget = "==3.2"
-
-[requires]
-python_version = "3.8"
-platform_system = 'Linux'
-```
-
-```
-# requirements.txt
-
-requests
-matplotlib==3.1.3
-numpy==1.18.1
-pandas==1.0.1
-wget==3.2
-```
-
-
-### Install
-```bash
-pip3 install --user pipenv
-```
-
-### Create Pipfile and virtual environment
-1. Create environment
-   <details>	
-     <summary> Watch</summary>
-     <img src='images/pipenv.gif' height=auto width="100%">
-   </details>
-
-   ```bash
-   pipenv --python 3
-   ```
-
-2. See **where** virtual environment is installed
-   ```bash
-   pipenv --venv
-   ```
-
-3. Activate environment
-   ```bash
-   pipenv run
-   ```
-
-4. Install Libraries with Pipefile
-   ```bash
-   pipenv install flask
-   # or
-   pipenv install --dev flask
-   ```
-
-5. Create lock file
-   <details>	
-     <summary> Watch</summary>
-     <img src='images/pipenv_lock.gif' height=auto width="100%">
-   </details>
- 
-   ```bash
-   pipenv lock
-   ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-
-## Requirements File
-_Requirements files_ is file containing a list of items to be installed using pip install.
-
-- Generate file `requirements.txt`
-```bash
-pip3 freeze > requirements.txt
-```
-
-or
-
-```bash
-venv/bin/pip3 freeze > requirements.txt
-cat requirements # image bellow
-```
-<img src="images/requeriments.png" align="center" height=auto width=50%/>
-
-
-- Visualize instaled libraries
-```bash
-pip3 freeze
-```
-<img src="images/freeze.png" align="center" height=auto width=100%/>
-
-- Install libraries in requirements
-```bash
-pip3 install -r requirements.txt
-```
-`-r` recursive
+  ### Create Pipfile and virtual environment
+  1. Create environment
+     <details>	
+       <summary> Watch</summary>
+       <img src='images/pipenv.gif' height=auto width="100%">
+     </details>
+  
+     ```bash
+     pipenv --python 3
+     ```
+  
+  2. See **where** virtual environment is installed
+     ```bash
+     pipenv --venv
+     ```
+  
+  3. Activate environment
+     ```bash
+     pipenv run
+     ```
+  
+  4. Install Libraries with Pipefile
+     ```bash
+     pipenv install flask
+     # or
+     pipenv install --dev flask
+     ```
+  
+  5. Create lock file
+     <details>	
+       <summary> Watch</summary>
+       <img src='images/pipenv_lock.gif' height=auto width="100%">
+     </details>
+   
+     ```bash
+     pipenv lock
+     ```
+     <br/>
+</details>
 
 ---
 
-## Simple Deterministic Build
+<br/>
+
+## **Requirements File**
+`Requirements.txt` is file containing a list of items to be installed using pip install.
+
+<details>	
+  <summary><b> Principal Comands</b></summary>
+
+  1. Visualize instaled libraries
+  ```bash
+  pip3 freeze
+  ```
+  
+  2. Generate file `requirements.txt`
+  ```bash
+  pip3 freeze > requirements.txt
+  ```
+  
+  3. Test 
+  ```bash
+  cat requirements.txt
+  ```
+  
+  4. Install libraries in requirements
+  ```bash
+  pip3 install -r requirements.txt
+  ```
+  <br/>
+</details>
+
+---
+
+<br/>
+
+## **Deterministic Build**
+### **The issue with Pip**
+Using pip and `requirements.txt` file, have a **real issue here is that the build isn’t [deterministic](https://pt.wikipedia.org/wiki/Algoritmo_determin%C3%ADstico)**. What I mean by that is, given the same input (the requirements.txt file), pip does not always produce the same environment.
+
+<br/>
+
+### **pip-tools**
+
+
 
 ```
 pip install pip-tools
@@ -592,8 +579,16 @@ zipp==3.4.0 \
 
 
 
----
-<!--
+
+
+
+
+
+
+
+
+<!-- 
+
 ## Python Files
 REFACTORING
 https://packaging.python.org/key_projects/#pipenv
