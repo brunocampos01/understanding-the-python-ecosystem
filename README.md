@@ -251,50 +251,50 @@ sudo update-alternatives --list python
   
   <br/>
   
-    <details>
-      <summary><b> Configure PYTHONPATH</b></summary>
+   <details>
+     <summary><b> Set PYTHONPATH</b></summary>
     
-    1. Open profile
-       ```bash
-       sudo vim ~/.bashrc
-       ```
+   1. Open profile
+      ```bash
+      sudo vim ~/.bashrc
+      ```
     
-    2. Insert Python PATH
-       ```bash
-       export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
-       ```
+   2. Insert Python PATH
+      ```bash
+      export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
+      ```
     
-    3. Update profile/bashrc
-       ```bash
-       source ~/.bashrc
-       ```
+   3. Update profile/bashrc
+      ```bash
+      source ~/.bashrc
+      ```
     
-    4. Test
-       ```bash
-       >>> import sys
-       >>> from pprint import pprint
-       >>> pprint(sys.path)
-       ['',
-        '/usr/lib/python311.zip',
-        '/usr/lib/python3.11',
-        '/usr/lib/python3.11/lib-dynload',
-        '/usr/local/lib/python3.11/dist-packages',
-        '/usr/lib/python3/dist-packages']
-       ```
-       
-       Example with Apache Airflow
-       ```bash
-       >>> import sys
-       >>> from pprint import pprint
-       >>> pprint(sys.path)
-       ['',
-        '/home/project_name/dags',
-        '/home/project_name/config',
-        '/home/project_name/utilities',
-        ...
-        ]
-       ```
-     </details>
+   4. Test
+      ```bash
+      >>> import sys
+      >>> from pprint import pprint
+      >>> pprint(sys.path)
+      ['',
+       '/usr/lib/python311.zip',
+       '/usr/lib/python3.11',
+       '/usr/lib/python3.11/lib-dynload',
+       '/usr/local/lib/python3.11/dist-packages',
+       '/usr/lib/python3/dist-packages']
+      ```
+      
+      Example with Apache Airflow
+      ```bash
+      >>> import sys
+      >>> from pprint import pprint
+      >>> pprint(sys.path)
+      ['',
+       '/home/project_name/dags',
+       '/home/project_name/config',
+       '/home/project_name/utilities',
+       ...
+       ]
+      ```
+   </details>
 
 </details>
 
@@ -304,14 +304,11 @@ sudo update-alternatives --list python
 <br/>
 
 ## **What is a virtual environment and how it works**
+Python can run in a virtual environment with **isolation** from the system. 
 
 <img src="images/virtualenv.png"  align="center" height=auto width=80%/>
 
-###### Source: https://vincenttechblog.com/fix-change-python-virtualenv-settings/
-
-<br/>
-
-Python can run in a virtual environment with **isolation** from the system. 
+###### Image source: https://vincenttechblog.com/fix-change-python-virtualenv-settings/
 
 <br/>
 
