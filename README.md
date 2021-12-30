@@ -153,135 +153,150 @@ sudo update-alternatives --list python
 
 ## **Advanced settings of Python**
 
-### **Install multiples Python versions**
-Sometimes you might work on different projects at the same time with different versions of Python. Normally I using Anaconda is the easiest solution, however, can there are restricted.
-
-1. Add repository
-   <details>	
-     <summary> Watch</summary>
-     <img src='images/install_python.gif' height=auto width="100%">
-   </details>
-
-   This PPA contains more recent Python versions packaged for Ubuntu.
-   ```bash
-   sudo add-apt-repository ppa:deadsnakes/ppa -y
-   ```
-
-2. Update packeages
-   ```bash
-   sudo apt update -y
-   ```
+<details>	
+   <summary><b> Install multiples Python versions</b></summary>
+  <!-- ### **Install multiples Python versions** -->
+  Sometimes you might work on different projects at the same time with different versions of Python. Normally I using Anaconda is the easiest solution, however, can there are restricted.
+  
+  1. Add repository
+     <details>	
+       <summary> Watch</summary>
+       <img src='images/install_python.gif' height=auto width="100%">
+     </details>
+  
+     This PPA contains more recent Python versions packaged for Ubuntu.
+     ```bash
+     sudo add-apt-repository ppa:deadsnakes/ppa -y
+     ```
+  
+  2. Update packeages
+     ```bash
+     sudo apt update -y
+     ```
+     
+  3. Check which python version is installed
+     ```bash
+     python --version
+     ```
+     
+  4. Install Python
+     ```bash
+     sudo apt install python3.<VERSION>
+     ```
+</details>
    
-3. Check which python version is installed
-   ```bash
-   python --version
-   ```
-   
-4. Install Python
-   ```bash
-   sudo apt install python3.<VERSION>
-   ```
-   
-<br/>
 
-### **Change system's Python**
-Before installed other versions of Python it's necessary set which system's Python will be use.
+<details>	
+   <summary><b> Change system's Python</b></summary>
+  
+  <!-- ### **Change system's Python** -->
+  Before installed other versions of Python it's necessary set which system's Python will be use.
+  
+  1. Use `update-alternatives`
+  
+     It's possible use the `update-alternatives` command to set priority to different versions of the same software installed in Ubuntu systems. Now, define priority of versions:
+     
+     ```bash
+     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+     
+     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 2
+      
+     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 3
+  
+     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 4
+     ```
+  
+     In directory `/usr/bin` will be create simbolic link: `/usr/bin/python -> /etc/alternatives/python*`
+  
+  2. Choose version
+  
+     <details>	
+       <summary> Watch</summary>
+       <img src='images/change_python.gif' height=auto width="100%">
+     </details>
+  
+     ```bash
+     sudo update-alternatives --config python
+     ```
+  
+  3. Test
+     ```bash
+     python --version
+     ```
+</details>
 
-1. Use `update-alternatives`
-
-   It's possible use the `update-alternatives` command to set priority to different versions of the same software installed in Ubuntu systems. Now, define priority of versions:
-   
-   ```bash
-   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
-   
-   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 2
-    
-   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 3
-
-   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 4
-   ```
-
-   In directory `/usr/bin` will be create simbolic link: `/usr/bin/python -> /etc/alternatives/python*`
-
-2. Choose version
-
-   <details>	
-     <summary> Watch</summary>
-     <img src='images/change_python.gif' height=auto width="100%">
-   </details>
-
-   ```bash
-   sudo update-alternatives --config python
-   ```
-
-3. Test
-   ```bash
-   python --version
-   ```
-
-
-<br/>
-
-### **Change Python2 to Python3**
-If return Python **2**, try set a alias in `/home/$USER/.bashrc`, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc).
-
-```bash
-alias python=python3
-```
-
-**NOTE:**
-The important thing to realize is that Python 3 is not backwards compatible with Python 2. This means that if you try to run Python 2 code as Python 3, it will probably break.
-
-<br/>
-
-### **Set Python's Environment Variables**
-- To individual project `PYTHONPATH` search path until module. Example: [Apache Airflow](https://airflow.apache.org/) read `dag\` folder and add automatically any file that is in this directory. 
-- To interpreter `PYTHONHOME` indicate standard libraries.
+  
+<!-- <br/> -->
 
 <details>
-  <summary><b>  Configure PYTHONPATH</b></summary>
+  <summary><b> Change Python2 to Python3</b></summary>
+  
+  <!-- ### **Change Python2 to Python3** -->
+  If return Python **2**, try set a alias in `/home/$USER/.bashrc`, see this [example](https://github.com/brunocampos01/home-sweet-home/blob/master/config/.bashrc).
+  
+  ```bash
+  alias python=python3
+  ```
+  
+  **NOTE:**
+  The important thing to realize is that Python 3 is not backwards compatible with Python 2. This means that if you try to run Python 2 code as Python 3, it will probably break.
+  
+  </details>
+  
+  <details>
+    <summary><b> Set Python's Environment Variables</b></summary>
+  
+  <!-- ### **Set Python's Environment Variables** -->
+  - To individual project `PYTHONPATH` search path until module. Example: [Apache Airflow](https://airflow.apache.org/) read `dag\` folder and add automatically any file that is in this directory. 
+  - To interpreter `PYTHONHOME` indicate standard libraries.
+  
+  <details>
+    <summary><b> Configure PYTHONPATH</b></summary>
+  
+  1. Open profile
+     ```bash
+     sudo vim ~/.bashrc
+     ```
+  
+  2. Insert Python PATH
+     ```bash
+     export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
+     ```
+  
+  3. Update profile/bashrc
+     ```bash
+     source ~/.bashrc
+     ```
+  
+  4. Test
+     ```bash
+     >>> import sys
+     >>> from pprint import pprint
+     >>> pprint(sys.path)
+     ['',
+      '/usr/lib/python311.zip',
+      '/usr/lib/python3.11',
+      '/usr/lib/python3.11/lib-dynload',
+      '/usr/local/lib/python3.11/dist-packages',
+      '/usr/lib/python3/dist-packages']
+     ```
+     
+     Example with Apache Airflow
+     ```bash
+     >>> import sys
+     >>> from pprint import pprint
+     >>> pprint(sys.path)
+     ['',
+      '/home/project_name/dags',
+      '/home/project_name/config',
+      '/home/project_name/utilities',
+      ...
+      ]
+     ```
+   </details>
 
-1. Open profile
-   ```bash
-   sudo vim ~/.bashrc
-   ```
-
-2. Insert Python PATH
-   ```bash
-   export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
-   ```
-
-3. Update profile/bashrc
-   ```bash
-   source ~/.bashrc
-   ```
-
-4. Test
-   ```bash
-   >>> import sys
-   >>> from pprint import pprint
-   >>> pprint(sys.path)
-   ['',
-    '/usr/lib/python311.zip',
-    '/usr/lib/python3.11',
-    '/usr/lib/python3.11/lib-dynload',
-    '/usr/local/lib/python3.11/dist-packages',
-    '/usr/lib/python3/dist-packages']
-   ```
-   
-   Example with Apache Airflow
-   ```bash
-   >>> import sys
-   >>> from pprint import pprint
-   >>> pprint(sys.path)
-   ['',
-    '/home/project_name/dags',
-    '/home/project_name/config',
-    '/home/project_name/utilities',
-    ...
-    ]
-   ```
 </details>
+
 
 ---
 
@@ -295,7 +310,7 @@ The important thing to realize is that Python 3 is not backwards compatible with
 
 <br/>
 
-Python can run in a virtual environment with **semi-isolation** from the system. 
+Python can run in a virtual environment with **isolation** from the system. 
 
 <br/>
 
@@ -357,21 +372,20 @@ Python can run in a virtual environment with **semi-isolation** from the system.
   
 </details>
   
-<br/>
+<!-- <br/> -->
 
 <details>
-  <summary><b> Create Virtual Environment</b></summary> 
-  
+  <summary><b> Create Virtual Environment</b></summary>  
   <details>	
-    <summary> Watch</summary>
-    <img src='images/create_virtualenv.gif' height=auto width="100%">
+      <summary> Watch</summary>
+      <img src='images/create_virtualenv.gif' height=auto width="100%">
   </details>
-  
+    
   Create virtual environment
   ```bash
   virtualenv -p python3  <NAME_ENVIRONMENT>
   ```
-  
+    
   Activate 
   ```bash
   source <NAME_ENVIRONMENT>/bin/activate
