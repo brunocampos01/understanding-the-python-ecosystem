@@ -8,13 +8,9 @@
 :sunrise_over_mountains: **_Python's Habitat_**
 
 This topic describe how to set up the environment to Python developement.
-- [Preparing the Environment for the Python](#How-to-prepare-and-install-a-Python-environment?)
+- [Preparing the Environment for the Python](#preparing-the-environment-for-the-python)
 - [Check Python Configuration](#check-python-configuration)
-- [Advanced settings of Python](#Advanced-settings-of-Python)
-  - [Install multiples Python versions](#Install-multiples-Python-versions)
-  - [Change system's Python](#Change-system's-Python)
-  - [Change Python2 to Python3](#Change-Python2-to-Python3)
-  - [Set Python's Environment Variables](#Set-Python's-Environment-Variables)
+- [Advanced settings of Python](#advanced-settings-of-python)
 - [What is a virtual environment and how it works](#What-is-a-virtual-environment-and-how-it-works)
 
 <br/>
@@ -59,7 +55,7 @@ Extra topics to see.
 
 ---
 
-## **How to prepare and install a Python environment?**
+## **Preparing the Environment for the Python**
 
 <details>
     <summary><b>  <a href="#linux"><img src="images/icon_ubuntu.png"/></a> Linux</b></summary>
@@ -253,7 +249,7 @@ sudo update-alternatives --list python
   <br/>
   
    <details>
-     <summary><b> Set PYTHONPATH</b></summary>
+     <summary><b>    Set PYTHONPATH</b></summary>
     
    1. Open profile
       ```bash
