@@ -321,7 +321,7 @@ sudo update-alternatives --list python
 ## **What is a virtual environment and how it works**
 Python can run in a virtual environment with **isolation** from the system. 
 
-<img src="images/virtualenv.png"  align="center" height=auto width=80%/>
+<img src="images/virtualenv.png"  align="center" height=auto width=60%/>
 
 ###### Image source: https://vincenttechblog.com/fix-change-python-virtualenv-settings/
 
