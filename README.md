@@ -619,7 +619,6 @@ A set of command line tools to help you keep your pip-based packages fresh.
 ## **Interpreter and Compiler**
 CPython can be defined as both an interpreter and a compiler.
 - The **compiler** converts the `.py` source file into a `.pyc` bytecode for the Python virtual machine.
-<br/>
 - The **interpreter** executes this bytecode on the virtual machine.
 
 <img src="images/interpreter.png"  align="center" height=auto width=80%/>
@@ -627,13 +626,16 @@ CPython can be defined as both an interpreter and a compiler.
 <br/>
 
 
-<details>	
-  <summary><b> CPython's Design</b></summary>
+<!-- <details>	
+  <summary><b> CPython's Design</b></summary> -->
 
+### **CPython's Design**
   The principal feature of [CPython](https://en.wikipedia.org/wiki/CPython#:~:text=8%20External%20links-,Design,bytecode%20at%20any%20one%20time.), is that it makes use of a global interpreter lock (GIL). This is a mechanism used in computer-language interpreters to synchronize the execution of threads so that only one native thread can execute at a time. 
   <br/>
   Therefore, for a CPU-bound task in Python, single-process multi-thread Python program would not improve the performance. However, this does not mean multi-thread is useless in Python. For a I/O-bound task in Python, multi-thread could be used to improve the program performance.
   
+<details>	
+  <summary><b> Multithreading in Python</b></summary>
   #### **Multithreading in Python**
   The Python has multithreads despite the GIL. Using Python threading, we are able to make better use of the CPU sitting idle when waiting for the I/O bound, how memory I/O, hard drive I/O, network I/O.
   
@@ -649,7 +651,11 @@ CPython can be defined as both an interpreter and a compiler.
   ver mais sobre thread and process
   https://leimao.github.io/blog/Python-Concurrency-High-Level/ -->
   
-  
+   <br/>
+</details>
+
+<details>	
+  <summary><b> Community Consensus</b></summary>
   #### **Community Consensus**
   Although many proposals have been made to eliminate the GIL, the general consensus has been that in most cases, the advantages of the GIL outweigh the disadvantages; in the few cases where the GIL is a bottleneck, the application should be built around the multiprocessing structure.
   
