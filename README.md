@@ -630,13 +630,12 @@ CPython can be defined as both an interpreter and a compiler.
   <summary><b> CPython's Design</b></summary> -->
 
 ### **CPython's Design**
-  The principal feature of [CPython](https://en.wikipedia.org/wiki/CPython#:~:text=8%20External%20links-,Design,bytecode%20at%20any%20one%20time.), is that it makes use of a global interpreter lock (GIL). This is a mechanism used in computer-language interpreters to synchronize the execution of threads so that only one native thread can execute at a time. 
-  <br/>
-  Therefore, for a CPU-bound task in Python, single-process multi-thread Python program would not improve the performance. However, this does not mean multi-thread is useless in Python. For a I/O-bound task in Python, multi-thread could be used to improve the program performance.
-  
+The principal feature of [CPython](https://en.wikipedia.org/wiki/CPython#:~:text=8%20External%20links-,Design,bytecode%20at%20any%20one%20time.), is that it makes use of a global interpreter lock (GIL). This is a mechanism used in computer-language interpreters to synchronize the execution of threads so that only one native thread can execute at a time. 
+<br/>
+Therefore, for a CPU-bound task in Python, single-process multi-thread Python program would not improve the performance. However, this does not mean multi-thread is useless in Python. For a I/O-bound task in Python, multi-thread could be used to improve the program performance.
+
 <details>	
   <summary><b> Multithreading in Python</b></summary>
-  #### **Multithreading in Python**
   The Python has multithreads despite the GIL. Using Python threading, we are able to make better use of the CPU sitting idle when waiting for the I/O bound, how memory I/O, hard drive I/O, network I/O.
   
   <img src="images/multithread.png"  align="center" height=auto width=80%/>
@@ -656,7 +655,6 @@ CPython can be defined as both an interpreter and a compiler.
 
 <details>	
   <summary><b> Community Consensus</b></summary>
-  #### **Community Consensus**
   Although many proposals have been made to eliminate the GIL, the general consensus has been that in most cases, the advantages of the GIL outweigh the disadvantages; in the few cases where the GIL is a bottleneck, the application should be built around the multiprocessing structure.
   
   <br/>
