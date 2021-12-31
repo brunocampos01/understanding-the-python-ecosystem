@@ -19,7 +19,7 @@ This topic describe how to set up the environment to Python developement.
 
 This topic describe how is the pattern of Python projects.
 - [Package manager](#package-manager)
-- [Requirements File](#requirements-file)
+- [Requirements file](#requirements-file)
 - [Deterministic build](#deterministic-build)
 <!-- - Principals Files -->
 
@@ -28,7 +28,7 @@ This topic describe how is the pattern of Python projects.
 :anger: **_Python's Behavior_**
 
 This topic describe how the language is designed and how it works.
-- [Interpreter and Compiler](#interpreter-and-compiler)
+- [Interpreter and compiler](#interpreter-and-compiler)
 - [How Python program run](#how-python-program-run)
 <!-- 
 - Tools (Dis, PDB, Python Profile and Tabnanny) #TODO
@@ -333,20 +333,20 @@ Python can run in a virtual environment with **isolation** from the system.
 <details>
   <summary><b> Arquitecture of Execution</b></summary>
 
-  <img src="images/org_python.jpg"  align="center" height=auto width=100%/>
+  <img src="images/org_python.jpg"  align="center" height=auto width=70%/>
   
   <br/>
   
   Virtualenv enables us to create multiple Python environments which are isolated from the global Python environment as well as from each other.
   
-  <img src="images/org_python_virtualenv.jpg"  align="center" height=auto width=100%/>
+  <img src="images/org_python_virtualenv.jpg"  align="center" height=auto width=70%/>
   
   <br/>
   
   When Python is initiating, it analyzes the path of its binary. In a virtual environment, it's actually just a copy or Symbolic link to your system's Python binary. Next, set the `sys.prefix` location which is used to locate the `site-packages` (third party libraries)
   
   
-  <img src="images/virtualenv.jpg"  align="center" height=auto width=70%/>
+  <img src="images/virtualenv.jpg"  align="center" height=auto width=50%/>
   
   <br/>
   
