@@ -26,6 +26,8 @@ This topic describe how is the pattern of Python projects.
 <br/>
 
 :anger: **_Python's Behavior_**
+This topic describe how the language is designed and how it works.
+- [Interpreter and Compiler](#interpreter-and-compiler)
 - [How Python program run](#how-python-program-run)
 <!-- 
 - Tools (Dis, PDB, Python Profile and Tabnanny) #TODO
@@ -614,35 +616,63 @@ A set of command line tools to help you keep your pip-based packages fresh.
 
 <br/>
 
-## **How Python program run**
+## **Interpreter and Compiler**
+CPython can be defined as both an interpreter and a compiler.
+- The **compiler** converts the `.py` source file into a `.pyc` bytecode for the Python virtual machine.
+<br/>
+- The **interpreter** executes this bytecode on the virtual machine.
 
 <img src="images/interpreter.png"  align="center" height=auto width=80%/>
+
+<br/>
+
+
+<details>	
+  <summary><b> CPython's Design</b></summary>
+
+  The principal feature of [CPython](https://en.wikipedia.org/wiki/CPython#:~:text=8%20External%20links-,Design,bytecode%20at%20any%20one%20time.), is that it makes use of a global interpreter lock (GIL). This is a mechanism used in computer-language interpreters to synchronize the execution of threads so that only one native thread can execute at a time. 
+  <br/>
+  Therefore, for a CPU-bound task in Python, single-process multi-thread Python program would not improve the performance. However, this does not mean multi-thread is useless in Python. For a I/O-bound task in Python, multi-thread could be used to improve the program performance.
+  
+  #### **Multithreading in Python**
+  The Python has multithreads despite the GIL. Using Python threading, we are able to make better use of the CPU sitting idle when waiting for the I/O bound, how memory I/O, hard drive I/O, network I/O.
+  
+  <img src="images/multithread.png"  align="center" height=auto width=80%/>
+  
+  <br/>
+  
+  This can happen when multiple threads are servicing separate clients. One thread may be waiting for a client to reply, and another may be waiting for a database query to execute, while the third thread is actually processing Python code or other example is read multiples images from disk.
+  
+  **NOTE:** we would have to be careful and use locks when necessary. Lock and unlock make sure that only one thread could write to memory at one time, but this will also introduce some overhead. 
+  
+  <!--
+  ver mais sobre thread and process
+  https://leimao.github.io/blog/Python-Concurrency-High-Level/ -->
+  
+  
+  #### **Community Consensus**
+  Although many proposals have been made to eliminate the GIL, the general consensus has been that in most cases, the advantages of the GIL outweigh the disadvantages; in the few cases where the GIL is a bottleneck, the application should be built around the multiprocessing structure.
+  
+  <br/>
+</details>
+
+
+---
+
+<br/>
+
+## **How Python program run**
+
 
 
 <br/>
 
-1. First, Python interpreter **checks syntax** (sequential)
-2. **Compile and convert it to bytecode** and directly bytecode is loaded in system memory.
-3. Then compiled bytecode interpreted from memory to execute it.
+1. Tokenize the source code: `Parser/tokenizer.c`
+2. Parse the stream of tokens into an Abstract Syntax Tree (AST): `Parser/parser.c`
+3. Transform AST into a Control Flow Graph: `Python/compile.c`
+4. Emit bytecode based on the Control Flow Graph: `Python/compile.c`
 
-    
-<!--  TODO
- Compilers and Interpreters
-A compiler converts the .py source file into a .pyc bytecode for the Python virtual machine.
-A Python interpreter executes this bytecode on the virtual machine
-    
-    
-Design of CPython
-Each CPython interpreter for Python, the process uses a GIL(Global Interpreter Lock). This serves as a limitation as it disables concurrent Python threads for a process.
 
-Another problem is that to achieve concurrency, you must manage separate CPython interpreter processes with a multitasking OS.
-
-This also makes it harder for concurrent CPython processes to communicate.
-    
-
-#gil -->
-    
-    
 ---
 
 <br/>
