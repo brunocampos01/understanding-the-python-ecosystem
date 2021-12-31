@@ -26,6 +26,7 @@ This topic describe how is the pattern of Python projects.
 <br/>
 
 :anger: **_Python's Behavior_**
+
 This topic describe how the language is designed and how it works.
 - [Interpreter and Compiler](#interpreter-and-compiler)
 - [How Python program run](#how-python-program-run)
