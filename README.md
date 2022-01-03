@@ -1312,8 +1312,10 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 
 <br/>
 
+## **Interview Questions**
+
 <details>
-  <summary><a href="#"><img src="images/icons_test.png"/></a><b> Interview Questions on Virtual Environment</b></summary> 
+  <summary><b> Virtual Environment</b></summary> 
 
   1. What is virtual environment in Python?
   2. How to create and use a virtual environment in Python?
