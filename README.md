@@ -878,7 +878,7 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
 </details>
 
 <details>	
-  <summary><b> Settings Files to text editor and IDE</b></summary>
+  <summary><b> Settings files to text editor and IDE</b></summary>
 
   - EditorConfig
   - Gitattributes
