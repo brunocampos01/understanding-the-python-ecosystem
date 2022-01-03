@@ -1,7 +1,7 @@
 # Becoming a Expert Python <img src="images/python_logo.png" width="10%" height="50%" align="right" valign="center"/> 
 
 ![Python 3](https://img.shields.io/badge/python-3-blue.svg)
-![License](https://img.shields.io/badge/Code%20License-MIT-yellow.svg)
+![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
 This project focuses on understanding the language ecosystem, not getting into programming details.
 
@@ -48,10 +48,10 @@ This topic describe how the language is designed and how it works.
 
 :bug: **_Python's Feeding_**
 
-This topic describes formatting patterns following a style guide.
-- [Linters](#linters)
-- [Knobs (Google YAPF)](https://github.com/google/yapf#id11)
+This topic describes static code analysis, formatting patterns and style guides.
+- [Static code analysis](#static-code-analysis)
 - [Principal style guides](#principal-style-guides)
+- [Knobs (Google YAPF)](https://github.com/google/yapf#id11)
 - [My Knobs](#my-knobs)
 - [Docstrings](#docstrings)
 
@@ -63,7 +63,7 @@ TODO - https://docs.python-guide.org/ -->
 
 :mag: **_Python's Other Features_**
 
-Extra topics to see.
+Extra topics.
 - [Awesome Python](https://github.com/vinta/awesome-python) 
 - [Interview questions](#interview-questions)
 - [Why Is CPython Written in C and Not Python?](https://realpython.com/cpython-source-code-guide/#why-is-cpython-written-in-c-and-not-python)
@@ -765,15 +765,135 @@ PySnooper: https://github.com/cool-RR/PySnooper -->
 
 <br/>
 
-## **Linters**
+## **Static code analysis**
+The static code analysis serves to **evaluate the coding**. This analysis must be done before submitting for a code review. The static code analysis can check:
+- Code styling analysis
+- Comment styling analysis
+- Error detection
+- Duplicate code detection
+- Unused code detection
+- Complexity analysis
+- Security linting
 
-TODO
+The characteristics of a static analysis are:
+- Provides insight into code without executing it
+- Can automate code quality maintenance
+- Can automate the search for bugs at the early stages
+- Can automate the finding of security problems
+
+A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(software)).
+
+<details>	
+  <summary><b> Pylint</b></summary>
+
+  [Pylint](https://pylint.org/) is a lint that checks for errors in Python code, tries to enforce a coding standard and looks for code smells.
+  <br/>
+  Features:
+  - Pylint follow the [PEP8](https://www.python.org/dev/peps/pep-0008/) style guide.
+  - It's possible automate with Jenkins.
+  - It is fully customizable through a `.pylintrc` file where you can choose which errors or agreements are relevant to you.
+  - Usage
+  ```bash
+    pylint <file/dir> --rcfile=<.pylintrc>
+  ```  
+  <details>	
+  <summary><b> Example execution</b></summary>
+    <img src="images/pylint_example.gif"  align="center" height=auto width=80%/>
+  <br/>
+  </details>
+  
+  <br/>
+</details>
+
+<details>	
+  <summary><b> Pyflakes</b></summary>
+
+  [Documentation Pyflakes](https://github.com/PyCQA/pyflakes)
+  <br/>
+</details>
+
+<details>	
+  <summary><b> Mypy</b></summary>
+
+  [Documentation Mypy](http://mypy-lang.org/)
+  <br/>
+</details>
+
+<details>	
+  <summary><b> Prospector</b></summary>
+
+  [Documentation Propector](https://prospector.landscape.io/en/master/) 
+  <br/>
+</details>
+
+---
+
+<br/>
+
+## Other Tools to make an effective Python style guide
+<details>	
+  <summary><b> Isort</b></summary>
+
+  [isort](https://pypi.org/project/isort/) is a Python tool/library for sorting imports alphabetically, automatically divided into sections. It is very useful in projects where we deal with a lot of imports [6].
+  ```bash
+  # sort the whole project
+  isort --recursive ./src/
+  
+  # just check for errors
+  isort script.py --check-only
+  ``` 
+  <br/>
+</details>
+
+<details>	
+  <summary><b> Unify</b></summary>
+
+  Someone likes to write them in single quotes, someone in double ones. To unify the whole project, there is a tool that allows you to automatically align with your style guide — [unify](https://pypi.python.org/pypi/unify) [6].
+  ```bash
+  unify --in-place -r ./src/
+  ```
+  Work recursively for files in the folder.
+  
+  <br/>
+</details>
+
+<details>	
+  <summary><b> docformatter</b></summary>
+
+  [Docformater](https://pypi.org/project/docformatter/) is utility helps to bring your docstring under the [PEP 257](https://www.python.org/dev/peps/pep-0257/) [6]. The agreement specifies how documentation should be written.
+  ```bash
+  docformatter --in-place example.py
+  ```
+  
+  <br/>
+</details>
+
+<details>	
+  <summary><b> Autoformatters</b></summary>
+
+  There are also automatic code formatters now, here are the popular one [6]:
+  - [yapf](https://github.com/google/yapf) (here you can make a align with your own style guide)
+  - [black](https://github.com/psf/black) (you don't need a style guide because you don't have a choice)
+  - [autopep8](https://github.com/hhatto/autopep8) (makes your python script to conform PEP8 style guide)
+  
+  <br/>
+</details>
+
+<details>	
+  <summary><b> Settings Files to text editor and IDE</b></summary>
+
+  - EditorConfig
+  - Gitattributes
+ 
+ <br/>
+</details>
 
 ---
 
 <br/>
 
 ## **Principal style guides**
+To make the code consistent and make sure it's readable the _style guides_ can help.
 - [Google style guide: THE BETTER](https://google.github.io/styleguide/pyguide.html) 
 - [Real Python: Naming Conventions](https://realpython.com/python-pep8/#naming-conventions)
 - [PEP 08: Style Guide](https://www.python.org/dev/peps/pep-0008/)
@@ -937,12 +1057,14 @@ Docstrings must have:
 <details>	
   <summary><b> References</b></summary>
   
-  - [Python 3 Installation & Setup Guide](https://realpython.com/installing-python/)
-  - [An Effective Python Environment: Making Yourself at Home](https://realpython.com/effective-python-environment/)
-  - [Import Scripts as Modules](https://realpython.com/python-import/#import-scripts-as-modules)
-  - [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)
-  - [What Is the Python Global Interpreter Lock (GIL)?](https://realpython.com/python-gil/)
-  
+  - 1: [Python 3 Installation & Setup Guide](https://realpython.com/installing-python/)
+  - 2: [An Effective Python Environment: Making Yourself at Home](https://realpython.com/effective-python-environment/)
+  - 3: [Import Scripts as Modules](https://realpython.com/python-import/#import-scripts-as-modules)
+  - 4: [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)
+  - 5: [What Is the Python Global Interpreter Lock (GIL)?](https://realpython.com/python-gil/)
+  - 6: [7 tips to make an effective python style guide](https://luminousmen.com/post/7-tips-to-make-an-effective-python-style-guide)
+  - 7: [Python Static Analysis Tools](https://luminousmen.com/post/python-static-analysis-tools)
+  - 8: [My unpopular opinion about black code formatter](https://luminousmen.com/post/my-unpopular-opinion-about-black-code-formatter)
   <br/>
 </details>
 
