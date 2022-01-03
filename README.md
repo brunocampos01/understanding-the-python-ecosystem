@@ -1,5 +1,4 @@
-# Becoming a Expert Python
-<img src="images/python_logo.png" width="10%" height="50%" align="right" valign="center"/> 
+# Becoming a Expert Python <img src="images/python_logo.png" width="10%" height="50%" align="right" valign="center"/> 
 
 ![Python 3](https://img.shields.io/badge/python-3-blue.svg)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
