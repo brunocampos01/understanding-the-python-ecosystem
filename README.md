@@ -2,6 +2,7 @@
 ![Python 3](https://img.shields.io/badge/python-3-blue.svg)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
+This project focuses on understanding the language ecosystem, not getting into programming details.
 
 # Summary
 
@@ -17,7 +18,7 @@ This topic describe how to set up the environment to Python developement.
 
 :snake: **_Python's Taxonomy_**
 
-This topic describe how is the pattern of Python projects.
+This topic describe features of the pattern of Python projects.
 - [Package manager](#package-manager)
 - [Requirements file](#requirements-file)
 - [Deterministic build](#deterministic-build)
@@ -28,9 +29,18 @@ This topic describe how is the pattern of Python projects.
 :anger: **_Python's Behavior_**
 
 This topic describe how the language is designed and how it works.
-- [Interpreter and compiler](#interpreter-and-compiler)
-- [How Python program run](#how-python-program-run)
+- [Compiler and interpreter](#compiler-and-interpreter)
+- [How Python runs a program](#how-python-runs-a-program)
+- [How Python search path module](#how-python-search-path-module)
+- [How Python manages process and threads](#how-python-manages-process-and-threads)
+- [How Python manages memory](#how-python-manages-memory)
+- [How to deeply understand Python code execution (debug)](#how-to-deeply-understand-python-code-execution)
+
 <!-- 
+- threads
+- process
+- Concurrency async
+- Debug
 - Tools (Dis, PDB, Python Profile and Tabnanny) #TODO
  https://data-flair.training/blogs/python-tools/ 
 -->
@@ -39,7 +49,9 @@ This topic describe how the language is designed and how it works.
 
 :bug: **_Python's Feeding_**
 
-This topic describe best pratices.
+This topic describes formatting patterns following a style guide.
+- Linters
+- [Knobs (Google YAPF)](https://github.com/google/yapf#id11)
 - [Identation and Length](#identation-and-length)
 - [Line Break After a Binary Operator](#line-break-after-a-binary-operator)
 - [Naming](#naming)
@@ -61,12 +73,17 @@ This topic describe best pratices.
 TODO - https://docs.python-guide.org/ -->
 
 
-
 <br/>
 
 :mag: **_Python's Other Features_**
 
 Extra topics to see.
+
+<!-- 
+- awesome 
+- Interview questions
+- [Why Is CPython Written in C and Not Python?](https://realpython.com/cpython-source-code-guide/#why-is-cpython-written-in-c-and-not-python)
+-->
 
 <br/>
 <br/>
@@ -79,7 +96,7 @@ Extra topics to see.
 ## **Preparing the Environment for the Python**
 
 <details>
-    <summary><b>  <a href="#linux"><img src="images/icon_ubuntu.png"/></a> Linux</b></summary>
+    <summary><b><a href="#preparing-the-environment-for-the-python"><img src="images/icon_ubuntu.png"/></a> Linux</b></summary>
   
   Python needs a set of tools that are system requirements. If necessary, install these requirements with this command:
   ```bash
@@ -104,7 +121,7 @@ Extra topics to see.
 </details>
 
 <details>
-  <summary><b>  <a href="#windows"><img src="images/icon_windows.png"/></a> Windows</b></summary>
+  <summary><b>  <a href="#preparing-the-environment-for-the-python"><img src="images/icon_windows.png"/></a> Windows</b></summary>
 
   On Windows, I recommend using the package manager [chocolatey](https://chocolatey.org/) and set your Powershell to can work as admin. See [this](devpos/infra-as-code) tutorial.
 
@@ -265,7 +282,7 @@ sudo update-alternatives --list python
   
   <!-- ### **Set Python's Environment Variables** -->
   - To individual project `PYTHONPATH` search path until module. Example: [Apache Airflow](https://airflow.apache.org/) read `dag\` folder and add automatically any file that is in this directory. 
-  - To interpreter `PYTHONHOME` indicate standard libraries.
+  - To interpreter `PYTHONHOME` indicate standard packages.
   
   <br/>
   
@@ -339,14 +356,14 @@ Python can run in a virtual environment with **isolation** from the system.
   
   Virtualenv enables us to create multiple Python environments which are isolated from the global Python environment as well as from each other.
   
-  <img src="images/org_python_virtualenv.jpg"  align="center" height=auto width=70%/>
+  <img src="images/org_python_virtualenv.jpg" align="center" height=auto width=70%/>
   
   <br/>
   
-  When Python is initiating, it analyzes the path of its binary. In a virtual environment, it's actually just a copy or Symbolic link to your system's Python binary. Next, set the `sys.prefix` location which is used to locate the `site-packages` (third party libraries)
+  When Python is initiating, it analyzes the path of its binary. In a virtual environment, it's actually just a copy or Symbolic link to your system's Python binary. Next, set the `sys.prefix` location which is used to locate the `site-packages` (third party packages/libraries)
   
   
-  <img src="images/virtualenv.jpg"  align="center" height=auto width=50%/>
+  <img src="images/virtualenv.jpg" align="middle" height=auto width=50%/>
   
   <br/>
   
@@ -407,14 +424,6 @@ Python can run in a virtual environment with **isolation** from the system.
   <br/>
 </details>
 
-<details>
-  <summary><a href="#"><img src="images/icons_test.png"/></a><b> Interview Questions on Virtual Environment</b></summary> 
-
-  1. What is virtual environment in Python?
-  2. How to create and use a virtual environment in Python?
-  3. How do Python virtual environments work?
-</details>
-
 ---
 
 <br/>
@@ -427,7 +436,7 @@ Python can run in a virtual environment with **isolation** from the system.
   
   #### **Features**
   - Deterministic builds
-  - Separates development and production environment libraries into a single file `Pipefile`
+  - Separates development and production environment packages into a single file `Pipefile`
   - Automatically adds/removes packages from your `Pipfile`
   - Automatically create and manage a virtualenv
   - Check PEP 508 requirements
@@ -495,7 +504,7 @@ Python can run in a virtual environment with **isolation** from the system.
      pipenv run
      ```
   
-  4. Install Libraries with Pipefile
+  4. Install packages with Pipefile
      ```bash
      pipenv install flask
      # or
@@ -545,7 +554,7 @@ Python can run in a virtual environment with **isolation** from the system.
 <details>	
   <summary><b> Principal Comands</b></summary>
 
-  1. Visualize instaled libraries
+  1. Visualize instaled packages
   ```bash
   pip3 freeze
   ```
@@ -560,7 +569,7 @@ Python can run in a virtual environment with **isolation** from the system.
   cat requirements.txt
   ```
   
-  4. Install libraries in requirements
+  4. Install packages in requirements
   ```bash
   pip3 install -r requirements.txt
   ```
@@ -594,7 +603,7 @@ A set of command line tools to help you keep your pip-based packages fresh.
   pip install pip-tools
   ```
   
-  2. Get libraries's version
+  2. Get packages's version
   ```bash
   pip3 freeze > requirements.in
   ```
@@ -605,7 +614,7 @@ A set of command line tools to help you keep your pip-based packages fresh.
   ```
   output: [requirements.txt](requirements.txt)
   
-  4. Install libraries and hash checking
+  4. Install packages and hash checking
   ```bash
   pip-compile --generate-hashes requirements.in
   ```
@@ -617,7 +626,7 @@ A set of command line tools to help you keep your pip-based packages fresh.
 
 <br/>
 
-## **Interpreter and Compiler**
+## **Compiler and interpreter**
 CPython can be defined as both an interpreter and a compiler.
 - The **compiler** converts the `.py` source file into a `.pyc` bytecode for the Python virtual machine.
 - The **interpreter** executes this bytecode on the virtual machine.
@@ -656,6 +665,11 @@ Therefore, for a CPU-bound task in Python, single-process multi-thread Python pr
 
 <details>	
   <summary><b> Community Consensus</b></summary>
+
+  Removing the GIL would have made **Python 3 slower in comparison to Python 2** in single-threaded performance.
+  <br/>
+  Removing the GIL **broke the existing C extensions** which depend heavily on the solution that the GIL provides 
+  <br/>
   Although many proposals have been made to eliminate the GIL, the general consensus has been that in most cases, the advantages of the GIL outweigh the disadvantages; in the few cases where the GIL is a bottleneck, the application should be built around the multiprocessing structure.
   
   <br/>
@@ -666,12 +680,7 @@ Therefore, for a CPU-bound task in Python, single-process multi-thread Python pr
 
 <br/>
 
-## **How Python program run**
-
-
-
-<br/>
-
+## **How Python runs a program**
 1. Tokenize the source code: `Parser/tokenizer.c`
 2. Parse the stream of tokens into an Abstract Syntax Tree (AST): `Parser/parser.c`
 3. Transform AST into a Control Flow Graph: `Python/compile.c`
@@ -682,15 +691,106 @@ Therefore, for a CPU-bound task in Python, single-process multi-thread Python pr
 
 <br/>
 
+## **How Python search path module**
+When Python executes this statement:
+```python
+import my_lib
+```
+The interpreter searches `my_lib.py` a list of directories
+assembled from the following sources: <!-- montada a partir das seguintes fontes: -->
+- Current directory
+- The list of directories contained in the **PYTHONPATH** environment variable
+- In directory which Python was is installed. E.g. 
+  <img src="images/show_path_lib.png"  align="center" height=auto width=100%/>
+
+
+The resulting search can be accessed using the **sys** module:
+```python
+import sys
+
+sys.path
+
+
+# ['', '/usr/lib/python38.zip', '/usr/lib/python3.8', '/usr/lib/python3.8/lib-dynload', '/home/campos/.local/lib/#python3.8/site-packages', '/usr/local/lib/python3.8/dist-packages', '/usr/lib/python3/dist-packages']
+```
+
+To see where a packeage was imported from you can use the attribute `__file__`:
+```python
+import zipp
+
+zipp.__file__
+
+# '/usr/lib/python3/dist-packages/zipp.py'
+```
+
+You can see that the `__file__` directory is in the list of directories searched by the interpreter.
+
+<!-- TODO
+- how check what was imported ?
+  - `dir()` function
+- package initiazion
+  - __init__
+  - __all__
+https://realpython.com/python-modules-packages/#package-initialization -->
+
+---
+
+<br/>
+
+## **How Python manages process and threads**
+
+TODO
+
+<!-- 
+https://realpython.com/python-gil/
+https://realpython.com/courses/speed-python-concurrency/
+https://realpython.com/intro-to-python-threading/
+https://data-flair.training/blogs/python-multithreading/
+https://sobolevn.me/2020/06/how-async-should-have-been
+-->
+
+---
+
+<br/>
+
+## **How Python manages memory**
+
+TODO
+
+<!-- https://realpython.com/courses/how-python-manages-memory/ -->
+
+
+---
+
+<br/>
+
+## **How to deeply understand Python code execution**
+
+
+
+
+
+
+---
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
 ## **Best Pratices**
 
 _"Readability counts"_
 
-### **Identation and Length**
+#### **Identation and Length**
 - 4 spaces
-- Limit all line 72 characteres to docstring
-- Limit all line 79 to code
-- Statement of functions and flow, e.g:
+- Limit all lines to a maximum **72 characteres to docstring or comments**
+- Limit all lines to a maximum **79 characteres to code**
 
 ```Python
 # Aligned with opening delimiter.
@@ -701,7 +801,7 @@ foo = long_function_name(var_one=0.0,
 
 ```
 
-### **Naming Convention**
+#### **Naming Convention**
 - Class Name (camelCase): `CapWords()`
 - Variables (snack_case): `cat_words`
 - Constants: `MAX_OVERFLOW`
@@ -729,7 +829,7 @@ By default: `UTF-8`
 Single quotation marks and strings with double quotation marks are the same.
 
 ##### Comments `#`
-- Fisrt word **need** upper case.
+- First word **need** upper case.
 - Comments in-line separete by 2 spaces.
 ```Python
 x = x + 1  # Compensar borda
@@ -791,7 +891,6 @@ stringA + stringB + stringC + stringD
 
 
 ##### String Methods
-
 - Use string methods instead of the string module because, String methods are always much faster.
 - Use `''.startswith()` and `''.endswith()` instead of string slicing to check for prefixes or suffixes.
 
@@ -802,7 +901,6 @@ No:  if foo[:3] == 'bar':
 
 
 ##### Exception
-
 Limit the clausule `try:` minimal code necessary.
 
 Yes:
@@ -904,6 +1002,13 @@ TODO
 - https://medium.com/@shamir.stav_83310/the-other-great-benefit-of-python-type-annotations-896c7d077c6b
 - https://www.python.org/dev/peps/pep-0484/
 - https://blog.jetbrains.com/pycharm/2015/11/python-3-5-type-hinting-in-pycharm-5/
+
+
+
+
+
+
+
 
 ---
 
@@ -1198,6 +1303,37 @@ Program **doesn’t run any faster when it is read from a .pyc** file than when 
 
 .pyc it's faster to loaded modules -->
 
+
+<br/>
+
+---
+
+<br/>
+
+<details>
+  <summary><a href="#"><img src="images/icons_test.png"/></a><b> Interview Questions on Virtual Environment</b></summary> 
+
+  1. What is virtual environment in Python?
+  2. How to create and use a virtual environment in Python?
+  3. How do Python virtual environments work?
+</details>
+
+
+---
+
+<br/>
+
+<details>	
+  <summary><b> References</b></summary>
+  
+  - [Python 3 Installation & Setup Guide](https://realpython.com/installing-python/)
+  - [An Effective Python Environment: Making Yourself at Home](https://realpython.com/effective-python-environment/)
+  - [Import Scripts as Modules](https://realpython.com/python-import/#import-scripts-as-modules)
+  - [Python Modules and Packages – An Introduction](https://realpython.com/python-modules-packages/)
+  - [What Is the Python Global Interpreter Lock (GIL)?](https://realpython.com/python-gil/)
+  
+  <br/>
+</details>
 
 ---
 
