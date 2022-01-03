@@ -796,7 +796,7 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
     ```  
   <details>	
   <summary><b> Example execution</b></summary>
-    <img src="images/pylint_example.gif"  align="center" height=auto width=80%/>
+    <img src="images/pylint_example.gif"  align="center" height=auto width=100%/>
   <br/>
   </details>
   
