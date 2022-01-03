@@ -666,9 +666,7 @@ Therefore, for a CPU-bound task in Python, single-process multi-thread Python pr
 <details>	
   <summary><b> Community Consensus</b></summary>
 
-  Removing the GIL would have made **Python 3 slower in comparison to Python 2** in single-threaded performance.
-  <br/>
-  Other problem if remove the GIL it's would **broke the existing C extensions** which depend heavily on the solution that the GIL provides 
+  Removing the GIL would have made **Python 3 slower in comparison to Python 2** in single-threaded performance. Other problem if remove the GIL it's would **broke the existing C extensions** which depend heavily on the solution that the GIL provides.
   <br/>
   Although many proposals have been made to eliminate the GIL, the general consensus has been that in most cases, the advantages of the GIL outweigh the disadvantages; in the few cases where the GIL is a bottleneck, the application should be built around the multiprocessing structure.
   
@@ -717,7 +715,9 @@ sys.paths
 # '/usr/lib/python3/dist-packages']
 ```
 
-To see where a packeage was imported from you can use the attribute `__file__`:
+<br/>
+
+Now, to see where a packeage was imported from you can use the attribute `__file__`:
 ```python
 import zipp
 
@@ -725,7 +725,7 @@ zipp.__file__
 # '/usr/lib/python3/dist-packages/zipp.py'
 ```
 
-You can see that the `__file__` directory is in the list of directories searched by the interpreter.
+> NOTE: you can see that the `__file__` directory is in the list of directories searched by the interpreter.
 
 <!-- TODO
 - how check what was imported ?
