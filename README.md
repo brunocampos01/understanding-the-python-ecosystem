@@ -1,7 +1,7 @@
 # Becoming a Expert Python <img src="images/python_logo.png" width="10%" height="50%" align="right" valign="center"/> 
 
 ![Python 3](https://img.shields.io/badge/python-3-blue.svg)
-![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
+![License](https://img.shields.io/badge/Code%20License-MIT-yellow.svg)
 
 This project focuses on understanding the language ecosystem, not getting into programming details.
 
@@ -64,12 +64,9 @@ TODO - https://docs.python-guide.org/ -->
 :mag: **_Python's Other Features_**
 
 Extra topics to see.
+- [Awesome Python](https://github.com/vinta/awesome-python) 
 - [Interview questions](#interview-questions)
-
-<!-- 
-- awesome 
 - [Why Is CPython Written in C and Not Python?](https://realpython.com/cpython-source-code-guide/#why-is-cpython-written-in-c-and-not-python)
--->
 
 <br/>
 <br/>
