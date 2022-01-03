@@ -792,7 +792,11 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
   - It is fully customizable through a `.pylintrc` file where you can choose which errors or agreements are relevant to you.
   - Usage
     ```bash
-      pylint <file/dir> --rcfile=<.pylintrc>
+    # Get Errors & Warnings
+    pylint -rn <file/dir> --rcfile=<.pylintrc>
+
+    # Get Full Report
+    pylint <file/dir> --rcfile=<.pylintrc>
     ```  
   <details>	
   <summary><b> Example execution</b></summary>
