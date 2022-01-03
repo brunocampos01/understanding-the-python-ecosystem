@@ -32,6 +32,7 @@ with open(f'{DATA_DIR}/test.xml') as fid:
 def main():
     # Read path from command line
     try:
+        breakpoint()  # type n in PDB
         root = pathlib.Path(sys.argv[1]).resolve()
     except IndexError:
         print("Need one argument: the root of the original file tree")
