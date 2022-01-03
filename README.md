@@ -1,4 +1,6 @@
 # Becoming a Expert Python
+<img src="images/python_logo.png" width="10%" height="50%" align="right" valign="center"/> 
+
 ![Python 3](https://img.shields.io/badge/python-3-blue.svg)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
@@ -779,8 +781,8 @@ TODO
 - [Google style guide: THE BETTER](https://google.github.io/styleguide/pyguide.html) 
 - [Real Python: Naming Conventions](https://realpython.com/python-pep8/#naming-conventions)
 - [PEP 08: Style Guide](https://www.python.org/dev/peps/pep-0008/)
+- [PEP 257: Docstrings](https://www.python.org/dev/peps/pep-0257/)
 - [PEP 484: Type Hints](https://www.python.org/dev/peps/pep-0484/)
-- [PEP 257](https://www.python.org/dev/peps/pep-0257/)
 
 ---
 
@@ -832,7 +834,7 @@ TODO
       return key_not_found(key)
   ```
   
-  - The goal to answer the question **"What went wrong?"** programmatically rather than just claiming that_"There was a problem"_
+  - The goal to answer the question **"What went wrong?"** programmatically rather than just claiming that _"There was a problem"_
   <br/>
 </details>
 
@@ -916,8 +918,6 @@ Docstrings must have:
 <!-- TODO
 - Side effects: https://realpython.com/defining-your-own-python-function/#side-effects
 - return: https://realpython.com/defining-your-own-python-function/#exiting-a-function -->
-
-<br/>
 
 ---
 
