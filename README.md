@@ -786,16 +786,14 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
 <details>	
   <summary><b> Pylint</b></summary>
 
-  [Pylint](https://pylint.org/) is a lint that checks for errors in Python code, tries to enforce a coding standard and looks for code smells.
-  <br/>
-  Features:
+  [Pylint](https://pylint.org/) is a lint that checks for errors in Python code, tries to enforce a coding standard and looks for code smells. The principal features is:
   - Pylint follow the [PEP8](https://www.python.org/dev/peps/pep-0008/) style guide.
   - It's possible automate with Jenkins.
   - It is fully customizable through a `.pylintrc` file where you can choose which errors or agreements are relevant to you.
   - Usage
-  ```bash
-    pylint <file/dir> --rcfile=<.pylintrc>
-  ```  
+    ```bash
+      pylint <file/dir> --rcfile=<.pylintrc>
+    ```  
   <details>	
   <summary><b> Example execution</b></summary>
     <img src="images/pylint_example.gif"  align="center" height=auto width=80%/>
