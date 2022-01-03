@@ -701,17 +701,20 @@ assembled from the following sources: <!-- montada a partir das seguintes fontes
 - Current directory
 - The list of directories contained in the **PYTHONPATH** environment variable
 - In directory which Python was is installed. E.g. 
-  <img src="images/show_path_lib.png"  align="center" height=auto width=100%/>
+  <img src="images/show_path_lib.png"  align="center" height=auto width=80%/>
 
 
 The resulting search can be accessed using the **sys** module:
 ```python
 import sys
 
-sys.path
-
-
-# ['', '/usr/lib/python38.zip', '/usr/lib/python3.8', '/usr/lib/python3.8/lib-dynload', '/home/campos/.local/lib/#python3.8/site-packages', '/usr/local/lib/python3.8/dist-packages', '/usr/lib/python3/dist-packages']
+sys.paths
+# ['', '/usr/lib/python38.zip', 
+# '/usr/lib/python3.8',
+# '/usr/lib/python3.8/lib-dynload',
+# '/home/campos/.local/lib/#python3.8/site-packages',
+# '/usr/local/lib/python3.8/dist-packages',
+# '/usr/lib/python3/dist-packages']
 ```
 
 To see where a packeage was imported from you can use the attribute `__file__`:
@@ -719,7 +722,6 @@ To see where a packeage was imported from you can use the attribute `__file__`:
 import zipp
 
 zipp.__file__
-
 # '/usr/lib/python3/dist-packages/zipp.py'
 ```
 
