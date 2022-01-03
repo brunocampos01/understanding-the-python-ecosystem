@@ -668,7 +668,7 @@ Therefore, for a CPU-bound task in Python, single-process multi-thread Python pr
 
   Removing the GIL would have made **Python 3 slower in comparison to Python 2** in single-threaded performance.
   <br/>
-  Removing the GIL **broke the existing C extensions** which depend heavily on the solution that the GIL provides 
+  Other problem if remove the GIL it's would **broke the existing C extensions** which depend heavily on the solution that the GIL provides 
   <br/>
   Although many proposals have been made to eliminate the GIL, the general consensus has been that in most cases, the advantages of the GIL outweigh the disadvantages; in the few cases where the GIL is a bottleneck, the application should be built around the multiprocessing structure.
   
