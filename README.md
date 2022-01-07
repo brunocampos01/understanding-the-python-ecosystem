@@ -569,7 +569,7 @@ Using pip and `requirements.txt` file, have a **real issue here is that the buil
 
 
 ### **pip-tools**
-A set of command line tools to help you keep your pip-based packages fresh.
+A set of command line tools to help you keep your pip-based packages fresh and ensure the deterministic build.
 
 #### **Features**
 - Distinguish direct dependencies and versions
