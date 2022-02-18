@@ -1,8 +1,8 @@
 # Understanding the Python Ecosystem <img src="images/python_logo.png" width="10%" height="50%" align="right" valign="center"/> 
 
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbrunocampos01%2Funderstanding-the-python-ecosystem&count_bg=%233D81C8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false)](https://hits.seeyoufarm.com)
-
+<!-- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbrunocampos01%2Funderstanding-the-python-ecosystem&count_bg=%233D81C8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false)](https://hits.seeyoufarm.com)
+ -->
 This project focuses on understanding the language ecosystem, not getting into programming details.
 
 # Summary
