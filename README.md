@@ -65,7 +65,6 @@ TODO - https://docs.python-guide.org/ -->
 
 Extra topics.
 - [Awesome Python](https://github.com/vinta/awesome-python) 
-- [Interview questions](#interview-questions)
 - [Why Is CPython Written in C and Not Python?](https://realpython.com/cpython-source-code-guide/#why-is-cpython-written-in-c-and-not-python)
 
 <br/>
@@ -264,7 +263,7 @@ sudo update-alternatives --list python
     <summary><b> Set Python's Environment Variables</b></summary>
   
   <!-- ### **Set Python's Environment Variables** -->
-  - To individual project `PYTHONPATH` search path until module. Example: [Apache Airflow](https://airflow.apache.org/) read `dag\` folder and add automatically any file that is in this directory. 
+  - `PYTHONPATH` is an environment variable which you can set to add additional directories where python will look for modules and packages. Example: [Apache Airflow](https://airflow.apache.org/) read `dag/` folder and add automatically any file that is in this directory. 
   - To interpreter `PYTHONHOME` indicate standard packages.
   
   <br/>
@@ -1036,21 +1035,6 @@ Docstrings must have:
 <!-- TODO
 - Side effects: https://realpython.com/defining-your-own-python-function/#side-effects
 - return: https://realpython.com/defining-your-own-python-function/#exiting-a-function -->
-
----
-
-<br/>
-
-## **Interview Questions**
-
-<details>
-  <summary><b> Virtual Environment</b></summary> 
-
-  1. What is virtual environment in Python?
-  2. How to create and use a virtual environment in Python?
-  3. How do Python virtual environments work?
-</details>
-
 
 ---
 
