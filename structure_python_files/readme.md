@@ -160,35 +160,26 @@ Writing processed data to a database
 Data from the web that has been modified
 ```
 
-## References:
-- https://realpython.com/python-main-function/
-- https://docs.python.org/3/library/__main__.html 
+## References
 
+- [Some Gist][LinkGist]
+- [Python Docs: \_\_main\_\_][LinkPythonDocs]
+- [Stack Exchange: DB connections][LinkStackExchange]
+- [Real Python: main function][LinkRealPythonMain]
+- [Real Python: exceptions][LinkRealPythonExceptions]
+- [Real Python: handlers in logging][LinkRealPythonHandler]
+- [Stack Overflow: method "new"][LinkPTStackOverflowNew]
+- [Stack Overflow: DB how to add foreign key][LinkPTStackOverflowFK]
+- [Stack Overflow: create user if inexistent in MySQL][LinkStackOverflowMySQL]
+- [Stack Overflow: manually raising throwing exception][LinkStackOverflowException]
 
-
-
-
-
-
-
-
-
-
-
-
-
-https://pt.stackoverflow.com/questions/109784/pra-qu%C3%AA-serve-o-metodo-new-in-python
-https://softwareengineering.stackexchange.com/questions/200522/how-to-deal-with-database-connections-in-a-python-library-module
-
-https://gist.github.com/cabecada/da8913830960a644755b18a02b65e184
-
-https://pt.stackoverflow.com/questions/110806/como-adicionar-uma-foreign-key-em-uma-tabela-j%C3%A1-criada
-
-
-https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python
-
-https://realpython.com/python-exceptions/
-
-https://realpython.com/python-logging/#using-handlers
-
-https://stackoverflow.com/questions/13357760/mysql-create-user-if-not-exists
+[LinkGist]: https://gist.github.com/cabecada/da8913830960a644755b18a02b65e184
+[LinkPythonDocs]: https://docs.python.org/3/library/__main__.html
+[LinkStackExchange]: https://softwareengineering.stackexchange.com/questions/200522/how-to-deal-with-database-connections-in-a-python-library-module
+[LinkRealPythonMain]: https://realpython.com/python-main-function/
+[LinkRealPythonExceptions]: https://realpython.com/python-exceptions/
+[LinkRealPythonHandler]: https://realpython.com/python-logging/#using-handlers
+[LinkPTStackOverflowNew]: https://pt.stackoverflow.com/questions/109784/pra-qu%C3%AA-serve-o-metodo-new-in-python
+[LinkPTStackOverflowFK]: https://pt.stackoverflow.com/questions/110806/como-adicionar-uma-foreign-key-em-uma-tabela-j%C3%A1-criada
+[LinkStackOverflowMySQL]: https://stackoverflow.com/questions/13357760/mysql-create-user-if-not-exists
+[LinkStackOverflowException]: https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python
