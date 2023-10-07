@@ -9,7 +9,7 @@ This project focuses on understanding the language ecosystem, not getting into p
 
 :sunrise_over_mountains: **_Python's Habitat_**
 
-This topic describe how to set up the environment to Python developement.
+This topic describes how to set up the environment for Python development.
 - [Preparing the Environment for the Python](#preparing-the-environment-for-the-python)
 - [Check Python Configuration](#check-python-configuration)
 - [Advanced settings of Python](#advanced-settings-of-python)
@@ -19,7 +19,7 @@ This topic describe how to set up the environment to Python developement.
 
 :snake: **_Python's Taxonomy_**
 
-This topic describe features of the pattern of Python projects.
+This topic describes features of the pattern of Python projects.
 - [Package manager](#package-manager)
 - [Requirements file](#requirements-file)
 - [Deterministic build](#deterministic-build)
@@ -29,7 +29,7 @@ This topic describe features of the pattern of Python projects.
 
 :anger: **_Python's Behavior_**
 
-This topic describe how the language is designed and how it works.
+This topic describes how the language is designed and how it works.
 - [Compiler and interpreter](#compiler-and-interpreter)
 - [How Python runs a program](#how-python-runs-a-program)
 - [How Python search path module](#how-python-search-path-module)
@@ -105,7 +105,7 @@ Extra topics.
 <details>
   <summary><b>  <a href="#preparing-the-environment-for-the-python"><img src="images/icon_windows.png"/></a> Windows</b></summary>
 
-  On Windows, I recommend using the package manager [chocolatey](https://chocolatey.org/) and set your Powershell to can work as admin. See [this](devpos/infra-as-code) tutorial.
+  On Windows, I recommend using the package manager [chocolatey](https://chocolatey.org/) and setting your Powershell to work as admin. See [this](devpos/infra-as-code) tutorial.
 
   Now, install Python
   ```powershell
@@ -172,25 +172,25 @@ sudo update-alternatives --list python
 <details>	
    <summary><b> Install multiples Python versions</b></summary>
   <!-- ### **Install multiples Python versions** -->
-  Sometimes you might work on different projects at the same time with different versions of Python. Normally I using Anaconda is the easiest solution, however, can there are restricted.
+  Sometimes you might work on different projects simultaneously with different versions of Python. Normally using Anaconda is the easiest solution, however, there are restrictions.
   
   1. Add repository
      <details>	
        <summary> Watch</summary>
        <img src='images/install_python.gif' height=auto width="100%">
      </details>
-  
+
      This PPA contains more recent Python versions packaged for Ubuntu.
      ```bash
      sudo add-apt-repository ppa:deadsnakes/ppa -y
      ```
-  
-  2. Update packeages
+
+  2. Update packages
      ```bash
      sudo apt update -y
      ```
      
-  3. Check which python version is installed
+  3. Check which Python version is installed
      ```bash
      python --version
      ```
@@ -201,12 +201,46 @@ sudo update-alternatives --list python
      ```
   <br/>
 </details>
-   
+
+<details>	
+   <summary><b> Install multiples Python versions Using Pyenv</b></summary>
+  <!-- ### **Install multiples Python versions** -->
+  
+  1. Add dependencies
+     ```bash
+     sudo apt install curl -y
+     ```
+  
+  2. Update packages
+     ```bash
+     sudo apt update -y
+     ```
+
+  3. Install pyenv
+     ```bash
+     curl https://pyenv.run | bash
+     ```
+
+  4. Add these three lines from .bashrc or .zhshrc
+     ```bash
+     export PATH="$HOME/.pyenv/bin:$PATH"
+     eval "$(pyenv init --path)"
+     eval "$(pyenv virtualenv-init -)"
+     ```
+
+  5. Open a new terminal and execute
+     ```bash
+     exec $SHELL
+     pyenv --version
+     ```
+     
+  <br/>
+</details>
 
 <details>	
    <summary><b> Change system's Python</b></summary>
   
-  Before installed other versions of Python it's necessary set which system's Python will be use.
+  Before installing other versions of Python it's necessary to set which system's Python will be used.
   
   1. Use `update-alternatives`
   
