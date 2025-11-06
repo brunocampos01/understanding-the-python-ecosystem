@@ -1,0 +1,4 @@
+O 10 valor da sequência de fibonacci é 55
+Fibonacci(10) = 55
+O 15 valor da sequência de fibonacci é 610
+89
