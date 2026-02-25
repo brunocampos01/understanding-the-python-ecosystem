@@ -21,18 +21,13 @@ import files
 # from . import files
 
 # A more common way to open data files
-# is to locate them based on your module’s __file__ attribute:
-import pathlib
-
+# is to locate them based on your module's __file__ attribute:
 DATA_DIR = f'{pathlib.Path(__file__).parent.parent}/data'
-with open(f'{DATA_DIR}/test.xml') as fid:
-    fid.read()
 
 
 def main():
     # Read path from command line
     try:
-        breakpoint()  # type n in PDB
         root = pathlib.Path(sys.argv[1]).resolve()
     except IndexError:
         print("Need one argument: the root of the original file tree")

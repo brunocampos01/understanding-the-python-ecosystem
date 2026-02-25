@@ -1,6 +1,7 @@
+from __future__ import annotations
+
 import os
 from abc import ABC, abstractmethod
-from __future__ import annotations
 
 from pyspark.sql import SparkSession
 from pyspark.sql import DataFrame
@@ -20,9 +21,11 @@ class Context(ABC):
         also provides a setter to change it at runtime.
         """
         self.logger = LoggerProvider.get_logger()
-        self.env = os.getenv("Environment").lower()
+        env = os.getenv("Environment")
+        self.env = env.lower() if env else "dev"
         self._spark = spark
         self._layer_name = layer_name
+        self._strategy = None
 
     @property
     def spark(self) -> SparkSession:
@@ -37,19 +40,26 @@ class Context(ABC):
     def layer_name(self) -> str:
         return self._layer_name
 
+    @property
+    def strategy(self):
+        return self._strategy
+
+    @strategy.setter
+    def strategy(self, strategy):
+        self._strategy = strategy
+
+    @abstractmethod
+    def execute(self) -> None:
+        pass
+
     def do_some_business_logic(self) -> None:
         """
         The Context delegates some work to the Strategy object instead of
         implementing multiple versions of the algorithm on its own.
         """
-
-        # ...
+        if self._strategy is None:
+            raise RuntimeError("Strategy not set")
 
         print("Context: Sorting data using the strategy (not sure how it'll do it)")
         result = self._strategy.do_algorithm(["a", "b", "c", "d", "e"])
         print(",".join(result))
-
-# executor (main): bronze
-context = Context(BronzeTransformer())
-print("Client: Strategy is set to bronze")
-context.execute()

@@ -1,3 +1,7 @@
-import sys, os
+import sys
+import os
 
-print("Olá do filho", os.getpid(), sys.argv[1])
+if len(sys.argv) > 1:
+    print("Hello from child process", os.getpid(), sys.argv[1])
+else:
+    print("Hello from child process", os.getpid(), "(no argument)")

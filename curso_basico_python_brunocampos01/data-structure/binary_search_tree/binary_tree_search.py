@@ -3,14 +3,14 @@
 
 def generate_levels (tree, tree_levels):
     """
-    function to walker tree in order: [root -> left -> right]
-    and generates the levels correctly
+    Walk the tree in order [root -> left -> right]
+    and generate the levels correctly.
     """
     stack = []
     stack_levels = []
     level = 0
 
-    # tree null
+    # empty tree
     if tree is None:
         print("null")
 
@@ -34,7 +34,7 @@ def generate_levels (tree, tree_levels):
 
 def validate_tree(stack_levels, tree_levels):
     """"
-    validation, if levels equals
+    Validate whether the computed levels match the expected levels.
     """
     if stack_levels == tree_levels:
         print(True)

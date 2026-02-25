@@ -7,7 +7,7 @@ class MyFirstClass:
 
 
 if __name__ == '__main__':
-    object = MyFirstClass()  # initialized instance
-    object.func_ex()
+    instance = MyFirstClass()
+    instance.func_ex()
 
-    print(object.__class__)
+    print(instance.__class__)

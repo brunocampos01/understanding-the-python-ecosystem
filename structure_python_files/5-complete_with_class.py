@@ -1,39 +1,37 @@
 class Animal:
-    __hungry = "yes"
-    __name = "no name"
-    __owner = "no owner"
+    def __init__(self, name="no name", owner="no owner", hungry=True):
+        self._name = name
+        self._owner = owner
+        self._hungry = hungry
 
-    def __init__(self):
-        pass
+    @property
+    def owner(self):
+        return self._owner
 
-    def set_owner(self, new_owner):
-        self.__owner = new_owner
-        return
+    @owner.setter
+    def owner(self, new_owner):
+        self._owner = new_owner
 
-    def get_owner(self):
-        return self.__owner
+    @property
+    def name(self):
+        return self._name
 
-    def set_name(self, new_name):
-        self.__name = new_name
-        return
-
-    def get_name(self):
-        return self.__name
+    @name.setter
+    def name(self, new_name):
+        self._name = new_name
 
     def noise(self):
         print('errr')
-        return
 
     @staticmethod
-    def __hidden_method():
+    def _hidden_method():
         print("hard to find")
 
 
 def main():
-    # Indentation is OUT class
     dog = Animal()
-    dog.set_owner('Sue')
-    print(dog.get_owner())
+    dog.owner = 'Sue'
+    print(dog.owner)
     dog.noise()
 
 

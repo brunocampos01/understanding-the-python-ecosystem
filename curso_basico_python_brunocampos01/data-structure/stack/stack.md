@@ -3,7 +3,7 @@ title: Stack (pilha)
 subtitle: Understand how the stack data structure works
 authors:
 - admin
-tags: [data_structure, big_data, stack, algoritms]
+tags: [data_structure, big_data, stack, algorithms]
 categories: []
 date: "2020-06-13T00:00:00Z"
 lastMod: "2020-06-13T00:00:00Z"
@@ -34,9 +34,9 @@ projects: []
 
 ## How a Stack Works
 
-- **FILO - First In Last Out**: In Stack the first element to be inserted is the last to be removed.
-- To add new element always inserted at the top of the stack, 
-- To remove an element is done on top of the stack
+- **FILO - First In Last Out**: In a stack, the first element to be inserted is the last to be removed.
+- A new element is always inserted at the top of the stack.
+- An element is always removed from the top of the stack.
 
 <img src="../../img/stack.png" align="center" width="70%" weight="300" />
 
@@ -44,7 +44,7 @@ projects: []
 
 ### Stack Applications
 
-he most common uses of a stack are:
+The most common uses of a stack are:
 
 - **Validate parenthesis**: implementation [here](validate_parenthesis.py)
 - **Check if numeric list is sorted**: implementation [here](is_sorted.py)
@@ -192,7 +192,7 @@ Prepare file to blog
 
 
 ```python
-# convert ipynb to markdonw
+# convert ipynb to markdown
 
 !jupyter nbconvert stack.ipynb --to markdown
 ```

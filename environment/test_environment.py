@@ -19,7 +19,7 @@ def check_python_version(python_req: str):
         raise TypeError("This project requires Python {}. Found: Python {}"
                         .format(required_major, sys.version))
     else:
-        print("Python Version: {}".format(sys.version))  # e.g 3.11
+        print("Python Version: {}".format(sys.version))  # e.g. 3.11
         print("Development environment passes all tests!")
 
 

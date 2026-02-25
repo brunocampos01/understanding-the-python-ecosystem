@@ -1,11 +1,11 @@
 import os
-from myapp import app
 
 secret_key = os.environ.get('SECRET_KEY', None)
 
 if not secret_key:
-    raise ValueError('You must have "SECRET_KEY" variable')
+    raise ValueError('You must set the "SECRET_KEY" environment variable')
 
-app.config['SECRET_KEY'] = secret_key
-
-# The configuration values are not managed as a separate file, so there is less risk of exposure of secret values
+# Example usage with a web framework:
+# from myapp import app
+# app.config['SECRET_KEY'] = secret_key
+print(f"SECRET_KEY loaded successfully (length={len(secret_key)})")

@@ -1,21 +1,27 @@
 import sys
 
+
 def args():
     print(sys.argv)
-    
+
+
 def install():
-    print("Instalando tudo!")
-    
+    print("Installing everything!")
+
+
 def text(text):
     print(text)
-    
-def sum(x, y):
-    return x + y
-    
+
+
+def add(x, y):
+    return int(x) + int(y)
+
+
 def pipe():
     n = sys.stdin.read()
-    print("O sentido da vida é", n)
-    
+    print("The meaning of life is", n)
+
+
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         if sys.argv[1] == '--install':
@@ -27,4 +33,4 @@ if __name__ == '__main__':
         elif sys.argv[1] == '--text':
             text(sys.argv[2])
         elif sys.argv[1] == '--sum':
-            sum(sys.argv[2], sys.argv[3])
+            print(add(sys.argv[2], sys.argv[3]))

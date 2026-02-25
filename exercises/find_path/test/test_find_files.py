@@ -2,7 +2,7 @@ import os
 import tempfile
 import unittest
 
-from first_exercise.app.find_files import find_files
+from exercises.find_path.app.find_files import find_files
 
 
 class TestFindFiles(unittest.TestCase):
@@ -28,11 +28,12 @@ class TestFindFiles(unittest.TestCase):
         self.tempdir.cleanup()
 
     def test_positive(self):
-        # Test that the function returns the correct file paths for a directory with matching files.
-        result = list(find_files("*.log", self.dirpath)).sort()
-        expected = [os.path.join(self.dirpath, "file2.log"),
-                    os.path.join(self.dirpath, "subdir1", "file3.log"),
-                    os.path.join(self.dirpath, "subdir2", "file5.log")].sort()
+        result = sorted(find_files("*.log", self.dirpath))
+        expected = sorted([
+            os.path.join(self.dirpath, "file2.log"),
+            os.path.join(self.dirpath, "subdir1", "file3.log"),
+            os.path.join(self.dirpath, "subdir2", "file5.log"),
+        ])
         self.assertEqual(result, expected)
 
     def test_without_matching(self):

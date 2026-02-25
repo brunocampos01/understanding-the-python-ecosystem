@@ -4,20 +4,20 @@ Reference: https://docs.python.org/3/tutorial/controlflow.html
 
 
 def parrot(voltage, state='a stiff', action='voom',
-           type='Norwegian Blue'):
+           kind='Norwegian Blue'):
     """
     Accepts one required argument (voltage)
-    and three optional arguments (state, action, and type).
+    and three optional arguments (state, action, and kind).
 
     Params
     :param voltage: required
     :param state: optional
     :param action: optional
-    :param type: optional
+    :param kind: optional
     """
     print("-- This parrot wouldn't", action, end=' ')
     print("if you put", voltage, "volts through it.")
-    print("-- Lovely plumage, the", type)
+    print("-- Lovely plumage, the", kind)
     print("-- It's", state, "!")
 
 

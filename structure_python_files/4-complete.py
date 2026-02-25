@@ -6,13 +6,13 @@ print("This is my file to demonstrate best practices.\n")
 
 def process_data(data: str) -> str:
     """
-    Example Function with DocStrings and Annotation Function.
-    In this file Python view the best pratices write a Python file using main()
+    Example function with docstrings and type annotations.
+    This file demonstrates best practices for writing a Python file using main().
 
     :arg:
-        data: A data to process.
+        data: The data to process.
     :return:
-        A data changed of type String.
+        The modified data as a string.
     :raises:
         None
     """

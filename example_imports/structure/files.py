@@ -1,5 +1,5 @@
 def unique_path(directory, name_pattern):
-    """Find a path name that does not already exist"""
+    """Find a path name that does not already exist."""
     counter = 0
     while True:
         counter += 1
@@ -9,7 +9,7 @@ def unique_path(directory, name_pattern):
 
 
 def add_empty_file(path):
-    """Create an empty file at the given path"""
+    """Create an empty file at the given path."""
     print(f"Create file: {path}")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.touch()

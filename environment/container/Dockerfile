@@ -1,34 +1,31 @@
 # Set the base image
-FROM python:3
+FROM python:3.11-slim
 
 # Set environment variables
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-# COPY, best pratices: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
-RUN mkdir /usr/src/app
-COPY ./ ./usr/src/app
-RUN cd usr/src/app && ls -la
+RUN mkdir -p /usr/src/app
+COPY ./ /usr/src/app/
 
-# Update and
-RUN apt-get update && apt-get -yq dist-upgrade
-
-# Installs
-RUN apt-get install -y git \
-                       vim \
-                       tree \
-                       wget \
-    && pip install --no-cache-dir -r usr/src/app/src/environment/requirements.txt
-
-# Clean
-RUN apt autoclean  \
+# Update and install system packages
+RUN apt-get update && apt-get -yq dist-upgrade \
+    && apt-get install -y --no-install-recommends \
+       git \
+       vim \
+       tree \
+       wget \
+    && apt-get autoclean \
     && rm -rf /var/lib/apt/lists/*
 
-# Set config jupyter
-RUN mkdir $HOME/.jupyter/
-RUN mv usr/src/app/src/environment/jupyter_notebook_config.py $HOME/.jupyter/
+# NOTE: Add a requirements.txt to the project root and uncomment the line below:
+# RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
+
+# Set up Jupyter configuration
+RUN mkdir -p $HOME/.jupyter/ \
+    && cp /usr/src/app/environment/jupyter_notebook_config.py $HOME/.jupyter/
 
 # Set working directory
 WORKDIR /usr/src/app
 
 # Run shell command for notebook on start
-CMD jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+CMD ["jupyter", "notebook", "--ip", "0.0.0.0", "--no-browser", "--allow-root"]

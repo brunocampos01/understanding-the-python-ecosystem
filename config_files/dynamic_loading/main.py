@@ -8,7 +8,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 def connect_db(dbname):
     if dbname != config.DATABASE_CONFIG['dbname']:
-        raise ValueError("Couldn't not find DB with given name")
+        raise ValueError("Could not find DB with given name")
 
     conn = pymysql.connect(host=config.DATABASE_CONFIG['host'],
                            user=config.DATABASE_CONFIG['user'],
@@ -17,5 +17,6 @@ def connect_db(dbname):
     return conn
 
 
-print(BASE_DIR)
-connect_db('company')
+if __name__ == '__main__':
+    print(BASE_DIR)
+    connect_db('company')

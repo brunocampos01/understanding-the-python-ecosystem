@@ -8,7 +8,6 @@ The brackets must close in the correct order,
 
 
 def is_valid(s: str) -> bool:
-    # The stack to keep track of opening brackets.
     stack = []
     mapping = {
         ")": "(",
@@ -17,16 +16,16 @@ def is_valid(s: str) -> bool:
     }
 
     for char in s:
-        if char in mapping.values():  # open
+        if char in mapping.values():
             stack.append(char)
             print(f'stack = {stack}')
+        elif char in mapping:
+            if not stack or mapping[char] != stack[-1]:
+                print("Unbalanced\n")
+                return False
+            stack.pop()
 
-        elif char in mapping.keys():
-            if len(stack) > 0 and mapping[char] == stack[len(stack) - 1]:
-                stack.pop()
-
-    # if the stack is empty, then we have a valid expression.
-    if len(stack) == 0:
+    if not stack:
         print("Balanced\n")
         return True
     else:
@@ -35,13 +34,15 @@ def is_valid(s: str) -> bool:
 
 
 def main():
-    is_valid('()')
-    is_valid('[]')
-    is_valid('{}')
+    assert is_valid('()') is True
+    assert is_valid('[]') is True
+    assert is_valid('{}') is True
+    assert is_valid('{[]{()}}') is True
 
-    is_valid('{[]{()}}')
-    is_valid('[{}{})(]')
-    is_valid('((()')
+    assert is_valid('[{}{})(]') is False
+    assert is_valid('((()') is False
+    assert is_valid('][') is False
+    assert is_valid(')') is False
 
 
 if __name__ == '__main__':

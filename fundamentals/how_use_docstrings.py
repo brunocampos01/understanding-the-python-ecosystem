@@ -30,4 +30,5 @@ def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
     return None
 
 
-print(fetch_bigtable_rows.__doc__)
+if __name__ == '__main__':
+    print(fetch_bigtable_rows.__doc__)

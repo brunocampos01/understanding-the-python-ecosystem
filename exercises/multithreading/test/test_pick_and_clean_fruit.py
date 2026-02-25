@@ -2,7 +2,7 @@ import time
 import unittest
 from typing import List
 
-from second_exercise.app.pick_and_clean_fruit import (
+from exercises.multithreading.app.pick_and_clean_fruit import (
     Tree,
     Basket,
     Farmer
@@ -10,19 +10,20 @@ from second_exercise.app.pick_and_clean_fruit import (
 
 
 class TestPickAndCleanFruit(unittest.TestCase):
-    basket = Basket()
-    dirty_basket = Basket()
-    clean_basket = Basket()
 
-    @classmethod
-    def _generate_farmers(cls, tree) -> List:
+    def setUp(self):
+        self.basket = Basket()
+        self.dirty_basket = Basket()
+        self.clean_basket = Basket()
+
+    def _generate_farmers(self, tree) -> List:
         return [
-            Farmer("farmer1", tree, cls.dirty_basket, cls.clean_basket),
-            Farmer("farmer2", tree, cls.dirty_basket, cls.clean_basket),
-            Farmer("farmer3", tree, cls.dirty_basket, cls.clean_basket),
-            Farmer("cleaner1", tree, cls.dirty_basket, cls.clean_basket),
-            Farmer("cleaner2", tree, cls.dirty_basket, cls.clean_basket),
-            Farmer("cleaner3", tree, cls.dirty_basket, cls.clean_basket),
+            Farmer("farmer1", tree, self.dirty_basket, self.clean_basket),
+            Farmer("farmer2", tree, self.dirty_basket, self.clean_basket),
+            Farmer("farmer3", tree, self.dirty_basket, self.clean_basket),
+            Farmer("cleaner1", tree, self.dirty_basket, self.clean_basket),
+            Farmer("cleaner2", tree, self.dirty_basket, self.clean_basket),
+            Farmer("cleaner3", tree, self.dirty_basket, self.clean_basket),
         ]
 
     def test_tree_pick_fruit(self):
@@ -71,7 +72,6 @@ class TestPickAndCleanFruit(unittest.TestCase):
 
     def test_farm_run_empty_tree(self):
         tree_empty = Tree(0)
-        self.clean_basket.fruits = 0
         farmers = self._generate_farmers(tree_empty)
 
         for farmer in farmers:

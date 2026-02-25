@@ -1,8 +1,4 @@
-# Global variable
-elements = []
-
-
-class Tree(object):
+class Tree:
     def __init__(self):
         self.left = None
         self.right = None
@@ -42,27 +38,21 @@ def initializeTreeB():
     """
     root = Tree()
     root.i = 6
-    elements.append(root.i)
 
     node1 = Tree()
     node1.i = 4
-    elements.append(node1.i)
 
     node2 = Tree()
     node2.i = 10
-    elements.append(node2.i)
 
     node3 = Tree()
     node3.i = 1
-    elements.append(node3.i)
 
     node4 = Tree()
     node4.i = 7
-    elements.append(node4.i)
 
     node5 = Tree()
     node5.i = 12
-    elements.append(node5.i)
 
     root.left = node1
     root.right = node2
@@ -85,47 +75,54 @@ def printTree(node, level):
 
 def find(node, value, level):
     """
-    Function to find in mode recursion.
-    (node.left) and (node.right) it´s new Trees objects
+    Recursively find a value in the tree.
+    (node.left) and (node.right) are child Tree objects.
     """
     if node is None:
         print("Not found")
         return False
     if value == node.i:
-        return print("found = {}, level = {}".format(node.i, level))
+        print("found = {}, level = {}".format(node.i, level))
+        return True
     if value < node.i:
         return find(node.left, value, level + 1)
-    if value > node.i:
-        return find(node.right, value, level + 1)
+    return find(node.right, value, level + 1)
 
 
 def validation_tree(node):
+    """Validate BST using in-order traversal (should yield sorted order)."""
     print("\n---validation_tree---")
-    stack = [node.right]
+    elements = []
+    stack = []
+    current = node
 
-    while stack is not None:
-        stack.pop(0)
-        stack.append(node.left)
-        stack.append(node.right)
+    while current is not None or stack:
+        while current is not None:
+            stack.append(current)
+            current = current.left
 
-        for element in stack:
-            print(element)
+        current = stack.pop()
+        elements.append(current.i)
+        current = current.right
 
-    # stack pop(node auxiliar)
-    # node.left push
-    # node.right push
+    is_valid = all(
+        elements[i] < elements[i + 1]
+        for i in range(len(elements) - 1)
+    )
+    print(f"In-order traversal: {elements}")
+    print(f"Valid BST: {is_valid}")
+    return is_valid
 
 
 def main():
-    print("arvore A")
+    print("Tree A")
     printTree(initializeTreeA(), 0)
     validation_tree(initializeTreeA())
 
-    print("\narvore B")
+    print("\nTree B")
     printTree(initializeTreeB(), 0)
     validation_tree(initializeTreeB())
 
 
-# run
 if __name__ == "__main__":
     main()

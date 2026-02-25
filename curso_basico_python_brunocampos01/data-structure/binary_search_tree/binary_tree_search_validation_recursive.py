@@ -1,9 +1,8 @@
-# global
 MIN = -999
 MAX = 999
 
 
-class Tree(object):
+class Tree:
     def __init__(self):
         self.left = None
         self.right = None
@@ -70,53 +69,52 @@ def initializeTreeB():
     return root
 
 
-def printTree (node , level):
+def printTree(node, level):
     print(str(node.i) + "| level " + str(level))
     if node.left is not None:
-        printTree (node.left , level+1)
+        printTree(node.left, level + 1)
     if node.right is not None:
-        printTree (node.right, level+1)
+        printTree(node.right, level + 1)
 
 
 def validation_tree(node, mini, maxi):
     """
-    Function to validation if tree its valid
-	
-    - First, walk tree in edge left until leaf 
-    - If left, max must be the dad node
-    - If right, min must be the dad node
+    Function to validate if tree is a valid BST.
+
+    - First, walk the left edge of the tree until reaching a leaf
+    - If going left, the max must be the parent node
+    - If going right, the min must be the parent node
     """
-    print("Validation node:", node.i)
-
-    # minimum isn´t node dad
-    if node.i <= mini:
-        print ("Tree not valid in node =", node.i)
-        return False
-
-    # maximum isn´t node dad
-    if node.i > maxi:
-        print ("Tree not valid in node =", node.i)
-        return False
-
-    if node.left is not None:
-        validation_tree(node.left, mini, node.i)
-    if node.right is not None:
-        validation_tree(node.right, node.i, maxi)
-
     if node is None:
         return True
 
+    print("Validation node:", node.i)
+
+    if node.i <= mini:
+        print("Tree not valid in node =", node.i)
+        return False
+
+    if node.i > maxi:
+        print("Tree not valid in node =", node.i)
+        return False
+
+    left_valid = validation_tree(node.left, mini, node.i)
+    right_valid = validation_tree(node.right, node.i, maxi)
+
+    return left_valid and right_valid
+
 
 def main():
-    print("arvore A")
+    print("Tree A")
     printTree(initializeTreeA(), 0)
-    validation_tree(initializeTreeA(), MIN, MAX)
+    result_a = validation_tree(initializeTreeA(), MIN, MAX)
+    print(f"Tree A valid: {result_a}")
 
-    print("\narvore B")
+    print("\nTree B")
     printTree(initializeTreeB(), 0)
-    validation_tree(initializeTreeB(), MIN, MAX)
+    result_b = validation_tree(initializeTreeB(), MIN, MAX)
+    print(f"Tree B valid: {result_b}")
 
 
-# run
 if __name__ == "__main__":
     main()

@@ -2,21 +2,21 @@ import sys
 
 from bottle import app
 
-from configuration_files.configuration_by_environment import config
+from config_files.config_by_environment.config import (
+    DevelopmentConfig,
+    TestConfig,
+    ProductionConfig,
+)
 
 if __name__ == '__main__':
-    env = sys.argv[1] if len(sys.argv) > 2 else 'dev'
+    env = sys.argv[1] if len(sys.argv) > 1 else 'dev'
 
     if env == 'dev':
-        app.config = config.DevelopmentConfig
-
+        app.config = DevelopmentConfig
     elif env == 'test':
-        app.config = config.TestConfig
+        app.config = TestConfig
     elif env == 'prod':
         print('Select: production')
-        app.config = config.ProductionConfig
-
+        app.config = ProductionConfig
     else:
         raise ValueError('Invalid environment name')
-
-    app.ci = config.CIConfig

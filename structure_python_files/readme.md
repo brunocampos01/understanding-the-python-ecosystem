@@ -1,12 +1,12 @@
 ## Main()
 
-Many programming languages have a special functions that is automatically executed when an operation system starts to run.
+Many programming languages have a special function that is automatically executed when an operating system starts to run a program.
 
 This function is often called the **entry point** because it is where execution enters the program.
 
-The Python interpreter is not have special functions that serves as the entry point
+The Python interpreter does not have a special function that serves as the entry point.
 
-Nevertheless (pt:mesmo assim) have convetions to define start execution.
+Nevertheless, there are conventions to define the start of execution.
 
 
 ### A Basic Python main()
@@ -39,7 +39,7 @@ Sometimes the code you write will have side effects that you want the user to co
 **why?**<br/>
 This is because when the Python interpreter encounters the def or class keywords, it only stores those definitions for later use and doesn’t actually execute them until you tell it to.
 
-Example: `best_pratices.py`
+Example: `best_practices.py`
 ```python
 from time import sleep
 
@@ -77,7 +77,7 @@ if __name__ == "__main__":
 ```
 
 ##### Create a Function Called main() to Contain the Code You Want to Run
-Although Python does not assign any significance to a function named main(), the best practice is to name the entry point function main() anyways.
+Although Python does not assign any significance to a function named main(), the best practice is to name the entry point function main() anyway.
 
 
 **why?**<br/>
@@ -106,12 +106,9 @@ if __name__ == "__main__":
 
 ##### Call Other Functions From main()
 
-The function `main()` must execute other functions.
+The function `main()` should call other functions to reuse functionality.
 
-
-To reuse functionality
-
-Examples:
+Example:
 ```python
 from time import sleep
 

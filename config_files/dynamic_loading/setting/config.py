@@ -1,5 +1,5 @@
 DATABASE_CONFIG = {
-    'host': 'TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT',
+    'host': 'localhost',
     'dbname': 'company',
     'user': 'user',
     'password': 'password',

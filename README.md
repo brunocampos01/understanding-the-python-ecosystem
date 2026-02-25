@@ -51,7 +51,7 @@ This topic describes how the language is designed and how it works.
 This topic describes static code analysis, formatting patterns and style guides.
 - [Static code analysis](#static-code-analysis)
 - [Principal style guides](#principal-style-guides)
-- [Knobs (Google YAPF)](https://github.com/google/yapf#id11)
+- [Knobs (Google YAPF)](https://github.com/google/yapf#knobs)
 - [My Knobs](#my-knobs)
 - [Docstrings](#docstrings)
 
@@ -105,7 +105,7 @@ Extra topics.
 <details>
   <summary><b>  <a href="#preparing-the-environment-for-the-python"><img src="images/icon_windows.png"/></a> Windows</b></summary>
 
-  On Windows, I recommend using the package manager [chocolatey](https://chocolatey.org/) and setting your Powershell to work as admin. See [this](devpos/infra-as-code) tutorial.
+  On Windows, I recommend using the package manager [chocolatey](https://chocolatey.org/) and setting your Powershell to work as admin.
 
   Now, install Python
   ```powershell
@@ -221,7 +221,7 @@ sudo update-alternatives --list python
      curl https://pyenv.run | bash
      ```
 
-  4. Add these three lines from .bashrc or .zhshrc
+  4. Add these three lines to .bashrc or .zshrc
      ```bash
      export PATH="$HOME/.pyenv/bin:$PATH"
      eval "$(pyenv init --path)"
@@ -247,16 +247,16 @@ sudo update-alternatives --list python
      It's possible use the `update-alternatives` command to set priority to different versions of the same software installed in Ubuntu systems. Now, define priority of versions:
      
      ```bash
-     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.13 1
      
-     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 2
+     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 2
       
-     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 3
+     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.11 3
   
-     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 4
+     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 4
      ```
   
-     In directory `/usr/bin` will be create simbolic link: `/usr/bin/python -> /etc/alternatives/python*`
+     In directory `/usr/bin` will be created a symbolic link: `/usr/bin/python -> /etc/alternatives/python*`
   
   2. Choose version
   
@@ -312,7 +312,7 @@ sudo update-alternatives --list python
     
    2. Insert Python PATH
       ```bash
-      export PYTHONHOME=/usr/bin/python<NUMER_VERSION>
+      export PYTHONHOME=/usr/bin/python<NUMBER_VERSION>
       ```
     
    3. Update profile/bashrc
@@ -364,7 +364,7 @@ Python can run in a virtual environment with **isolation** from the system.
 <br/>
 
 <details>
-  <summary><b> Arquitecture of Execution</b></summary>
+  <summary><b> Architecture of Execution</b></summary>
 
   <img src="images/org_python.jpg"  align="center" height=auto width=70%/>
   
@@ -391,9 +391,9 @@ Python can run in a virtual environment with **isolation** from the system.
   ```bash
   ll
   
-  # random.py -> /usr/lib/python3.6/random.py
-  # reprlib.py -> /usr/lib/python3.6/reprlib.py
-  # re.py -> /usr/lib/python3.6/re.py
+  # random.py -> /usr/lib/python3.11/random.py
+  # reprlib.py -> /usr/lib/python3.11/reprlib.py
+  # re.py -> /usr/lib/python3.11/re.py
   # ...
   ```
   
@@ -404,17 +404,15 @@ Python can run in a virtual environment with **isolation** from the system.
   │   ├── activate
   │   ├── activate.csh
   │   ├── activate.fish
-  │   ├── easy_install
-  │   ├── easy_install-3.8
   │   ├── pip
   │   ├── pip3
-  │   ├── pip3.8
-  │   ├── python -> python3.8
-  │   ├── python3 -> python3.8
-  │   └── python3.8 -> /Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8
+  │   ├── pip3.11
+  │   ├── python -> python3.11
+  │   ├── python3 -> python3.11
+  │   └── python3.11 -> /usr/bin/python3.11
   ├── include
   ├── lib
-  │   └── python3.8
+  │   └── python3.11
   │       └── site-packages
   └── pyvenv.cfg
   ```
@@ -428,9 +426,14 @@ Python can run in a virtual environment with **isolation** from the system.
       <img src='images/create_virtualenv.gif' height=auto width="100%">
   </details>
     
-  Create virtual environment
+  Create virtual environment (using the built-in `venv` module, recommended since Python 3.3+)
   ```bash
-  virtualenv -p python3  <NAME_ENVIRONMENT>
+  python3 -m venv <NAME_ENVIRONMENT>
+  ```
+  
+  Or using the third-party `virtualenv` package
+  ```bash
+  virtualenv -p python3 <NAME_ENVIRONMENT>
   ```
     
   Activate 
@@ -446,13 +449,110 @@ Python can run in a virtual environment with **isolation** from the system.
 
 ## **Package manager**
 <details>
+  <summary><b> uv (recommended)</b></summary> 
+  
+  [uv](https://docs.astral.sh/uv/) is an extremely fast Python package and project manager written in Rust by [Astral](https://astral.sh/) (the creators of Ruff). It is **10-100x faster** than pip and serves as a single tool that can replace pip, pip-tools, pipx, poetry, pyenv, virtualenv, and more.
+  
+  #### **Features**
+  - Extremely fast dependency resolution and installation (written in Rust)
+  - Drop-in replacement for pip (`uv pip install`)
+  - Built-in Python version management (`uv python install 3.12`)
+  - Project management with `pyproject.toml` and cross-platform lockfile
+  - Virtual environment creation and management
+  - Script execution with inline dependencies
+  - Tool management (replaces pipx)
+  - Workspace support for monorepos
+  - Deterministic builds via `uv.lock`
+  
+  #### **Install**
+  ```bash
+  # macOS / Linux
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+
+  # or via pip
+  pip install uv
+
+  # or via Homebrew
+  brew install uv
+  ```
+  
+  #### **Project workflow**
+  ```bash
+  # Create a new project
+  uv init my-project
+  cd my-project
+
+  # Add dependencies (updates pyproject.toml and uv.lock)
+  uv add requests flask
+  uv add --dev pytest ruff
+
+  # Sync the virtual environment with the lockfile
+  uv sync
+
+  # Run a command inside the project environment
+  uv run python main.py
+  uv run pytest
+
+  # Remove a dependency
+  uv remove flask
+
+  # Build and publish
+  uv build
+  uv publish
+  ```
+
+  #### **Python version management**
+  ```bash
+  # Install a specific Python version
+  uv python install 3.12
+
+  # List available Python versions
+  uv python list
+
+  # Pin a project to a specific version
+  uv python pin 3.12
+  ```
+
+  #### **pip-compatible interface**
+  ```bash
+  # Works as a drop-in replacement for pip
+  uv pip install requests
+  uv pip install -r requirements.txt
+  uv pip freeze
+  uv pip compile requirements.in -o requirements.txt
+  ```
+
+  #### **pyproject.toml example**
+  ```toml
+  [project]
+  name = "my-project"
+  version = "0.1.0"
+  description = "My Python project"
+  requires-python = ">=3.11"
+  dependencies = [
+      "requests>=2.31",
+      "flask>=3.0",
+  ]
+
+  [dependency-groups]
+  dev = [
+      "pytest>=8.0",
+      "ruff>=0.4",
+  ]
+  ```
+
+  [Documentation](https://docs.astral.sh/uv/) | [GitHub](https://github.com/astral-sh/uv)
+  <br/>
+</details>
+
+<details>
   <summary><b> Pipenv</b></summary> 
   
   Create and manage automatically a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates the ever-important `Pipfile.lock`, which is used to produce deterministic builds.
   
   #### **Features**
   - Deterministic builds
-  - Separates development and production environment packages into a single file `Pipefile`
+  - Separates development and production environment packages into a single file `Pipfile`
   - Automatically adds/removes packages from your `Pipfile`
   - Automatically create and manage a virtualenv
   - Check PEP 508 requirements
@@ -476,7 +576,7 @@ Python can run in a virtual environment with **isolation** from the system.
   wget = "==3.2"
   
   [requires]
-  python_version = "3.8"
+  python_version = "3.11"
   platform_system = 'Linux'
   ```
   
@@ -520,7 +620,7 @@ Python can run in a virtual environment with **isolation** from the system.
      pipenv run
      ```
   
-  4. Install packages with Pipefile
+  4. Install packages with Pipfile
      ```bash
      pipenv install flask
      # or
@@ -568,9 +668,9 @@ Python can run in a virtual environment with **isolation** from the system.
 `Requirements.txt` is file containing a list of items to be installed using pip install.
 
 <details>	
-  <summary><b> Principal Comands</b></summary>
+  <summary><b> Principal Commands</b></summary>
 
-  1. Visualize instaled packages
+  1. Visualize installed packages
   ```bash
   pip3 freeze
   ```
@@ -612,7 +712,7 @@ A set of command line tools to help you keep your pip-based packages fresh and e
 - Stable
 
 <details>	
-  <summary><b> Principal Comands</b></summary>
+  <summary><b> Principal Commands</b></summary>
 
   1. Install
   ```
@@ -624,15 +724,15 @@ A set of command line tools to help you keep your pip-based packages fresh and e
   pip3 freeze > requirements.in
   ```
   
-  3. Generate hashes and list dependeces
+  3. Generate hashes and list dependencies
   ```bash
   pip-compile --generate-hashes requirements.in
   ```
   output: [requirements.txt](requirements.txt)
   
-  4. Install packages and hash checking
+  4. Install packages with hash checking
   ```bash
-  pip-compile --generate-hashes requirements.in
+  pip-sync requirements.txt
   ```
   <br/>
 
@@ -680,11 +780,32 @@ Therefore, for a CPU-bound task in Python, single-process multi-thread Python pr
 </details>
 
 <details>	
-  <summary><b> Community Consensus</b></summary>
+  <summary><b> Community Consensus and Free-Threaded Python (PEP 703)</b></summary>
 
-  Removing the GIL would have made **Python 3 slower in comparison to Python 2** in single-threaded performance. Other problem if remove the GIL it's would **broke the existing C extensions** which depend heavily on the solution that the GIL provides.
+  Historically, removing the GIL would have made **Python 3 slower in comparison to Python 2** in single-threaded performance. Another problem was that removing the GIL would **break existing C extensions** which depend heavily on it.
   <br/>
-  Although many proposals have been made to eliminate the GIL, the general consensus has been that in most cases, the advantages of the GIL outweigh the disadvantages; in the few cases where the GIL is a bottleneck, the application should be built around the multiprocessing structure.
+  However, [PEP 703](https://peps.python.org/pep-0703/) was **accepted in October 2023**, and **Python 3.13** (released October 2024) includes **experimental free-threaded mode** where the GIL can be disabled:
+  
+  ```bash
+  # Run Python 3.13 without the GIL
+  python3.13t script.py
+  
+  # Or disable at runtime
+  PYTHON_GIL=0 python3.13 script.py
+  python3.13 -X gil=0 script.py
+  ```
+  
+  ```python
+  # Check GIL status at runtime
+  import sys
+  print(sys._is_gil_enabled())  # Python 3.13+
+  ```
+  
+  **Key points about free-threaded Python:**
+  - The free-threaded build uses `python3.13t` (the "t" suffix means "threaded")
+  - It is still **experimental** -- not all C extensions support it yet
+  - Performance varies by workload: some CPU-bound tasks see significant speedups, while single-threaded code may be slightly slower
+  - C extension authors must explicitly opt in via `Py_mod_gil` slot
   
   <br/>
 </details>
@@ -722,18 +843,18 @@ The resulting search can be accessed using the **sys** module:
 ```python
 import sys
 
-sys.paths
-# ['', '/usr/lib/python38.zip', 
-# '/usr/lib/python3.8',
-# '/usr/lib/python3.8/lib-dynload',
-# '/home/campos/.local/lib/#python3.8/site-packages',
-# '/usr/local/lib/python3.8/dist-packages',
+sys.path
+# ['', '/usr/lib/python311.zip', 
+# '/usr/lib/python3.11',
+# '/usr/lib/python3.11/lib-dynload',
+# '/home/campos/.local/lib/python3.11/site-packages',
+# '/usr/local/lib/python3.11/dist-packages',
 # '/usr/lib/python3/dist-packages']
 ```
 
 <br/>
 
-Now, to see where a packeage was imported from you can use the attribute `__file__`:
+Now, to see where a package was imported from you can use the attribute `__file__`:
 ```python
 import zipp
 
@@ -757,15 +878,35 @@ https://realpython.com/python-modules-packages/#package-initialization -->
 
 ## **How Python manages process and threads**
 
-TODO
+CPython uses the **Global Interpreter Lock (GIL)**, which allows only one thread to execute Python bytecode at a time. This has important implications:
 
-<!-- 
-https://realpython.com/python-gil/
-https://realpython.com/courses/speed-python-concurrency/
-https://realpython.com/intro-to-python-threading/
-https://data-flair.training/blogs/python-multithreading/
-https://sobolevn.me/2020/06/how-async-should-have-been
--->
+- **CPU-bound tasks**: Multi-threading does NOT improve performance due to the GIL. Use `multiprocessing` or `concurrent.futures.ProcessPoolExecutor` instead.
+- **I/O-bound tasks**: Multi-threading IS effective because threads release the GIL while waiting for I/O (network, disk, etc.). Use `threading` or `concurrent.futures.ThreadPoolExecutor`.
+- **Async I/O**: For high-concurrency I/O-bound workloads, `asyncio` provides cooperative multitasking with a single thread.
+
+```python
+# CPU-bound: use multiprocessing
+from concurrent.futures import ProcessPoolExecutor
+with ProcessPoolExecutor() as executor:
+    results = executor.map(cpu_heavy_func, data)
+
+# I/O-bound: use threading
+from concurrent.futures import ThreadPoolExecutor
+with ThreadPoolExecutor() as executor:
+    results = executor.map(io_bound_func, urls)
+
+# Async I/O
+import asyncio
+async def fetch_all(urls):
+    async with aiohttp.ClientSession() as session:
+        tasks = [session.get(url) for url in urls]
+        return await asyncio.gather(*tasks)
+```
+
+**References:**
+- [What Is the Python GIL?](https://realpython.com/python-gil/)
+- [Speed Up Python with Concurrency](https://realpython.com/courses/speed-python-concurrency/)
+- [Intro to Python Threading](https://realpython.com/intro-to-python-threading/)
 
 ---
 
@@ -773,9 +914,30 @@ https://sobolevn.me/2020/06/how-async-should-have-been
 
 ## **How Python manages memory**
 
-TODO
+Python uses **automatic memory management** with two key mechanisms:
 
-<!-- https://realpython.com/courses/how-python-manages-memory/ -->
+1. **Reference Counting**: Every object has a reference count. When it drops to zero, the memory is immediately freed.
+2. **Garbage Collector**: Handles circular references that reference counting cannot detect. Uses a generational approach (3 generations) to optimize collection.
+
+```python
+import sys
+
+a = [1, 2, 3]
+print(sys.getrefcount(a))  # reference count (includes the getrefcount arg itself)
+
+import gc
+gc.collect()  # manually trigger garbage collection
+print(gc.get_stats())  # stats per generation
+```
+
+Key points:
+- **Small integers** (-5 to 256) and **interned strings** are cached and reused.
+- **Memory pools**: CPython uses a private heap with an internal memory allocator (`pymalloc`) for small objects (< 512 bytes).
+- Use `tracemalloc` to trace memory allocations and find leaks.
+
+**References:**
+- [How Python Manages Memory](https://realpython.com/courses/how-python-manages-memory/)
+- [tracemalloc](https://docs.python.org/3/library/tracemalloc.html)
 
 
 ---
@@ -784,14 +946,41 @@ TODO
 
 ## **How to deeply understand Python code execution**
 
+Several tools help you trace, debug, and profile Python code:
 
-TODO
+**Debuggers:**
+- **pdb** (built-in): Insert `breakpoint()` in your code and step through with `n` (next), `s` (step into), `c` (continue).
+- **PyCharm Debugger**: Set breakpoints visually, inspect variables, evaluate expressions.
+- **VS Code Debugger**: Similar to PyCharm with the Python extension.
 
-<!-- trace via Pycharm
-trace via VS CODE
-trace memory allocations: https://docs.python.org/3/library/tracemalloc.html#module-tracemalloc
-code coverage: https://pypi.org/project/coverage/
-PySnooper: https://github.com/cool-RR/PySnooper -->
+**Profilers:**
+- **cProfile**: Built-in CPU profiler. Run with `python -m cProfile -s cumtime script.py`.
+- **tracemalloc**: Built-in memory profiler. Traces memory allocations to find leaks.
+- **line_profiler**: Line-by-line CPU profiling with `@profile` decorator.
+
+**Other Tools:**
+- **coverage.py**: Measure code coverage of your tests with `coverage run -m pytest && coverage report`.
+- **PySnooper**: Decorator-based tracing that logs every line execution, variable changes, and return values.
+
+```python
+# Using pdb
+def buggy_function(x):
+    breakpoint()  # drops into pdb here
+    return x * 2
+
+# Using tracemalloc
+import tracemalloc
+tracemalloc.start()
+# ... your code ...
+snapshot = tracemalloc.take_snapshot()
+for stat in snapshot.statistics('lineno')[:10]:
+    print(stat)
+```
+
+**References:**
+- [tracemalloc](https://docs.python.org/3/library/tracemalloc.html)
+- [coverage.py](https://pypi.org/project/coverage/)
+- [PySnooper](https://github.com/cool-RR/PySnooper)
 
 
 ---
@@ -820,7 +1009,7 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
   <summary><b> Pylint</b></summary>
 
   [Pylint](https://pylint.org/) is a lint that checks for errors in Python code, tries to enforce a coding standard and looks for code smells. The principal features is:
-  - Pylint follow the [PEP8](https://www.python.org/dev/peps/pep-0008/) style guide.
+  - Pylint follows the [PEP 8](https://peps.python.org/pep-0008/) style guide.
   - It's possible automate with Jenkins.
   - It is fully customizable through a `.pylintrc` file where you can choose which errors or agreements are relevant to you.
   - Usage
@@ -841,6 +1030,23 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
 </details>
 
 <details>	
+  <summary><b> Ruff</b></summary>
+
+  [Ruff](https://docs.astral.sh/ruff/) is an extremely fast Python linter and formatter written in Rust. It can replace Pylint, Pyflakes, isort, and many other tools in a single pass.
+  ```bash
+  # Lint the whole project
+  ruff check ./src/
+
+  # Lint and auto-fix
+  ruff check --fix ./src/
+
+  # Format (replaces black)
+  ruff format ./src/
+  ```
+  <br/>
+</details>
+
+<details>	
   <summary><b> Pyflakes</b></summary>
 
   [Documentation Pyflakes](https://github.com/PyCQA/pyflakes)
@@ -850,14 +1056,14 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
 <details>	
   <summary><b> Mypy</b></summary>
 
-  [Documentation Mypy](http://mypy-lang.org/)
+  [Documentation Mypy](https://mypy-lang.org/)
   <br/>
 </details>
 
 <details>	
   <summary><b> Prospector</b></summary>
 
-  [Documentation Propector](https://prospector.landscape.io/en/master/) 
+  [Documentation Prospector](https://github.com/prospector-dev/prospector) 
   <br/>
 </details>
 
@@ -871,8 +1077,8 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
 
   [isort](https://pypi.org/project/isort/) is a Python tool/library for sorting imports alphabetically, automatically divided into sections. It is very useful in projects where we deal with a lot of imports [6].
   ```bash
-  # sort the whole project
-  isort --recursive ./src/
+  # sort the whole project (isort 5+ traverses directories automatically)
+  isort ./src/
   
   # just check for errors
   isort script.py --check-only
@@ -895,7 +1101,7 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
 <details>	
   <summary><b> docformatter</b></summary>
 
-  [Docformater](https://pypi.org/project/docformatter/) is utility helps to bring your docstring under the [PEP 257](https://www.python.org/dev/peps/pep-0257/) [6]. The agreement specifies how documentation should be written.
+  [docformatter](https://pypi.org/project/docformatter/) is a utility that helps bring your docstrings under [PEP 257](https://peps.python.org/pep-0257/) [6]. The standard specifies how documentation should be written.
   ```bash
   docformatter --in-place example.py
   ```
@@ -906,10 +1112,11 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
 <details>	
   <summary><b> Autoformatters</b></summary>
 
-  There are also automatic code formatters now, here are the popular one [6]:
-  - [yapf](https://github.com/google/yapf) (here you can make a align with your own style guide)
+  There are also automatic code formatters now, here are the popular ones [6]:
   - [black](https://github.com/psf/black) (you don't need a style guide because you don't have a choice)
-  - [autopep8](https://github.com/hhatto/autopep8) (makes your python script to conform PEP8 style guide)
+  - [ruff format](https://docs.astral.sh/ruff/formatter/) (extremely fast, drop-in replacement for black)
+  - [autopep8](https://github.com/hhatto/autopep8) (makes your python script conform to PEP 8 style guide)
+  - [yapf](https://github.com/google/yapf) (customizable style guide; **note:** relies on `lib2to3` which has limited support for Python 3.10+ syntax)
   
   <br/>
 </details>
@@ -931,9 +1138,9 @@ A lint, is a [static code analysis tool](https://en.wikipedia.org/wiki/Lint_(sof
 To make the code consistent and make sure it's readable the _style guides_ can help.
 - [Google style guide: THE BETTER](https://google.github.io/styleguide/pyguide.html) 
 - [Real Python: Naming Conventions](https://realpython.com/python-pep8/#naming-conventions)
-- [PEP 08: Style Guide](https://www.python.org/dev/peps/pep-0008/)
-- [PEP 257: Docstrings](https://www.python.org/dev/peps/pep-0257/)
-- [PEP 484: Type Hints](https://www.python.org/dev/peps/pep-0484/)
+- [PEP 08: Style Guide](https://peps.python.org/pep-0008/)
+- [PEP 257: Docstrings](https://peps.python.org/pep-0257/)
+- [PEP 484: Type Hints](https://peps.python.org/pep-0484/)
 
 ---
 
@@ -942,19 +1149,19 @@ To make the code consistent and make sure it's readable the _style guides_ can h
 ## **My Knobs**
 
 <details>
-  <summary><b> Identation and Length</b></summary> 
+  <summary><b> Indentation and Length</b></summary> 
   
   - 4 spaces
-  - Limit all lines to a maximum **72 characteres to docstring or comments**
-  - Limit all lines to a maximum **79 characteres to code**  
+  - Limit all lines to a maximum **72 characters to docstring or comments**
+  - Limit all lines to a maximum **79 characters to code**  
   <br/>
 </details>
 
 <details>
   <summary><b> Naming Convention</b></summary> 
 
-  - Class Name (camelCase): `CapWords()`
-  - Variables (snack_case): `cat_words`
+  - Class Name (PascalCase): `CapWords()`
+  - Variables (snake_case): `cat_words`
   - Constants: `MAX_OVERFLOW`
   <br/>
 </details>
@@ -995,7 +1202,7 @@ To make the code consistent and make sure it's readable the _style guides_ can h
   "_Should explicitly state this as return None_"
   
   - Be consistent in return statements.
-  - Todas as instruções de retorno em uma função devem retornar uma expressão ou nenhuma delas deve.
+  - All return statements in a function should return an expression, or none of them should.
   
   Yes:
   ```Python

@@ -62,10 +62,10 @@ def initializeTreeB():
 
 def validation_tree(node):
     """
-    Function to validation if tree its valid
+    Validate whether the tree is a valid BST using a stack.
 
-    - First, walk tree in edge left until leaf 
-    - Stack must have largest element in the background
+    - First, walk the left edge of the tree until reaching a leaf.
+    - The stack must have the largest element at the bottom.
     """
     print("\n---validation tree with stack---")
 
@@ -91,11 +91,10 @@ def validation_tree(node):
 
 
 def main():
-    print("arvore A")
+    print("Tree A")
     validation_tree(initializeTreeA())
 
-
-    print("\narvore B")
+    print("\nTree B")
     validation_tree(initializeTreeB())
 
 

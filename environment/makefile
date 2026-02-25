@@ -1,5 +1,5 @@
-# Description:   Install Python dependencies, delete all compiled Python files
-#                and test python environment
+# Description:   Install Python dependencies, delete all compiled Python files,
+#                and test the Python environment
 # Author:        brunocampos01
 # ----------------------------------- #
 
@@ -19,8 +19,8 @@ PYTHON_INTERPRETER = python3
 
 ## Install Python Dependencies
 install_dependencies:
-	$ sudo apt install python3
-	$ sudo apt install build-essential \
+	sudo apt install python3
+	sudo apt install build-essential \
 	                   software-properties-common \
                        libssl-dev \
                        libffi-dev \
@@ -40,7 +40,7 @@ clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
-## Test python environment is setup correctly
+## Test that the Python environment is set up correctly
 test_environment:
 	$(PYTHON_INTERPRETER) test_environment.py
 

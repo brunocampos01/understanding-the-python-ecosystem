@@ -1,19 +1,19 @@
-# How prepare Python environment in anywhere
+# How to Prepare a Python Environment Anywhere
 1. [Local](#running-in-local)
 2. [Development: Virtual Environment](#running-in-virtual-environment)
 3. [Deploy: Container](#running-in-container)
 
 ## Running in Local
-Install Python dependencies, test Python environment and delete all compiled Python files.
+Install Python dependencies, test the Python environment, and delete all compiled Python files.
 
 ```shell script
-sudo make
+make help
 
 # Available rules:
 
 # clean                       Delete all compiled Python files
 # install_dependencies        Install Python Dependencies
-# test_environment            Test python environment is setup correctly
+# test_environment            Test that the Python environment is set up correctly
 ```
 
 ```shell script
@@ -43,7 +43,7 @@ pip3 install -r requirements.txt
 ---
 
 ## Running in Container
-It's necessary be in project's home
+You must be in the project's root directory.
 ```sh
 name_project=$(basename "$(pwd)")
 echo $name_project
